@@ -3,8 +3,8 @@
     "UxmlPath": "Assets/Scripts/BT-GUI/GUI/BehaviourTreeEditor.uxml",
     "CanvasX": -531,
     "CanvasY": -67,
-    "CanvasWidth": 1242,
-    "CanvasHeight": 768,
+    "CanvasWidth": 1080,
+    "CanvasHeight": 720,
     "MatchGameView": false,
     "ZoomScale": 0.5,
     "PanOffset": {
