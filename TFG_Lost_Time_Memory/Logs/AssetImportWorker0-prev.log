@@ -1,0 +1,2321 @@
+Using pre-set license
+Built from '2021.3/staging' branch; Version is '2021.3.15f1 (e8e88683f834) revision 15263878'; Using compiler version '192829333'; Build Type 'Release'
+OS: 'Windows 10  (10.0.19043) 64bit Core' Language: 'es' Physical Memory: 16330 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
+
+COMMAND LINE ARGUMENTS:
+E:\Proyectos Unity\2021.3.15f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker0
+-projectPath
+E:/4 Carrera/TFG/LOST_TIME_MEMORY/Lost_Time_Memory/Lost_Time_Memory
+-logFile
+Logs/AssetImportWorker0.log
+-srvPort
+53004
+Successfully changed project path to: E:/4 Carrera/TFG/LOST_TIME_MEMORY/Lost_Time_Memory/Lost_Time_Memory
+E:/4 Carrera/TFG/LOST_TIME_MEMORY/Lost_Time_Memory/Lost_Time_Memory
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+Player connection [8112] Host "[IP] 25.49.201.9 [Port] 0 [Flags] 2 [Guid] 38888021 [EditorId] 38888021 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-2583QGM) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+
+Player connection [8112] Host "[IP] 25.49.201.9 [Port] 0 [Flags] 2 [Guid] 38888021 [EditorId] 38888021 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-2583QGM) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+
+Refreshing native plugins compatible for Editor in 76.16 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2021.3.15f1 (e8e88683f834)
+[Subsystems] Discovering subsystems at path E:/Proyectos Unity/2021.3.15f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path E:/4 Carrera/TFG/LOST_TIME_MEMORY/Lost_Time_Memory/Lost_Time_Memory/Assets
+GfxDevice: creating device client; threaded=0; jobified=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce GTX 1070 (ID=0x1b81)
+    Vendor:   NVIDIA
+    VRAM:     8088 MB
+    Driver:   31.0.15.1694
+Initialize mono
+Mono path[0] = 'E:/Proyectos Unity/2021.3.15f1/Editor/Data/Managed'
+Mono path[1] = 'E:/Proyectos Unity/2021.3.15f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'E:/Proyectos Unity/2021.3.15f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56244
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: E:/Proyectos Unity/2021.3.15f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
+Register platform support module: E:/Proyectos Unity/2021.3.15f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
+Register platform support module: E:/Proyectos Unity/2021.3.15f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.003551 seconds.
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 73.87 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.679 seconds
+Domain Reload Profiling:
+	ReloadAssembly (679ms)
+		BeginReloadAssembly (88ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (0ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (1ms)
+		EndReloadAssembly (493ms)
+			LoadAssemblies (89ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (106ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (30ms)
+			SetupLoadedEditorAssemblies (310ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (57ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (74ms)
+				BeforeProcessingInitializeOnLoad (1ms)
+				ProcessInitializeOnLoadAttributes (127ms)
+				ProcessInitializeOnLoadMethodAttributes (50ms)
+				AfterProcessingInitializeOnLoad (0ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (0ms)
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.006236 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 76.79 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+System.InvalidOperationException: The operation is not possible when moved past all properties (Next returned false)
+  at UnityEditor.SerializedProperty.Verify (UnityEditor.SerializedProperty+VerifyFlags verifyFlags) [0x00068] in <63965ae56af7489797f355b7c1211ab2>:0 
+  at UnityEditor.SerializedProperty.get_stringValue () [0x00001] in <63965ae56af7489797f355b7c1211ab2>:0 
+  at PixelCrushers.InputDeviceManagerEditor.AxisDefined (System.String axisName) [0x00059] in E:\4 Carrera\TFG\LOST_TIME_MEMORY\Lost_Time_Memory\Lost_Time_Memory\Assets\Plugins\Pixel Crushers\Common\Scripts\Editor\UI\InputDeviceManagerEditor.cs:204 
+  at PixelCrushers.InputDeviceManagerEditor.HasStandardInputDefinitions () [0x00001] in E:\4 Carrera\TFG\LOST_TIME_MEMORY\Lost_Time_Memory\Lost_Time_Memory\Assets\Plugins\Pixel Crushers\Common\Scripts\Editor\UI\InputDeviceManagerEditor.cs:61 
+  at PixelCrushers.CheckInputManagerSettings..cctor () [0x00019] in E:\4 Carrera\TFG\LOST_TIME_MEMORY\Lost_Time_Memory\Lost_Time_Memory\Assets\Plugins\Pixel Crushers\Common\Scripts\Editor\UI\CheckInputManagerSettings.cs:23 
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+Mono: successfully reloaded assembly
+- Completed reload, in  1.344 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1345ms)
+		BeginReloadAssembly (285ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (6ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (181ms)
+		EndReloadAssembly (956ms)
+			LoadAssemblies (106ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (233ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (73ms)
+			SetupLoadedEditorAssemblies (519ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (14ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (77ms)
+				BeforeProcessingInitializeOnLoad (78ms)
+				ProcessInitializeOnLoadAttributes (310ms)
+				ProcessInitializeOnLoadMethodAttributes (37ms)
+				AfterProcessingInitializeOnLoad (3ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (6ms)
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.07 seconds
+Refreshing native plugins compatible for Editor in 0.61 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3770 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 37 unused Assets / (56.4 KB). Loaded Objects now: 4235.
+Memory consumption went from 153.9 MB to 153.8 MB.
+Total: 3.402700 ms (FindLiveObjects: 0.273200 ms CreateObjectMapping: 0.301500 ms MarkObjects: 2.738600 ms  DeleteObjects: 0.088400 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.005616 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.65 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+System.InvalidOperationException: The operation is not possible when moved past all properties (Next returned false)
+  at UnityEditor.SerializedProperty.Verify (UnityEditor.SerializedProperty+VerifyFlags verifyFlags) [0x00068] in <63965ae56af7489797f355b7c1211ab2>:0 
+  at UnityEditor.SerializedProperty.get_stringValue () [0x00001] in <63965ae56af7489797f355b7c1211ab2>:0 
+  at PixelCrushers.InputDeviceManagerEditor.AxisDefined (System.String axisName) [0x00059] in E:\4 Carrera\TFG\LOST_TIME_MEMORY\Lost_Time_Memory\Lost_Time_Memory\Assets\Plugins\Pixel Crushers\Common\Scripts\Editor\UI\InputDeviceManagerEditor.cs:204 
+  at PixelCrushers.InputDeviceManagerEditor.HasStandardInputDefinitions () [0x00001] in E:\4 Carrera\TFG\LOST_TIME_MEMORY\Lost_Time_Memory\Lost_Time_Memory\Assets\Plugins\Pixel Crushers\Common\Scripts\Editor\UI\InputDeviceManagerEditor.cs:61 
+  at PixelCrushers.CheckInputManagerSettings..cctor () [0x00019] in E:\4 Carrera\TFG\LOST_TIME_MEMORY\Lost_Time_Memory\Lost_Time_Memory\Assets\Plugins\Pixel Crushers\Common\Scripts\Editor\UI\CheckInputManagerSettings.cs:23 
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+Mono: successfully reloaded assembly
+- Completed reload, in  1.027 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1027ms)
+		BeginReloadAssembly (136ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (7ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (33ms)
+		EndReloadAssembly (807ms)
+			LoadAssemblies (102ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (224ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (46ms)
+			SetupLoadedEditorAssemblies (401ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (23ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (58ms)
+				ProcessInitializeOnLoadAttributes (279ms)
+				ProcessInitializeOnLoadMethodAttributes (36ms)
+				AfterProcessingInitializeOnLoad (3ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (9ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 2.10 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3747 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 21 unused Assets / (24.6 KB). Loaded Objects now: 4238.
+Memory consumption went from 151.7 MB to 151.7 MB.
+Total: 3.033500 ms (FindLiveObjects: 0.294400 ms CreateObjectMapping: 0.168000 ms MarkObjects: 2.548700 ms  DeleteObjects: 0.021600 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 28754.738930 seconds.
+  path: Assets/Scenes/QuickStart.unity
+  artifactKey: Guid(2cda990e2423bbf4892e6590ba056729) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/QuickStart.unity using Guid(2cda990e2423bbf4892e6590ba056729) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd4c2037f4d389da8c6553daf9b9aeb8e') in 0.010411 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.005289 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.64 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+System.InvalidOperationException: The operation is not possible when moved past all properties (Next returned false)
+  at UnityEditor.SerializedProperty.Verify (UnityEditor.SerializedProperty+VerifyFlags verifyFlags) [0x00068] in <63965ae56af7489797f355b7c1211ab2>:0 
+  at UnityEditor.SerializedProperty.get_stringValue () [0x00001] in <63965ae56af7489797f355b7c1211ab2>:0 
+  at PixelCrushers.InputDeviceManagerEditor.AxisDefined (System.String axisName) [0x00059] in E:\4 Carrera\TFG\LOST_TIME_MEMORY\Lost_Time_Memory\Lost_Time_Memory\Assets\Plugins\Pixel Crushers\Common\Scripts\Editor\UI\InputDeviceManagerEditor.cs:204 
+  at PixelCrushers.InputDeviceManagerEditor.HasStandardInputDefinitions () [0x00001] in E:\4 Carrera\TFG\LOST_TIME_MEMORY\Lost_Time_Memory\Lost_Time_Memory\Assets\Plugins\Pixel Crushers\Common\Scripts\Editor\UI\InputDeviceManagerEditor.cs:61 
+  at PixelCrushers.CheckInputManagerSettings..cctor () [0x00019] in E:\4 Carrera\TFG\LOST_TIME_MEMORY\Lost_Time_Memory\Lost_Time_Memory\Assets\Plugins\Pixel Crushers\Common\Scripts\Editor\UI\CheckInputManagerSettings.cs:23 
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+Mono: successfully reloaded assembly
+- Completed reload, in  1.014 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1014ms)
+		BeginReloadAssembly (136ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (7ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (33ms)
+		EndReloadAssembly (793ms)
+			LoadAssemblies (102ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (214ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (50ms)
+			SetupLoadedEditorAssemblies (396ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (25ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (61ms)
+				ProcessInitializeOnLoadAttributes (273ms)
+				ProcessInitializeOnLoadMethodAttributes (33ms)
+				AfterProcessingInitializeOnLoad (3ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (8ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.89 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3747 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 21 unused Assets / (24.6 KB). Loaded Objects now: 4241.
+Memory consumption went from 151.7 MB to 151.7 MB.
+Total: 2.931200 ms (FindLiveObjects: 0.219200 ms CreateObjectMapping: 0.160000 ms MarkObjects: 2.529800 ms  DeleteObjects: 0.021300 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 23.325770 seconds.
+  path: Assets/Scenes/Game
+  artifactKey: Guid(98912890e56f7034d9231557ed9bf85f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Game using Guid(98912890e56f7034d9231557ed9bf85f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '31a05e3d51d40ef71a632f6147d48741') in 0.008666 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.357492 seconds.
+  path: Assets/Scenes/Game/Fight.unity
+  artifactKey: Guid(ed9b73073da6273448671e56de679e0a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Game/Fight.unity using Guid(ed9b73073da6273448671e56de679e0a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0a284fd3ff7df74568d8b94bb8cb55aa') in 0.004967 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.005450 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.64 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+System.InvalidOperationException: The operation is not possible when moved past all properties (Next returned false)
+  at UnityEditor.SerializedProperty.Verify (UnityEditor.SerializedProperty+VerifyFlags verifyFlags) [0x00068] in <63965ae56af7489797f355b7c1211ab2>:0 
+  at UnityEditor.SerializedProperty.get_stringValue () [0x00001] in <63965ae56af7489797f355b7c1211ab2>:0 
+  at PixelCrushers.InputDeviceManagerEditor.AxisDefined (System.String axisName) [0x00059] in E:\4 Carrera\TFG\LOST_TIME_MEMORY\Lost_Time_Memory\Lost_Time_Memory\Assets\Plugins\Pixel Crushers\Common\Scripts\Editor\UI\InputDeviceManagerEditor.cs:204 
+  at PixelCrushers.InputDeviceManagerEditor.HasStandardInputDefinitions () [0x00001] in E:\4 Carrera\TFG\LOST_TIME_MEMORY\Lost_Time_Memory\Lost_Time_Memory\Assets\Plugins\Pixel Crushers\Common\Scripts\Editor\UI\InputDeviceManagerEditor.cs:61 
+  at PixelCrushers.CheckInputManagerSettings..cctor () [0x00019] in E:\4 Carrera\TFG\LOST_TIME_MEMORY\Lost_Time_Memory\Lost_Time_Memory\Assets\Plugins\Pixel Crushers\Common\Scripts\Editor\UI\CheckInputManagerSettings.cs:23 
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+Mono: successfully reloaded assembly
+- Completed reload, in  1.138 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1139ms)
+		BeginReloadAssembly (142ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (7ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (34ms)
+		EndReloadAssembly (898ms)
+			LoadAssemblies (112ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (245ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (52ms)
+			SetupLoadedEditorAssemblies (439ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (26ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (64ms)
+				ProcessInitializeOnLoadAttributes (306ms)
+				ProcessInitializeOnLoadMethodAttributes (37ms)
+				AfterProcessingInitializeOnLoad (3ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (9ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 2.24 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3747 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 21 unused Assets / (24.6 KB). Loaded Objects now: 4244.
+Memory consumption went from 151.7 MB to 151.7 MB.
+Total: 2.966200 ms (FindLiveObjects: 0.280000 ms CreateObjectMapping: 0.187700 ms MarkObjects: 2.477300 ms  DeleteObjects: 0.020500 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 29.431660 seconds.
+  path: Assets/Scenes/Game/Team.unity
+  artifactKey: Guid(be8cd38f13425f349917adec16eaac45) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Game/Team.unity using Guid(be8cd38f13425f349917adec16eaac45) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd0e6d7d440178fc711cdd58b53a82712') in 0.009525 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 9.176511 seconds.
+  path: Assets/Scenes/Game/Lobby.unity
+  artifactKey: Guid(3bbfffa8552b4f14ebd98d52428558cc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Game/Lobby.unity using Guid(3bbfffa8552b4f14ebd98d52428558cc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8e0da8afa41e4bf72bcdac9b2cd70d0c') in 0.005603 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.005348 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.62 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+System.InvalidOperationException: The operation is not possible when moved past all properties (Next returned false)
+  at UnityEditor.SerializedProperty.Verify (UnityEditor.SerializedProperty+VerifyFlags verifyFlags) [0x00068] in <63965ae56af7489797f355b7c1211ab2>:0 
+  at UnityEditor.SerializedProperty.get_stringValue () [0x00001] in <63965ae56af7489797f355b7c1211ab2>:0 
+  at PixelCrushers.InputDeviceManagerEditor.AxisDefined (System.String axisName) [0x00059] in E:\4 Carrera\TFG\LOST_TIME_MEMORY\Lost_Time_Memory\Lost_Time_Memory\Assets\Plugins\Pixel Crushers\Common\Scripts\Editor\UI\InputDeviceManagerEditor.cs:204 
+  at PixelCrushers.InputDeviceManagerEditor.HasStandardInputDefinitions () [0x00001] in E:\4 Carrera\TFG\LOST_TIME_MEMORY\Lost_Time_Memory\Lost_Time_Memory\Assets\Plugins\Pixel Crushers\Common\Scripts\Editor\UI\InputDeviceManagerEditor.cs:61 
+  at PixelCrushers.CheckInputManagerSettings..cctor () [0x00019] in E:\4 Carrera\TFG\LOST_TIME_MEMORY\Lost_Time_Memory\Lost_Time_Memory\Assets\Plugins\Pixel Crushers\Common\Scripts\Editor\UI\CheckInputManagerSettings.cs:23 
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+Mono: successfully reloaded assembly
+- Completed reload, in  1.147 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1148ms)
+		BeginReloadAssembly (142ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (6ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (36ms)
+		EndReloadAssembly (905ms)
+			LoadAssemblies (111ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (243ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (54ms)
+			SetupLoadedEditorAssemblies (455ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (26ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (63ms)
+				ProcessInitializeOnLoadAttributes (325ms)
+				ProcessInitializeOnLoadMethodAttributes (36ms)
+				AfterProcessingInitializeOnLoad (3ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (9ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.97 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3747 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 21 unused Assets / (24.6 KB). Loaded Objects now: 4247.
+Memory consumption went from 151.8 MB to 151.7 MB.
+Total: 3.226900 ms (FindLiveObjects: 0.247900 ms CreateObjectMapping: 0.170900 ms MarkObjects: 2.782000 ms  DeleteObjects: 0.025300 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.006192 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 2.23 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+System.InvalidOperationException: The operation is not possible when moved past all properties (Next returned false)
+  at UnityEditor.SerializedProperty.Verify (UnityEditor.SerializedProperty+VerifyFlags verifyFlags) [0x00068] in <63965ae56af7489797f355b7c1211ab2>:0 
+  at UnityEditor.SerializedProperty.get_stringValue () [0x00001] in <63965ae56af7489797f355b7c1211ab2>:0 
+  at PixelCrushers.InputDeviceManagerEditor.AxisDefined (System.String axisName) [0x00059] in E:\4 Carrera\TFG\LOST_TIME_MEMORY\Lost_Time_Memory\Lost_Time_Memory\Assets\Plugins\Pixel Crushers\Common\Scripts\Editor\UI\InputDeviceManagerEditor.cs:204 
+  at PixelCrushers.InputDeviceManagerEditor.HasStandardInputDefinitions () [0x00001] in E:\4 Carrera\TFG\LOST_TIME_MEMORY\Lost_Time_Memory\Lost_Time_Memory\Assets\Plugins\Pixel Crushers\Common\Scripts\Editor\UI\InputDeviceManagerEditor.cs:61 
+  at PixelCrushers.CheckInputManagerSettings..cctor () [0x00019] in E:\4 Carrera\TFG\LOST_TIME_MEMORY\Lost_Time_Memory\Lost_Time_Memory\Assets\Plugins\Pixel Crushers\Common\Scripts\Editor\UI\CheckInputManagerSettings.cs:23 
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+Mono: successfully reloaded assembly
+- Completed reload, in  6.613 seconds
+Domain Reload Profiling:
+	ReloadAssembly (6616ms)
+		BeginReloadAssembly (236ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (10ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (73ms)
+		EndReloadAssembly (5942ms)
+			LoadAssemblies (318ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (1002ms)
+			ReleaseScriptCaches (3ms)
+			RebuildScriptCaches (241ms)
+			SetupLoadedEditorAssemblies (4104ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (461ms)
+				SetLoadedEditorAssemblies (4ms)
+				RefreshPlugins (2ms)
+				BeforeProcessingInitializeOnLoad (862ms)
+				ProcessInitializeOnLoadAttributes (2088ms)
+				ProcessInitializeOnLoadMethodAttributes (619ms)
+				AfterProcessingInitializeOnLoad (64ms)
+				EditorAssembliesLoaded (3ms)
+			ExecutionOrderSort2 (21ms)
+			AwakeInstancesAfterBackupRestoration (34ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 4.29 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3747 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 21 unused Assets / (24.6 KB). Loaded Objects now: 4250.
+Memory consumption went from 151.8 MB to 151.7 MB.
+Total: 195.320600 ms (FindLiveObjects: 0.272700 ms CreateObjectMapping: 0.192900 ms MarkObjects: 194.828700 ms  DeleteObjects: 0.024900 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 98.671419 seconds.
+  path: Assets/Scenes/AI/BT-Pruebas.unity
+  artifactKey: Guid(0d08c4847669d6b4caa9761156496f64) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/AI/BT-Pruebas.unity using Guid(0d08c4847669d6b4caa9761156496f64) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5a63c824e5ee8d0ad9c75f55e7b2f1b7') in 0.016928 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.006488 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.68 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+System.InvalidOperationException: The operation is not possible when moved past all properties (Next returned false)
+  at UnityEditor.SerializedProperty.Verify (UnityEditor.SerializedProperty+VerifyFlags verifyFlags) [0x00068] in <63965ae56af7489797f355b7c1211ab2>:0 
+  at UnityEditor.SerializedProperty.get_stringValue () [0x00001] in <63965ae56af7489797f355b7c1211ab2>:0 
+  at PixelCrushers.InputDeviceManagerEditor.AxisDefined (System.String axisName) [0x00059] in E:\4 Carrera\TFG\LOST_TIME_MEMORY\Lost_Time_Memory\Lost_Time_Memory\Assets\Plugins\Pixel Crushers\Common\Scripts\Editor\UI\InputDeviceManagerEditor.cs:204 
+  at PixelCrushers.InputDeviceManagerEditor.HasStandardInputDefinitions () [0x00001] in E:\4 Carrera\TFG\LOST_TIME_MEMORY\Lost_Time_Memory\Lost_Time_Memory\Assets\Plugins\Pixel Crushers\Common\Scripts\Editor\UI\InputDeviceManagerEditor.cs:61 
+  at PixelCrushers.CheckInputManagerSettings..cctor () [0x00019] in E:\4 Carrera\TFG\LOST_TIME_MEMORY\Lost_Time_Memory\Lost_Time_Memory\Assets\Plugins\Pixel Crushers\Common\Scripts\Editor\UI\CheckInputManagerSettings.cs:23 
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+Mono: successfully reloaded assembly
+- Completed reload, in  2.282 seconds
+Domain Reload Profiling:
+	ReloadAssembly (2283ms)
+		BeginReloadAssembly (181ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (6ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (45ms)
+		EndReloadAssembly (1781ms)
+			LoadAssemblies (159ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (301ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (91ms)
+			SetupLoadedEditorAssemblies (1066ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (53ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (203ms)
+				ProcessInitializeOnLoadAttributes (701ms)
+				ProcessInitializeOnLoadMethodAttributes (99ms)
+				AfterProcessingInitializeOnLoad (8ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (36ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 2.81 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3747 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 21 unused Assets / (24.6 KB). Loaded Objects now: 4253.
+Memory consumption went from 151.8 MB to 151.8 MB.
+Total: 10.516600 ms (FindLiveObjects: 0.322100 ms CreateObjectMapping: 0.216200 ms MarkObjects: 9.956300 ms  DeleteObjects: 0.021000 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 143.036019 seconds.
+  path: Assets/Scripts/BT-GUI
+  artifactKey: Guid(3cc406c799539d641903d0cf1e53454b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/BT-GUI using Guid(3cc406c799539d641903d0cf1e53454b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '79e17d64167335229669f90ce522e49c') in 0.010599 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.012439 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.99 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+System.InvalidOperationException: The operation is not possible when moved past all properties (Next returned false)
+  at UnityEditor.SerializedProperty.Verify (UnityEditor.SerializedProperty+VerifyFlags verifyFlags) [0x00068] in <63965ae56af7489797f355b7c1211ab2>:0 
+  at UnityEditor.SerializedProperty.get_stringValue () [0x00001] in <63965ae56af7489797f355b7c1211ab2>:0 
+  at PixelCrushers.InputDeviceManagerEditor.AxisDefined (System.String axisName) [0x00059] in E:\4 Carrera\TFG\LOST_TIME_MEMORY\Lost_Time_Memory\Lost_Time_Memory\Assets\Plugins\Pixel Crushers\Common\Scripts\Editor\UI\InputDeviceManagerEditor.cs:204 
+  at PixelCrushers.InputDeviceManagerEditor.HasStandardInputDefinitions () [0x00001] in E:\4 Carrera\TFG\LOST_TIME_MEMORY\Lost_Time_Memory\Lost_Time_Memory\Assets\Plugins\Pixel Crushers\Common\Scripts\Editor\UI\InputDeviceManagerEditor.cs:61 
+  at PixelCrushers.CheckInputManagerSettings..cctor () [0x00019] in E:\4 Carrera\TFG\LOST_TIME_MEMORY\Lost_Time_Memory\Lost_Time_Memory\Assets\Plugins\Pixel Crushers\Common\Scripts\Editor\UI\CheckInputManagerSettings.cs:23 
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+Mono: successfully reloaded assembly
+- Completed reload, in  1.508 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1508ms)
+		BeginReloadAssembly (165ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (13ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (43ms)
+		EndReloadAssembly (1252ms)
+			LoadAssemblies (114ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (414ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (61ms)
+			SetupLoadedEditorAssemblies (584ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (131ms)
+				SetLoadedEditorAssemblies (2ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (102ms)
+				ProcessInitializeOnLoadAttributes (306ms)
+				ProcessInitializeOnLoadMethodAttributes (32ms)
+				AfterProcessingInitializeOnLoad (8ms)
+				EditorAssembliesLoaded (1ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (14ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.93 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3747 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 21 unused Assets / (24.6 KB). Loaded Objects now: 4256.
+Memory consumption went from 151.8 MB to 151.8 MB.
+Total: 2.971400 ms (FindLiveObjects: 0.247100 ms CreateObjectMapping: 0.166100 ms MarkObjects: 2.535700 ms  DeleteObjects: 0.021600 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 169.880540 seconds.
+  path: Assets/Scripts/BT-GUI/NodeComposite.cs
+  artifactKey: Guid(4be2120239d030e4ab7d6927d0d7a2a1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/BT-GUI/NodeComposite.cs using Guid(4be2120239d030e4ab7d6927d0d7a2a1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '528b47be855d093584ea9a28b2b17639') in 0.032905 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 81.039612 seconds.
+  path: Assets/Scripts/BT-GUI/NodeComposite.cs
+  artifactKey: Guid(4be2120239d030e4ab7d6927d0d7a2a1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/BT-GUI/NodeComposite.cs using Guid(4be2120239d030e4ab7d6927d0d7a2a1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '411bb8a8c5762dd3e950d51fc873bf2d') in 0.001901 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.006686 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.75 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+System.InvalidOperationException: The operation is not possible when moved past all properties (Next returned false)
+  at UnityEditor.SerializedProperty.Verify (UnityEditor.SerializedProperty+VerifyFlags verifyFlags) [0x00068] in <63965ae56af7489797f355b7c1211ab2>:0 
+  at UnityEditor.SerializedProperty.get_stringValue () [0x00001] in <63965ae56af7489797f355b7c1211ab2>:0 
+  at PixelCrushers.InputDeviceManagerEditor.AxisDefined (System.String axisName) [0x00059] in E:\4 Carrera\TFG\LOST_TIME_MEMORY\Lost_Time_Memory\Lost_Time_Memory\Assets\Plugins\Pixel Crushers\Common\Scripts\Editor\UI\InputDeviceManagerEditor.cs:204 
+  at PixelCrushers.InputDeviceManagerEditor.HasStandardInputDefinitions () [0x00001] in E:\4 Carrera\TFG\LOST_TIME_MEMORY\Lost_Time_Memory\Lost_Time_Memory\Assets\Plugins\Pixel Crushers\Common\Scripts\Editor\UI\InputDeviceManagerEditor.cs:61 
+  at PixelCrushers.CheckInputManagerSettings..cctor () [0x00019] in E:\4 Carrera\TFG\LOST_TIME_MEMORY\Lost_Time_Memory\Lost_Time_Memory\Assets\Plugins\Pixel Crushers\Common\Scripts\Editor\UI\CheckInputManagerSettings.cs:23 
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+Mono: successfully reloaded assembly
+- Completed reload, in  1.113 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1114ms)
+		BeginReloadAssembly (141ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (6ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (33ms)
+		EndReloadAssembly (876ms)
+			LoadAssemblies (109ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (233ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (51ms)
+			SetupLoadedEditorAssemblies (439ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (27ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (80ms)
+				ProcessInitializeOnLoadAttributes (295ms)
+				ProcessInitializeOnLoadMethodAttributes (33ms)
+				AfterProcessingInitializeOnLoad (3ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (8ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 2.04 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3747 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 21 unused Assets / (24.7 KB). Loaded Objects now: 4259.
+Memory consumption went from 151.8 MB to 151.8 MB.
+Total: 2.927300 ms (FindLiveObjects: 0.260600 ms CreateObjectMapping: 0.184200 ms MarkObjects: 2.460500 ms  DeleteObjects: 0.021000 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.009938 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.68 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+System.InvalidOperationException: The operation is not possible when moved past all properties (Next returned false)
+  at UnityEditor.SerializedProperty.Verify (UnityEditor.SerializedProperty+VerifyFlags verifyFlags) [0x00068] in <63965ae56af7489797f355b7c1211ab2>:0 
+  at UnityEditor.SerializedProperty.get_stringValue () [0x00001] in <63965ae56af7489797f355b7c1211ab2>:0 
+  at PixelCrushers.InputDeviceManagerEditor.AxisDefined (System.String axisName) [0x00059] in E:\4 Carrera\TFG\LOST_TIME_MEMORY\Lost_Time_Memory\Lost_Time_Memory\Assets\Plugins\Pixel Crushers\Common\Scripts\Editor\UI\InputDeviceManagerEditor.cs:204 
+  at PixelCrushers.InputDeviceManagerEditor.HasStandardInputDefinitions () [0x00001] in E:\4 Carrera\TFG\LOST_TIME_MEMORY\Lost_Time_Memory\Lost_Time_Memory\Assets\Plugins\Pixel Crushers\Common\Scripts\Editor\UI\InputDeviceManagerEditor.cs:61 
+  at PixelCrushers.CheckInputManagerSettings..cctor () [0x00019] in E:\4 Carrera\TFG\LOST_TIME_MEMORY\Lost_Time_Memory\Lost_Time_Memory\Assets\Plugins\Pixel Crushers\Common\Scripts\Editor\UI\CheckInputManagerSettings.cs:23 
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+Mono: successfully reloaded assembly
+- Completed reload, in  2.004 seconds
+Domain Reload Profiling:
+	ReloadAssembly (2004ms)
+		BeginReloadAssembly (253ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (8ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (73ms)
+		EndReloadAssembly (1649ms)
+			LoadAssemblies (156ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (278ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (149ms)
+			SetupLoadedEditorAssemblies (827ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (51ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (72ms)
+				ProcessInitializeOnLoadAttributes (591ms)
+				ProcessInitializeOnLoadMethodAttributes (109ms)
+				AfterProcessingInitializeOnLoad (3ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (23ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.96 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3747 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 21 unused Assets / (24.6 KB). Loaded Objects now: 4262.
+Memory consumption went from 151.8 MB to 151.8 MB.
+Total: 8.705500 ms (FindLiveObjects: 0.247900 ms CreateObjectMapping: 0.193200 ms MarkObjects: 8.240800 ms  DeleteObjects: 0.022700 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.006084 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.68 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+System.InvalidOperationException: The operation is not possible when moved past all properties (Next returned false)
+  at UnityEditor.SerializedProperty.Verify (UnityEditor.SerializedProperty+VerifyFlags verifyFlags) [0x00068] in <63965ae56af7489797f355b7c1211ab2>:0 
+  at UnityEditor.SerializedProperty.get_stringValue () [0x00001] in <63965ae56af7489797f355b7c1211ab2>:0 
+  at PixelCrushers.InputDeviceManagerEditor.AxisDefined (System.String axisName) [0x00059] in E:\4 Carrera\TFG\LOST_TIME_MEMORY\Lost_Time_Memory\Lost_Time_Memory\Assets\Plugins\Pixel Crushers\Common\Scripts\Editor\UI\InputDeviceManagerEditor.cs:204 
+  at PixelCrushers.InputDeviceManagerEditor.HasStandardInputDefinitions () [0x00001] in E:\4 Carrera\TFG\LOST_TIME_MEMORY\Lost_Time_Memory\Lost_Time_Memory\Assets\Plugins\Pixel Crushers\Common\Scripts\Editor\UI\InputDeviceManagerEditor.cs:61 
+  at PixelCrushers.CheckInputManagerSettings..cctor () [0x00019] in E:\4 Carrera\TFG\LOST_TIME_MEMORY\Lost_Time_Memory\Lost_Time_Memory\Assets\Plugins\Pixel Crushers\Common\Scripts\Editor\UI\CheckInputManagerSettings.cs:23 
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+Mono: successfully reloaded assembly
+- Completed reload, in  2.106 seconds
+Domain Reload Profiling:
+	ReloadAssembly (2107ms)
+		BeginReloadAssembly (166ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (9ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (39ms)
+		EndReloadAssembly (1768ms)
+			LoadAssemblies (155ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (782ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (186ms)
+			SetupLoadedEditorAssemblies (462ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (27ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (65ms)
+				ProcessInitializeOnLoadAttributes (330ms)
+				ProcessInitializeOnLoadMethodAttributes (35ms)
+				AfterProcessingInitializeOnLoad (3ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (8ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.96 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3747 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 21 unused Assets / (24.7 KB). Loaded Objects now: 4265.
+Memory consumption went from 151.8 MB to 151.8 MB.
+Total: 3.458000 ms (FindLiveObjects: 0.241800 ms CreateObjectMapping: 0.157300 ms MarkObjects: 3.032900 ms  DeleteObjects: 0.024800 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 322.194465 seconds.
+  path: Assets/Scripts/BT-GUI/DecoratorChilds
+  artifactKey: Guid(d7ac71e27cfbd0d4a889cd5232117672) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/BT-GUI/DecoratorChilds using Guid(d7ac71e27cfbd0d4a889cd5232117672) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '91d1c37bf4abfd2aa6c3f5e017c50eb7') in 0.011795 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.005950 seconds.
+  path: Assets/Scripts/BT-GUI/CompositeChilds
+  artifactKey: Guid(747896cc8b84d974d92a39c4c4af1d64) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/BT-GUI/CompositeChilds using Guid(747896cc8b84d974d92a39c4c4af1d64) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e21c6380fefb140c076d2cc39fc4380a') in 0.005131 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.979330 seconds.
+  path: Assets/Scripts/BT-GUI/CompositeChilds/NodeSequence.cs
+  artifactKey: Guid(ca4df30741692fc4bbfd511b0872e48b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/BT-GUI/CompositeChilds/NodeSequence.cs using Guid(ca4df30741692fc4bbfd511b0872e48b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9ec5c8b4cc9999f9261f2e74e5618cd6') in 0.005754 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 224.587409 seconds.
+  path: Assets/Scripts/BT-GUI/CompositeChilds/NodeSelector.cs
+  artifactKey: Guid(ecff183f08bf6784c9cd6444804b75cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/BT-GUI/CompositeChilds/NodeSelector.cs using Guid(ecff183f08bf6784c9cd6444804b75cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0832e0659516aa4adb1685dace232d31') in 0.005623 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.007209 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 1.06 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+System.InvalidOperationException: The operation is not possible when moved past all properties (Next returned false)
+  at UnityEditor.SerializedProperty.Verify (UnityEditor.SerializedProperty+VerifyFlags verifyFlags) [0x00068] in <63965ae56af7489797f355b7c1211ab2>:0 
+  at UnityEditor.SerializedProperty.get_stringValue () [0x00001] in <63965ae56af7489797f355b7c1211ab2>:0 
+  at PixelCrushers.InputDeviceManagerEditor.AxisDefined (System.String axisName) [0x00059] in E:\4 Carrera\TFG\LOST_TIME_MEMORY\Lost_Time_Memory\Lost_Time_Memory\Assets\Plugins\Pixel Crushers\Common\Scripts\Editor\UI\InputDeviceManagerEditor.cs:204 
+  at PixelCrushers.InputDeviceManagerEditor.HasStandardInputDefinitions () [0x00001] in E:\4 Carrera\TFG\LOST_TIME_MEMORY\Lost_Time_Memory\Lost_Time_Memory\Assets\Plugins\Pixel Crushers\Common\Scripts\Editor\UI\InputDeviceManagerEditor.cs:61 
+  at PixelCrushers.CheckInputManagerSettings..cctor () [0x00019] in E:\4 Carrera\TFG\LOST_TIME_MEMORY\Lost_Time_Memory\Lost_Time_Memory\Assets\Plugins\Pixel Crushers\Common\Scripts\Editor\UI\CheckInputManagerSettings.cs:23 
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+Mono: successfully reloaded assembly
+- Completed reload, in  1.178 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1179ms)
+		BeginReloadAssembly (148ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (7ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (37ms)
+		EndReloadAssembly (942ms)
+			LoadAssemblies (112ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (262ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (48ms)
+			SetupLoadedEditorAssemblies (485ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (27ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (68ms)
+				ProcessInitializeOnLoadAttributes (346ms)
+				ProcessInitializeOnLoadMethodAttributes (39ms)
+				AfterProcessingInitializeOnLoad (3ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (12ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.91 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3748 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 21 unused Assets / (24.6 KB). Loaded Objects now: 4269.
+Memory consumption went from 151.9 MB to 151.8 MB.
+Total: 2.872600 ms (FindLiveObjects: 0.231300 ms CreateObjectMapping: 0.166900 ms MarkObjects: 2.449400 ms  DeleteObjects: 0.023900 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 8.989741 seconds.
+  path: Assets/Scripts/BT-GUI/ActionChilds
+  artifactKey: Guid(f6c26014e1a6c65458bca8a793dfade9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/BT-GUI/ActionChilds using Guid(f6c26014e1a6c65458bca8a793dfade9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6b289f86e833c467f25db0a70fc69b7f') in 0.016962 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 290.248840 seconds.
+  path: Assets/Scripts/BT-GUI/CompositeChilds/NodeSelector.cs
+  artifactKey: Guid(ecff183f08bf6784c9cd6444804b75cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/BT-GUI/CompositeChilds/NodeSelector.cs using Guid(ecff183f08bf6784c9cd6444804b75cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a74e823094b7991d167ca493e30162d3') in 0.002284 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.005529 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.62 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+System.InvalidOperationException: The operation is not possible when moved past all properties (Next returned false)
+  at UnityEditor.SerializedProperty.Verify (UnityEditor.SerializedProperty+VerifyFlags verifyFlags) [0x00068] in <63965ae56af7489797f355b7c1211ab2>:0 
+  at UnityEditor.SerializedProperty.get_stringValue () [0x00001] in <63965ae56af7489797f355b7c1211ab2>:0 
+  at PixelCrushers.InputDeviceManagerEditor.AxisDefined (System.String axisName) [0x00059] in E:\4 Carrera\TFG\LOST_TIME_MEMORY\Lost_Time_Memory\Lost_Time_Memory\Assets\Plugins\Pixel Crushers\Common\Scripts\Editor\UI\InputDeviceManagerEditor.cs:204 
+  at PixelCrushers.InputDeviceManagerEditor.HasStandardInputDefinitions () [0x00001] in E:\4 Carrera\TFG\LOST_TIME_MEMORY\Lost_Time_Memory\Lost_Time_Memory\Assets\Plugins\Pixel Crushers\Common\Scripts\Editor\UI\InputDeviceManagerEditor.cs:61 
+  at PixelCrushers.CheckInputManagerSettings..cctor () [0x00019] in E:\4 Carrera\TFG\LOST_TIME_MEMORY\Lost_Time_Memory\Lost_Time_Memory\Assets\Plugins\Pixel Crushers\Common\Scripts\Editor\UI\CheckInputManagerSettings.cs:23 
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+Mono: successfully reloaded assembly
+- Completed reload, in  1.024 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1025ms)
+		BeginReloadAssembly (145ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (7ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (35ms)
+		EndReloadAssembly (790ms)
+			LoadAssemblies (107ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (225ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (45ms)
+			SetupLoadedEditorAssemblies (390ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (23ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (58ms)
+				ProcessInitializeOnLoadAttributes (273ms)
+				ProcessInitializeOnLoadMethodAttributes (32ms)
+				AfterProcessingInitializeOnLoad (3ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (8ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.95 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3748 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 21 unused Assets / (24.7 KB). Loaded Objects now: 4272.
+Memory consumption went from 151.9 MB to 151.8 MB.
+Total: 2.991200 ms (FindLiveObjects: 0.260500 ms CreateObjectMapping: 0.222600 ms MarkObjects: 2.486400 ms  DeleteObjects: 0.021100 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 84.394730 seconds.
+  path: Assets/Scripts/BT-GUI/NodeComposite.cs
+  artifactKey: Guid(4be2120239d030e4ab7d6927d0d7a2a1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/BT-GUI/NodeComposite.cs using Guid(4be2120239d030e4ab7d6927d0d7a2a1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9aec97e0ad2f18b465ffe26efd2bba78') in 0.007808 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.005868 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.68 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+System.InvalidOperationException: The operation is not possible when moved past all properties (Next returned false)
+  at UnityEditor.SerializedProperty.Verify (UnityEditor.SerializedProperty+VerifyFlags verifyFlags) [0x00068] in <63965ae56af7489797f355b7c1211ab2>:0 
+  at UnityEditor.SerializedProperty.get_stringValue () [0x00001] in <63965ae56af7489797f355b7c1211ab2>:0 
+  at PixelCrushers.InputDeviceManagerEditor.AxisDefined (System.String axisName) [0x00059] in E:\4 Carrera\TFG\LOST_TIME_MEMORY\Lost_Time_Memory\Lost_Time_Memory\Assets\Plugins\Pixel Crushers\Common\Scripts\Editor\UI\InputDeviceManagerEditor.cs:204 
+  at PixelCrushers.InputDeviceManagerEditor.HasStandardInputDefinitions () [0x00001] in E:\4 Carrera\TFG\LOST_TIME_MEMORY\Lost_Time_Memory\Lost_Time_Memory\Assets\Plugins\Pixel Crushers\Common\Scripts\Editor\UI\InputDeviceManagerEditor.cs:61 
+  at PixelCrushers.CheckInputManagerSettings..cctor () [0x00019] in E:\4 Carrera\TFG\LOST_TIME_MEMORY\Lost_Time_Memory\Lost_Time_Memory\Assets\Plugins\Pixel Crushers\Common\Scripts\Editor\UI\CheckInputManagerSettings.cs:23 
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+Mono: successfully reloaded assembly
+- Completed reload, in  1.080 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1081ms)
+		BeginReloadAssembly (144ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (7ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (33ms)
+		EndReloadAssembly (850ms)
+			LoadAssemblies (110ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (227ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (48ms)
+			SetupLoadedEditorAssemblies (423ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (38ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (61ms)
+				ProcessInitializeOnLoadAttributes (282ms)
+				ProcessInitializeOnLoadMethodAttributes (38ms)
+				AfterProcessingInitializeOnLoad (3ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (9ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 2.09 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3748 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 21 unused Assets / (24.7 KB). Loaded Objects now: 4275.
+Memory consumption went from 151.9 MB to 151.9 MB.
+Total: 3.125700 ms (FindLiveObjects: 0.230700 ms CreateObjectMapping: 0.158800 ms MarkObjects: 2.716400 ms  DeleteObjects: 0.019200 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.006230 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.73 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+System.InvalidOperationException: The operation is not possible when moved past all properties (Next returned false)
+  at UnityEditor.SerializedProperty.Verify (UnityEditor.SerializedProperty+VerifyFlags verifyFlags) [0x00068] in <63965ae56af7489797f355b7c1211ab2>:0 
+  at UnityEditor.SerializedProperty.get_stringValue () [0x00001] in <63965ae56af7489797f355b7c1211ab2>:0 
+  at PixelCrushers.InputDeviceManagerEditor.AxisDefined (System.String axisName) [0x00059] in E:\4 Carrera\TFG\LOST_TIME_MEMORY\Lost_Time_Memory\Lost_Time_Memory\Assets\Plugins\Pixel Crushers\Common\Scripts\Editor\UI\InputDeviceManagerEditor.cs:204 
+  at PixelCrushers.InputDeviceManagerEditor.HasStandardInputDefinitions () [0x00001] in E:\4 Carrera\TFG\LOST_TIME_MEMORY\Lost_Time_Memory\Lost_Time_Memory\Assets\Plugins\Pixel Crushers\Common\Scripts\Editor\UI\InputDeviceManagerEditor.cs:61 
+  at PixelCrushers.CheckInputManagerSettings..cctor () [0x00019] in E:\4 Carrera\TFG\LOST_TIME_MEMORY\Lost_Time_Memory\Lost_Time_Memory\Assets\Plugins\Pixel Crushers\Common\Scripts\Editor\UI\CheckInputManagerSettings.cs:23 
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+Mono: successfully reloaded assembly
+- Completed reload, in  1.448 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1449ms)
+		BeginReloadAssembly (200ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (8ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (35ms)
+		EndReloadAssembly (1129ms)
+			LoadAssemblies (168ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (323ms)
+			ReleaseScriptCaches (3ms)
+			RebuildScriptCaches (68ms)
+			SetupLoadedEditorAssemblies (538ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (34ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (100ms)
+				ProcessInitializeOnLoadAttributes (354ms)
+				ProcessInitializeOnLoadMethodAttributes (44ms)
+				AfterProcessingInitializeOnLoad (4ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (13ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 2.02 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3748 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 21 unused Assets / (24.7 KB). Loaded Objects now: 4278.
+Memory consumption went from 151.9 MB to 151.9 MB.
+Total: 3.789400 ms (FindLiveObjects: 0.248900 ms CreateObjectMapping: 0.183000 ms MarkObjects: 3.299500 ms  DeleteObjects: 0.056900 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.005983 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.62 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+System.InvalidOperationException: The operation is not possible when moved past all properties (Next returned false)
+  at UnityEditor.SerializedProperty.Verify (UnityEditor.SerializedProperty+VerifyFlags verifyFlags) [0x00068] in <63965ae56af7489797f355b7c1211ab2>:0 
+  at UnityEditor.SerializedProperty.get_stringValue () [0x00001] in <63965ae56af7489797f355b7c1211ab2>:0 
+  at PixelCrushers.InputDeviceManagerEditor.AxisDefined (System.String axisName) [0x00059] in E:\4 Carrera\TFG\LOST_TIME_MEMORY\Lost_Time_Memory\Lost_Time_Memory\Assets\Plugins\Pixel Crushers\Common\Scripts\Editor\UI\InputDeviceManagerEditor.cs:204 
+  at PixelCrushers.InputDeviceManagerEditor.HasStandardInputDefinitions () [0x00001] in E:\4 Carrera\TFG\LOST_TIME_MEMORY\Lost_Time_Memory\Lost_Time_Memory\Assets\Plugins\Pixel Crushers\Common\Scripts\Editor\UI\InputDeviceManagerEditor.cs:61 
+  at PixelCrushers.CheckInputManagerSettings..cctor () [0x00019] in E:\4 Carrera\TFG\LOST_TIME_MEMORY\Lost_Time_Memory\Lost_Time_Memory\Assets\Plugins\Pixel Crushers\Common\Scripts\Editor\UI\CheckInputManagerSettings.cs:23 
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+Mono: successfully reloaded assembly
+- Completed reload, in  1.031 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1032ms)
+		BeginReloadAssembly (160ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (7ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (43ms)
+		EndReloadAssembly (785ms)
+			LoadAssemblies (111ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (211ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (45ms)
+			SetupLoadedEditorAssemblies (396ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (22ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (58ms)
+				ProcessInitializeOnLoadAttributes (279ms)
+				ProcessInitializeOnLoadMethodAttributes (33ms)
+				AfterProcessingInitializeOnLoad (3ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (8ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.82 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3748 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 21 unused Assets / (24.6 KB). Loaded Objects now: 4281.
+Memory consumption went from 151.9 MB to 151.9 MB.
+Total: 3.132600 ms (FindLiveObjects: 0.223600 ms CreateObjectMapping: 0.152900 ms MarkObjects: 2.736100 ms  DeleteObjects: 0.019300 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 377.674076 seconds.
+  path: Assets/Scripts/BT-GUI/GUI
+  artifactKey: Guid(98c9bc89e010d474b91d8b4c85d8d95c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/BT-GUI/GUI using Guid(98c9bc89e010d474b91d8b4c85d8d95c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd41f313fe380500aabbc569c3149e6b4') in 0.012017 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 50.832831 seconds.
+  path: Assets/Scripts/BT-GUI/GUI/BehaviourTreeEditor.uss
+  artifactKey: Guid(43ece076607e5df459ffc95171b6a114) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/BT-GUI/GUI/BehaviourTreeEditor.uss using Guid(43ece076607e5df459ffc95171b6a114) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0f5a0179023e34498573aa8dcf3982b1') in 0.021940 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Scripts/BT-GUI/GUI/BehaviourTreeEditor.uxml
+  artifactKey: Guid(9df13c947a651884db7c37dff24e1c10) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/BT-GUI/GUI/BehaviourTreeEditor.uxml using Guid(9df13c947a651884db7c37dff24e1c10) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '01e4d8fcaf289ece4fcc6b972eb299a7') in 0.006077 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.005417 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.62 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+System.InvalidOperationException: The operation is not possible when moved past all properties (Next returned false)
+  at UnityEditor.SerializedProperty.Verify (UnityEditor.SerializedProperty+VerifyFlags verifyFlags) [0x00068] in <63965ae56af7489797f355b7c1211ab2>:0 
+  at UnityEditor.SerializedProperty.get_stringValue () [0x00001] in <63965ae56af7489797f355b7c1211ab2>:0 
+  at PixelCrushers.InputDeviceManagerEditor.AxisDefined (System.String axisName) [0x00059] in E:\4 Carrera\TFG\LOST_TIME_MEMORY\Lost_Time_Memory\Lost_Time_Memory\Assets\Plugins\Pixel Crushers\Common\Scripts\Editor\UI\InputDeviceManagerEditor.cs:204 
+  at PixelCrushers.InputDeviceManagerEditor.HasStandardInputDefinitions () [0x00001] in E:\4 Carrera\TFG\LOST_TIME_MEMORY\Lost_Time_Memory\Lost_Time_Memory\Assets\Plugins\Pixel Crushers\Common\Scripts\Editor\UI\InputDeviceManagerEditor.cs:61 
+  at PixelCrushers.CheckInputManagerSettings..cctor () [0x00019] in E:\4 Carrera\TFG\LOST_TIME_MEMORY\Lost_Time_Memory\Lost_Time_Memory\Assets\Plugins\Pixel Crushers\Common\Scripts\Editor\UI\CheckInputManagerSettings.cs:23 
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+Mono: successfully reloaded assembly
+- Completed reload, in  1.090 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1091ms)
+		BeginReloadAssembly (148ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (7ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (35ms)
+		EndReloadAssembly (849ms)
+			LoadAssemblies (118ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (237ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (46ms)
+			SetupLoadedEditorAssemblies (416ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (24ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (60ms)
+				ProcessInitializeOnLoadAttributes (291ms)
+				ProcessInitializeOnLoadMethodAttributes (37ms)
+				AfterProcessingInitializeOnLoad (3ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (11ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.85 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3749 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 21 unused Assets / (24.7 KB). Loaded Objects now: 4286.
+Memory consumption went from 151.9 MB to 151.9 MB.
+Total: 3.197700 ms (FindLiveObjects: 0.265300 ms CreateObjectMapping: 0.190500 ms MarkObjects: 2.717300 ms  DeleteObjects: 0.023600 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 175.156454 seconds.
+  path: Assets/Scripts/BT-GUI/GUI/BehaviourTreeEditor.cs
+  artifactKey: Guid(df270fc8fffea9648b80b42beae74dc6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/BT-GUI/GUI/BehaviourTreeEditor.cs using Guid(df270fc8fffea9648b80b42beae74dc6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0b6c9155c75c23d78d6a096bebbe852d') in 0.006188 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.005841 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.71 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+System.InvalidOperationException: The operation is not possible when moved past all properties (Next returned false)
+  at UnityEditor.SerializedProperty.Verify (UnityEditor.SerializedProperty+VerifyFlags verifyFlags) [0x00068] in <63965ae56af7489797f355b7c1211ab2>:0 
+  at UnityEditor.SerializedProperty.get_stringValue () [0x00001] in <63965ae56af7489797f355b7c1211ab2>:0 
+  at PixelCrushers.InputDeviceManagerEditor.AxisDefined (System.String axisName) [0x00059] in E:\4 Carrera\TFG\LOST_TIME_MEMORY\Lost_Time_Memory\Lost_Time_Memory\Assets\Plugins\Pixel Crushers\Common\Scripts\Editor\UI\InputDeviceManagerEditor.cs:204 
+  at PixelCrushers.InputDeviceManagerEditor.HasStandardInputDefinitions () [0x00001] in E:\4 Carrera\TFG\LOST_TIME_MEMORY\Lost_Time_Memory\Lost_Time_Memory\Assets\Plugins\Pixel Crushers\Common\Scripts\Editor\UI\InputDeviceManagerEditor.cs:61 
+  at PixelCrushers.CheckInputManagerSettings..cctor () [0x00019] in E:\4 Carrera\TFG\LOST_TIME_MEMORY\Lost_Time_Memory\Lost_Time_Memory\Assets\Plugins\Pixel Crushers\Common\Scripts\Editor\UI\CheckInputManagerSettings.cs:23 
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+Mono: successfully reloaded assembly
+- Completed reload, in  1.026 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1027ms)
+		BeginReloadAssembly (144ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (7ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (34ms)
+		EndReloadAssembly (796ms)
+			LoadAssemblies (110ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (217ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (46ms)
+			SetupLoadedEditorAssemblies (391ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (23ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (61ms)
+				ProcessInitializeOnLoadAttributes (270ms)
+				ProcessInitializeOnLoadMethodAttributes (32ms)
+				AfterProcessingInitializeOnLoad (3ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (8ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 2.82 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3749 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 21 unused Assets / (24.6 KB). Loaded Objects now: 4289.
+Memory consumption went from 152.0 MB to 151.9 MB.
+Total: 3.554500 ms (FindLiveObjects: 0.300000 ms CreateObjectMapping: 0.207600 ms MarkObjects: 3.021600 ms  DeleteObjects: 0.024200 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 221.715752 seconds.
+  path: Assets/Scripts/BT-GUI/GUI/BehaviourTreeEditor.cs
+  artifactKey: Guid(df270fc8fffea9648b80b42beae74dc6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/BT-GUI/GUI/BehaviourTreeEditor.cs using Guid(df270fc8fffea9648b80b42beae74dc6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cf38a354425b862afa3c561e8cbe2846') in 0.006489 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 44.129017 seconds.
+  path: Assets/Scripts/BT-GUI/GUI/BehaviourTreeEditor.uss
+  artifactKey: Guid(43ece076607e5df459ffc95171b6a114) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/BT-GUI/GUI/BehaviourTreeEditor.uss using Guid(43ece076607e5df459ffc95171b6a114) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '120694d31822f753bd123339fa3d998d') in 0.011787 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Scripts/BT-GUI/GUI/BehaviourTreeEditor.uxml
+  artifactKey: Guid(9df13c947a651884db7c37dff24e1c10) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/BT-GUI/GUI/BehaviourTreeEditor.uxml using Guid(9df13c947a651884db7c37dff24e1c10) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a1b9af638088d964275bf83067f82d9e') in 0.004448 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 306.068617 seconds.
+  path: Assets/Scripts/BT-GUI/GUI/BehaviourTreeView.cs
+  artifactKey: Guid(1cdf9b465c7b5724fb34c9d0527b32af) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/BT-GUI/GUI/BehaviourTreeView.cs using Guid(1cdf9b465c7b5724fb34c9d0527b32af) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ed969be992a068f299414ea081f4e86a') in 0.005779 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.005407 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.64 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+System.InvalidOperationException: The operation is not possible when moved past all properties (Next returned false)
+  at UnityEditor.SerializedProperty.Verify (UnityEditor.SerializedProperty+VerifyFlags verifyFlags) [0x00068] in <63965ae56af7489797f355b7c1211ab2>:0 
+  at UnityEditor.SerializedProperty.get_stringValue () [0x00001] in <63965ae56af7489797f355b7c1211ab2>:0 
+  at PixelCrushers.InputDeviceManagerEditor.AxisDefined (System.String axisName) [0x00059] in E:\4 Carrera\TFG\LOST_TIME_MEMORY\Lost_Time_Memory\Lost_Time_Memory\Assets\Plugins\Pixel Crushers\Common\Scripts\Editor\UI\InputDeviceManagerEditor.cs:204 
+  at PixelCrushers.InputDeviceManagerEditor.HasStandardInputDefinitions () [0x00001] in E:\4 Carrera\TFG\LOST_TIME_MEMORY\Lost_Time_Memory\Lost_Time_Memory\Assets\Plugins\Pixel Crushers\Common\Scripts\Editor\UI\InputDeviceManagerEditor.cs:61 
+  at PixelCrushers.CheckInputManagerSettings..cctor () [0x00019] in E:\4 Carrera\TFG\LOST_TIME_MEMORY\Lost_Time_Memory\Lost_Time_Memory\Assets\Plugins\Pixel Crushers\Common\Scripts\Editor\UI\CheckInputManagerSettings.cs:23 
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+Mono: successfully reloaded assembly
+- Completed reload, in  1.019 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1020ms)
+		BeginReloadAssembly (140ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (7ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (33ms)
+		EndReloadAssembly (794ms)
+			LoadAssemblies (108ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (222ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (48ms)
+			SetupLoadedEditorAssemblies (388ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (20ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (59ms)
+				ProcessInitializeOnLoadAttributes (274ms)
+				ProcessInitializeOnLoadMethodAttributes (32ms)
+				AfterProcessingInitializeOnLoad (3ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (8ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.96 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3750 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 21 unused Assets / (24.7 KB). Loaded Objects now: 4293.
+Memory consumption went from 152.0 MB to 152.0 MB.
+Total: 3.124600 ms (FindLiveObjects: 0.229300 ms CreateObjectMapping: 0.157400 ms MarkObjects: 2.718200 ms  DeleteObjects: 0.019000 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.005957 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.63 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+System.InvalidOperationException: The operation is not possible when moved past all properties (Next returned false)
+  at UnityEditor.SerializedProperty.Verify (UnityEditor.SerializedProperty+VerifyFlags verifyFlags) [0x00068] in <63965ae56af7489797f355b7c1211ab2>:0 
+  at UnityEditor.SerializedProperty.get_stringValue () [0x00001] in <63965ae56af7489797f355b7c1211ab2>:0 
+  at PixelCrushers.InputDeviceManagerEditor.AxisDefined (System.String axisName) [0x00059] in E:\4 Carrera\TFG\LOST_TIME_MEMORY\Lost_Time_Memory\Lost_Time_Memory\Assets\Plugins\Pixel Crushers\Common\Scripts\Editor\UI\InputDeviceManagerEditor.cs:204 
+  at PixelCrushers.InputDeviceManagerEditor.HasStandardInputDefinitions () [0x00001] in E:\4 Carrera\TFG\LOST_TIME_MEMORY\Lost_Time_Memory\Lost_Time_Memory\Assets\Plugins\Pixel Crushers\Common\Scripts\Editor\UI\InputDeviceManagerEditor.cs:61 
+  at PixelCrushers.CheckInputManagerSettings..cctor () [0x00019] in E:\4 Carrera\TFG\LOST_TIME_MEMORY\Lost_Time_Memory\Lost_Time_Memory\Assets\Plugins\Pixel Crushers\Common\Scripts\Editor\UI\CheckInputManagerSettings.cs:23 
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+Mono: successfully reloaded assembly
+- Completed reload, in  1.048 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1049ms)
+		BeginReloadAssembly (144ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (7ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (33ms)
+		EndReloadAssembly (815ms)
+			LoadAssemblies (111ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (238ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (47ms)
+			SetupLoadedEditorAssemblies (395ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (21ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (60ms)
+				ProcessInitializeOnLoadAttributes (274ms)
+				ProcessInitializeOnLoadMethodAttributes (36ms)
+				AfterProcessingInitializeOnLoad (3ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (8ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.89 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3750 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 21 unused Assets / (24.7 KB). Loaded Objects now: 4296.
+Memory consumption went from 152.0 MB to 152.0 MB.
+Total: 3.471200 ms (FindLiveObjects: 0.247700 ms CreateObjectMapping: 0.176400 ms MarkObjects: 3.024200 ms  DeleteObjects: 0.021900 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 286.772734 seconds.
+  path: Assets/Scripts/BT-GUI/GUI/BehaviourTreeEditor.uxml
+  artifactKey: Guid(9df13c947a651884db7c37dff24e1c10) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/BT-GUI/GUI/BehaviourTreeEditor.uxml using Guid(9df13c947a651884db7c37dff24e1c10) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6e272804a7826d12893c0aae82319ab4') in 0.017731 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Scripts/BT-GUI/GUI/BehaviourTreeView.cs
+  artifactKey: Guid(1cdf9b465c7b5724fb34c9d0527b32af) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/BT-GUI/GUI/BehaviourTreeView.cs using Guid(1cdf9b465c7b5724fb34c9d0527b32af) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1a4210aba56583b3483a50a1a2eefb6a') in 0.002188 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 403.110387 seconds.
+  path: Assets/Scripts/BT-GUI/GUI/BehaviourTreeView.cs
+  artifactKey: Guid(1cdf9b465c7b5724fb34c9d0527b32af) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/BT-GUI/GUI/BehaviourTreeView.cs using Guid(1cdf9b465c7b5724fb34c9d0527b32af) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c779bfd44f95d1d373a0e2dc7136411d') in 0.007169 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.005531 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.64 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+System.InvalidOperationException: The operation is not possible when moved past all properties (Next returned false)
+  at UnityEditor.SerializedProperty.Verify (UnityEditor.SerializedProperty+VerifyFlags verifyFlags) [0x00068] in <63965ae56af7489797f355b7c1211ab2>:0 
+  at UnityEditor.SerializedProperty.get_stringValue () [0x00001] in <63965ae56af7489797f355b7c1211ab2>:0 
+  at PixelCrushers.InputDeviceManagerEditor.AxisDefined (System.String axisName) [0x00059] in E:\4 Carrera\TFG\LOST_TIME_MEMORY\Lost_Time_Memory\Lost_Time_Memory\Assets\Plugins\Pixel Crushers\Common\Scripts\Editor\UI\InputDeviceManagerEditor.cs:204 
+  at PixelCrushers.InputDeviceManagerEditor.HasStandardInputDefinitions () [0x00001] in E:\4 Carrera\TFG\LOST_TIME_MEMORY\Lost_Time_Memory\Lost_Time_Memory\Assets\Plugins\Pixel Crushers\Common\Scripts\Editor\UI\InputDeviceManagerEditor.cs:61 
+  at PixelCrushers.CheckInputManagerSettings..cctor () [0x00019] in E:\4 Carrera\TFG\LOST_TIME_MEMORY\Lost_Time_Memory\Lost_Time_Memory\Assets\Plugins\Pixel Crushers\Common\Scripts\Editor\UI\CheckInputManagerSettings.cs:23 
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+Mono: successfully reloaded assembly
+- Completed reload, in  1.160 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1161ms)
+		BeginReloadAssembly (149ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (7ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (36ms)
+		EndReloadAssembly (919ms)
+			LoadAssemblies (123ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (243ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (50ms)
+			SetupLoadedEditorAssemblies (472ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (23ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (76ms)
+				ProcessInitializeOnLoadAttributes (333ms)
+				ProcessInitializeOnLoadMethodAttributes (37ms)
+				AfterProcessingInitializeOnLoad (3ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (9ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.82 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3750 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 21 unused Assets / (24.6 KB). Loaded Objects now: 4299.
+Memory consumption went from 152.0 MB to 152.0 MB.
+Total: 3.213500 ms (FindLiveObjects: 0.225100 ms CreateObjectMapping: 0.148200 ms MarkObjects: 2.819300 ms  DeleteObjects: 0.020100 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.005433 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.64 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+System.InvalidOperationException: The operation is not possible when moved past all properties (Next returned false)
+  at UnityEditor.SerializedProperty.Verify (UnityEditor.SerializedProperty+VerifyFlags verifyFlags) [0x00068] in <63965ae56af7489797f355b7c1211ab2>:0 
+  at UnityEditor.SerializedProperty.get_stringValue () [0x00001] in <63965ae56af7489797f355b7c1211ab2>:0 
+  at PixelCrushers.InputDeviceManagerEditor.AxisDefined (System.String axisName) [0x00059] in E:\4 Carrera\TFG\LOST_TIME_MEMORY\Lost_Time_Memory\Lost_Time_Memory\Assets\Plugins\Pixel Crushers\Common\Scripts\Editor\UI\InputDeviceManagerEditor.cs:204 
+  at PixelCrushers.InputDeviceManagerEditor.HasStandardInputDefinitions () [0x00001] in E:\4 Carrera\TFG\LOST_TIME_MEMORY\Lost_Time_Memory\Lost_Time_Memory\Assets\Plugins\Pixel Crushers\Common\Scripts\Editor\UI\InputDeviceManagerEditor.cs:61 
+  at PixelCrushers.CheckInputManagerSettings..cctor () [0x00019] in E:\4 Carrera\TFG\LOST_TIME_MEMORY\Lost_Time_Memory\Lost_Time_Memory\Assets\Plugins\Pixel Crushers\Common\Scripts\Editor\UI\CheckInputManagerSettings.cs:23 
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+Mono: successfully reloaded assembly
+- Completed reload, in  1.028 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1029ms)
+		BeginReloadAssembly (144ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (7ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (34ms)
+		EndReloadAssembly (798ms)
+			LoadAssemblies (109ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (219ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (49ms)
+			SetupLoadedEditorAssemblies (391ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (21ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (59ms)
+				ProcessInitializeOnLoadAttributes (274ms)
+				ProcessInitializeOnLoadMethodAttributes (32ms)
+				AfterProcessingInitializeOnLoad (3ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (8ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.81 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3750 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 21 unused Assets / (24.7 KB). Loaded Objects now: 4302.
+Memory consumption went from 152.0 MB to 152.0 MB.
+Total: 3.536700 ms (FindLiveObjects: 0.234900 ms CreateObjectMapping: 0.339300 ms MarkObjects: 2.939800 ms  DeleteObjects: 0.021900 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 330.530238 seconds.
+  path: Assets/Scripts/BT-GUI/GUI/BehaviourTreeEditor.uss
+  artifactKey: Guid(43ece076607e5df459ffc95171b6a114) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/BT-GUI/GUI/BehaviourTreeEditor.uss using Guid(43ece076607e5df459ffc95171b6a114) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '041b966be4509a269e68d2082f80b632') in 0.021910 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Scripts/BT-GUI/GUI/BehaviourTreeEditor.uxml
+  artifactKey: Guid(9df13c947a651884db7c37dff24e1c10) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/BT-GUI/GUI/BehaviourTreeEditor.uxml using Guid(9df13c947a651884db7c37dff24e1c10) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f467319dd56663657cc069b501f1b177') in 0.004785 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 108.707942 seconds.
+  path: Assets/Scripts/BT-GUI/GUI/BehaviourTreeEditor.uss
+  artifactKey: Guid(43ece076607e5df459ffc95171b6a114) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/BT-GUI/GUI/BehaviourTreeEditor.uss using Guid(43ece076607e5df459ffc95171b6a114) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e1e370226da6c98999b960b473eb7663') in 0.003161 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Scripts/BT-GUI/GUI/BehaviourTreeEditor.uxml
+  artifactKey: Guid(9df13c947a651884db7c37dff24e1c10) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/BT-GUI/GUI/BehaviourTreeEditor.uxml using Guid(9df13c947a651884db7c37dff24e1c10) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1a0e7be5b5bbc1c2b24231913ef4d92d') in 0.002751 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 58.659278 seconds.
+  path: Assets/Scripts/BT-GUI/GUI/BehaviourTreeEditor.uxml
+  artifactKey: Guid(9df13c947a651884db7c37dff24e1c10) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/BT-GUI/GUI/BehaviourTreeEditor.uxml using Guid(9df13c947a651884db7c37dff24e1c10) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2846a7b8e2e4b145f3ef8f0adb62e730') in 0.002779 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 31.643171 seconds.
+  path: Assets/Scripts/BT-GUI/GUI/BehaviourTreeEditor.uss
+  artifactKey: Guid(43ece076607e5df459ffc95171b6a114) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/BT-GUI/GUI/BehaviourTreeEditor.uss using Guid(43ece076607e5df459ffc95171b6a114) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cee364072a85e0e8ec7671b861ee526f') in 0.002084 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Scripts/BT-GUI/GUI/BehaviourTreeEditor.uxml
+  artifactKey: Guid(9df13c947a651884db7c37dff24e1c10) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/BT-GUI/GUI/BehaviourTreeEditor.uxml using Guid(9df13c947a651884db7c37dff24e1c10) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '386aadeebab47f9ad477d79a0ea3bb61') in 0.003112 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 81.740971 seconds.
+  path: Assets/Scripts/BT-GUI/GUI/BehaviourTreeEditor.uxml
+  artifactKey: Guid(9df13c947a651884db7c37dff24e1c10) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/BT-GUI/GUI/BehaviourTreeEditor.uxml using Guid(9df13c947a651884db7c37dff24e1c10) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e082c3c3c681f79869c0b49d3f22dab7') in 0.011848 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 195.650042 seconds.
+  path: Assets/Scripts/BT-GUI/GUI/BehaviourTreeEditor.uss
+  artifactKey: Guid(43ece076607e5df459ffc95171b6a114) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/BT-GUI/GUI/BehaviourTreeEditor.uss using Guid(43ece076607e5df459ffc95171b6a114) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '305b4f7ca8ca2b6ec5a3c212bb214ffd') in 0.005901 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Scripts/BT-GUI/GUI/BehaviourTreeEditor.uxml
+  artifactKey: Guid(9df13c947a651884db7c37dff24e1c10) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/BT-GUI/GUI/BehaviourTreeEditor.uxml using Guid(9df13c947a651884db7c37dff24e1c10) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2517497601f35c257fc1c836ebbe3655') in 0.004568 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 70.889385 seconds.
+  path: Assets/Scripts/BT-GUI/GUI/BehaviourTreeEditor.uxml
+  artifactKey: Guid(9df13c947a651884db7c37dff24e1c10) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/BT-GUI/GUI/BehaviourTreeEditor.uxml using Guid(9df13c947a651884db7c37dff24e1c10) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9f954043aad3aaafe5cfcdd5db390ddd') in 0.002830 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 332.754552 seconds.
+  path: Assets/Scripts/BT-GUI/GUI/BehaviourTreeEditor.uss
+  artifactKey: Guid(43ece076607e5df459ffc95171b6a114) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/BT-GUI/GUI/BehaviourTreeEditor.uss using Guid(43ece076607e5df459ffc95171b6a114) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd73cd5e8db68da81080ca65f1415ec1e') in 0.003829 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Scripts/BT-GUI/GUI/BehaviourTreeEditor.uxml
+  artifactKey: Guid(9df13c947a651884db7c37dff24e1c10) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/BT-GUI/GUI/BehaviourTreeEditor.uxml using Guid(9df13c947a651884db7c37dff24e1c10) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6cf095ef8956a34837dd403bee04fd45') in 0.003059 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 34.053243 seconds.
+  path: Assets/Scripts/BT-GUI/GUI/BehaviourTreeEditor.uxml
+  artifactKey: Guid(9df13c947a651884db7c37dff24e1c10) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/BT-GUI/GUI/BehaviourTreeEditor.uxml using Guid(9df13c947a651884db7c37dff24e1c10) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fd240b0d3e8d4f2f1cce0211d78b5edf') in 0.002650 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.005454 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.69 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+System.InvalidOperationException: The operation is not possible when moved past all properties (Next returned false)
+  at UnityEditor.SerializedProperty.Verify (UnityEditor.SerializedProperty+VerifyFlags verifyFlags) [0x00068] in <63965ae56af7489797f355b7c1211ab2>:0 
+  at UnityEditor.SerializedProperty.get_stringValue () [0x00001] in <63965ae56af7489797f355b7c1211ab2>:0 
+  at PixelCrushers.InputDeviceManagerEditor.AxisDefined (System.String axisName) [0x00059] in E:\4 Carrera\TFG\LOST_TIME_MEMORY\Lost_Time_Memory\Lost_Time_Memory\Assets\Plugins\Pixel Crushers\Common\Scripts\Editor\UI\InputDeviceManagerEditor.cs:204 
+  at PixelCrushers.InputDeviceManagerEditor.HasStandardInputDefinitions () [0x00001] in E:\4 Carrera\TFG\LOST_TIME_MEMORY\Lost_Time_Memory\Lost_Time_Memory\Assets\Plugins\Pixel Crushers\Common\Scripts\Editor\UI\InputDeviceManagerEditor.cs:61 
+  at PixelCrushers.CheckInputManagerSettings..cctor () [0x00019] in E:\4 Carrera\TFG\LOST_TIME_MEMORY\Lost_Time_Memory\Lost_Time_Memory\Assets\Plugins\Pixel Crushers\Common\Scripts\Editor\UI\CheckInputManagerSettings.cs:23 
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+Mono: successfully reloaded assembly
+- Completed reload, in  1.118 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1119ms)
+		BeginReloadAssembly (148ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (7ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (34ms)
+		EndReloadAssembly (878ms)
+			LoadAssemblies (113ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (253ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (50ms)
+			SetupLoadedEditorAssemblies (434ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (21ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (63ms)
+				ProcessInitializeOnLoadAttributes (311ms)
+				ProcessInitializeOnLoadMethodAttributes (34ms)
+				AfterProcessingInitializeOnLoad (3ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (8ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.87 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3750 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 21 unused Assets / (24.7 KB). Loaded Objects now: 4305.
+Memory consumption went from 152.1 MB to 152.0 MB.
+Total: 3.319100 ms (FindLiveObjects: 0.229400 ms CreateObjectMapping: 0.155900 ms MarkObjects: 2.909800 ms  DeleteObjects: 0.023100 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 241.086529 seconds.
+  path: Assets/Scripts/BT-GUI/GUI/SplitView.cs
+  artifactKey: Guid(1fb25aa89d4c45f4e82d7759a0e4f573) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/BT-GUI/GUI/SplitView.cs using Guid(1fb25aa89d4c45f4e82d7759a0e4f573) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9dd17582bcb8d61aab1fb2bd762cd68e') in 0.030941 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.005542 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.65 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+System.InvalidOperationException: The operation is not possible when moved past all properties (Next returned false)
+  at UnityEditor.SerializedProperty.Verify (UnityEditor.SerializedProperty+VerifyFlags verifyFlags) [0x00068] in <63965ae56af7489797f355b7c1211ab2>:0 
+  at UnityEditor.SerializedProperty.get_stringValue () [0x00001] in <63965ae56af7489797f355b7c1211ab2>:0 
+  at PixelCrushers.InputDeviceManagerEditor.AxisDefined (System.String axisName) [0x00059] in E:\4 Carrera\TFG\LOST_TIME_MEMORY\Lost_Time_Memory\Lost_Time_Memory\Assets\Plugins\Pixel Crushers\Common\Scripts\Editor\UI\InputDeviceManagerEditor.cs:204 
+  at PixelCrushers.InputDeviceManagerEditor.HasStandardInputDefinitions () [0x00001] in E:\4 Carrera\TFG\LOST_TIME_MEMORY\Lost_Time_Memory\Lost_Time_Memory\Assets\Plugins\Pixel Crushers\Common\Scripts\Editor\UI\InputDeviceManagerEditor.cs:61 
+  at PixelCrushers.CheckInputManagerSettings..cctor () [0x00019] in E:\4 Carrera\TFG\LOST_TIME_MEMORY\Lost_Time_Memory\Lost_Time_Memory\Assets\Plugins\Pixel Crushers\Common\Scripts\Editor\UI\CheckInputManagerSettings.cs:23 
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+Mono: successfully reloaded assembly
+- Completed reload, in  1.027 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1028ms)
+		BeginReloadAssembly (137ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (7ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (31ms)
+		EndReloadAssembly (804ms)
+			LoadAssemblies (103ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (218ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (55ms)
+			SetupLoadedEditorAssemblies (394ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (22ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (59ms)
+				ProcessInitializeOnLoadAttributes (277ms)
+				ProcessInitializeOnLoadMethodAttributes (32ms)
+				AfterProcessingInitializeOnLoad (3ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (8ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 2.38 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3751 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 21 unused Assets / (24.8 KB). Loaded Objects now: 4309.
+Memory consumption went from 152.1 MB to 152.1 MB.
+Total: 3.568500 ms (FindLiveObjects: 0.240800 ms CreateObjectMapping: 0.162800 ms MarkObjects: 3.145000 ms  DeleteObjects: 0.019100 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 29.696542 seconds.
+  path: Assets/Scripts/BT-GUI/GUI/InspectorView.cs
+  artifactKey: Guid(e5be5a93f9848b8429a801ed8e587426) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/BT-GUI/GUI/InspectorView.cs using Guid(e5be5a93f9848b8429a801ed8e587426) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f337b54871ac5af5c022bd8facf897d8') in 0.012039 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.006729 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.76 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+System.InvalidOperationException: The operation is not possible when moved past all properties (Next returned false)
+  at UnityEditor.SerializedProperty.Verify (UnityEditor.SerializedProperty+VerifyFlags verifyFlags) [0x00068] in <63965ae56af7489797f355b7c1211ab2>:0 
+  at UnityEditor.SerializedProperty.get_stringValue () [0x00001] in <63965ae56af7489797f355b7c1211ab2>:0 
+  at PixelCrushers.InputDeviceManagerEditor.AxisDefined (System.String axisName) [0x00059] in E:\4 Carrera\TFG\LOST_TIME_MEMORY\Lost_Time_Memory\Lost_Time_Memory\Assets\Plugins\Pixel Crushers\Common\Scripts\Editor\UI\InputDeviceManagerEditor.cs:204 
+  at PixelCrushers.InputDeviceManagerEditor.HasStandardInputDefinitions () [0x00001] in E:\4 Carrera\TFG\LOST_TIME_MEMORY\Lost_Time_Memory\Lost_Time_Memory\Assets\Plugins\Pixel Crushers\Common\Scripts\Editor\UI\InputDeviceManagerEditor.cs:61 
+  at PixelCrushers.CheckInputManagerSettings..cctor () [0x00019] in E:\4 Carrera\TFG\LOST_TIME_MEMORY\Lost_Time_Memory\Lost_Time_Memory\Assets\Plugins\Pixel Crushers\Common\Scripts\Editor\UI\CheckInputManagerSettings.cs:23 
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+Mono: successfully reloaded assembly
+- Completed reload, in  1.168 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1169ms)
+		BeginReloadAssembly (163ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (7ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (39ms)
+		EndReloadAssembly (882ms)
+			LoadAssemblies (131ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (259ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (53ms)
+			SetupLoadedEditorAssemblies (419ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (23ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (64ms)
+				ProcessInitializeOnLoadAttributes (291ms)
+				ProcessInitializeOnLoadMethodAttributes (35ms)
+				AfterProcessingInitializeOnLoad (3ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (9ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 3.76 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3752 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 21 unused Assets / (24.7 KB). Loaded Objects now: 4313.
+Memory consumption went from 152.1 MB to 152.1 MB.
+Total: 4.010600 ms (FindLiveObjects: 0.335600 ms CreateObjectMapping: 0.479400 ms MarkObjects: 3.172300 ms  DeleteObjects: 0.022300 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.005789 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.71 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+System.InvalidOperationException: The operation is not possible when moved past all properties (Next returned false)
+  at UnityEditor.SerializedProperty.Verify (UnityEditor.SerializedProperty+VerifyFlags verifyFlags) [0x00068] in <63965ae56af7489797f355b7c1211ab2>:0 
+  at UnityEditor.SerializedProperty.get_stringValue () [0x00001] in <63965ae56af7489797f355b7c1211ab2>:0 
+  at PixelCrushers.InputDeviceManagerEditor.AxisDefined (System.String axisName) [0x00059] in E:\4 Carrera\TFG\LOST_TIME_MEMORY\Lost_Time_Memory\Lost_Time_Memory\Assets\Plugins\Pixel Crushers\Common\Scripts\Editor\UI\InputDeviceManagerEditor.cs:204 
+  at PixelCrushers.InputDeviceManagerEditor.HasStandardInputDefinitions () [0x00001] in E:\4 Carrera\TFG\LOST_TIME_MEMORY\Lost_Time_Memory\Lost_Time_Memory\Assets\Plugins\Pixel Crushers\Common\Scripts\Editor\UI\InputDeviceManagerEditor.cs:61 
+  at PixelCrushers.CheckInputManagerSettings..cctor () [0x00019] in E:\4 Carrera\TFG\LOST_TIME_MEMORY\Lost_Time_Memory\Lost_Time_Memory\Assets\Plugins\Pixel Crushers\Common\Scripts\Editor\UI\CheckInputManagerSettings.cs:23 
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+Mono: successfully reloaded assembly
+- Completed reload, in  1.041 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1042ms)
+		BeginReloadAssembly (144ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (7ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (31ms)
+		EndReloadAssembly (810ms)
+			LoadAssemblies (108ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (222ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (46ms)
+			SetupLoadedEditorAssemblies (401ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (21ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (61ms)
+				ProcessInitializeOnLoadAttributes (275ms)
+				ProcessInitializeOnLoadMethodAttributes (39ms)
+				AfterProcessingInitializeOnLoad (4ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (10ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.85 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3752 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 21 unused Assets / (24.7 KB). Loaded Objects now: 4316.
+Memory consumption went from 152.1 MB to 152.1 MB.
+Total: 2.964100 ms (FindLiveObjects: 0.229900 ms CreateObjectMapping: 0.149200 ms MarkObjects: 2.565400 ms  DeleteObjects: 0.019000 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 79.409420 seconds.
+  path: Assets/Scripts/BT-GUI/GUI/SplitView.cs
+  artifactKey: Guid(1fb25aa89d4c45f4e82d7759a0e4f573) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/BT-GUI/GUI/SplitView.cs using Guid(1fb25aa89d4c45f4e82d7759a0e4f573) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e3edcdf769cb62959e3b467011c0d0b3') in 0.005293 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 25.371112 seconds.
+  path: Assets/Scripts/BT-GUI/GUI/InspectorView.cs
+  artifactKey: Guid(e5be5a93f9848b8429a801ed8e587426) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/BT-GUI/GUI/InspectorView.cs using Guid(e5be5a93f9848b8429a801ed8e587426) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7acf60db4e63a33e8eac9f3741884ae8') in 0.002023 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.005457 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.65 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+System.InvalidOperationException: The operation is not possible when moved past all properties (Next returned false)
+  at UnityEditor.SerializedProperty.Verify (UnityEditor.SerializedProperty+VerifyFlags verifyFlags) [0x00068] in <63965ae56af7489797f355b7c1211ab2>:0 
+  at UnityEditor.SerializedProperty.get_stringValue () [0x00001] in <63965ae56af7489797f355b7c1211ab2>:0 
+  at PixelCrushers.InputDeviceManagerEditor.AxisDefined (System.String axisName) [0x00059] in E:\4 Carrera\TFG\LOST_TIME_MEMORY\Lost_Time_Memory\Lost_Time_Memory\Assets\Plugins\Pixel Crushers\Common\Scripts\Editor\UI\InputDeviceManagerEditor.cs:204 
+  at PixelCrushers.InputDeviceManagerEditor.HasStandardInputDefinitions () [0x00001] in E:\4 Carrera\TFG\LOST_TIME_MEMORY\Lost_Time_Memory\Lost_Time_Memory\Assets\Plugins\Pixel Crushers\Common\Scripts\Editor\UI\InputDeviceManagerEditor.cs:61 
+  at PixelCrushers.CheckInputManagerSettings..cctor () [0x00019] in E:\4 Carrera\TFG\LOST_TIME_MEMORY\Lost_Time_Memory\Lost_Time_Memory\Assets\Plugins\Pixel Crushers\Common\Scripts\Editor\UI\CheckInputManagerSettings.cs:23 
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+Mono: successfully reloaded assembly
+- Completed reload, in  1.028 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1029ms)
+		BeginReloadAssembly (143ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (10ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (31ms)
+		EndReloadAssembly (799ms)
+			LoadAssemblies (108ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (224ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (49ms)
+			SetupLoadedEditorAssemblies (386ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (20ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (58ms)
+				ProcessInitializeOnLoadAttributes (271ms)
+				ProcessInitializeOnLoadMethodAttributes (32ms)
+				AfterProcessingInitializeOnLoad (3ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (8ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 2.19 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3752 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 21 unused Assets / (24.8 KB). Loaded Objects now: 4319.
+Memory consumption went from 152.1 MB to 152.1 MB.
+Total: 4.527600 ms (FindLiveObjects: 0.391300 ms CreateObjectMapping: 0.391600 ms MarkObjects: 3.719500 ms  DeleteObjects: 0.024300 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 509.240555 seconds.
+  path: Assets/Scripts/BT-GUI/GUI/BehaviourTreeEditor.uxml
+  artifactKey: Guid(9df13c947a651884db7c37dff24e1c10) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/BT-GUI/GUI/BehaviourTreeEditor.uxml using Guid(9df13c947a651884db7c37dff24e1c10) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '14b796ea43ce44429b4c7253930e635b') in 0.025768 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 582.258028 seconds.
+  path: Assets/Scripts/BT-GUI/GUI/BehaviourTreeEditor.uxml
+  artifactKey: Guid(9df13c947a651884db7c37dff24e1c10) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/BT-GUI/GUI/BehaviourTreeEditor.uxml using Guid(9df13c947a651884db7c37dff24e1c10) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '609a8d25dc6b7eacb0f4d349df3852e4') in 0.006124 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.005583 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.66 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+System.InvalidOperationException: The operation is not possible when moved past all properties (Next returned false)
+  at UnityEditor.SerializedProperty.Verify (UnityEditor.SerializedProperty+VerifyFlags verifyFlags) [0x00068] in <63965ae56af7489797f355b7c1211ab2>:0 
+  at UnityEditor.SerializedProperty.get_stringValue () [0x00001] in <63965ae56af7489797f355b7c1211ab2>:0 
+  at PixelCrushers.InputDeviceManagerEditor.AxisDefined (System.String axisName) [0x00059] in E:\4 Carrera\TFG\LOST_TIME_MEMORY\Lost_Time_Memory\Lost_Time_Memory\Assets\Plugins\Pixel Crushers\Common\Scripts\Editor\UI\InputDeviceManagerEditor.cs:204 
+  at PixelCrushers.InputDeviceManagerEditor.HasStandardInputDefinitions () [0x00001] in E:\4 Carrera\TFG\LOST_TIME_MEMORY\Lost_Time_Memory\Lost_Time_Memory\Assets\Plugins\Pixel Crushers\Common\Scripts\Editor\UI\InputDeviceManagerEditor.cs:61 
+  at PixelCrushers.CheckInputManagerSettings..cctor () [0x00019] in E:\4 Carrera\TFG\LOST_TIME_MEMORY\Lost_Time_Memory\Lost_Time_Memory\Assets\Plugins\Pixel Crushers\Common\Scripts\Editor\UI\CheckInputManagerSettings.cs:23 
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+Mono: successfully reloaded assembly
+- Completed reload, in  1.111 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1111ms)
+		BeginReloadAssembly (156ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (7ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (36ms)
+		EndReloadAssembly (861ms)
+			LoadAssemblies (121ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (244ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (58ms)
+			SetupLoadedEditorAssemblies (416ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (23ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (64ms)
+				ProcessInitializeOnLoadAttributes (289ms)
+				ProcessInitializeOnLoadMethodAttributes (35ms)
+				AfterProcessingInitializeOnLoad (4ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (8ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 2.53 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3752 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 21 unused Assets / (24.7 KB). Loaded Objects now: 4322.
+Memory consumption went from 152.1 MB to 152.1 MB.
+Total: 3.031600 ms (FindLiveObjects: 0.227600 ms CreateObjectMapping: 0.151900 ms MarkObjects: 2.630700 ms  DeleteObjects: 0.020800 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 60.400575 seconds.
+  path: Assets/Scripts/BT-GUI/GUI/InspectorView.cs
+  artifactKey: Guid(e5be5a93f9848b8429a801ed8e587426) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/BT-GUI/GUI/InspectorView.cs using Guid(e5be5a93f9848b8429a801ed8e587426) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd148b009ae1ac98b9801f4c64e7ea05f') in 0.009534 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 49.627190 seconds.
+  path: Assets/Scripts/BT-GUI/GUI/BehaviourTreeEditor.uxml
+  artifactKey: Guid(9df13c947a651884db7c37dff24e1c10) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/BT-GUI/GUI/BehaviourTreeEditor.uxml using Guid(9df13c947a651884db7c37dff24e1c10) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '56e1ecb2ea2cec5fb1342c6f75fbea80') in 0.019442 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 344.950517 seconds.
+  path: Assets/Scripts/BT-GUI/GUI/BehaviourTreeEditor.uxml
+  artifactKey: Guid(9df13c947a651884db7c37dff24e1c10) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/BT-GUI/GUI/BehaviourTreeEditor.uxml using Guid(9df13c947a651884db7c37dff24e1c10) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6f27d0fcfbff27f38433a0d8061d440e') in 0.006179 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1951.127263 seconds.
+  path: Assets/Scripts/BT-GUI/GUI/BehaviourTreeEditor.uxml
+  artifactKey: Guid(9df13c947a651884db7c37dff24e1c10) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/BT-GUI/GUI/BehaviourTreeEditor.uxml using Guid(9df13c947a651884db7c37dff24e1c10) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd025f7116af521106d29bd55a36cb993') in 0.006078 seconds 
