@@ -426,7 +426,7 @@ GameObject:
   - component: {fileID: 860649841}
   - component: {fileID: 860649843}
   m_Layer: 0
-  m_Name: GearManager
+  m_Name: CharactersManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

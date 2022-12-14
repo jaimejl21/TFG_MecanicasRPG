@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager inst;
 
+    public int charToEquipGear = 0;
     public bool restartPP;
 
     [System.Serializable]
@@ -118,4 +119,19 @@ public class GameManager : MonoBehaviour
         FileHandler.SaveToJson2(new ListsToJson(allChar, myTeam), filename);
         //Debug.Log("SaveJson");
     }
+
+    //public Character.Info GetCharById(int id)
+    //{
+    //    foreach(Character.Info ci in allChar)
+    //    {
+    //        if(ci.id == id)
+    //        {
+    //            return ci;
+    //        }
+    //        else
+    //        {
+    //            return allChar[0];
+    //        }
+    //    }
+    //}
 }
