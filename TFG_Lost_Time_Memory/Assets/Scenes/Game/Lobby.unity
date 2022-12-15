@@ -256,7 +256,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29df927127ab34b40aff19a979bed9ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  restartPP: 1
+  charToEquipGear: 0
+  restartPP: 0
   filename: CharactersDB.json
 --- !u!4 &397772045
 Transform:

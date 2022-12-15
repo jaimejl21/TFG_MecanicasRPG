@@ -13,10 +13,10 @@ public class CharManager : MonoBehaviour
     {
         auxCharList = GameManager.allChar;
 
-        for (int i = 0; i < auxCharList.Count; i++)
-        {
-            Debug.Log(" Pos " + i + ": " +  auxCharList[i]);
-        }
+        //for (int i = 0; i < auxCharList.Count; i++)
+        //{
+        //    Debug.Log(" Pos " + i + ": " +  auxCharList[i].id);
+        //}
 
         CharInventory();
     }

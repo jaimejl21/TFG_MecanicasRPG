@@ -25,7 +25,15 @@ public class ItemPool : MonoBehaviour, IDropHandler
         if (item.GetComponent<Character>().info.inTeam)
         {
             item.GetComponent<Character>().info.inTeam = false;
-            teamManager.noTeamCharList.Add(item.GetComponent<Character>().info);
+            //teamManager.noTeamCharList.Add(item.GetComponent<Character>().info);
+            for (int i = 0; i < teamManager.noTeamCharList.Count; i++)
+            {
+                if (teamManager.noTeamCharList[i].id == item.GetComponent<Character>().info.id)
+                {
+                    //teamManager.noTeamCharList.RemoveAt(i);
+                    teamManager.noTeamCharList[i].inTeam = false;
+                }
+            }
             //Debug.Log("Add to pool " + item.GetComponent<Character>().info.id);
             //Debug.Log("Char list " + teamManager.auxCharList[(teamManager.auxCharList.Count - 1)].id + "   " + teamManager.auxCharList.Count);
         }

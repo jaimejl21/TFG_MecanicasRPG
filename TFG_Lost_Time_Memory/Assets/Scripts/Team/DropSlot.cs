@@ -32,7 +32,8 @@ public class DropSlot : MonoBehaviour, IDropHandler
                 {
                     if (teamManager.noTeamCharList[i].id == item.GetComponent<Character>().info.id)
                     {
-                        teamManager.noTeamCharList.RemoveAt(i);
+                        //teamManager.noTeamCharList.RemoveAt(i);
+                        teamManager.noTeamCharList[i].inTeam = true;
                     }
                 }
 
@@ -66,7 +67,15 @@ public class DropSlot : MonoBehaviour, IDropHandler
                 item.transform.position = GameObject.FindGameObjectWithTag("Pool").transform.position;
                 item.GetComponent<DragHandler>().slotParent = GameObject.FindGameObjectWithTag("Pool").transform;
                 item.GetComponent<Character>().info.inTeam = false;
-                teamManager.noTeamCharList.Add(item.GetComponent<Character>().info);
+                //teamManager.noTeamCharList.Add(item.GetComponent<Character>().info);
+                for (int i = 0; i < teamManager.noTeamCharList.Count; i++)
+                {
+                    if (teamManager.noTeamCharList[i].id == item.GetComponent<Character>().info.id)
+                    {
+                        //teamManager.noTeamCharList.RemoveAt(i);
+                        teamManager.noTeamCharList[i].inTeam = false;
+                    }
+                }
                 //Debug.Log("Add to pool " + item.GetComponent<Character>().info.id);
                 //Debug.Log("Char list " + teamManager.auxCharList[(teamManager.auxCharList.Count - 1)].id + "   " + teamManager.auxCharList.Count);
                 //foreach (Character.Info c in teamManager.auxCharList)
@@ -83,7 +92,8 @@ public class DropSlot : MonoBehaviour, IDropHandler
                 {
                     if (teamManager.noTeamCharList[i].id == item.GetComponent<Character>().info.id)
                     {
-                        teamManager.noTeamCharList.RemoveAt(i);
+                        //teamManager.noTeamCharList.RemoveAt(i);
+                        teamManager.noTeamCharList[i].inTeam = true;
                     }
                 }
             } 

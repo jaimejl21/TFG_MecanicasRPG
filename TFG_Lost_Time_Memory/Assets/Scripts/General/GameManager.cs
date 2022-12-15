@@ -120,18 +120,29 @@ public class GameManager : MonoBehaviour
         //Debug.Log("SaveJson");
     }
 
-    //public Character.Info GetCharById(int id)
-    //{
-    //    foreach(Character.Info ci in allChar)
-    //    {
-    //        if(ci.id == id)
-    //        {
-    //            return ci;
-    //        }
-    //        else
-    //        {
-    //            return allChar[0];
-    //        }
-    //    }
-    //}
+    public int GetCharPosById(int id)
+    {
+        int pos = -1;
+        for (int i = 0; i < allChar.Count; i++)
+        {
+            if (allChar[i].id == id)
+            {
+                pos = i;
+            }
+        }
+        return pos;
+    }
+
+    public Character.Info GetCharInfoById(int id)
+    {
+        Character.Info chi = new Character.Info();
+        for (int i = 0; i < allChar.Count; i++)
+        {
+            if (allChar[i].id == id)
+            {
+                chi = allChar[i];
+            }
+        }
+        return chi;
+    }
 }

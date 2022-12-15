@@ -44,6 +44,7 @@ public class TeamManager : MonoBehaviour
                 aux.GetComponent<RectTransform>().anchorMin = new Vector2(0.5f, 0.5f);
                 aux.GetComponent<RectTransform>().anchorMax = new Vector2(0.5f, 0.5f);
                 teamSlots[i].GetComponent<DropSlot>().item = teamSlots[i].transform.GetChild(0).gameObject;
+                teamSlots[i].transform.GetChild(0).GetComponent<DragHandler>().slotParent = teamSlots[i].transform;
                 teamSlots[i].transform.GetChild(0).GetComponent<DragHandler>().startParent = pool.transform;
             }
         }
@@ -124,7 +125,7 @@ public class TeamManager : MonoBehaviour
         //}
 
         GameManager.myTeam = inTeamCharList;
-        //GameManager.allChar = noTeamCharList;
+        GameManager.allChar = noTeamCharList;
 
         for (int i = 0; i < GameManager.allChar.Count; i++)
         {
