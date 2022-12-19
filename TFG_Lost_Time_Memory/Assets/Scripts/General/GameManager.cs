@@ -31,6 +31,7 @@ public class GameManager : MonoBehaviour
 
     public static List<Character.Info> allChar;
     public static List<Character.Info> myTeam;
+    public static List<Gear.Info> allGear;
 
     int started;
 
@@ -51,10 +52,11 @@ public class GameManager : MonoBehaviour
     {
         myTeam = new List<Character.Info>();
         allChar = new List<Character.Info>();
+        allGear = new List<Gear.Info>();
 
         //Debug.Log("Started: " + started);
 
-        if(!restartPP)
+        if (!restartPP)
         {
             if (PlayerPrefs.HasKey("started"))
             {
@@ -72,14 +74,18 @@ public class GameManager : MonoBehaviour
 
         if (started == 0)
         {
-            for (int i = 0; i < 8; i++)
+            for (int i = 0; i < 12; i++)
             {
+                if(i<6)
+                {
+                    myTeam.Add(new Character.Info(-1, -2, false));
+                    allGear.Add(new Gear.Info(i, i, false));
+                }
+                else
+                {
+                    allGear.Add(new Gear.Info(i, (i-6), false));
+                }
                 allChar.Add(new Character.Info(i, -1, false));
-            }
-
-            for (int i = 0; i < 6; i++)
-            {
-                myTeam.Add(new Character.Info(-1, -2, false));
             }
 
             SaveListsToJson();

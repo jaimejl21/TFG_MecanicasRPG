@@ -5,47 +5,31 @@ using UnityEngine.EventSystems;
 
 public class GearItemPool : MonoBehaviour, IDropHandler
 {
-    public TeamManager teamManager;
+    public GearManager gearManager;
     public GameObject item;
 
     void Start()
     {
-        teamManager = FindObjectOfType<TeamManager>();
+        gearManager = FindObjectOfType<GearManager>();
     }
 
     public void OnDrop(PointerEventData eventData)
     {
-        item = DragHandler.itemDragging;
+        item = GearDragHandler.itemDragging;
 
-        //foreach (Character.Info c in teamManager.auxCharList)
-        //{
-        //    Debug.Log(c.id);
-        //}
-
-        if (item.GetComponent<Character>().info.inTeam)
+        if (item.GetComponent<Gear>().info.equiped)
         {
-            item.GetComponent<Character>().info.inTeam = false;
-            //teamManager.noTeamCharList.Add(item.GetComponent<Character>().info);
-            for (int i = 0; i < teamManager.noTeamCharList.Count; i++)
+            item.GetComponent<Gear>().info.equiped = false;
+            for (int i = 0; i < gearManager.gearList.Count; i++)
             {
-                if (teamManager.noTeamCharList[i].id == item.GetComponent<Character>().info.id)
+                if (gearManager.gearList[i].id == item.GetComponent<Gear>().info.id)
                 {
-                    //teamManager.noTeamCharList.RemoveAt(i);
-                    teamManager.noTeamCharList[i].inTeam = false;
+                    gearManager.gearList[i].equiped = false;
                 }
             }
-            //Debug.Log("Add to pool " + item.GetComponent<Character>().info.id);
-            //Debug.Log("Char list " + teamManager.auxCharList[(teamManager.auxCharList.Count - 1)].id + "   " + teamManager.auxCharList.Count);
         }
 
-        DragHandler.itemDragging.transform.SetParent(transform);
-        item.GetComponent<DragHandler>().slotParent = transform;
-
-        //Debug.Log("Char list " + teamManager.auxCharList[(teamManager.auxCharList.Count - 1)].id + "   " + teamManager.auxCharList.Count);
-
-        //foreach (Character.Info c in teamManager.auxCharList)
-        //{
-        //    Debug.Log(c.id);
-        //}
+        GearDragHandler.itemDragging.transform.SetParent(transform);
+        item.GetComponent<GearDragHandler>().slotParent = transform;
     }
 }

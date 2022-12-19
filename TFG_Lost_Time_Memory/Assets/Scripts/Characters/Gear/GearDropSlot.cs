@@ -5,98 +5,66 @@ using UnityEngine.EventSystems;
 
 public class GearDropSlot : MonoBehaviour, IDropHandler
 {
-    public TeamManager teamManager;
+    public GearManager gearManager;
     public GameObject item;
     public int slotPos;
+    public int type;
 
     void Start()
     {
-        teamManager = FindObjectOfType<TeamManager>();
+        gearManager = FindObjectOfType<GearManager>();
     }
 
     public void OnDrop(PointerEventData eventData)
     {
-        if(!item)
+        if (GearDragHandler.itemDragging.GetComponent<Gear>().info.type == type)
         {
-            Debug.Log("Opcion A");
-            //Debug.Log(teamManager.CanAddToTeam().ToString());
-            if (teamManager.CanAddToTeam())
+            if (!item)
             {
-                item = DragHandler.itemDragging;
+                Debug.Log("Opcion A");
+                item = GearDragHandler.itemDragging;
                 item.transform.SetParent(transform);
                 item.transform.position = transform.position;
-                item.GetComponent<DragHandler>().slotParent = transform;
-                item.GetComponent<Character>().info.inTeam = true;
-                //Debug.Log("inTeam: " + item.GetComponent<Character>().info.inTeam);
-                for (int i = 0; i < teamManager.noTeamCharList.Count; i++)
+                item.GetComponent<GearDragHandler>().slotParent = transform;
+                item.GetComponent<Gear>().info.equiped = true;
+
+                for (int i = 0; i < gearManager.gearList.Count; i++)
                 {
-                    if (teamManager.noTeamCharList[i].id == item.GetComponent<Character>().info.id)
+                    if (gearManager.gearList[i].id == item.GetComponent<Gear>().info.id)
                     {
-                        //teamManager.noTeamCharList.RemoveAt(i);
-                        teamManager.noTeamCharList[i].inTeam = true;
+                        gearManager.gearList[i].equiped = true;
                     }
                 }
-
-                //Debug.Log(teamManager.auxCharList.Contains(item.GetComponent<Character>().info) + "   " + teamManager.auxCharList.Count);
-                //Debug.Log("Count: " + teamManager.auxCharList.Count);
-
-                //foreach (Character.Info c in teamManager.auxCharList)
-                //{
-                //    Debug.Log(c.id);
-                //}
-            } 
-        }
-        else
-        {
-            if(DragHandler.itemDragging.GetComponent<Character>().info.inTeam)
-            {
-                Debug.Log("Opcion B");
-                item.transform.SetParent(DragHandler.itemDragging.GetComponent<DragHandler>().slotParent);
-                item.transform.position = DragHandler.itemDragging.GetComponent<DragHandler>().slotParent.position;
-                DragHandler.itemDragging.GetComponent<DragHandler>().slotParent.GetComponent<DropSlot>().item = item;
-                item.GetComponent<DragHandler>().slotParent = DragHandler.itemDragging.GetComponent<DragHandler>().slotParent;
-                item = DragHandler.itemDragging;
-                item.transform.SetParent(transform);
-                item.transform.position = transform.position;
-                item.GetComponent<DragHandler>().slotParent = transform;
             }
             else
             {
-                Debug.Log("Opcion C");
+
+                Debug.Log("Opcion B");
                 item.transform.SetParent(GameObject.FindGameObjectWithTag("Pool").transform);
                 item.transform.position = GameObject.FindGameObjectWithTag("Pool").transform.position;
-                item.GetComponent<DragHandler>().slotParent = GameObject.FindGameObjectWithTag("Pool").transform;
-                item.GetComponent<Character>().info.inTeam = false;
-                //teamManager.noTeamCharList.Add(item.GetComponent<Character>().info);
-                for (int i = 0; i < teamManager.noTeamCharList.Count; i++)
+                item.GetComponent<GearDragHandler>().slotParent = GameObject.FindGameObjectWithTag("Pool").transform;
+                item.GetComponent<Gear>().info.equiped = false;
+                for (int i = 0; i < gearManager.gearList.Count; i++)
                 {
-                    if (teamManager.noTeamCharList[i].id == item.GetComponent<Character>().info.id)
+                    if (gearManager.gearList[i].id == item.GetComponent<Gear>().info.id)
                     {
-                        //teamManager.noTeamCharList.RemoveAt(i);
-                        teamManager.noTeamCharList[i].inTeam = false;
+                        gearManager.gearList[i].equiped = false;
                     }
                 }
-                //Debug.Log("Add to pool " + item.GetComponent<Character>().info.id);
-                //Debug.Log("Char list " + teamManager.auxCharList[(teamManager.auxCharList.Count - 1)].id + "   " + teamManager.auxCharList.Count);
-                //foreach (Character.Info c in teamManager.auxCharList)
-                //{
-                //    Debug.Log(c.id);
-                //}
 
-                item = DragHandler.itemDragging;
+                item = GearDragHandler.itemDragging;
                 item.transform.SetParent(transform);
                 item.transform.position = transform.position;
-                item.GetComponent<DragHandler>().slotParent = transform;
-                item.GetComponent<Character>().info.inTeam = true;
-                for (int i = 0; i < teamManager.noTeamCharList.Count; i++)
+                item.GetComponent<GearDragHandler>().slotParent = transform;
+                item.GetComponent<Gear>().info.equiped = true;
+                for (int i = 0; i < gearManager.gearList.Count; i++)
                 {
-                    if (teamManager.noTeamCharList[i].id == item.GetComponent<Character>().info.id)
+                    if (gearManager.gearList[i].id == item.GetComponent<Gear>().info.id)
                     {
-                        //teamManager.noTeamCharList.RemoveAt(i);
-                        teamManager.noTeamCharList[i].inTeam = true;
+                        gearManager.gearList[i].equiped = true;
                     }
                 }
-            } 
+            }
         }
     }
 

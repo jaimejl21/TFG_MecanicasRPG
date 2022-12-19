@@ -73,7 +73,6 @@ public class TeamManager : MonoBehaviour
                 cont++;
             }
         }
-        Debug.Log("Cont inTeam: " + cont);
         if(cont < 4)
         {
             return true;
@@ -127,10 +126,10 @@ public class TeamManager : MonoBehaviour
         GameManager.myTeam = inTeamCharList;
         GameManager.allChar = noTeamCharList;
 
-        for (int i = 0; i < GameManager.allChar.Count; i++)
-        {
-            Debug.Log(" Pos " + i + ": " + GameManager.allChar[i].id);
-        }
+        //for (int i = 0; i < GameManager.allChar.Count; i++)
+        //{
+        //    Debug.Log(" Pos " + i + ": " + GameManager.allChar[i].id);
+        //}
 
         //Debug.Log("Saved");
 

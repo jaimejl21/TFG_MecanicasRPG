@@ -387,6 +387,7 @@
 "Assets/Scripts/BT-GUI/NodeComposite.cs"
 "Assets/Scripts/BT-GUI/NodeDecorator.cs"
 "Assets/Scripts/Characters/CharManager.cs"
+"Assets/Scripts/Characters/Gear/Gear.cs"
 "Assets/Scripts/Characters/Gear/GearChar.cs"
 "Assets/Scripts/Characters/Gear/GearDragHandler.cs"
 "Assets/Scripts/Characters/Gear/GearDropSlot.cs"
