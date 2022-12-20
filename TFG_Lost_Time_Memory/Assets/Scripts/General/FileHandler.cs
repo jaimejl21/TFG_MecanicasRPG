@@ -6,7 +6,7 @@ using UnityEngine;
 
 public static class FileHandler
 {
-    public static void SaveToJson2(GameManager.ListsToJson data, string filename)
+    public static void SaveToJson2(GameManager.ListToJson data, string filename)
     {
         string json = JsonUtility.ToJson(data);
         Debug.Log(json);

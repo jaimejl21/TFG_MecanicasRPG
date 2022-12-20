@@ -12,7 +12,8 @@ public class FightController : MonoBehaviour
     bool turn = true;
     public bool fightResult;
 
-    public List<Character.Info> auxTeamList;
+    public List<Character.Info> auxCharList;
+    public List<Character.Info> teamList;
     public List<Character.Info> ordTeamList;
     public List<GameObject> listAttackButtons;
 
@@ -31,13 +32,27 @@ public class FightController : MonoBehaviour
 
     private void Start()
     {
-        auxTeamList = GameManager.myTeam;
-        ordTeamList = auxTeamList.OrderBy(character => character.pos).ToList<Character.Info>();
-        auxTeamList = ordTeamList;
+        auxCharList = GameManager.allChar.ToList();
+        teamList = new List<Character.Info>() { null, null, null, null, null, null };
+
+        for (int i = 0; i < auxCharList.Count; i++)
+        {
+            if(auxCharList[i].inTeam)
+            {
+                teamList.RemoveAt(auxCharList[i].pos);
+                teamList.Insert(auxCharList[i].pos, auxCharList[i]);
+            }
+        }
         for (int i = 0; i < 6; i++)
         {
-            Debug.Log(auxTeamList[i].pos);
+            if (teamList[i] == null)
+            {
+                teamList.RemoveAt(i);
+                teamList.Insert(i, new Character.Info(-1, -1, false, new List<Gear.Info>()));
+            }
         }
+        ordTeamList = teamList.OrderBy(character => character.pos).ToList();
+        teamList = ordTeamList;
 
         playersPositions = new List<int>();
         enemiesPositions = new List<int>();
@@ -45,15 +60,10 @@ public class FightController : MonoBehaviour
         SetFight();
 
         playersN = playersPositions.Count - 1;
-        //playerSelect = playersPositions[0];
-        //pointerPlayer = 0;
 
         enemiesN = enemiesPositions.Count - 1;
         enemySelect = enemiesPositions[0]; ;
         pointerEnemy = 0;
-
-        //GameObject p = players.transform.GetChild(playerSelect).GetChild(0).gameObject;
-        //p.GetComponent<FightCharacter>().Select(true);
 
         enemies.transform.GetChild(enemySelect).GetChild(0).GetComponent<FightCharacter>().Select(true);
     }
@@ -62,9 +72,9 @@ public class FightController : MonoBehaviour
     {
         for (int i = 0; i < 6; i++)
         {
-            if (auxTeamList[i].id != -1)
+            if (teamList[i].id != -1)
             {
-                player.GetComponent<Character>().info = auxTeamList[i];
+                player.GetComponent<Character>().info = teamList[i];
                 player.GetComponent<FightCharacter>().position = player.GetComponent<Character>().info.pos;
                 playersPositions.Add(player.GetComponent<FightCharacter>().position);
                 if ((i % 2) == 0)

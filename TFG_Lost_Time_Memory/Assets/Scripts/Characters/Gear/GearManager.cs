@@ -13,6 +13,7 @@ public class GearManager : MonoBehaviour
     public int idToEquip;
 
     public List<Gear.Info> gearList;
+    public List<Gear.Info> equipedGearList;
 
     private void Start()
     {
@@ -41,6 +42,16 @@ public class GearManager : MonoBehaviour
 
     public void SaveGear()
     {
-        //charGO.transform.GetComponent<Character>().info.gear.Add();
+        for (int i = 0; i < 6; i++)
+        {
+            if (gearSlots[i].GetComponent<GearDropSlot>().item != null)
+            {
+                int pos_type = gearSlots[i].GetComponent<GearDropSlot>().slotPos;
+                Gear.Info gear = new Gear.Info(gearSlots[i].GetComponent<GearDropSlot>().item.GetComponent<Gear>().info.id, pos_type, true);
+                //.RemoveAt(i);
+                //inTeamCharList.Insert(i, inSlotChar);
+                //.Add();
+            }
+        }
     }
 }

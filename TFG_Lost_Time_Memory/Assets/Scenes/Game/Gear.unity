@@ -662,9 +662,17 @@ MonoBehaviour:
   charGO: {fileID: 6430165257657577314, guid: 39ff8fdd6e5e36547bc1fa232bde2427, type: 3}
   pool: {fileID: 0}
   gear: {fileID: 6430165257657577314, guid: ffbecefdd4595184c8d4c5b085e80e1e, type: 3}
+  gearSlots:
+  - {fileID: 1727480249}
+  - {fileID: 956142212}
+  - {fileID: 1557950507}
+  - {fileID: 1448149170}
+  - {fileID: 1269165080}
+  - {fileID: 1761056429}
   charPos: {fileID: 878082961}
   idToEquip: 0
   gearList: []
+  equipedGearList: []
 --- !u!1 &875895279
 GameObject:
   m_ObjectHideFlags: 0
@@ -951,7 +959,7 @@ GameObject:
   - component: {fileID: 956142214}
   - component: {fileID: 956142216}
   m_Layer: 5
-  m_Name: Slot (2)
+  m_Name: Slot (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1044,7 +1052,7 @@ GameObject:
   - component: {fileID: 1269165082}
   - component: {fileID: 1269165084}
   m_Layer: 5
-  m_Name: Slot (2)
+  m_Name: Slot (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1137,7 +1145,7 @@ GameObject:
   - component: {fileID: 1448149172}
   - component: {fileID: 1448149174}
   m_Layer: 5
-  m_Name: Slot
+  m_Name: Slot (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1314,7 +1322,7 @@ GameObject:
   - component: {fileID: 1557950509}
   - component: {fileID: 1557950511}
   m_Layer: 5
-  m_Name: Slot (4)
+  m_Name: Slot (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1634,7 +1642,7 @@ GameObject:
   - component: {fileID: 1761056431}
   - component: {fileID: 1761056433}
   m_Layer: 5
-  m_Name: Slot (4)
+  m_Name: Slot (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
