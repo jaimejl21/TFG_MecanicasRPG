@@ -7,6 +7,7 @@ using UnityEngine;
 public class GearManager : MonoBehaviour
 {
     public GameObject charGO, pool, gear;
+    public GameObject[] gearSlots;
     public Transform charPos;
 
     public int idToEquip;
@@ -40,6 +41,6 @@ public class GearManager : MonoBehaviour
 
     public void SaveGear()
     {
-
+        //charGO.transform.GetComponent<Character>().info.gear.Add();
     }
 }

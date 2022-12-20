@@ -78,14 +78,14 @@ public class GameManager : MonoBehaviour
             {
                 if(i<6)
                 {
-                    myTeam.Add(new Character.Info(-1, -2, false));
+                    myTeam.Add(new Character.Info(-1, -2, false, new List<Gear.Info>()));
                     allGear.Add(new Gear.Info(i, i, false));
                 }
                 else
                 {
                     allGear.Add(new Gear.Info(i, (i-6), false));
                 }
-                allChar.Add(new Character.Info(i, -1, false));
+                allChar.Add(new Character.Info(i, -1, false, new List<Gear.Info>()));
             }
 
             SaveListsToJson();

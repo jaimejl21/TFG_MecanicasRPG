@@ -17,14 +17,17 @@ public class Character : MonoBehaviour
         public int id;
         public int pos;
         public bool inTeam;
+
+        public List<Gear.Info> gear;
         
         public Info() {}
 
-        public Info(int id, int pos, bool inTeam)
+        public Info(int id, int pos, bool inTeam, List<Gear.Info> gear)
         {
             this.id = id;
             this.pos = pos;
             this.inTeam = inTeam;
+            this.gear = gear;
         }
     }
 

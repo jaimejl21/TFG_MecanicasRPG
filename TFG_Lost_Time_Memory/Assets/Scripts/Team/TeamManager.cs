@@ -90,7 +90,7 @@ public class TeamManager : MonoBehaviour
             if(teamSlots[i].GetComponent<DropSlot>().item != null)
             {
                 int pos = teamSlots[i].GetComponent<DropSlot>().slotPos;
-                Character.Info inSlotChar = new Character.Info(teamSlots[i].GetComponent<DropSlot>().item.GetComponent<Character>().info.id, pos, true);
+                Character.Info inSlotChar = new Character.Info(teamSlots[i].GetComponent<DropSlot>().item.GetComponent<Character>().info.id, pos, true, new List<Gear.Info>());
                 inTeamCharList.RemoveAt(i);
                 inTeamCharList.Insert(i, inSlotChar);
 
@@ -113,7 +113,7 @@ public class TeamManager : MonoBehaviour
             else
             {
                 inTeamCharList.RemoveAt(i);
-                inTeamCharList.Insert(i, new Character.Info(-1, -1, false));
+                inTeamCharList.Insert(i, new Character.Info(-1, -1, false, new List<Gear.Info>()));
                 //Debug.Log(auxTeamList[i]);
             }
         }
