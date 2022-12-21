@@ -27,12 +27,13 @@ public class GearDropSlot : MonoBehaviour, IDropHandler
                 item.transform.position = transform.position;
                 item.GetComponent<GearDragHandler>().slotParent = transform;
                 item.GetComponent<Gear>().info.equiped = true;
-
+                item.GetComponent<Gear>().info.characterId = gearManager.charGO.transform.GetComponent<Character>().info.id;
                 for (int i = 0; i < gearManager.gearList.Count; i++)
                 {
                     if (gearManager.gearList[i].id == item.GetComponent<Gear>().info.id)
                     {
                         gearManager.gearList[i].equiped = true;
+                        gearManager.gearList[i].characterId = gearManager.charGO.transform.GetComponent<Character>().info.id;
                     }
                 }
             }
@@ -44,11 +45,13 @@ public class GearDropSlot : MonoBehaviour, IDropHandler
                 item.transform.position = GameObject.FindGameObjectWithTag("Pool").transform.position;
                 item.GetComponent<GearDragHandler>().slotParent = GameObject.FindGameObjectWithTag("Pool").transform;
                 item.GetComponent<Gear>().info.equiped = false;
+                item.GetComponent<Gear>().info.characterId = -1;
                 for (int i = 0; i < gearManager.gearList.Count; i++)
                 {
                     if (gearManager.gearList[i].id == item.GetComponent<Gear>().info.id)
                     {
                         gearManager.gearList[i].equiped = false;
+                        gearManager.gearList[i].characterId = -1;
                     }
                 }
 
@@ -57,11 +60,13 @@ public class GearDropSlot : MonoBehaviour, IDropHandler
                 item.transform.position = transform.position;
                 item.GetComponent<GearDragHandler>().slotParent = transform;
                 item.GetComponent<Gear>().info.equiped = true;
+                item.GetComponent<Gear>().info.characterId = gearManager.charGO.transform.GetComponent<Character>().info.id;
                 for (int i = 0; i < gearManager.gearList.Count; i++)
                 {
                     if (gearManager.gearList[i].id == item.GetComponent<Gear>().info.id)
                     {
                         gearManager.gearList[i].equiped = true;
+                        gearManager.gearList[i].characterId = gearManager.charGO.transform.GetComponent<Character>().info.id;
                     }
                 }
             }

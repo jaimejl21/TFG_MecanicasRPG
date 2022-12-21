@@ -13,11 +13,12 @@ public class GearManager : MonoBehaviour
     public int idToEquip;
 
     public List<Gear.Info> gearList;
-    public List<Gear.Info> equipedGearList;
+    public List<Character.Info> allCharList;
 
     private void Start()
     {
         gearList = GameManager.allGear.ToList();
+        allCharList = GameManager.allChar.ToList();
 
         pool = GameObject.FindGameObjectWithTag("Pool");
 
@@ -25,7 +26,24 @@ public class GearManager : MonoBehaviour
         charGO.transform.GetComponent<Character>().info = GameManager.inst.GetCharInfoById(idToEquip);
         Instantiate(charGO, charPos);
 
+        TeamSlots();
         GearInventory();
+    }
+
+    void TeamSlots()
+    {
+        for (int i = 0; i < gearList.Count; i++)
+        {
+            if (gearList[i].equiped && gearList[i].characterId == charGO.transform.GetComponent<Character>().info.id)
+            {
+                gear.transform.GetComponent<Gear>().info = gearList[i];
+                int pos = gearList[i].type;
+                Instantiate(gear, gearSlots[pos].transform);
+                gearSlots[pos].GetComponent<GearDropSlot>().item = gearSlots[pos].transform.GetChild(0).gameObject;
+                gearSlots[pos].transform.GetChild(0).GetComponent<GearDragHandler>().slotParent = gearSlots[pos].transform;
+                gearSlots[pos].transform.GetChild(0).GetComponent<GearDragHandler>().startParent = pool.transform;
+            }
+        }
     }
 
     void GearInventory()
@@ -36,6 +54,7 @@ public class GearManager : MonoBehaviour
             if (gear.GetComponent<Gear>().info.equiped != true)
             {
                 Instantiate(gear, pool.transform);
+                Debug.Log("");
             }
         }
     }
@@ -47,11 +66,16 @@ public class GearManager : MonoBehaviour
             if (gearSlots[i].GetComponent<GearDropSlot>().item != null)
             {
                 int pos_type = gearSlots[i].GetComponent<GearDropSlot>().slotPos;
-                Gear.Info gear = new Gear.Info(gearSlots[i].GetComponent<GearDropSlot>().item.GetComponent<Gear>().info.id, pos_type, true);
-                //.RemoveAt(i);
-                //inTeamCharList.Insert(i, inSlotChar);
-                //.Add();
+                charGO.transform.GetComponent<Character>().info.gear.RemoveAt(pos_type);
+                charGO.transform.GetComponent<Character>().info.gear.Insert(pos_type, gearSlots[i].GetComponent<GearDropSlot>().item.transform.GetComponent<Gear>().info);
             }
         }
+        for (int i = 0; i < 6; i++)
+        {
+            Debug.Log(charGO.transform.GetComponent<Character>().info.gear[i].id);
+        }
+
+        GameManager.allGear = gearList;
+        GameManager.inst.SaveListsToJson();
     }
 }

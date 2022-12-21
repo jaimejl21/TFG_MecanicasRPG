@@ -87,11 +87,6 @@ public class TeamManager : MonoBehaviour
 
     public void SaveTeam()
     {
-        for (int i = 0; i < GameManager.allChar.Count; i++)
-        {
-            Debug.Log("id: " + allCharList[i].id + " inTeam " + allCharList[i].inTeam);
-        }
-
         GameManager.allChar = allCharList;
         GameManager.inst.SaveListsToJson();
     }

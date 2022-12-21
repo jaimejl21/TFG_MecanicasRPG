@@ -12,17 +12,19 @@ public class GameManager : MonoBehaviour
     public bool restartPP;
 
     [System.Serializable]
-    public class ListToJson
+    public class ListsToJson
     {
         public List<Character.Info> charList;
+        public List<Gear.Info> gearList;
 
-        public ListToJson(List<Character.Info> charList)
+        public ListsToJson(List<Character.Info> charList, List<Gear.Info> gearList)
         {
             this.charList = charList;
+            this.gearList = gearList;
         }
     }
 
-    ListToJson charList;
+    ListsToJson lists;
 
     [SerializeField]
     string filename;
@@ -70,17 +72,18 @@ public class GameManager : MonoBehaviour
 
         if (started == 0)
         {
+            Gear.Info gi = new Gear.Info(-1, -1, false, -1);
             for (int i = 0; i < 12; i++)
             {
                 if(i<6)
                 {
-                    allGear.Add(new Gear.Info(i, i, false));
+                    allGear.Add(new Gear.Info(i, i, false, -1));
                 }
                 else
                 {
-                    allGear.Add(new Gear.Info(i, (i-6), false));
+                    allGear.Add(new Gear.Info(i, (i-6), false, -1));
                 }
-                allChar.Add(new Character.Info(i, -1, false, new List<Gear.Info>()));
+                allChar.Add(new Character.Info(i, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi }));
             }
 
             SaveListsToJson();
@@ -92,20 +95,21 @@ public class GameManager : MonoBehaviour
         else
         {
             GetListsFromJson();
-            allChar = charList.charList;
+            allChar = lists.charList;
+            allGear = lists.gearList;
         }
     }
 
     public void GetListsFromJson ()
     {
-        charList = FileHandler.ReadFromJSON<ListToJson>(filename);
+        lists = FileHandler.ReadFromJSON<ListsToJson>(filename);
         //Debug.Log(lists.charList[0].id);
         //Debug.Log(lists.teamList[0].id);
     }
 
     public void SaveListsToJson()
     {
-        FileHandler.SaveToJson2(new ListToJson(allChar), filename);
+        FileHandler.SaveToJson2(new ListsToJson(allChar, allGear), filename);
         //Debug.Log("SaveJson");
     }
 
