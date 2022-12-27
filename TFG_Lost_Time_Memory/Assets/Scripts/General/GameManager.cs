@@ -31,6 +31,7 @@ public class GameManager : MonoBehaviour
 
     public static List<Character.Info> allChar;
     public static List<Gear.Info> allGear;
+    public static List<Character.Info> allEnemies;
 
     int started;
 
@@ -51,6 +52,7 @@ public class GameManager : MonoBehaviour
     {
         allChar = new List<Character.Info>();
         allGear = new List<Gear.Info>();
+        allEnemies = new List<Character.Info>();
 
         //Debug.Log("Started: " + started);
 
@@ -78,12 +80,13 @@ public class GameManager : MonoBehaviour
                 if(i<6)
                 {
                     allGear.Add(new Gear.Info(i, i, false, -1));
+                    allEnemies.Add(new Character.Info(i, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi }, new Character.Stats()));
                 }
                 else
                 {
                     allGear.Add(new Gear.Info(i, (i-6), false, -1));
                 }
-                allChar.Add(new Character.Info(i, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi }));
+                allChar.Add(new Character.Info(i, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi }, new Character.Stats()));
             }
 
             SaveListsToJson();

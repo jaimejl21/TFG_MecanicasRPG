@@ -15,6 +15,7 @@ public class FightController : MonoBehaviour
     public List<Character.Info> auxCharList;
     public List<Character.Info> teamList;
     public List<Character.Info> ordTeamList;
+    public List<Character.Info> allEnemiesList;
     public List<GameObject> listAttackButtons;
 
     [SerializeField]
@@ -34,6 +35,7 @@ public class FightController : MonoBehaviour
     {
         auxCharList = GameManager.allChar.ToList();
         teamList = new List<Character.Info>() { null, null, null, null, null, null };
+        allEnemiesList = GameManager.allEnemies.ToList();
 
         for (int i = 0; i < auxCharList.Count; i++)
         {
@@ -48,7 +50,7 @@ public class FightController : MonoBehaviour
             if (teamList[i] == null)
             {
                 teamList.RemoveAt(i);
-                teamList.Insert(i, new Character.Info(-1, -1, false, new List<Gear.Info>()));
+                teamList.Insert(i, new Character.Info(-1, -1, false, new List<Gear.Info>(), new Character.Stats()));
             }
         }
         ordTeamList = teamList.OrderBy(character => character.pos).ToList();
@@ -91,6 +93,7 @@ public class FightController : MonoBehaviour
                 ab.GetComponent<AttackButton>().charPos = p.GetComponent<FightCharacter>().position;
                 listAttackButtons.Add(ab);
             }
+            enemy.GetComponent<Character>().info = allEnemiesList[i];
             enemy.GetComponent<FightCharacter>().position = i;
             enemiesPositions.Add(enemy.GetComponent<FightCharacter>().position);
             if ((i % 2) == 0)
@@ -200,7 +203,7 @@ public class FightController : MonoBehaviour
         }
     }
 
-    IEnumerator AttackEn()
+    public IEnumerator AttackEn()
     {
         if (enemiesN >= 0)
         {
@@ -220,9 +223,13 @@ public class FightController : MonoBehaviour
                 {
                     enemies.transform.GetChild(enemiesPositions[i]).GetChild(0).GetComponent<FightCharacter>().Attack();
                 }
+                if (playersN < 0)
+                {
+                    StopAllCoroutines();
+                }
                 yield return new WaitForSecondsRealtime(1f);
             }
-            if(playersN > 0 && enemiesN > 0)
+            if (playersN >= 0 && enemiesN >= 0)
             {
                 turn = true;
                 ActivateBtns();
