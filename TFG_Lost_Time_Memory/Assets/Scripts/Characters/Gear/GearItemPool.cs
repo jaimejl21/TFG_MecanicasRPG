@@ -28,8 +28,46 @@ public class GearItemPool : MonoBehaviour, IDropHandler
                 }
             }
         }
-
+        UpdateStatGear(false);
         GearDragHandler.itemDragging.transform.SetParent(transform);
         item.GetComponent<GearDragHandler>().slotParent = transform;
+    }
+
+    void UpdateStatGear(bool add)
+    {
+        if (add)
+        {
+            switch (item.transform.GetComponent<Gear>().info.statType)
+            {
+                case 0:
+                    gearManager.atkGears++;
+                    break;
+                case 1:
+                    gearManager.defGears++;
+                    break;
+                case 2:
+                    gearManager.hpGears++;
+                    break;
+                default:
+                    break;
+            }
+        }
+        else
+        {
+            switch (item.transform.GetComponent<Gear>().info.statType)
+            {
+                case 0:
+                    gearManager.atkGears--;
+                    break;
+                case 1:
+                    gearManager.defGears--;
+                    break;
+                case 2:
+                    gearManager.hpGears--;
+                    break;
+                default:
+                    break;
+            }
+        }
     }
 }

@@ -14,16 +14,18 @@ public class Gear : MonoBehaviour
     public class Info
     {
         public int id;
-        public int type;
+        public int objType;
+        public int statType;
         public bool equiped;
         public int characterId;
 
         public Info() {}
 
-        public Info(int id, int type, bool equiped, int characterId)
+        public Info(int id, int objType, int statType, bool equiped, int characterId)
         {
             this.id = id;
-            this.type = type;
+            this.objType = objType;
+            this.statType = statType;
             this.equiped = equiped;
             this.characterId = characterId;
         }

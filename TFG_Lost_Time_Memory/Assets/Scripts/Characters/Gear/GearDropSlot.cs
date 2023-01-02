@@ -17,7 +17,7 @@ public class GearDropSlot : MonoBehaviour, IDropHandler
 
     public void OnDrop(PointerEventData eventData)
     {
-        if (GearDragHandler.itemDragging.GetComponent<Gear>().info.type == type)
+        if (GearDragHandler.itemDragging.GetComponent<Gear>().info.objType == type)
         {
             if (!item)
             {
@@ -36,10 +36,10 @@ public class GearDropSlot : MonoBehaviour, IDropHandler
                         gearManager.gearList[i].characterId = gearManager.charGO.transform.GetComponent<Character>().info.id;
                     }
                 }
+                UpdateStatGear(true);
             }
             else
             {
-
                 Debug.Log("Opcion B");
                 item.transform.SetParent(GameObject.FindGameObjectWithTag("Pool").transform);
                 item.transform.position = GameObject.FindGameObjectWithTag("Pool").transform.position;
@@ -54,6 +54,7 @@ public class GearDropSlot : MonoBehaviour, IDropHandler
                         gearManager.gearList[i].characterId = -1;
                     }
                 }
+                UpdateStatGear(false);
 
                 item = GearDragHandler.itemDragging;
                 item.transform.SetParent(transform);
@@ -69,6 +70,7 @@ public class GearDropSlot : MonoBehaviour, IDropHandler
                         gearManager.gearList[i].characterId = gearManager.charGO.transform.GetComponent<Character>().info.id;
                     }
                 }
+                UpdateStatGear(true);
             }
         }
     }
@@ -78,6 +80,44 @@ public class GearDropSlot : MonoBehaviour, IDropHandler
         if (item != null && item.transform.parent != transform)
         {
             item = null;
+        }
+    }
+
+    void UpdateStatGear(bool add)
+    {
+        if(add)
+        {
+            switch (item.transform.GetComponent<Gear>().info.statType)
+            {
+                case 0:
+                    gearManager.atkGears++;
+                    break;
+                case 1:
+                    gearManager.defGears++;
+                    break;
+                case 2:
+                    gearManager.hpGears++;
+                    break;
+                default:
+                    break;
+            }
+        }
+        else
+        {
+            switch (item.transform.GetComponent<Gear>().info.statType)
+            {
+                case 0:
+                    gearManager.atkGears--;
+                    break;
+                case 1:
+                    gearManager.defGears--;
+                    break;
+                case 2:
+                    gearManager.hpGears--;
+                    break;
+                default:
+                    break;
+            }
         }
     }
 }

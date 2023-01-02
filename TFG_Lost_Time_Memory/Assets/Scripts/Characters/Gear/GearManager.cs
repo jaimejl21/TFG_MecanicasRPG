@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using TMPro;
 using UnityEngine;
 
 public class GearManager : MonoBehaviour
@@ -9,8 +10,10 @@ public class GearManager : MonoBehaviour
     public GameObject charGO, pool, gear;
     public GameObject[] gearSlots;
     public Transform charPos;
+    public TextMeshProUGUI[] statsTxt;
 
     public int idToEquip;
+    public int atkGears = 0, defGears = 0, hpGears = 0;
 
     public List<Gear.Info> gearList;
     public List<Character.Info> allCharList;
@@ -26,6 +29,7 @@ public class GearManager : MonoBehaviour
         charGO.transform.GetComponent<Character>().info = GameManager.inst.GetCharInfoById(idToEquip);
         Instantiate(charGO, charPos);
 
+        ShowStats();
         TeamSlots();
         GearInventory();
     }
@@ -37,8 +41,9 @@ public class GearManager : MonoBehaviour
             if (gearList[i].equiped && gearList[i].characterId == charGO.transform.GetComponent<Character>().info.id)
             {
                 gear.transform.GetComponent<Gear>().info = gearList[i];
-                int pos = gearList[i].type;
-                Instantiate(gear, gearSlots[pos].transform);
+                int pos = gearList[i].objType;
+                GameObject aux = Instantiate(gear, gearSlots[pos].transform);
+                //aux.transform.GetComponent<GearItem>().SetGearColor();
                 gearSlots[pos].GetComponent<GearDropSlot>().item = gearSlots[pos].transform.GetChild(0).gameObject;
                 gearSlots[pos].transform.GetChild(0).GetComponent<GearDragHandler>().slotParent = gearSlots[pos].transform;
                 gearSlots[pos].transform.GetChild(0).GetComponent<GearDragHandler>().startParent = pool.transform;
@@ -53,10 +58,17 @@ public class GearManager : MonoBehaviour
             gear.GetComponent<Gear>().info = g;
             if (gear.GetComponent<Gear>().info.equiped != true)
             {
-                Instantiate(gear, pool.transform);
-                Debug.Log("");
+                GameObject aux = Instantiate(gear, pool.transform);
+                //aux.transform.GetComponent<GearItem>().SetGearColor();
             }
         }
+    }
+
+    void ShowStats()
+    {
+        statsTxt[0].text = "ATK: " + charGO.transform.GetComponent<Character>().info.stats.atk;
+        statsTxt[1].text = "DEF: " + charGO.transform.GetComponent<Character>().info.stats.def;
+        statsTxt[2].text = "HP: " + charGO.transform.GetComponent<Character>().info.stats.hp;
     }
 
     public void SaveGear()

@@ -74,17 +74,24 @@ public class GameManager : MonoBehaviour
 
         if (started == 0)
         {
-            Gear.Info gi = new Gear.Info(-1, -1, false, -1);
+            Gear.Info gi = new Gear.Info(-1, -1, -1, false, -1);
+            int j = 0;
             for (int i = 0; i < 12; i++)
             {
                 if(i<6)
                 {
-                    allGear.Add(new Gear.Info(i, i, false, -1));
+                    allGear.Add(new Gear.Info(i, i, j, false, -1));
                     allEnemies.Add(new Character.Info(i, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi }, new Character.Stats()));
+                    j++;
                 }
                 else
                 {
-                    allGear.Add(new Gear.Info(i, (i-6), false, -1));
+                    allGear.Add(new Gear.Info(i, (i-6), j, false, -1));
+                    j++;
+                }
+                if (j == 3)
+                {
+                    j = 0;
                 }
                 allChar.Add(new Character.Info(i, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi }, new Character.Stats()));
             }

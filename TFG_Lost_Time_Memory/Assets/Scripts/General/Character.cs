@@ -36,23 +36,20 @@ public class Character : MonoBehaviour
     public class Stats
     {
         public float atk;
-        public float dfs;
-        public float crt;
+        public float def;
         public float hp;
 
-        public Stats(float atk, float dfs, float crt, float hp)
+        public Stats(float atk, float def, float hp)
         {
             this.atk = atk;
-            this.dfs = dfs;
-            this.crt = crt;
+            this.def = def;
             this.hp = hp;
         }
 
         public Stats()
         {
             this.atk = 10;
-            this.dfs = 0;
-            this.crt = 0;
+            this.def = 0;
             this.hp = 100;
         }
     }
