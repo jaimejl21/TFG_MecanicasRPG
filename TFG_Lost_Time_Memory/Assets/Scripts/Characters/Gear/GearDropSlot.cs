@@ -40,46 +40,41 @@ public class GearDropSlot : MonoBehaviour, IDropHandler
             }
             else
             {
-                Debug.Log("Opcion B");
-                item.transform.SetParent(GameObject.FindGameObjectWithTag("Pool").transform);
-                item.transform.position = GameObject.FindGameObjectWithTag("Pool").transform.position;
-                item.GetComponent<GearDragHandler>().slotParent = GameObject.FindGameObjectWithTag("Pool").transform;
-                item.GetComponent<Gear>().info.equiped = false;
-                item.GetComponent<Gear>().info.characterId = -1;
-                for (int i = 0; i < gearManager.gearList.Count; i++)
+                if(item.GetComponent<GearDragHandler>().slotParent != GearDragHandler.itemDragging.GetComponent<GearDragHandler>().slotParent)
                 {
-                    if (gearManager.gearList[i].id == item.GetComponent<Gear>().info.id)
+                    Debug.Log("Opcion B");
+                    item.transform.SetParent(GameObject.FindGameObjectWithTag("Pool").transform);
+                    item.transform.position = GameObject.FindGameObjectWithTag("Pool").transform.position;
+                    item.GetComponent<GearDragHandler>().slotParent = GameObject.FindGameObjectWithTag("Pool").transform;
+                    item.GetComponent<Gear>().info.equiped = false;
+                    item.GetComponent<Gear>().info.characterId = -1;
+                    for (int i = 0; i < gearManager.gearList.Count; i++)
                     {
-                        gearManager.gearList[i].equiped = false;
-                        gearManager.gearList[i].characterId = -1;
+                        if (gearManager.gearList[i].id == item.GetComponent<Gear>().info.id)
+                        {
+                            gearManager.gearList[i].equiped = false;
+                            gearManager.gearList[i].characterId = -1;
+                        }
                     }
-                }
-                UpdateStatGear(false);
+                    UpdateStatGear(false);
 
-                item = GearDragHandler.itemDragging;
-                item.transform.SetParent(transform);
-                item.transform.position = transform.position;
-                item.GetComponent<GearDragHandler>().slotParent = transform;
-                item.GetComponent<Gear>().info.equiped = true;
-                item.GetComponent<Gear>().info.characterId = gearManager.charGO.transform.GetComponent<Character>().info.id;
-                for (int i = 0; i < gearManager.gearList.Count; i++)
-                {
-                    if (gearManager.gearList[i].id == item.GetComponent<Gear>().info.id)
+                    item = GearDragHandler.itemDragging;
+                    item.transform.SetParent(transform);
+                    item.transform.position = transform.position;
+                    item.GetComponent<GearDragHandler>().slotParent = transform;
+                    item.GetComponent<Gear>().info.equiped = true;
+                    item.GetComponent<Gear>().info.characterId = gearManager.charGO.transform.GetComponent<Character>().info.id;
+                    for (int i = 0; i < gearManager.gearList.Count; i++)
                     {
-                        gearManager.gearList[i].equiped = true;
-                        gearManager.gearList[i].characterId = gearManager.charGO.transform.GetComponent<Character>().info.id;
+                        if (gearManager.gearList[i].id == item.GetComponent<Gear>().info.id)
+                        {
+                            gearManager.gearList[i].equiped = true;
+                            gearManager.gearList[i].characterId = gearManager.charGO.transform.GetComponent<Character>().info.id;
+                        }
                     }
-                }
-                UpdateStatGear(true);
+                    UpdateStatGear(true);
+                }   
             }
-        }
-    }
-
-    void Update()
-    {
-        if (item != null && item.transform.parent != transform)
-        {
-            item = null;
         }
     }
 

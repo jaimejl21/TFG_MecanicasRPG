@@ -100,12 +100,4 @@ public class DropSlot : MonoBehaviour, IDropHandler
             } 
         }
     }
-
-    void Update()
-    {
-        if (item != null && item.transform.parent != transform)
-        {
-            item = null;
-        }
-    }
 }

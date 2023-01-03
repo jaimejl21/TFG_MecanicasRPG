@@ -15,6 +15,8 @@ public class GearItemPool : MonoBehaviour, IDropHandler
 
     public void OnDrop(PointerEventData eventData)
     {
+        GearDragHandler.itemDragging.GetComponent<GearDragHandler>().slotParent.GetComponent<GearDropSlot>().item = null;
+
         item = GearDragHandler.itemDragging;
 
         if (item.GetComponent<Gear>().info.equiped)

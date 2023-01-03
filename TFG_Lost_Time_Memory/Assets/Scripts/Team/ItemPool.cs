@@ -15,6 +15,8 @@ public class ItemPool : MonoBehaviour, IDropHandler
 
     public void OnDrop(PointerEventData eventData)
     {
+        DragHandler.itemDragging.GetComponent<DragHandler>().slotParent.GetComponent<DropSlot>().item = null;
+
         item = DragHandler.itemDragging;
 
         if (item.GetComponent<Character>().info.inTeam)
