@@ -21,7 +21,7 @@ public class GearManager : MonoBehaviour
     private void Start()
     {
         gearList = GameManager.allGear.ToList();
-        allCharList = GameManager.allChar.ToList();
+        allCharList = GameManager.allChar;
 
         pool = GameObject.FindGameObjectWithTag("Pool");
 
@@ -29,7 +29,7 @@ public class GearManager : MonoBehaviour
         charGO.transform.GetComponent<Character>().info = GameManager.inst.GetCharInfoById(idToEquip);
         Instantiate(charGO, charPos);
 
-        ShowStats();
+        UpdateStatsTxt();
         TeamSlots();
         GearInventory();
     }
@@ -56,6 +56,7 @@ public class GearManager : MonoBehaviour
         foreach (Gear.Info g in gearList)
         {
             gear.GetComponent<Gear>().info = g;
+            gear.GetComponent<GearDragHandler>().slotParent = pool.transform;
             if (gear.GetComponent<Gear>().info.equiped != true)
             {
                 GameObject aux = Instantiate(gear, pool.transform);
@@ -64,7 +65,90 @@ public class GearManager : MonoBehaviour
         }
     }
 
-    void ShowStats()
+    public void UpdateStatGear(bool add, Gear.Info ginfo)
+    {
+        if (add)
+        {
+            switch (ginfo.statType)
+            {
+                case 0:
+                    atkGears++;
+                    break;
+                case 1:
+                    defGears++;
+                    break;
+                case 2:
+                    hpGears++;
+                    break;
+                default:
+                    break;
+            }
+        }
+        else
+        {
+            switch (ginfo.statType)
+            {
+                case 0:
+                    atkGears--;
+                    break;
+                case 1:
+                    defGears--;
+                    break;
+                case 2:
+                    hpGears--;
+                    break;
+                default:
+                    break;
+            }
+        }
+        UpdateCharStats(add, ginfo);
+    }
+
+    public void UpdateCharStats(bool add, Gear.Info ginfo)
+    {
+        if(add)
+        {
+            if (ginfo.objType == 0 || ginfo.objType == 3)
+            {
+                charGO.transform.GetComponent<Character>().info.stats.atk += ginfo.statAmount;
+            }
+            else if (ginfo.objType == 1 || ginfo.objType == 4)
+            {
+                charGO.transform.GetComponent<Character>().info.stats.def += ginfo.statAmount;
+            }
+            else if (ginfo.objType == 2 || ginfo.objType == 5)
+            {
+                charGO.transform.GetComponent<Character>().info.stats.hp += ginfo.statAmount;
+            }
+        }
+        else
+        {
+            if (ginfo.objType == 0 || ginfo.objType == 3)
+            {
+                charGO.transform.GetComponent<Character>().info.stats.atk -= ginfo.statAmount;
+            }
+            else if (ginfo.objType == 1 || ginfo.objType == 4)
+            {
+                charGO.transform.GetComponent<Character>().info.stats.def -= ginfo.statAmount;
+            }
+            else if (ginfo.objType == 2 || ginfo.objType == 5)
+            {
+                charGO.transform.GetComponent<Character>().info.stats.hp -= ginfo.statAmount;
+            }
+        }
+        UpdateStatsTxt();
+    }
+
+    public bool CanDropGear()
+    {
+        if (atkGears <= 0 && defGears <= 0 && hpGears <= 0)
+        {
+            return false;
+        }
+        else return true;
+    }
+
+    void UpdateStatsTxt()
     {
         statsTxt[0].text = "ATK: " + charGO.transform.GetComponent<Character>().info.stats.atk;
         statsTxt[1].text = "DEF: " + charGO.transform.GetComponent<Character>().info.stats.def;
@@ -82,9 +166,12 @@ public class GearManager : MonoBehaviour
                 charGO.transform.GetComponent<Character>().info.gear.Insert(pos_type, gearSlots[i].GetComponent<GearDropSlot>().item.transform.GetComponent<Gear>().info);
             }
         }
-        for (int i = 0; i < 6; i++)
+        for(int i = 0; i < allCharList.Count; i++)
         {
-            Debug.Log(charGO.transform.GetComponent<Character>().info.gear[i].id);
+            if(allCharList[i].id == idToEquip)
+            {
+                allCharList[i].stats = charGO.transform.GetComponent<Character>().info.stats;
+            }
         }
 
         GameManager.allGear = gearList;

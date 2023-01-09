@@ -36,7 +36,7 @@ public class GearDropSlot : MonoBehaviour, IDropHandler
                         gearManager.gearList[i].characterId = gearManager.charGO.transform.GetComponent<Character>().info.id;
                     }
                 }
-                UpdateStatGear(true);
+                gearManager.UpdateStatGear(true, item.transform.GetComponent<Gear>().info);
             }
             else
             {
@@ -56,7 +56,7 @@ public class GearDropSlot : MonoBehaviour, IDropHandler
                             gearManager.gearList[i].characterId = -1;
                         }
                     }
-                    UpdateStatGear(false);
+                    gearManager.UpdateStatGear(false, item.transform.GetComponent<Gear>().info);
 
                     item = GearDragHandler.itemDragging;
                     item.transform.SetParent(transform);
@@ -72,46 +72,8 @@ public class GearDropSlot : MonoBehaviour, IDropHandler
                             gearManager.gearList[i].characterId = gearManager.charGO.transform.GetComponent<Character>().info.id;
                         }
                     }
-                    UpdateStatGear(true);
+                    gearManager.UpdateStatGear(true, item.transform.GetComponent<Gear>().info);
                 }   
-            }
-        }
-    }
-
-    void UpdateStatGear(bool add)
-    {
-        if(add)
-        {
-            switch (item.transform.GetComponent<Gear>().info.statType)
-            {
-                case 0:
-                    gearManager.atkGears++;
-                    break;
-                case 1:
-                    gearManager.defGears++;
-                    break;
-                case 2:
-                    gearManager.hpGears++;
-                    break;
-                default:
-                    break;
-            }
-        }
-        else
-        {
-            switch (item.transform.GetComponent<Gear>().info.statType)
-            {
-                case 0:
-                    gearManager.atkGears--;
-                    break;
-                case 1:
-                    gearManager.defGears--;
-                    break;
-                case 2:
-                    gearManager.hpGears--;
-                    break;
-                default:
-                    break;
             }
         }
     }

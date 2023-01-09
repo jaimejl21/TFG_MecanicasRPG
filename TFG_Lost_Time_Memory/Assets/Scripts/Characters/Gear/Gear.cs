@@ -14,6 +14,7 @@ public class Gear : MonoBehaviour
     public class Info
     {
         public int id;
+        public int statAmount;
         public int objType;
         public int statType;
         public bool equiped;
@@ -21,9 +22,10 @@ public class Gear : MonoBehaviour
 
         public Info() {}
 
-        public Info(int id, int objType, int statType, bool equiped, int characterId)
+        public Info(int id, int statAmount, int objType, int statType, bool equiped, int characterId)
         {
             this.id = id;
+            this.statAmount = statAmount;
             this.objType = objType;
             this.statType = statType;
             this.equiped = equiped;
