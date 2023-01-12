@@ -257,7 +257,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   charToEquipGear: 0
-  restartPP: 1
+  restartPP: 0
   filename: CharactersDB.json
 --- !u!4 &397772045
 Transform:

@@ -10,7 +10,7 @@ public class GearManager : MonoBehaviour
     public GameObject charGO, pool, gear;
     public GameObject[] gearSlots;
     public Transform charPos;
-    public TextMeshProUGUI[] statsTxt;
+    public TextMeshProUGUI[] statsTxt, bonusTxt;
 
     public int idToEquip;
     public int atkGears = 0, defGears = 0, hpGears = 0;
@@ -29,12 +29,14 @@ public class GearManager : MonoBehaviour
         charGO.transform.GetComponent<Character>().info = GameManager.inst.GetCharInfoById(idToEquip);
         Instantiate(charGO, charPos);
 
-        UpdateStatsTxt();
-        TeamSlots();
+        GearSlots();
         GearInventory();
+        GearStats();
+        UpdateStatsTxt();
+        UpdateBonusTxt();
     }
 
-    void TeamSlots()
+    void GearSlots()
     {
         for (int i = 0; i < gearList.Count; i++)
         {
@@ -61,6 +63,30 @@ public class GearManager : MonoBehaviour
             {
                 GameObject aux = Instantiate(gear, pool.transform);
                 //aux.transform.GetComponent<GearItem>().SetGearColor();
+            }
+        }
+    }
+
+    void GearStats()
+    {
+        for(int i = 0; i < gearSlots.Length; i++)
+        {
+            if(gearSlots[i].transform.childCount != 0)
+            {
+                switch(gearSlots[i].transform.GetChild(0).GetComponent<Gear>().info.statType)
+                {
+                    case 0:
+                        atkGears++;
+                        break;
+                    case 1:
+                        defGears++;
+                        break;
+                    case 2:
+                        hpGears++;
+                        break;
+                    default:
+                        break;
+                }
             }
         }
     }
@@ -101,6 +127,7 @@ public class GearManager : MonoBehaviour
                     break;
             }
         }
+        UpdateBonusTxt();
         UpdateCharStats(add, ginfo);
     }
 
@@ -139,6 +166,71 @@ public class GearManager : MonoBehaviour
         UpdateStatsTxt();
     }
 
+    public void UpdateBonusTxt()
+    {
+        CheckBonusTxt(atkGears, 0);
+        CheckBonusTxt(defGears, 1);
+        CheckBonusTxt(hpGears, 2);
+    }
+
+
+    public void CheckBonusTxt(int statGear, int statType)
+    {
+        if (statGear < 2)
+        {
+            if (bonusTxt[statType].gameObject.activeSelf)
+            {
+                bonusTxt[statType].gameObject.SetActive(false);
+            }
+            else
+            {
+
+            }
+        }
+        else if (statGear < 4)
+        {
+            if(bonusTxt[statType].gameObject.activeSelf)
+            {
+                ChangeStatBonusCount(1, statType);
+            }
+            else
+            {
+                bonusTxt[statType].gameObject.SetActive(true);
+            }   
+        }
+        else if (statGear < 6)
+        {
+            if (bonusTxt[statType].gameObject.activeSelf)
+            {
+                ChangeStatBonusCount(2, statType);
+            }
+            else
+            {
+                bonusTxt[statType].gameObject.SetActive(true);
+                ChangeStatBonusCount(2, statType);
+            }       
+        }
+        else if (statGear > 5)
+        {
+            if (bonusTxt[statType].gameObject.activeSelf)
+            {
+                ChangeStatBonusCount(3, statType);
+            }
+            else
+            {
+                bonusTxt[statType].gameObject.SetActive(true);
+                ChangeStatBonusCount(3, statType);
+            }
+        }
+    }
+
+
+    void ChangeStatBonusCount(int num, int statType)
+    {
+        bonusTxt[statType].text = bonusTxt[statType].text.Remove(bonusTxt[statType].text.Length - 3);
+        bonusTxt[statType].text += " x" + num;
+    }
+
     public bool CanDropGear()
     {
         if (atkGears <= 0 && defGears <= 0 && hpGears <= 0)
@@ -153,6 +245,40 @@ public class GearManager : MonoBehaviour
         statsTxt[0].text = "ATK: " + charGO.transform.GetComponent<Character>().info.stats.atk;
         statsTxt[1].text = "DEF: " + charGO.transform.GetComponent<Character>().info.stats.def;
         statsTxt[2].text = "HP: " + charGO.transform.GetComponent<Character>().info.stats.hp;
+    }
+
+    void AddSubtractStats(bool add, int statType, int amount)
+    {
+        if (add)
+        {
+            if (statType == 0)
+            {
+                charGO.transform.GetComponent<Character>().info.stats.atk += amount;
+            }
+            else if (statType == 1)
+            {
+                charGO.transform.GetComponent<Character>().info.stats.def += amount;
+            }
+            else if (statType == 2)
+            {
+                charGO.transform.GetComponent<Character>().info.stats.hp += amount;
+            }
+        }
+        else
+        {
+            if (statType == 0)
+            {
+                charGO.transform.GetComponent<Character>().info.stats.atk -= amount;
+            }
+            else if (statType == 1)
+            {
+                charGO.transform.GetComponent<Character>().info.stats.def -= amount;
+            }
+            else if (statType == 2)
+            {
+                charGO.transform.GetComponent<Character>().info.stats.hp -= amount;
+            }
+        }
     }
 
     public void SaveGear()

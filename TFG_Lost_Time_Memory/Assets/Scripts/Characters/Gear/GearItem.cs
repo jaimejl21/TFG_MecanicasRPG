@@ -56,11 +56,11 @@ public class GearItem : MonoBehaviour
                 break;
             case 1:
                 //statTypeColor = new Color(189f, 133f, 246f, 255f);
-                statTypeColor = Color.green;
+                statTypeColor = Color.blue;
                 break;
             case 2:
                 //statTypeColor = new Color(133f, 225f, 246f, 255f);
-                statTypeColor = Color.blue;
+                statTypeColor = Color.green;
                 break;
             default:
                 break;
