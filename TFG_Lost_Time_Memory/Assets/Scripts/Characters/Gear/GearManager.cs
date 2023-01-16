@@ -10,10 +10,11 @@ public class GearManager : MonoBehaviour
     public GameObject charGO, pool, gear;
     public GameObject[] gearSlots;
     public Transform charPos;
-    public TextMeshProUGUI[] statsTxt, bonusTxt;
+    public TextMeshProUGUI[] statsTxt, bonusTxt, statsBonusTxt;
 
     public int idToEquip;
     public int atkGears = 0, defGears = 0, hpGears = 0;
+    bool initialized = false;
 
     public List<Gear.Info> gearList;
     public List<Character.Info> allCharList;
@@ -32,8 +33,9 @@ public class GearManager : MonoBehaviour
         GearSlots();
         GearInventory();
         GearStats();
-        UpdateStatsTxt();
-        UpdateBonusTxt();
+        InitStatsTxt();
+        UpdateBonusTxt(false);
+        initialized = true;
     }
 
     void GearSlots()
@@ -127,7 +129,7 @@ public class GearManager : MonoBehaviour
                     break;
             }
         }
-        UpdateBonusTxt();
+        UpdateBonusTxt(add);
         UpdateCharStats(add, ginfo);
     }
 
@@ -166,25 +168,25 @@ public class GearManager : MonoBehaviour
         UpdateStatsTxt();
     }
 
-    public void UpdateBonusTxt()
+    public void UpdateBonusTxt(bool add)
     {
-        CheckBonusTxt(atkGears, 0);
-        CheckBonusTxt(defGears, 1);
-        CheckBonusTxt(hpGears, 2);
+        CheckBonusTxt(add, atkGears, 0);
+        CheckBonusTxt(add, defGears, 1);
+        CheckBonusTxt(add, hpGears, 2);
     }
 
 
-    public void CheckBonusTxt(int statGear, int statType)
+    public void CheckBonusTxt(bool add, int statGear, int statType)
     {
         if (statGear < 2)
         {
             if (bonusTxt[statType].gameObject.activeSelf)
             {
+                if(statGear == 1 && !add)
+                {
+                    AddSubtractStats(add, statType, 10);
+                }
                 bonusTxt[statType].gameObject.SetActive(false);
-            }
-            else
-            {
-
             }
         }
         else if (statGear < 4)
@@ -192,10 +194,21 @@ public class GearManager : MonoBehaviour
             if(bonusTxt[statType].gameObject.activeSelf)
             {
                 ChangeStatBonusCount(1, statType);
+                if (statGear == 3 && !add)
+                {
+                    AddSubtractStats(add, statType, 10);
+                }
             }
             else
             {
                 bonusTxt[statType].gameObject.SetActive(true);
+                if(initialized)
+                {
+                    if (statGear == 2)
+                    {
+                        AddSubtractStats(add, statType, 10);
+                    }
+                }
             }   
         }
         else if (statGear < 6)
@@ -203,6 +216,10 @@ public class GearManager : MonoBehaviour
             if (bonusTxt[statType].gameObject.activeSelf)
             {
                 ChangeStatBonusCount(2, statType);
+                if ((statGear == 5 && !add) || (statGear == 4 && add))
+                {
+                    AddSubtractStats(add, statType, 10);
+                }
             }
             else
             {
@@ -215,6 +232,7 @@ public class GearManager : MonoBehaviour
             if (bonusTxt[statType].gameObject.activeSelf)
             {
                 ChangeStatBonusCount(3, statType);
+                AddSubtractStats(add, statType, 10);
             }
             else
             {
@@ -239,12 +257,18 @@ public class GearManager : MonoBehaviour
         }
         else return true;
     }
-
-    void UpdateStatsTxt()
+    void InitStatsTxt()
     {
         statsTxt[0].text = "ATK: " + charGO.transform.GetComponent<Character>().info.stats.atk;
         statsTxt[1].text = "DEF: " + charGO.transform.GetComponent<Character>().info.stats.def;
         statsTxt[2].text = "HP: " + charGO.transform.GetComponent<Character>().info.stats.hp;
+    }
+
+    void UpdateStatsTxt()
+    {
+        statsBonusTxt[0].text = "+" + charGO.transform.GetComponent<Character>().info.stats.atk;
+        statsBonusTxt[1].text = "+" + charGO.transform.GetComponent<Character>().info.stats.def;
+        statsBonusTxt[2].text = "+" + charGO.transform.GetComponent<Character>().info.stats.hp;
     }
 
     void AddSubtractStats(bool add, int statType, int amount)

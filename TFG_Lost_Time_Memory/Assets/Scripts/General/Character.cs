@@ -35,12 +35,24 @@ public class Character : MonoBehaviour
     [System.Serializable]
     public class Stats
     {
+        public float baseAtk;
+        public float baseDef;
+        public float baseHp;
+        public float extraAtk;
+        public float extraDef;
+        public float extraHp;
         public float atk;
         public float def;
         public float hp;
 
-        public Stats(float atk, float def, float hp)
+        public Stats(float baseAtk, float baseDef, float baseHp, float extraAtk, float extraDef, float extraHp, float atk, float def, float hp)
         {
+            this.baseAtk = baseAtk;
+            this.baseDef = baseDef;
+            this.baseHp = baseHp;
+            this.extraAtk = extraAtk;
+            this.extraDef = extraDef;
+            this.extraHp = extraHp;
             this.atk = atk;
             this.def = def;
             this.hp = hp;
@@ -48,9 +60,15 @@ public class Character : MonoBehaviour
 
         public Stats()
         {
-            this.atk = 10;
-            this.def = 0;
-            this.hp = 100;
+            this.baseAtk = 10;
+            this.baseDef = 0;
+            this.baseHp = 100;
+            this.extraAtk = 0;
+            this.extraDef = 0;
+            this.extraHp = 0;
+            this.atk = baseAtk + extraAtk;
+            this.def = baseDef + extraDef;
+            this.hp = baseHp + extraHp;  
         }
     }
 
