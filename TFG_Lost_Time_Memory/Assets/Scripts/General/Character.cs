@@ -53,15 +53,15 @@ public class Character : MonoBehaviour
             this.extraAtk = extraAtk;
             this.extraDef = extraDef;
             this.extraHp = extraHp;
-            this.atk = atk;
-            this.def = def;
-            this.hp = hp;
+            this.atk = baseAtk + extraAtk;
+            this.def = baseDef + extraDef;
+            this.hp = baseHp + extraHp;
         }
 
         public Stats()
         {
             this.baseAtk = 10;
-            this.baseDef = 0;
+            this.baseDef = 5;
             this.baseHp = 100;
             this.extraAtk = 0;
             this.extraDef = 0;
@@ -69,6 +69,13 @@ public class Character : MonoBehaviour
             this.atk = baseAtk + extraAtk;
             this.def = baseDef + extraDef;
             this.hp = baseHp + extraHp;  
+        }
+
+        public void UpdateStats()
+        {
+            this.atk = baseAtk + extraAtk;
+            this.def = baseDef + extraDef;
+            this.hp = baseHp + extraHp;
         }
     }
 

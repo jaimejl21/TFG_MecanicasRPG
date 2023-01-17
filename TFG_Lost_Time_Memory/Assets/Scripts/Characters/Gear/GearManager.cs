@@ -33,7 +33,8 @@ public class GearManager : MonoBehaviour
         GearSlots();
         GearInventory();
         GearStats();
-        InitStatsTxt();
+        InitBaseStatsTxt();
+        UpdateStatsTxt();
         UpdateBonusTxt(false);
         initialized = true;
     }
@@ -139,32 +140,33 @@ public class GearManager : MonoBehaviour
         {
             if (ginfo.objType == 0 || ginfo.objType == 3)
             {
-                charGO.transform.GetComponent<Character>().info.stats.atk += ginfo.statAmount;
+                charGO.transform.GetComponent<Character>().info.stats.extraAtk += ginfo.statAmount;
             }
             else if (ginfo.objType == 1 || ginfo.objType == 4)
             {
-                charGO.transform.GetComponent<Character>().info.stats.def += ginfo.statAmount;
+                charGO.transform.GetComponent<Character>().info.stats.extraDef += ginfo.statAmount;
             }
             else if (ginfo.objType == 2 || ginfo.objType == 5)
             {
-                charGO.transform.GetComponent<Character>().info.stats.hp += ginfo.statAmount;
+                charGO.transform.GetComponent<Character>().info.stats.extraHp += ginfo.statAmount;
             }
         }
         else
         {
             if (ginfo.objType == 0 || ginfo.objType == 3)
             {
-                charGO.transform.GetComponent<Character>().info.stats.atk -= ginfo.statAmount;
+                charGO.transform.GetComponent<Character>().info.stats.extraAtk -= ginfo.statAmount;
             }
             else if (ginfo.objType == 1 || ginfo.objType == 4)
             {
-                charGO.transform.GetComponent<Character>().info.stats.def -= ginfo.statAmount;
+                charGO.transform.GetComponent<Character>().info.stats.extraDef -= ginfo.statAmount;
             }
             else if (ginfo.objType == 2 || ginfo.objType == 5)
             {
-                charGO.transform.GetComponent<Character>().info.stats.hp -= ginfo.statAmount;
+                charGO.transform.GetComponent<Character>().info.stats.extraHp -= ginfo.statAmount;
             }
         }
+        charGO.transform.GetComponent<Character>().info.stats.UpdateStats();
         UpdateStatsTxt();
     }
 
@@ -174,7 +176,6 @@ public class GearManager : MonoBehaviour
         CheckBonusTxt(add, defGears, 1);
         CheckBonusTxt(add, hpGears, 2);
     }
-
 
     public void CheckBonusTxt(bool add, int statGear, int statType)
     {
@@ -257,18 +258,19 @@ public class GearManager : MonoBehaviour
         }
         else return true;
     }
-    void InitStatsTxt()
+
+    void InitBaseStatsTxt()
     {
-        statsTxt[0].text = "ATK: " + charGO.transform.GetComponent<Character>().info.stats.atk;
-        statsTxt[1].text = "DEF: " + charGO.transform.GetComponent<Character>().info.stats.def;
-        statsTxt[2].text = "HP: " + charGO.transform.GetComponent<Character>().info.stats.hp;
+        statsTxt[0].text = "ATK: " + charGO.transform.GetComponent<Character>().info.stats.baseAtk;
+        statsTxt[1].text = "DEF: " + charGO.transform.GetComponent<Character>().info.stats.baseDef;
+        statsTxt[2].text = "HP: " + charGO.transform.GetComponent<Character>().info.stats.baseHp;
     }
 
     void UpdateStatsTxt()
     {
-        statsBonusTxt[0].text = "+" + charGO.transform.GetComponent<Character>().info.stats.atk;
-        statsBonusTxt[1].text = "+" + charGO.transform.GetComponent<Character>().info.stats.def;
-        statsBonusTxt[2].text = "+" + charGO.transform.GetComponent<Character>().info.stats.hp;
+        statsBonusTxt[0].text = "+" + charGO.transform.GetComponent<Character>().info.stats.extraAtk;
+        statsBonusTxt[1].text = "+" + charGO.transform.GetComponent<Character>().info.stats.extraDef;
+        statsBonusTxt[2].text = "+" + charGO.transform.GetComponent<Character>().info.stats.extraHp;
     }
 
     void AddSubtractStats(bool add, int statType, int amount)
@@ -277,30 +279,30 @@ public class GearManager : MonoBehaviour
         {
             if (statType == 0)
             {
-                charGO.transform.GetComponent<Character>().info.stats.atk += amount;
+                charGO.transform.GetComponent<Character>().info.stats.extraAtk += amount;
             }
             else if (statType == 1)
             {
-                charGO.transform.GetComponent<Character>().info.stats.def += amount;
+                charGO.transform.GetComponent<Character>().info.stats.extraDef += amount;
             }
             else if (statType == 2)
             {
-                charGO.transform.GetComponent<Character>().info.stats.hp += amount;
+                charGO.transform.GetComponent<Character>().info.stats.extraHp += amount;
             }
         }
         else
         {
             if (statType == 0)
             {
-                charGO.transform.GetComponent<Character>().info.stats.atk -= amount;
+                charGO.transform.GetComponent<Character>().info.stats.extraAtk -= amount;
             }
             else if (statType == 1)
             {
-                charGO.transform.GetComponent<Character>().info.stats.def -= amount;
+                charGO.transform.GetComponent<Character>().info.stats.extraDef -= amount;
             }
             else if (statType == 2)
             {
-                charGO.transform.GetComponent<Character>().info.stats.hp -= amount;
+                charGO.transform.GetComponent<Character>().info.stats.extraHp -= amount;
             }
         }
     }

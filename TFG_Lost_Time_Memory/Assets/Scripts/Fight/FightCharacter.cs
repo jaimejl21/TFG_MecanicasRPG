@@ -22,7 +22,7 @@ public class FightCharacter : MonoBehaviour, IPointerClickHandler, IPointerDownH
     public bool type, specialActivated = false;
     public string abilityType;
     public float life, special;
-    float maxLife, maxSpecial, attack, scaleI;
+    float maxLife, maxSpecial, attack, defense, scaleI;
 
     private  void Start()
     {
@@ -39,6 +39,7 @@ public class FightCharacter : MonoBehaviour, IPointerClickHandler, IPointerDownH
         special = 0;
 
         attack = charInfo.stats.atk;
+        defense = charInfo.stats.def;
 
         if (type)
         {
@@ -294,10 +295,11 @@ public class FightCharacter : MonoBehaviour, IPointerClickHandler, IPointerDownH
         }
     }
 
-    public void Damage(float attack)
+    public void Damage(float amount)
     {
-        life -= attack;
-        StartCoroutine(AnimDamage(attack));
+        amount = amount - defense;
+        life -= amount;
+        StartCoroutine(AnimDamage(amount));
         if(life <= 0)
         {
             if(type)
