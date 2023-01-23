@@ -18,16 +18,19 @@ public class Character : MonoBehaviour
         public int pos;
         public bool inTeam;
         public List<Gear.Info> gear;
+        public int level;
         public Stats stats;
 
-        public Info() {}
 
-        public Info(int id, int pos, bool inTeam, List<Gear.Info> gear, Stats stats)
+        public Info() { }
+
+        public Info(int id, int pos, bool inTeam, List<Gear.Info> gear, int level, Stats stats)
         {
             this.id = id;
             this.pos = pos;
             this.inTeam = inTeam;
             this.gear = gear;
+            this.level = level;
             this.stats = stats;
         }
     }

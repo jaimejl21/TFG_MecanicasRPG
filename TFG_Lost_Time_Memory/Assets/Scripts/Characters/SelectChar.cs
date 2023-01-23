@@ -19,7 +19,7 @@ public class SelectChar : MonoBehaviour, IPointerClickHandler, IPointerDownHandl
     {
         Debug.Log("Selected character: " + transform.GetComponent<Character>().info.id);
         GameManager.inst.charToEquipGear = transform.GetComponent<Character>().info.id;
-        sm.ChangeScene("Gear");
+        sm.ChangeScene("CharInfo");
     }
 
     public void OnPointerDown(PointerEventData eventData) { }
