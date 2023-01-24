@@ -7,16 +7,15 @@ public class LevelUpItem : MonoBehaviour
 {
     public TextMeshProUGUI[] texts;
 
-    public int statsAm;
-    int type;
+    public int statsAm, type, amount;
     string typeTxt;
 
     void Start()
     {
-        SetType();
+        SetItemInfo();
     }
 
-    void SetType()
+    void SetItemInfo()
     {
         switch(type)
         {
@@ -29,7 +28,26 @@ public class LevelUpItem : MonoBehaviour
             case 2:
                 typeTxt = "SR";
                 break;
+            default:
+                break;
         }
         texts[1].text = typeTxt;
+
+        switch (typeTxt)
+        {
+            case "C":
+                statsAm =  10;
+                break;
+            case "R":
+                statsAm = 20;
+                break;
+            case "SR":
+                statsAm = 30;
+                break;
+            default:
+                break;
+        }
+
+        texts[0].text = amount.ToString();
     }
 }

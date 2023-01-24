@@ -864,6 +864,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   charGO: {fileID: 6430165257657577314, guid: 39ff8fdd6e5e36547bc1fa232bde2427, type: 3}
   pool: {fileID: 0}
+  materialGO: {fileID: 0}
   charPos: {fileID: 878082961}
   statsTxt:
   - {fileID: 1745892663}
@@ -874,6 +875,9 @@ MonoBehaviour:
   - {fileID: 1627534753}
   - {fileID: 971172194}
   idToEquip: 0
+  amountC: 0
+  amountR: 0
+  amountSR: 0
   allCharList: []
 --- !u!1 &875895279
 GameObject:
@@ -1964,6 +1968,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 860649844}
+        m_TargetAssemblyTypeName: LevelUpMananager, Assembly-CSharp
+        m_MethodName: SaveAmounts
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 860649843}
         m_TargetAssemblyTypeName: ScenesManager, Assembly-CSharp
         m_MethodName: ChangeScene
