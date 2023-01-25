@@ -2,18 +2,32 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class LevelUpItem : MonoBehaviour
+public class LevelUpItem : MonoBehaviour, IPointerClickHandler, IPointerDownHandler, IPointerUpHandler
 {
     public TextMeshProUGUI[] texts;
 
     public int statsAm, type, amount;
     string typeTxt;
 
+    LevelUpMananager lum;
+
     void Start()
     {
+        lum = FindObjectOfType<LevelUpMananager>();
+        
         SetItemInfo();
     }
+
+    public void OnPointerClick(PointerEventData pointerEventData)
+    {
+        SelectMaterial();
+    }
+
+    public void OnPointerDown(PointerEventData eventData) { }
+
+    public void OnPointerUp(PointerEventData eventData) { }
 
     void SetItemInfo()
     {
@@ -49,5 +63,10 @@ public class LevelUpItem : MonoBehaviour
         }
 
         texts[0].text = amount.ToString();
+    }
+
+    public void SelectMaterial()
+    {
+        Debug.Log("a");
     }
 }

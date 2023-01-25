@@ -7,7 +7,7 @@ using UnityEngine;
 
 public class LevelUpMananager : MonoBehaviour
 {
-    public GameObject charGO, pool, materialGO;
+    public GameObject charGO, pool, selectedPool, materialGO;
     public Transform charPos;
     public TextMeshProUGUI[] statsTxt, statsBonusTxt;
 
@@ -20,6 +20,7 @@ public class LevelUpMananager : MonoBehaviour
         allCharList = GameManager.allChar;
 
         pool = GameObject.FindGameObjectWithTag("Pool");
+        pool = GameObject.Find("SelectedPool");
 
         idToEquip = GameManager.inst.charToEquipGear;
         charGO.transform.GetComponent<Character>().info = GameManager.inst.GetCharInfoById(idToEquip);
@@ -32,20 +33,33 @@ public class LevelUpMananager : MonoBehaviour
 
     void SetAmounts()
     {
-        SetAmount(amountC, 10);
-        SetAmount(amountR, 20);
-        SetAmount(amountSR, 30);
-    }
+        PlayerPrefs.DeleteAll();
 
-    void SetAmount(int amount, int num)
-    {
-        if(PlayerPrefs.HasKey(amount.ToString()))
+        if (PlayerPrefs.HasKey("amountC"))
         {
-            amount = PlayerPrefs.GetInt(amount.ToString());
+            amountC = PlayerPrefs.GetInt("amountC");
         }
         else
         {
-            amount = num;
+            amountC = 10;
+        }
+
+        if (PlayerPrefs.HasKey("amountR"))
+        {
+            amountR = PlayerPrefs.GetInt("amountR");
+        }
+        else
+        {
+            amountR = 10;
+        }
+
+        if (PlayerPrefs.HasKey("amountSR"))
+        {
+            amountSR = PlayerPrefs.GetInt("amountSR");
+        }
+        else
+        {
+            amountSR = 10;
         }
     }
 
@@ -145,6 +159,7 @@ public class LevelUpMananager : MonoBehaviour
                 allCharList[i].level = charGO.transform.GetComponent<Character>().info.level;
             }
         }
+
         GameManager.inst.SaveListsToJson();
     }
 }
