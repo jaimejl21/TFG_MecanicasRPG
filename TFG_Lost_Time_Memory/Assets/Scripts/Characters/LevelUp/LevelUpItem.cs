@@ -8,8 +8,9 @@ public class LevelUpItem : MonoBehaviour, IPointerClickHandler, IPointerDownHand
 {
     public TextMeshProUGUI[] texts;
 
-    public int statsAm, type, amount;
+    public int statsAm, type, amount, position;
     string typeTxt;
+    bool selected = false;
 
     LevelUpMananager lum;
 
@@ -22,7 +23,7 @@ public class LevelUpItem : MonoBehaviour, IPointerClickHandler, IPointerDownHand
 
     public void OnPointerClick(PointerEventData pointerEventData)
     {
-        SelectMaterial();
+        lum.SelectMaterial(type);
     }
 
     public void OnPointerDown(PointerEventData eventData) { }
@@ -63,10 +64,5 @@ public class LevelUpItem : MonoBehaviour, IPointerClickHandler, IPointerDownHand
         }
 
         texts[0].text = amount.ToString();
-    }
-
-    public void SelectMaterial()
-    {
-        Debug.Log("a");
     }
 }

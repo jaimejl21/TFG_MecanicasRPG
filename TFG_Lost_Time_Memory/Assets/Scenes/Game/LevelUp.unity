@@ -880,6 +880,8 @@ MonoBehaviour:
   amountR: 0
   amountSR: 0
   allCharList: []
+  materialsList: []
+  selectedList: []
 --- !u!1 &875895279
 GameObject:
   m_ObjectHideFlags: 0

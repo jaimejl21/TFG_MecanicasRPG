@@ -12,15 +12,21 @@ public class LevelUpMananager : MonoBehaviour
     public TextMeshProUGUI[] statsTxt, statsBonusTxt;
 
     public int idToEquip, amountC, amountR, amountSR;
+    int selectedC = 0, selectedR = 0, selectedSR = 0;
 
     public List<Character.Info> allCharList;
+    public List<GameObject> materialsList;
+    public List<GameObject> selectedList;
 
     private void Start()
     {
         allCharList = GameManager.allChar;
 
+        materialsList = new List<GameObject>();
+        selectedList = new List<GameObject>();
+
         pool = GameObject.FindGameObjectWithTag("Pool");
-        pool = GameObject.Find("SelectedPool");
+        selectedPool = GameObject.Find("SelectedPool");
 
         idToEquip = GameManager.inst.charToEquipGear;
         charGO.transform.GetComponent<Character>().info = GameManager.inst.GetCharInfoById(idToEquip);
@@ -76,8 +82,39 @@ public class LevelUpMananager : MonoBehaviour
         {
             materialGO.GetComponent<LevelUpItem>().type = type;
             materialGO.GetComponent<LevelUpItem>().amount = amount;
+            materialGO.GetComponent<LevelUpItem>().position = materialsList.Count;
+            materialsList.Add(materialGO);
             Instantiate(materialGO, pool.transform);
         }  
+    }
+
+    public void SelectMaterial(int type)
+    {
+        switch(type)
+        {
+            case 0:
+                if(selectedC == 0)
+                {
+                    selectedC++;
+                    materialGO.GetComponent<LevelUpItem>().type = type;
+                    materialGO.GetComponent<LevelUpItem>().amount = selectedC;
+                    materialGO.GetComponent<LevelUpItem>().position = selectedList.Count;
+                    selectedList.Add(materialGO);
+                    Instantiate(materialGO, selectedPool.transform);
+                }
+                else
+                {
+
+                }
+                break;
+            case 1:
+                break;
+            case 2:
+                break;
+            default:
+                break;
+        }
+        
     }
 
     public void UpdateCharStats(bool add, Gear.Info ginfo)
