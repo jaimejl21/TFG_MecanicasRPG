@@ -6,11 +6,10 @@ using UnityEngine.EventSystems;
 
 public class LevelUpItem : MonoBehaviour, IPointerClickHandler, IPointerDownHandler, IPointerUpHandler
 {
-    public TextMeshProUGUI[] texts;
+    public TextMeshProUGUI typeTxt, amountTxt;
 
-    public int statsAm, type, amount, position;
-    string typeTxt;
-    bool selected = false;
+    public int statsAm, amount, type, position;
+    public bool selected;
 
     LevelUpMananager lum;
 
@@ -23,7 +22,8 @@ public class LevelUpItem : MonoBehaviour, IPointerClickHandler, IPointerDownHand
 
     public void OnPointerClick(PointerEventData pointerEventData)
     {
-        lum.SelectMaterial(type);
+        lum.SelectMaterial(selected, type, position);
+        //Debug.Log("Click type " + type + " position " + position);
     }
 
     public void OnPointerDown(PointerEventData eventData) { }
@@ -35,20 +35,19 @@ public class LevelUpItem : MonoBehaviour, IPointerClickHandler, IPointerDownHand
         switch(type)
         {
             case 0:
-                typeTxt = "C";
+                typeTxt.text = "C";
                 break;
             case 1:
-                typeTxt = "R";
+                typeTxt.text = "R";
                 break;
             case 2:
-                typeTxt = "SR";
+                typeTxt.text = "SR";
                 break;
             default:
                 break;
         }
-        texts[1].text = typeTxt;
 
-        switch (typeTxt)
+        switch (typeTxt.text)
         {
             case "C":
                 statsAm =  10;
@@ -63,6 +62,13 @@ public class LevelUpItem : MonoBehaviour, IPointerClickHandler, IPointerDownHand
                 break;
         }
 
-        texts[0].text = amount.ToString();
+        amountTxt.text = "" + amount;
+    }
+
+    public void SetAmount(int am)
+    {
+        amount = am;
+        amountTxt.text = "" + amount;
+        Debug.Log("Amount changed to " + amount);
     }
 }
