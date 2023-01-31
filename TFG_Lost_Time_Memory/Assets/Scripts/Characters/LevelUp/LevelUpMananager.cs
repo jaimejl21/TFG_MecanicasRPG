@@ -10,6 +10,7 @@ public class LevelUpMananager : MonoBehaviour
     public GameObject charGO, pool, selectedPool, materialGO;
     public Transform charPos;
     public TextMeshProUGUI[] statsTxt, statsBonusTxt;
+    public TextMeshProUGUI lvTxt;
 
     public int idToEquip, amountC, amountR, amountSR;
     int selectedC = 0, selectedR, selectedSR;
@@ -26,6 +27,8 @@ public class LevelUpMananager : MonoBehaviour
         idToEquip = GameManager.inst.charToEquipGear;
         charGO.transform.GetComponent<Character>().info = GameManager.inst.GetCharInfoById(idToEquip);
         Instantiate(charGO, charPos);
+
+        lvTxt.text = "Lv. " + charGO.transform.GetComponent<Character>().info.level;
 
         SetAmounts();
         MaterialsInventory();
@@ -78,7 +81,7 @@ public class LevelUpMananager : MonoBehaviour
             materialGO.GetComponent<LevelUpItem>().type = type;
             materialGO.GetComponent<LevelUpItem>().amount = amount;
             materialGO.GetComponent<LevelUpItem>().selected = false;
-            GameObject aux = Instantiate(materialGO, pool.transform);
+            Instantiate(materialGO, pool.transform);
         }  
     }
 
@@ -233,21 +236,21 @@ public class LevelUpMananager : MonoBehaviour
         statsBonusTxt[2].text = "+" + charGO.transform.GetComponent<Character>().info.stats.extraHp;
     }
 
-    void AddSubtractStats(int statType, int amount)
-    {
-        if (statType == 0)
-        {
-            charGO.transform.GetComponent<Character>().info.stats.extraAtk += amount;
-        }
-        else if (statType == 1)
-        {
-            charGO.transform.GetComponent<Character>().info.stats.extraDef += amount;
-        }
-        else if (statType == 2)
-        {
-            charGO.transform.GetComponent<Character>().info.stats.extraHp += amount;
-        }
-    }
+    //void AddSubtractStats(int statType, int amount)
+    //{
+    //    if (statType == 0)
+    //    {
+    //        charGO.transform.GetComponent<Character>().info.stats.extraAtk += amount;
+    //    }
+    //    else if (statType == 1)
+    //    {
+    //        charGO.transform.GetComponent<Character>().info.stats.extraDef += amount;
+    //    }
+    //    else if (statType == 2)
+    //    {
+    //        charGO.transform.GetComponent<Character>().info.stats.extraHp += amount;
+    //    }
+    //}
 
     public void SaveAmounts()
     {

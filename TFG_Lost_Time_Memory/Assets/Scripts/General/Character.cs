@@ -18,13 +18,13 @@ public class Character : MonoBehaviour
         public int pos;
         public bool inTeam;
         public List<Gear.Info> gear;
-        public int level;
+        public float level;
         public Stats stats;
 
 
         public Info() { }
 
-        public Info(int id, int pos, bool inTeam, List<Gear.Info> gear, int level, Stats stats)
+        public Info(int id, int pos, bool inTeam, List<Gear.Info> gear, float level, Stats stats)
         {
             this.id = id;
             this.pos = pos;
@@ -48,7 +48,7 @@ public class Character : MonoBehaviour
         public float def;
         public float hp;
 
-        public Stats(float baseAtk, float baseDef, float baseHp, float extraAtk, float extraDef, float extraHp, float atk, float def, float hp)
+        public Stats(float baseAtk, float baseDef, float baseHp, float extraAtk, float extraDef, float extraHp)
         {
             this.baseAtk = baseAtk;
             this.baseDef = baseDef;

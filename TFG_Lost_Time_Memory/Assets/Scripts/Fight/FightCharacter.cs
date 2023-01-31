@@ -297,7 +297,7 @@ public class FightCharacter : MonoBehaviour, IPointerClickHandler, IPointerDownH
 
     public void Damage(float amount)
     {
-        amount = amount - defense;
+        amount -= defense;
         life -= amount;
         StartCoroutine(AnimDamage(amount));
         if(life <= 0)
@@ -347,10 +347,10 @@ public class FightCharacter : MonoBehaviour, IPointerClickHandler, IPointerDownH
         }
     }
 
-    IEnumerator WaitTime(float time)
-    {
-        yield return new WaitForSecondsRealtime(time);
-    }
+    //IEnumerator WaitTime(float time)
+    //{
+    //    yield return new WaitForSecondsRealtime(time);
+    //}
 
     IEnumerator AnimAttack()
     {

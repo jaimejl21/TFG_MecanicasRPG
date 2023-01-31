@@ -47,7 +47,7 @@ public class GearManager : MonoBehaviour
             {
                 gear.transform.GetComponent<Gear>().info = gearList[i];
                 int pos = gearList[i].objType;
-                GameObject aux = Instantiate(gear, gearSlots[pos].transform);
+                Instantiate(gear, gearSlots[pos].transform);
                 //aux.transform.GetComponent<GearItem>().SetGearColor();
                 gearSlots[pos].GetComponent<GearDropSlot>().item = gearSlots[pos].transform.GetChild(0).gameObject;
                 gearSlots[pos].transform.GetChild(0).GetComponent<GearDragHandler>().slotParent = gearSlots[pos].transform;
@@ -64,7 +64,7 @@ public class GearManager : MonoBehaviour
             gear.GetComponent<GearDragHandler>().slotParent = pool.transform;
             if (gear.GetComponent<Gear>().info.equiped != true)
             {
-                GameObject aux = Instantiate(gear, pool.transform);
+                Instantiate(gear, pool.transform);
                 //aux.transform.GetComponent<GearItem>().SetGearColor();
             }
         }
