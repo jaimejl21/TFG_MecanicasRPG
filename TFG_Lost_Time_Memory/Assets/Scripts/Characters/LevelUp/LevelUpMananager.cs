@@ -15,15 +15,10 @@ public class LevelUpMananager : MonoBehaviour
     int selectedC = 0, selectedR, selectedSR;
 
     public List<Character.Info> allCharList;
-    public List<GameObject> materialsList;
-    public List<GameObject> selectedList;
 
     private void Start()
     {
         allCharList = GameManager.allChar;
-
-        materialsList = new List<GameObject>();
-        selectedList = new List<GameObject>();
 
         pool = GameObject.FindGameObjectWithTag("Pool");
         selectedPool = GameObject.Find("SelectedPool");
@@ -82,59 +77,109 @@ public class LevelUpMananager : MonoBehaviour
         {
             materialGO.GetComponent<LevelUpItem>().type = type;
             materialGO.GetComponent<LevelUpItem>().amount = amount;
-            materialGO.GetComponent<LevelUpItem>().position = materialsList.Count;
             materialGO.GetComponent<LevelUpItem>().selected = false;
             GameObject aux = Instantiate(materialGO, pool.transform);
-            materialsList.Add(aux);
         }  
     }
 
-    public void SelectMaterial(bool selecType, int type, int position)
+    public void SelectMaterial(bool selecType, int type)
     {
         switch(type)
         {
             case 0:
-                SelectionManager(selecType, type, position, selectedC, amountC);
+                SelectionManager(selecType, type, ref selectedC, ref amountC);
                 break;
             case 1:
-                SelectionManager(selecType, type, position, selectedR, amountR);
+                SelectionManager(selecType, type, ref selectedR, ref amountR);
                 break;
             case 2:
-                SelectionManager(selecType, type, position, selectedSR, amountSR);
+                SelectionManager(selecType, type, ref selectedSR, ref amountSR);
                 break;
             default:
                 break;
         }
-        
     }
 
-    void SelectionManager(bool selecType, int type, int position, int selected, int amount)
+    void SelectionManager(bool selecType, int type, ref int selectedAm, ref int amount)
     {
-        if (selected == 0)
+        if(!selecType)
         {
-            selected++;
-            materialGO.GetComponent<LevelUpItem>().type = type;
-            materialGO.GetComponent<LevelUpItem>().amount = selected;
-            materialGO.GetComponent<LevelUpItem>().position = selectedList.Count;
-            materialGO.GetComponent<LevelUpItem>().selected = true;
-            GameObject aux = Instantiate(materialGO, selectedPool.transform);
-            selectedList.Add(aux);
-            amount--;
-            materialsList[position].transform.GetComponent<LevelUpItem>().SetAmount(amount);
+            if (selectedAm == 0)
+            {
+                selectedAm++;
+                materialGO.GetComponent<LevelUpItem>().type = type;
+                materialGO.GetComponent<LevelUpItem>().amount = selectedAm;
+                materialGO.GetComponent<LevelUpItem>().selected = true;
+                Instantiate(materialGO, selectedPool.transform);
+                amount--;
+                ChangeAmounts(pool, type, amount);
+            }
+            else if(amount == 1)
+            {
+               amount--;
+                for (int i = 0; i < pool.transform.childCount; i++)
+                {
+                    if (pool.transform.GetChild(i).transform.GetComponent<LevelUpItem>().type == type)
+                    {
+                        Destroy(pool.transform.GetChild(i).gameObject);
+                    }
+                }
+                selectedAm++;
+                ChangeAmounts(selectedPool, type, selectedAm);
+            }
+            else
+            {
+                selectedAm++;
+                ChangeAmounts(selectedPool, type, selectedAm);
+                Debug.Log("--------------");
+                amount--;
+                ChangeAmounts(pool, type, amount);
+            }
         }
         else
         {
-            selected++;
-            for (int i = 0; i < selectedList.Count; i++)
+            if (selectedAm == 1)
             {
-                if (selectedList[i].transform.GetComponent<LevelUpItem>().type == type)
+                selectedAm--;
+                for (int i = 0; i < selectedPool.transform.childCount; i++)
                 {
-                    selectedList[i].transform.GetComponent<LevelUpItem>().SetAmount(selected);
-                    Debug.Log("--------------");
+                    if (selectedPool.transform.GetChild(i).transform.GetComponent<LevelUpItem>().type == type)
+                    {
+                        Destroy(selectedPool.transform.GetChild(i).gameObject);
+                    }
                 }
+                amount++;
+                ChangeAmounts(pool, type, amount);
             }
-            amount--;
-            materialsList[position].transform.GetComponent<LevelUpItem>().SetAmount(amount);
+            else if (amount == 0)
+            {
+                amount++;
+                materialGO.GetComponent<LevelUpItem>().type = type;
+                materialGO.GetComponent<LevelUpItem>().amount = amount;
+                materialGO.GetComponent<LevelUpItem>().selected = false;
+                Instantiate(materialGO, pool.transform);
+                selectedAm--;
+                ChangeAmounts(selectedPool, type, selectedAm);
+            }
+            else
+            {
+                selectedAm--;
+                ChangeAmounts(selectedPool, type, selectedAm);
+                Debug.Log("--------------");
+                amount++;
+                ChangeAmounts(pool, type, amount);
+            }
+        }
+    }
+
+    void ChangeAmounts(GameObject poolType, int type, int amount)
+    {
+        for (int i = 0; i < poolType.transform.childCount; i++)
+        {
+            if (poolType.transform.GetChild(i).transform.GetComponent<LevelUpItem>().type == type)
+            {
+                poolType.transform.GetChild(i).transform.GetComponent<LevelUpItem>().SetAmount(amount);
+            }
         }
     }
 

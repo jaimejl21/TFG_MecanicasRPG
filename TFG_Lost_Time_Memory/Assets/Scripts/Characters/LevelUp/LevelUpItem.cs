@@ -8,7 +8,7 @@ public class LevelUpItem : MonoBehaviour, IPointerClickHandler, IPointerDownHand
 {
     public TextMeshProUGUI typeTxt, amountTxt;
 
-    public int statsAm, amount, type, position;
+    public int statsAm, amount, type;
     public bool selected;
 
     LevelUpMananager lum;
@@ -22,7 +22,7 @@ public class LevelUpItem : MonoBehaviour, IPointerClickHandler, IPointerDownHand
 
     public void OnPointerClick(PointerEventData pointerEventData)
     {
-        lum.SelectMaterial(selected, type, position);
+        lum.SelectMaterial(selected, type);
         //Debug.Log("Click type " + type + " position " + position);
     }
 
