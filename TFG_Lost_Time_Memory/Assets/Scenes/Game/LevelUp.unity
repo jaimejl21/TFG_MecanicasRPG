@@ -818,7 +818,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 000000/000000
+  m_text: 00000/00000
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1039,6 +1039,7 @@ MonoBehaviour:
   amountR: 0
   amountSR: 0
   allCharList: []
+  expSlider: {fileID: 895320188}
 --- !u!1 &875895279
 GameObject:
   m_ObjectHideFlags: 0
@@ -1267,6 +1268,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slider: {fileID: 895320190}
   sliderTxt: {fileID: 485384554}
+  lum: {fileID: 860649844}
+  max: 0
+  value: 0
 --- !u!114 &895320189
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1332,7 +1336,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 0}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 1
+  m_MaxValue: 320
   m_WholeNumbers: 1
   m_Value: 0
   m_OnValueChanged:

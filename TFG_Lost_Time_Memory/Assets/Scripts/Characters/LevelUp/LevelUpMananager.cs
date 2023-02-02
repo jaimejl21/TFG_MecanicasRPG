@@ -13,9 +13,10 @@ public class LevelUpMananager : MonoBehaviour
     public TextMeshProUGUI lvTxt;
 
     public int idToEquip, amountC, amountR, amountSR;
-    int selectedC = 0, selectedR, selectedSR;
+    int selectedC, selectedR, selectedSR, exp, maxExp, level;
 
     public List<Character.Info> allCharList;
+    public ExpSlider expSlider;
 
     private void Start()
     {
@@ -28,7 +29,11 @@ public class LevelUpMananager : MonoBehaviour
         charGO.transform.GetComponent<Character>().info = GameManager.inst.GetCharInfoById(idToEquip);
         Instantiate(charGO, charPos);
 
-        lvTxt.text = "Lv. " + charGO.transform.GetComponent<Character>().info.level;
+        level = charGO.transform.GetComponent<Character>().info.level;
+        exp = charGO.transform.GetComponent<Character>().info.exp;
+        maxExp = charGO.transform.GetComponent<Character>().info.expNextLv;
+
+        lvTxt.text = "Lv. " + level;
 
         SetAmounts();
         MaterialsInventory();
@@ -85,25 +90,25 @@ public class LevelUpMananager : MonoBehaviour
         }  
     }
 
-    public void SelectMaterial(bool selecType, int type)
+    public void SelectMaterial(bool selecType, int type, int expAm)
     {
         switch(type)
         {
             case 0:
-                SelectionManager(selecType, type, ref selectedC, ref amountC);
+                SelectionManager(selecType, type, expAm, ref selectedC, ref amountC);
                 break;
             case 1:
-                SelectionManager(selecType, type, ref selectedR, ref amountR);
+                SelectionManager(selecType, type, expAm, ref selectedR, ref amountR);
                 break;
             case 2:
-                SelectionManager(selecType, type, ref selectedSR, ref amountSR);
+                SelectionManager(selecType, type, expAm, ref selectedSR, ref amountSR);
                 break;
             default:
                 break;
         }
     }
 
-    void SelectionManager(bool selecType, int type, ref int selectedAm, ref int amount)
+    void SelectionManager(bool selecType, int type, int expAm, ref int selectedAm, ref int amount)
     {
         if(!selecType)
         {
@@ -134,10 +139,10 @@ public class LevelUpMananager : MonoBehaviour
             {
                 selectedAm++;
                 ChangeAmounts(selectedPool, type, selectedAm);
-                Debug.Log("--------------");
                 amount--;
                 ChangeAmounts(pool, type, amount);
             }
+            UpdateExp(selecType, expAm);
         }
         else
         {
@@ -168,10 +173,10 @@ public class LevelUpMananager : MonoBehaviour
             {
                 selectedAm--;
                 ChangeAmounts(selectedPool, type, selectedAm);
-                Debug.Log("--------------");
                 amount++;
                 ChangeAmounts(pool, type, amount);
             }
+            UpdateExp(selecType, expAm);
         }
     }
 
@@ -184,6 +189,33 @@ public class LevelUpMananager : MonoBehaviour
                 poolType.transform.GetChild(i).transform.GetComponent<LevelUpItem>().SetAmount(amount);
             }
         }
+    }
+
+    void UpdateExp(bool selectType, int expAm)
+    {
+        if (selectType)
+        {
+            exp -= expAm;
+            if (exp < 0)
+            {
+                level--;
+                lvTxt.text = "Lv. " + level;
+                maxExp -= 320;
+                exp = maxExp + exp;
+            }
+        }
+        else
+        {
+            exp += expAm;
+            if (exp >= maxExp)
+            {
+                level++;
+                lvTxt.text = "Lv. " + level;
+                exp -= maxExp;
+                maxExp += 320;
+            }
+        }
+        expSlider.UpdateValues(exp, maxExp);
     }
 
     public void UpdateCharStats(bool add, Gear.Info ginfo)
