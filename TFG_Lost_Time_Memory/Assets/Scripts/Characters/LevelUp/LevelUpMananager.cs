@@ -12,8 +12,8 @@ public class LevelUpMananager : MonoBehaviour
     public TextMeshProUGUI[] statsTxt, statsBonusTxt;
     public TextMeshProUGUI lvTxt;
 
-    public int idToEquip, amountC, amountR, amountSR;
-    int selectedC, selectedR, selectedSR, exp, maxExp, level;
+    public int idToEquip, amountC, amountR, amountSR, exp, maxExp, level;
+    int selectedC, selectedR, selectedSR, extraAtk = 0, extraDef = 0, extraHp = 0;
 
     public List<Character.Info> allCharList;
     public ExpSlider expSlider;
@@ -32,12 +32,13 @@ public class LevelUpMananager : MonoBehaviour
         level = charGO.transform.GetComponent<Character>().info.level;
         exp = charGO.transform.GetComponent<Character>().info.exp;
         maxExp = charGO.transform.GetComponent<Character>().info.expNextLv;
+        expSlider.UpdateValues(exp, maxExp);
 
         lvTxt.text = "Lv. " + level;
 
         SetAmounts();
         MaterialsInventory();
-        InitBaseStatsTxt();
+        UpdateBaseStatsTxt();
     }
 
     void SetAmounts()
@@ -202,6 +203,9 @@ public class LevelUpMananager : MonoBehaviour
                 lvTxt.text = "Lv. " + level;
                 maxExp -= 320;
                 exp = maxExp + exp;
+                extraAtk -= 5;
+                extraDef -= 2;
+                extraHp -= 30;
             }
         }
         else
@@ -213,48 +217,16 @@ public class LevelUpMananager : MonoBehaviour
                 lvTxt.text = "Lv. " + level;
                 exp -= maxExp;
                 maxExp += 320;
+                extraAtk += 5;
+                extraDef += 2;
+                extraHp += 30;
             }
         }
         expSlider.UpdateValues(exp, maxExp);
-    }
-
-    public void UpdateCharStats(bool add, Gear.Info ginfo)
-    {
-        if(add)
-        {
-            if (ginfo.objType == 0 || ginfo.objType == 3)
-            {
-                charGO.transform.GetComponent<Character>().info.stats.extraAtk += ginfo.statAmount;
-            }
-            else if (ginfo.objType == 1 || ginfo.objType == 4)
-            {
-                charGO.transform.GetComponent<Character>().info.stats.extraDef += ginfo.statAmount;
-            }
-            else if (ginfo.objType == 2 || ginfo.objType == 5)
-            {
-                charGO.transform.GetComponent<Character>().info.stats.extraHp += ginfo.statAmount;
-            }
-        }
-        else
-        {
-            if (ginfo.objType == 0 || ginfo.objType == 3)
-            {
-                charGO.transform.GetComponent<Character>().info.stats.extraAtk -= ginfo.statAmount;
-            }
-            else if (ginfo.objType == 1 || ginfo.objType == 4)
-            {
-                charGO.transform.GetComponent<Character>().info.stats.extraDef -= ginfo.statAmount;
-            }
-            else if (ginfo.objType == 2 || ginfo.objType == 5)
-            {
-                charGO.transform.GetComponent<Character>().info.stats.extraHp -= ginfo.statAmount;
-            }
-        }
-        charGO.transform.GetComponent<Character>().info.stats.UpdateStats();
         UpdateStatsTxt();
     }
 
-    void InitBaseStatsTxt()
+    void UpdateBaseStatsTxt()
     {
         statsTxt[0].text = "ATK: " + charGO.transform.GetComponent<Character>().info.stats.baseAtk;
         statsTxt[1].text = "DEF: " + charGO.transform.GetComponent<Character>().info.stats.baseDef;
@@ -263,9 +235,9 @@ public class LevelUpMananager : MonoBehaviour
 
     void UpdateStatsTxt()
     {
-        statsBonusTxt[0].text = "+" + charGO.transform.GetComponent<Character>().info.stats.extraAtk;
-        statsBonusTxt[1].text = "+" + charGO.transform.GetComponent<Character>().info.stats.extraDef;
-        statsBonusTxt[2].text = "+" + charGO.transform.GetComponent<Character>().info.stats.extraHp;
+        statsBonusTxt[0].text = "+" + extraAtk;
+        statsBonusTxt[1].text = "+" + extraDef;
+        statsBonusTxt[2].text = "+" + extraHp;
     }
 
     //void AddSubtractStats(int statType, int amount)
@@ -284,20 +256,50 @@ public class LevelUpMananager : MonoBehaviour
     //    }
     //}
 
+    public void LvlUp()
+    {
+        foreach (Transform child in selectedPool.transform)
+        {
+            Destroy(child.gameObject);
+        }
+
+        charGO.transform.GetComponent<Character>().info.stats.baseAtk += extraAtk;
+        charGO.transform.GetComponent<Character>().info.stats.baseDef += extraDef;
+        charGO.transform.GetComponent<Character>().info.stats.baseHp += extraHp;
+
+        extraAtk = 0;
+        extraDef = 0;
+        extraHp = 0;
+
+        UpdateBaseStatsTxt();
+        UpdateStatsTxt();
+    }
+
     public void SaveAmounts()
     {
         PlayerPrefs.SetInt("amountC", amountC);
         PlayerPrefs.SetInt("amountR", amountR);
         PlayerPrefs.SetInt("amountSR", amountSR);
 
+        charGO.transform.GetComponent<Character>().info.level = level;
+        charGO.transform.GetComponent<Character>().info.exp = exp;
+        charGO.transform.GetComponent<Character>().info.expNextLv = maxExp;
+
         for (int i = 0; i < allCharList.Count; i++)
         {
             if (allCharList[i].id == idToEquip)
             {
                 allCharList[i].level = charGO.transform.GetComponent<Character>().info.level;
+                allCharList[i].exp = charGO.transform.GetComponent<Character>().info.exp;
+                allCharList[i].expNextLv = charGO.transform.GetComponent<Character>().info.expNextLv;
+                allCharList[i].stats.baseAtk = charGO.transform.GetComponent<Character>().info.stats.baseAtk;
+                allCharList[i].stats.baseDef = charGO.transform.GetComponent<Character>().info.stats.baseDef;
+                allCharList[i].stats.baseHp = charGO.transform.GetComponent<Character>().info.stats.baseHp;
+                Debug.Log("id: " + allCharList[i].id + " level: " + allCharList[i].level + " exp: " + allCharList[i].exp + " expNextLvl: " + allCharList[i].expNextLv);
             }
         }
 
+        GameManager.allChar = allCharList;
         GameManager.inst.SaveListsToJson();
     }
 }

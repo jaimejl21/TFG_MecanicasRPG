@@ -11,12 +11,6 @@ public class ExpSlider : MonoBehaviour
     public LevelUpMananager lum;
 
     public int max, value;
-    
-    void Start()
-    {
-        max = lum.charGO.transform.GetComponent<Character>().info.expNextLv;
-        UpdateMaxValue();
-    }
 
     public void UpdateValue(int exp)
     {
