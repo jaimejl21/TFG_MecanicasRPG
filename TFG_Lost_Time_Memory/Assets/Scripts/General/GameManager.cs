@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
 
     public int charToEquipGear = 0;
     public bool restartPP;
+    public int coins = 1000;
 
     [System.Serializable]
     public class ListsToJson
@@ -74,21 +75,21 @@ public class GameManager : MonoBehaviour
 
         if (started == 0)
         {
-            Gear.Info gi = new Gear.Info(-1, 10, -1, -1, false, -1);
+            Gear.Info gi = new Gear.Info(-1, 10, -1, -1, 0, false, -1);
             for (int i = 0; i < 18; i++)
             {
                 if(i<6)
                 {
-                    allGear.Add(new Gear.Info(i, 10, i, 0, false, -1));
+                    allGear.Add(new Gear.Info(i, 10, i, 0, 0,false, -1));
                     allEnemies.Add(new Character.Info(i, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
                 }
                 else if((i > 5) && (i < 12))
                 {
-                    allGear.Add(new Gear.Info(i, 10, (i-6), 1, false, -1));
+                    allGear.Add(new Gear.Info(i, 10, (i-6), 1, 1, false, -1));
                 }
                 else
                 {
-                    allGear.Add(new Gear.Info(i, 10, (i - 12), 2, false, -1));
+                    allGear.Add(new Gear.Info(i, 10, (i - 12), 2, 2, false, -1));
                 }
                 allChar.Add(new Character.Info(i, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
             }

@@ -7,22 +7,29 @@ using UnityEngine.UI;
 
 public class MerchantItem : MonoBehaviour, IPointerClickHandler, IPointerDownHandler, IPointerUpHandler
 {
-    public TextMeshProUGUI text;
     string typeName;
+    public int price;
+
+    MerchantManager mm;
+
+    public TextMeshProUGUI text;
 
     [SerializeField]
     Color statTypeColor;
 
     void Start()
     {
+        mm = FindObjectOfType<MerchantManager>();
+        
         SetName();
         gameObject.transform.GetChild(0).gameObject.GetComponent<TextMeshProUGUI>().text = "" + transform.GetComponent<Gear>().info.id + "\n" + typeName;
         SelectGearColor();
+        SetPrice();
     }
 
     public void OnPointerClick(PointerEventData pointerEventData)
     {
-        //Debug.Log("Click type " + type + " position " + position);
+        mm.ChangeItemInfo(gameObject);
     }
 
     public void OnPointerDown(PointerEventData eventData) { }
@@ -81,5 +88,24 @@ public class MerchantItem : MonoBehaviour, IPointerClickHandler, IPointerDownHan
     public void SetGearColor()
     {
         gameObject.transform.GetComponent<Image>().color = statTypeColor;
+    }
+
+    public void SetPrice()
+    {
+        int rarity = gameObject.GetComponent<Gear>().info.rarity;
+        switch(rarity)
+        {
+            case 0:
+                price = 60;
+                break;
+            case 1:
+                price = 120;
+                break;
+            case 2:
+                price = 180;
+                break;
+            default:
+                break;
+        }
     }
 }
