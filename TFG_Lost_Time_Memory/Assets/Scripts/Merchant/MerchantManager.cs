@@ -8,14 +8,14 @@ using UnityEngine.UI;
 
 public class MerchantManager : MonoBehaviour
 {
-    public GameObject pool, merchantItem, buyTabPanel, sellTabPanel;
+    public GameObject pool, merchantItem, buyTabPanel, sellTabPanel, goSelected;
     public Transform itemPos;
     public List<Gear.Info> sellGearList, buyGearList;
     public TextMeshProUGUI[] itemInfoTxts;
     public TextMeshProUGUI coinsTxt;
     public Button[] btns;
 
-    public int coins;
+    public int coins, idGearCount;
 
     private void Start()
     {
@@ -24,6 +24,8 @@ public class MerchantManager : MonoBehaviour
 
         coins = GameManager.inst.coins;
         coinsTxt.text = "Coins: " + coins;
+
+        idGearCount = GameManager.inst.idGearCount;
 
         for (int i = 0; i < 18; i++)
         {
@@ -44,20 +46,78 @@ public class MerchantManager : MonoBehaviour
         BuyTabBtn();
     }
 
+    void UpdateCoinsTxt()
+    {
+        coinsTxt.text = "Coins: " + coins;
+        GameManager.inst.coins = coins;
+    }
+
+    public void BuyBtn()
+    {
+        for(int i = 0; i < buyGearList.Count; i++)
+        {
+            if(buyGearList[i].id == itemPos.GetChild(0).gameObject.GetComponent<Gear>().info.id)
+            {
+                coins -= goSelected.GetComponent<MerchantItem>().price;
+                UpdateCoinsTxt();
+                Gear.Info gi = goSelected.GetComponent<Gear>().info;
+                gi.id = idGearCount;
+                idGearCount++;
+                PlayerPrefs.SetInt("idGearCount", idGearCount);
+                GameManager.inst.idGearCount = idGearCount;
+                sellGearList.Add(gi);
+                buyGearList.RemoveAt(i);
+                Destroy(goSelected);
+                ResetItemInfo();
+                GameManager.allGear = sellGearList;
+                GameManager.inst.SaveListsToJson();
+            }
+        }      
+    }
+
+    public void SellBtn()
+    {
+        for (int i = 0; i < sellGearList.Count; i++)
+        {
+            if (sellGearList[i].id == goSelected.GetComponent<Gear>().info.id)
+            {
+                coins += goSelected.GetComponent<MerchantItem>().price;
+                UpdateCoinsTxt();
+                idGearCount--;
+                PlayerPrefs.SetInt("idGearCount", idGearCount);
+                GameManager.inst.idGearCount = idGearCount;
+                sellGearList.RemoveAt(i);
+                Destroy(goSelected);
+                ResetItemInfo();
+                GameManager.allGear = sellGearList;
+                GameManager.inst.SaveListsToJson();
+            }
+        }
+    }
+
     public void ChangeItemInfo(GameObject go)
     {
+        goSelected = go;
         if(itemPos.childCount != 0)
         {
             Destroy(itemPos.GetChild(0).gameObject);
         }
-        Debug.Log("Rarity: " + go.GetComponent<Gear>().info.rarity);
-        Debug.Log("Price: " + go.GetComponent<MerchantItem>().price);
+        //Debug.Log("Rarity: " + go.GetComponent<Gear>().info.rarity);
+        //Debug.Log("Price: " + go.GetComponent<MerchantItem>().price);
         merchantItem.GetComponent<Gear>().info = go.GetComponent<Gear>().info;
         merchantItem.GetComponent<MerchantItem>().price = go.GetComponent<MerchantItem>().price;
         Instantiate(merchantItem, itemPos);
         itemInfoTxts[0].text = "Price: " + merchantItem.GetComponent<MerchantItem>().price;
         itemInfoTxts[1].text = "Level: " + 1;
-        itemInfoTxts[2].text = "Stats: " + merchantItem.GetComponent<Gear>().info.statAmount;      
+        itemInfoTxts[2].text = "Stats: " + merchantItem.GetComponent<Gear>().info.statAmount;     
+        if(goSelected.GetComponent<MerchantItem>().price > coins)
+        {
+            btns[2].interactable = false;
+        }
+        else
+        {
+            btns[2].interactable = true;
+        }
     }
 
     public void ChangeInventory()
@@ -110,7 +170,8 @@ public class MerchantManager : MonoBehaviour
         sellTabPanel.SetActive(true);       
         buyTabPanel.SetActive(false);
         ChangeInventory();
-        btns[2].gameObject.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "Sell";
+        btns[2].gameObject.SetActive(false);
+        btns[3].gameObject.SetActive(true);
     }
 
     public void BuyTabBtn()
@@ -120,6 +181,7 @@ public class MerchantManager : MonoBehaviour
         buyTabPanel.SetActive(true);
         sellTabPanel.SetActive(false);
         ChangeInventory();
-        btns[2].gameObject.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "Buy";
+        btns[3].gameObject.SetActive(false);
+        btns[2].gameObject.SetActive(true);
     }
 }

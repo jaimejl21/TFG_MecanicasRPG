@@ -43,33 +43,20 @@ public class LevelUpMananager : MonoBehaviour
 
     void SetAmounts()
     {
-        PlayerPrefs.DeleteAll();
+        GetPlayerPrefs(ref amountC, 10);
+        GetPlayerPrefs(ref amountR, 10);
+        GetPlayerPrefs(ref amountSR, 10);
+    }
 
-        if (PlayerPrefs.HasKey("amountC"))
+    void GetPlayerPrefs(ref int var, int num)
+    {
+        if (PlayerPrefs.HasKey(nameof(var)))
         {
-            amountC = PlayerPrefs.GetInt("amountC");
+            var = PlayerPrefs.GetInt(nameof(var));
         }
         else
         {
-            amountC = 10;
-        }
-
-        if (PlayerPrefs.HasKey("amountR"))
-        {
-            amountR = PlayerPrefs.GetInt("amountR");
-        }
-        else
-        {
-            amountR = 10;
-        }
-
-        if (PlayerPrefs.HasKey("amountSR"))
-        {
-            amountSR = PlayerPrefs.GetInt("amountSR");
-        }
-        else
-        {
-            amountSR = 10;
+            var = num;
         }
     }
 
