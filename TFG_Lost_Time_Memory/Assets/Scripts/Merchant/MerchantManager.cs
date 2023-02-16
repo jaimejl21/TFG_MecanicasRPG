@@ -109,15 +109,22 @@ public class MerchantManager : MonoBehaviour
         Instantiate(merchantItem, itemPos);
         itemInfoTxts[0].text = "Price: " + merchantItem.GetComponent<MerchantItem>().price;
         itemInfoTxts[1].text = "Level: " + 1;
-        itemInfoTxts[2].text = "Stats: " + merchantItem.GetComponent<Gear>().info.statAmount;     
-        if(goSelected.GetComponent<MerchantItem>().price > coins)
+        itemInfoTxts[2].text = "Stats: " + merchantItem.GetComponent<Gear>().info.statAmount;    
+        if(btns[0].interactable == false)
         {
-            btns[2].interactable = false;
-        }
-        else
+            if (goSelected.GetComponent<MerchantItem>().price > coins)
+            {
+                btns[2].interactable = false;
+            }
+            else
+            {
+                btns[2].interactable = true;
+            }
+        }else if(btns[1].interactable == false)
         {
-            btns[2].interactable = true;
+            btns[3].interactable = true;
         }
+
     }
 
     public void ChangeInventory()
@@ -149,6 +156,11 @@ public class MerchantManager : MonoBehaviour
         itemInfoTxts[0].text = "Price: ";
         itemInfoTxts[1].text = "Level: ";
         itemInfoTxts[2].text = "Stats: ";
+
+        btns[2].interactable = false;
+        btns[3].interactable = false;
+
+        goSelected = null;
     }
 
     public void SetInventory(List<Gear.Info> list)

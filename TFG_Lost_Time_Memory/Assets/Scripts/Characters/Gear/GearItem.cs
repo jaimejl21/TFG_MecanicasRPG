@@ -10,13 +10,14 @@ public class GearItem : MonoBehaviour
     string typeName;
 
     [SerializeField]
-    Color statTypeColor;
+    Color statTypeColor, rarityColor;
 
     void Start()
     {
         SetName();
         gameObject.transform.GetChild(0).gameObject.GetComponent<TextMeshProUGUI>().text = "" + transform.GetComponent<Gear>().info.id + "\n" + typeName;
-        SelectGearColor();
+        SetGearStatColor();
+        SetRarityColor();
     }
 
     public void SetName()
@@ -45,22 +46,19 @@ public class GearItem : MonoBehaviour
         }
     }
 
-    void SelectGearColor()
+    void SetGearStatColor()
     {
         int statType = gameObject.transform.GetComponent<Gear>().info.statType;
         switch(statType)
         {
             case 0:
-                //statTypeColor = new Color(246f, 153f, 133f, 255f);
-                statTypeColor = Color.red;
+                statTypeColor = new Color(.5f, 0f, 0f, 1f);
                 break;
             case 1:
-                //statTypeColor = new Color(189f, 133f, 246f, 255f);
-                statTypeColor = Color.blue;
+                statTypeColor = new Color(0f, 0f, .5f, 1f);
                 break;
             case 2:
-                //statTypeColor = new Color(133f, 225f, 246f, 255f);
-                statTypeColor = Color.green;
+                statTypeColor = new Color(0f, .5f, 0f, 1f);
                 break;
             default:
                 break;
@@ -68,8 +66,23 @@ public class GearItem : MonoBehaviour
         gameObject.transform.GetChild(0).gameObject.GetComponent<TextMeshProUGUI>().color = statTypeColor;
     }
 
-    public void SetGearColor()
+    public void SetRarityColor()
     {
-        gameObject.transform.GetComponent<Image>().color = statTypeColor;
+        int rarity = gameObject.GetComponent<Gear>().info.rarity;
+        switch (rarity)
+        {
+            case 0:
+                rarityColor = new Color(0.5f, 0.5f, 0.5f, 1f);
+                break;
+            case 1:
+                rarityColor = new Color(0.5f, 0f, 1f, 1f);
+                break;
+            case 2:
+                rarityColor = new Color(1f, 0.7f, 0f, 1f);
+                break;
+            default:
+                break;
+        }
+        gameObject.transform.GetComponent<Image>().color = rarityColor;
     }
 }

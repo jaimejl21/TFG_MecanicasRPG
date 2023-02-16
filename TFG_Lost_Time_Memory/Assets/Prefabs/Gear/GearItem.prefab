@@ -93,6 +93,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 8535602807050464630}
+  statTypeColor: {r: 0, g: 0, b: 0, a: 0}
+  rarityColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &3026952365391508580
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -107,8 +109,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   info:
     id: 0
-    type: 0
+    statAmount: 0
+    objType: 0
+    statType: 0
+    rarity: 0
     equiped: 0
+    characterId: 0
 --- !u!114 &1923669206259557484
 MonoBehaviour:
   m_ObjectHideFlags: 0
