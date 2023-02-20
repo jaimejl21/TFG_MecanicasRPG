@@ -54,9 +54,11 @@ public class MerchantManager : MonoBehaviour
 
     public void BuyBtn()
     {
-        for(int i = 0; i < buyGearList.Count; i++)
+        bool found = false;
+        int i = 0;
+        while(!found)
         {
-            if(buyGearList[i].id == itemPos.GetChild(0).gameObject.GetComponent<Gear>().info.id)
+            if (buyGearList[i].id == itemPos.GetChild(0).gameObject.GetComponent<Gear>().info.id)
             {
                 coins -= goSelected.GetComponent<MerchantItem>().price;
                 UpdateCoinsTxt();
@@ -71,27 +73,30 @@ public class MerchantManager : MonoBehaviour
                 ResetItemInfo();
                 GameManager.allGear = sellGearList;
                 GameManager.inst.SaveListsToJson();
+                found = true;
             }
-        }      
+            i++;
+        }
     }
 
     public void SellBtn()
     {
-        for (int i = 0; i < sellGearList.Count; i++)
+        bool found = false;
+        int i = 0;
+        while(!found)
         {
             if (sellGearList[i].id == goSelected.GetComponent<Gear>().info.id)
             {
                 coins += goSelected.GetComponent<MerchantItem>().price;
                 UpdateCoinsTxt();
-                idGearCount--;
-                PlayerPrefs.SetInt("idGearCount", idGearCount);
-                GameManager.inst.idGearCount = idGearCount;
                 sellGearList.RemoveAt(i);
                 Destroy(goSelected);
                 ResetItemInfo();
                 GameManager.allGear = sellGearList;
                 GameManager.inst.SaveListsToJson();
+                found = true;
             }
+            i++;
         }
     }
 

@@ -258,7 +258,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   charToEquipGear: 0
-  restartPP: 0
+  restartPP: 1
   coins: 0
   idGearCount: 0
   idCharCount: 0
