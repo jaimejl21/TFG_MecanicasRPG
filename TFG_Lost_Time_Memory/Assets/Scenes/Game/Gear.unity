@@ -160,8 +160,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -251}
-  m_SizeDelta: {x: 1100, y: 310.6}
+  m_AnchoredPosition: {x: -352.8, y: 32}
+  m_SizeDelta: {x: 800, y: 780}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &60920992
 MonoBehaviour:
@@ -407,7 +407,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 225.8}
+  m_AnchoredPosition: {x: 514.4, y: 29.3}
   m_SizeDelta: {x: 584.55, y: 525.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &124443475
@@ -1062,7 +1062,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   charGO: {fileID: 6430165257657577314, guid: 39ff8fdd6e5e36547bc1fa232bde2427, type: 3}
-  pool: {fileID: 0}
+  pool: {fileID: 2101950375}
   gear: {fileID: 6430165257657577314, guid: ffbecefdd4595184c8d4c5b085e80e1e, type: 3}
   gearSlots:
   - {fileID: 1727480249}
@@ -1088,6 +1088,7 @@ MonoBehaviour:
   atkGears: 0
   defGears: 0
   hpGears: 0
+  dragging: 0
   gearList: []
   allCharList: []
 --- !u!1 &875895279
@@ -2174,7 +2175,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1100, y: 310}
+  m_SizeDelta: {x: 740, y: 740}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1478412620
 MonoBehaviour:
@@ -3513,8 +3514,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 590.62, y: -251.37}
-  m_SizeDelta: {x: 20, y: 274.4}
+  m_AnchoredPosition: {x: 88.3, y: 30}
+  m_SizeDelta: {x: 20, y: 732.89}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2085321274
 MonoBehaviour:
@@ -3748,8 +3749,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_IgnoreLayout: 0
-  m_MinWidth: 1100
-  m_MinHeight: 310
+  m_MinWidth: 740
+  m_MinHeight: 740
   m_PreferredWidth: -1
   m_PreferredHeight: -1
   m_FlexibleWidth: -1

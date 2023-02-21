@@ -14,6 +14,7 @@ public class GearManager : MonoBehaviour
 
     public int idToEquip;
     public int atkGears = 0, defGears = 0, hpGears = 0;
+    public bool dragging = false;
     bool initialized = false;
 
     public List<Gear.Info> gearList;

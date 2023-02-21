@@ -16,6 +16,8 @@ public class TeamManager : MonoBehaviour
 
     public List<Character.Info> allCharList;
 
+    public bool dragging = false;
+
     void Start()
     {
         allCharList = GameManager.allChar.ToList();

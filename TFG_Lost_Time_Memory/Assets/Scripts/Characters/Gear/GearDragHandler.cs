@@ -9,15 +9,18 @@ public class GearDragHandler : MonoBehaviour, IDragHandler, IEndDragHandler, IBe
     public Transform startParent, dragParent;
     public static GameObject itemDragging;
     public Transform slotParent;
+    GearManager gm;
 
     void Start()
     {
+        gm = FindObjectOfType<GearManager>();
         dragParent = GameObject.FindGameObjectWithTag("DragParent").transform;
     }
 
     public void OnBeginDrag(PointerEventData eventData)
     {
         //Debug.Log("OnBeginDrag");
+        gm.dragging = true;
         itemDragging = gameObject;
         startPosition = transform.position;
         startParent = transform.parent;
@@ -33,7 +36,7 @@ public class GearDragHandler : MonoBehaviour, IDragHandler, IEndDragHandler, IBe
     public void OnEndDrag(PointerEventData eventData)
     {
         //Debug.Log("OnEndDrag");
-
+        gm.dragging = false;
         itemDragging = null;
         if(transform.parent == dragParent)
         {
