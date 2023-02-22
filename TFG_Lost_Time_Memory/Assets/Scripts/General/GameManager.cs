@@ -79,23 +79,23 @@ public class GameManager : MonoBehaviour
             idGearCount = 0;
             idCharCount = 0;
 
-            Gear.Info gi = new Gear.Info(-1, 10, -1, -1, 0, false, -1);
+            Gear.Info gi = new Gear.Info(-1, 10, -1, -1, 0, 0, 0, false, -1);
             for (int i = 0; i < 18; i++)
             {
                 if(i<6)
                 {
-                    allGear.Add(new Gear.Info(i, 10, i, 0, 0,false, -1));
+                    allGear.Add(new Gear.Info(i, 10, i, 0, 0, 0, 0, false, -1));
                     idGearCount++;
                     allEnemies.Add(new Character.Info(i, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
                 }
                 else if((i > 5) && (i < 12))
                 {
-                    allGear.Add(new Gear.Info(i, 10, (i-6), 1, 1, false, -1));
+                    allGear.Add(new Gear.Info(i, 10, (i-6), 1, 1, 0, 0, false, -1));
                     idGearCount++;
                 }
                 else
                 {
-                    allGear.Add(new Gear.Info(i, 10, (i - 12), 2, 2, false, -1));
+                    allGear.Add(new Gear.Info(i, 10, (i - 12), 2, 2, 0, 0, false, -1));
                     idGearCount++;
                 }
                 allChar.Add(new Character.Info(i, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));

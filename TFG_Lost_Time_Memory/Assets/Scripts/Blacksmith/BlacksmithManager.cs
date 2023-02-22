@@ -41,43 +41,12 @@ public class BlacksmithManager : MonoBehaviour
             Destroy(itemPos.GetChild(0).gameObject);
         }
         blacksmithItem.GetComponent<Gear>().info = go.GetComponent<Gear>().info;
-        //blacksmithItem.GetComponent<BlacksmithItem>().price = go.GetComponent<MerchantItem>().price;
         Instantiate(blacksmithItem, itemPos);
-        //itemInfoTxts[0].text = "Price: " + blacksmithItem.GetComponent<MerchantItem>().price;
-        itemInfoTxts[1].text = "Level: " + 1;
-        itemInfoTxts[2].text = "Stats: " + blacksmithItem.GetComponent<Gear>().info.statAmount;    
-        if(btns[0].interactable == false)
-        {
-            if (goSelected.GetComponent<MerchantItem>().price > coins)
-            {
-                btns[2].interactable = false;
-            }
-            else
-            {
-                btns[2].interactable = true;
-            }
-        }else if(btns[1].interactable == false)
-        {
-            btns[3].interactable = true;
-        }
-
-    }
-
-    void ResetItemInfo()
-    {
-        if (itemPos.childCount != 0)
-        {
-            Destroy(itemPos.GetChild(0).gameObject);
-        }
-
-        itemInfoTxts[0].text = "Price: ";
-        itemInfoTxts[1].text = "Level: ";
-        itemInfoTxts[2].text = "Stats: ";
-
-        btns[2].interactable = false;
-        btns[3].interactable = false;
-
-        goSelected = null;
+        itemInfoTxts[0].text = "Augment: " + blacksmithItem.GetComponent<Gear>().info.augment;
+        itemInfoTxts[1].text = "Stars: " + blacksmithItem.GetComponent<Gear>().info.stars;
+        itemInfoTxts[2].text = "Stats: " + blacksmithItem.GetComponent<Gear>().info.statAmount;
+        itemInfoTxts[3].text = "Materials: ";
+        itemInfoTxts[4].text = "Coins: ";
     }
 
     public void SetInventory(List<Gear.Info> list)
