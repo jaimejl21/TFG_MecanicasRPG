@@ -8,8 +8,9 @@ using UnityEngine.UI;
 public class BlacksmithItem : MonoBehaviour, IPointerClickHandler, IPointerDownHandler, IPointerUpHandler
 {
     string typeName;
-    int upMatInc, awMatInc, awPriceInc, upPriceInc, upInitPrice;
+    int upMatInc, awMatInc, awPriceInc, upPriceInc, upInitPrice, cumuPrice;
     public int upMat, awMat, awPrice, upPrice;
+    public bool upgrade = true;
 
     BlacksmithManager bm;
 
@@ -109,6 +110,14 @@ public class BlacksmithItem : MonoBehaviour, IPointerClickHandler, IPointerDownH
         int rarity = gameObject.GetComponent<Gear>().info.rarity;
         int augment = gameObject.GetComponent<Gear>().info.augment;
         int stars = gameObject.GetComponent<Gear>().info.stars;
+        if(augment == 5 && stars != 5)
+        {
+            upgrade = false;
+        }
+        else
+        {
+            upgrade = true;
+        }
         switch(rarity)
         {
             case 0:
@@ -118,14 +127,14 @@ public class BlacksmithItem : MonoBehaviour, IPointerClickHandler, IPointerDownH
                 upPriceInc = 10;
                 upInitPrice = 60;
                 break;
-            case 2:
+            case 1:
                 upMatInc = 8;
                 awMatInc = 2;
                 awPriceInc = 4000;
                 upPriceInc = 20;
                 upInitPrice = 100;
                 break;
-            case 3:
+            case 2:
                 upMatInc = 10;
                 awMatInc = 3;
                 awPriceInc = 8000;
@@ -133,9 +142,20 @@ public class BlacksmithItem : MonoBehaviour, IPointerClickHandler, IPointerDownH
                 upInitPrice = 150;
                 break;
         }
+        for (int i = 0; i <= stars; i++)
+        {
+            if (i == 0)
+            {
+                cumuPrice = 0;
+            }
+            else
+            {
+                cumuPrice += ((stars * upPriceInc) + upInitPrice) * 5;
+            }
+        }
         upMat = upMatInc * (stars + 1);
         awMat = awMatInc * (stars + 1);
         awPrice = awPriceInc * (stars + 1);
-        upPrice = (((stars * upPriceInc) + upInitPrice) * (augment + 1) + 0) ;
+        upPrice = (((stars * upPriceInc) + upInitPrice) * (augment + 1) + cumuPrice) ;
     }
 }

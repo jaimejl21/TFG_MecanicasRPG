@@ -25,6 +25,7 @@ public class BlacksmithManager : MonoBehaviour
         coinsTxt.text = "Coins: " + coins;
 
         SetInventory(gearList);
+        ResetItemInfo();
     }
 
     void UpdateCoinsTxt()
@@ -45,8 +46,45 @@ public class BlacksmithManager : MonoBehaviour
         itemInfoTxts[0].text = "Augment: " + blacksmithItem.GetComponent<Gear>().info.augment;
         itemInfoTxts[1].text = "Stars: " + blacksmithItem.GetComponent<Gear>().info.stars;
         itemInfoTxts[2].text = "Stats: " + blacksmithItem.GetComponent<Gear>().info.statAmount;
+        if (goSelected.GetComponent<BlacksmithItem>().upgrade)
+        {
+            itemInfoTxts[3].text = "Materials: " + goSelected.GetComponent<BlacksmithItem>().upMat;
+            itemInfoTxts[4].text = "Coins: " + goSelected.GetComponent<BlacksmithItem>().upPrice;
+            btns[0].gameObject.SetActive(true);
+            btns[1].gameObject.SetActive(false);
+            btns[0].interactable = true;
+            btns[1].interactable = false;
+        }
+        else
+        {
+            itemInfoTxts[3].text = "Materials: " + goSelected.GetComponent<BlacksmithItem>().awMat;
+            itemInfoTxts[4].text = "Coins: " + goSelected.GetComponent<BlacksmithItem>().awPrice;
+            btns[0].gameObject.SetActive(false);
+            btns[1].gameObject.SetActive(true);
+            btns[0].interactable = false;
+            btns[1].interactable = true;
+        }      
+    }
+
+    void ResetItemInfo()
+    {
+        if (itemPos.childCount != 0)
+        {
+            Destroy(itemPos.GetChild(0).gameObject);
+        }
+
+        itemInfoTxts[0].text = "Augment: ";
+        itemInfoTxts[1].text = "Stars: ";
+        itemInfoTxts[2].text = "Stats: ";
         itemInfoTxts[3].text = "Materials: ";
         itemInfoTxts[4].text = "Coins: ";
+
+        btns[0].gameObject.SetActive(true);
+        btns[1].gameObject.SetActive(false);
+        btns[0].interactable = false;
+        btns[1].interactable = false;
+
+        goSelected = null;
     }
 
     public void SetInventory(List<Gear.Info> list)
