@@ -105,9 +105,9 @@ public class GameManager : MonoBehaviour
             SaveListsToJson();
 
             started = 1;
-            coins = 9000;
-            awMats = 9000;
-            upMats = 9000;
+            coins = 90000;
+            awMats = 90;
+            upMats = 90;
 
             PlayerPrefs.SetInt("started", started);
             PlayerPrefs.SetInt("idGearCount", idGearCount);

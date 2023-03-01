@@ -47,16 +47,46 @@ public class BlacksmithManager : MonoBehaviour
         itemInfoTxts[2].text = "Stats: " + blacksmithItem.GetComponent<Gear>().info.statAmount;
         if (goSelected.GetComponent<BlacksmithItem>().upgrade)
         {
-            itemInfoTxts[3].text = "UpgMats: " + goSelected.GetComponent<BlacksmithItem>().upMat;
-            itemInfoTxts[4].text = "Coins: " + goSelected.GetComponent<BlacksmithItem>().upPrice;
             ChangeUpAwBtn(true, false, true, false);
+            CanUpAwGear(goSelected.GetComponent<BlacksmithItem>().upPrice, 0, goSelected.GetComponent<BlacksmithItem>().upMat, upMats);
+            itemInfoTxts[3].text = "UpgMats: " + goSelected.GetComponent<BlacksmithItem>().upMat;
+            itemInfoTxts[4].text = "Coins: " + goSelected.GetComponent<BlacksmithItem>().upPrice;    
         }
         else
         {
+            ChangeUpAwBtn(false, true, false, true);
+            CanUpAwGear(goSelected.GetComponent<BlacksmithItem>().awPrice, 1, goSelected.GetComponent<BlacksmithItem>().awMat, awMats);
             itemInfoTxts[3].text = "AwaMats: " + goSelected.GetComponent<BlacksmithItem>().awMat;
             itemInfoTxts[4].text = "Coins: " + goSelected.GetComponent<BlacksmithItem>().awPrice;
-            ChangeUpAwBtn(false, true, false, true);
         }      
+    }
+
+    void CanUpAwGear(int upAwPrice, int btn, int upAwMatsNeed, int upAwMats)
+    {    
+        if (upAwPrice > coins)
+        {
+            itemInfoTxts[4].color = Color.red;
+        }
+        else
+        {
+            itemInfoTxts[4].color = Color.white;
+        }
+        if (upAwMatsNeed > upAwMats)
+        {
+            itemInfoTxts[3].color = Color.red;
+        }
+        else
+        {
+            itemInfoTxts[3].color = Color.white;
+        }
+        if(upAwPrice > coins || upAwMatsNeed > upAwMats)
+        {
+            btns[btn].interactable = false;
+        }
+        else
+        {
+            btns[btn].interactable = true;
+        }
     }
 
     void ChangeUpAwBtn(bool upAct, bool awAct, bool upInt, bool awInt)
@@ -120,7 +150,13 @@ public class BlacksmithManager : MonoBehaviour
                 goSelected.GetComponent<Gear>().info.augment = 0;
                 ChangeUpAwBtn(true, false, false, false);
             }
-            goSelected.GetComponent<BlacksmithItem>().upgrade = true;
+            else
+            {
+                goSelected.GetComponent<BlacksmithItem>().upgrade = true;
+                ChangeUpAwBtn(true, false, true, false);
+                Debug.Log("CanUpgrade : " + goSelected.GetComponent<BlacksmithItem>().upMat + " > " + upMats);
+                CanUpAwGear(goSelected.GetComponent<BlacksmithItem>().upPrice, 0, goSelected.GetComponent<BlacksmithItem>().upMat, upMats);
+            }           
         }
         else
         {
@@ -135,6 +171,13 @@ public class BlacksmithManager : MonoBehaviour
             {
                 ChangeUpAwBtn(false, true, false, true);
                 goSelected.GetComponent<BlacksmithItem>().upgrade = false;
+                Debug.Log("CanAwake");
+                CanUpAwGear(goSelected.GetComponent<BlacksmithItem>().awPrice, 1, goSelected.GetComponent<BlacksmithItem>().awMat, awMats);
+            }
+            else
+            {
+                Debug.Log("CanUpgradeee : " + goSelected.GetComponent<BlacksmithItem>().upMat + " > " + upMats);
+                CanUpAwGear(goSelected.GetComponent<BlacksmithItem>().upPrice, 0, goSelected.GetComponent<BlacksmithItem>().upMat, upMats);
             }
         }
         UpdateUpAwTexts();
