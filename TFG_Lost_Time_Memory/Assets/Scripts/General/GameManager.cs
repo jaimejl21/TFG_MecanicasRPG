@@ -105,7 +105,7 @@ public class GameManager : MonoBehaviour
             SaveListsToJson();
 
             started = 1;
-            coins = 90000;
+            coins = 50000;
             awMats = 90;
             upMats = 90;
 
@@ -122,37 +122,43 @@ public class GameManager : MonoBehaviour
             allChar = lists.charList;
             allGear = lists.gearList;
 
-            GetPlayerPrefs(ref idGearCount, 0);
-            GetPlayerPrefs(ref idCharCount, 0);
-            GetPlayerPrefs(ref coins, 9000);
-            GetPlayerPrefs(ref upMats, 9000);
-            GetPlayerPrefs(ref awMats, 9000);
+            //if (PlayerPrefs.HasKey("coins"))
+            //{
+            //    coins = PlayerPrefs.GetInt("coins");
+            //}
+            //else
+            //{
+            //    coins = 50000;
+            //}
+
+            GetPlayerPrefs("idGearCount", ref idGearCount, 0);
+            GetPlayerPrefs("idCharCount", ref idCharCount, 0);
+            GetPlayerPrefs("coins", ref coins, 50000);
+            GetPlayerPrefs("upMats", ref upMats, 90);
+            GetPlayerPrefs("awMats", ref awMats, 90);
         }
     }
 
-    void GetPlayerPrefs(ref int var, int num)
+    void GetPlayerPrefs(string name, ref int toGet, int num)
     {
-        if (PlayerPrefs.HasKey(nameof(var)))
+        if (PlayerPrefs.HasKey(name))
         {
-            var = PlayerPrefs.GetInt(nameof(var));
+            toGet = PlayerPrefs.GetInt(name);
         }
         else
         {
-            var = num;
+            toGet = num;
         }
     }
 
     public void GetListsFromJson ()
     {
         lists = FileHandler.ReadFromJSON<ListsToJson>(filename);
-        //Debug.Log(lists.charList[0].id);
-        //Debug.Log(lists.teamList[0].id);
     }
 
     public void SaveListsToJson()
     {
         FileHandler.SaveToJson2(new ListsToJson(allChar, allGear), filename);
-        //Debug.Log("SaveJson");
     }
 
     public int GetCharPosById(int id)

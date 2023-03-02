@@ -122,7 +122,11 @@ public class BlacksmithManager : MonoBehaviour
 
         GameManager.inst.coins = coins;
         GameManager.inst.awMats = awMats;
-        GameManager.inst.upMats = upMats;    
+        GameManager.inst.upMats = upMats;
+
+        PlayerPrefs.SetInt("coins", coins);
+        PlayerPrefs.SetInt("awMats", awMats);
+        PlayerPrefs.SetInt("upMats", upMats);
     }
 
     public void SetInventory(List<Gear.Info> list)
@@ -181,6 +185,20 @@ public class BlacksmithManager : MonoBehaviour
             }
         }
         UpdateUpAwTexts();
+        bool found = false;
+        int i = 0;
+        while (!found)
+        {
+            if (gearList[i].id == goSelected.GetComponent<Gear>().info.id)
+            {
+                Gear.Info gi = goSelected.GetComponent<Gear>().info;
+                gearList[i] = gi;
+                GameManager.allGear = gearList;
+                GameManager.inst.SaveListsToJson();
+                found = true;
+            }
+            i++;
+        }
     }
 
     void UpdateGearStats()
