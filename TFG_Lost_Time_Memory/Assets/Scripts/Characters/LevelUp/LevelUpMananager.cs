@@ -265,7 +265,7 @@ public class LevelUpMananager : MonoBehaviour
 
     void SetPrice(bool selectType)
     {
-        int incPrice = 0;
+        int incPrice;
         if(level <= 35) { incPrice = 60; }
             else if(level <= 70) { incPrice = 80; }
                 else { incPrice = 100; }
