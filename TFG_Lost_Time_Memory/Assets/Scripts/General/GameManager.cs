@@ -80,24 +80,34 @@ public class GameManager : MonoBehaviour
             idCharCount = 0;
 
             Gear.Info gi = new Gear.Info(-1, 10, -1, -1, 0, 0, 0, false, -1);
-            for (int i = 0; i < 18; i++)
+            for (int i = 0; i < 39; i++)
             {
                 if(i<6)
                 {
                     allGear.Add(new Gear.Info(i, 5, i, 0, 0, 0, 0, false, -1));
-                    idGearCount++;
                     allEnemies.Add(new Character.Info(i, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
                 }
                 else if((i > 5) && (i < 12))
                 {
                     allGear.Add(new Gear.Info(i, 3, (i-6), 1, 1, 0, 0, false, -1));
-                    idGearCount++;
+                }
+                else if ((i > 11) && (i < 18))
+                {
+                    allGear.Add(new Gear.Info(i, 50, (i - 12), 2, 2, 0, 0, false, -1));
+                }
+                else if ((i > 17) && (i < 25))
+                {
+                    allGear.Add(new Gear.Info(i, 10, (i - 12), -1, 0, 0, 0, false, -1));
+                }
+                else if ((i > 24) && (i < 32))
+                {
+                    allGear.Add(new Gear.Info(i, 20, (i - 19), -1, 1, 0, 0, false, -1));
                 }
                 else
                 {
-                    allGear.Add(new Gear.Info(i, 50, (i - 12), 2, 2, 0, 0, false, -1));
-                    idGearCount++;
+                    allGear.Add(new Gear.Info(i, 30, (i - 26), -1, 2, 0, 0, false, -1));
                 }
+                idGearCount++;
                 allChar.Add(new Character.Info(i, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
                 idCharCount++;
             }
@@ -121,15 +131,6 @@ public class GameManager : MonoBehaviour
             GetListsFromJson();
             allChar = lists.charList;
             allGear = lists.gearList;
-
-            //if (PlayerPrefs.HasKey("coins"))
-            //{
-            //    coins = PlayerPrefs.GetInt("coins");
-            //}
-            //else
-            //{
-            //    coins = 50000;
-            //}
 
             GetPlayerPrefs("idGearCount", ref idGearCount, 0);
             GetPlayerPrefs("idCharCount", ref idCharCount, 0);

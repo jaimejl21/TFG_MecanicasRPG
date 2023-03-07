@@ -4,13 +4,15 @@ using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GearManager : MonoBehaviour
 {
-    public GameObject charGO, pool, gear;
+    public GameObject charGO, pool, gearItem, weaponItem, weaponsTabPanel, armorTabPanel, weaponSlot;
     public GameObject[] gearSlots;
     public Transform charPos;
     public TextMeshProUGUI[] statsTxt, bonusTxt, statsBonusTxt;
+    public Button[] btns;
 
     public int idToEquip;
     public int atkGears = 0, defGears = 0, hpGears = 0;
@@ -32,7 +34,8 @@ public class GearManager : MonoBehaviour
         Instantiate(charGO, charPos);
 
         GearSlots();
-        GearInventory();
+        //GearInventory();
+        WeaponsTabBtn();
         GearStats();
         InitBaseStatsTxt();
         UpdateStatsTxt();
@@ -44,15 +47,22 @@ public class GearManager : MonoBehaviour
     {
         for (int i = 0; i < gearList.Count; i++)
         {
-            if (gearList[i].equiped && gearList[i].characterId == charGO.transform.GetComponent<Character>().info.id)
+            if (gearList[i].equiped && gearList[i].characterId == charGO.transform.GetComponent<Character>().info.id && gearList[i].objType > 6)
             {
-                gear.transform.GetComponent<Gear>().info = gearList[i];
+                gearItem.transform.GetComponent<Gear>().info = gearList[i];
                 int pos = gearList[i].objType;
-                Instantiate(gear, gearSlots[pos].transform);
-                //aux.transform.GetComponent<GearItem>().SetGearColor();
+                Instantiate(gearItem, gearSlots[pos].transform);
                 gearSlots[pos].GetComponent<GearDropSlot>().item = gearSlots[pos].transform.GetChild(0).gameObject;
                 gearSlots[pos].transform.GetChild(0).GetComponent<GearDragHandler>().slotParent = gearSlots[pos].transform;
                 gearSlots[pos].transform.GetChild(0).GetComponent<GearDragHandler>().startParent = pool.transform;
+            }
+            if (gearList[i].equiped && gearList[i].characterId == charGO.transform.GetComponent<Character>().info.id && gearList[i].objType > 5)
+            {
+                weaponItem.transform.GetComponent<Gear>().info = gearList[i];
+                Instantiate(weaponItem, weaponSlot.transform);
+                weaponSlot.GetComponent<GearDropSlot>().item = weaponSlot.transform.GetChild(0).gameObject;
+                weaponSlot.transform.GetChild(0).GetComponent<GearDragHandler>().slotParent = weaponSlot.transform;
+                weaponSlot.transform.GetChild(0).GetComponent<GearDragHandler>().startParent = pool.transform;
             }
         }
     }
@@ -61,12 +71,11 @@ public class GearManager : MonoBehaviour
     {
         foreach (Gear.Info g in gearList)
         {
-            gear.GetComponent<Gear>().info = g;
-            gear.GetComponent<GearDragHandler>().slotParent = pool.transform;
-            if (gear.GetComponent<Gear>().info.equiped != true)
+            gearItem.GetComponent<Gear>().info = g;
+            gearItem.GetComponent<GearDragHandler>().slotParent = pool.transform;
+            if (gearItem.GetComponent<Gear>().info.equiped != true)
             {
-                Instantiate(gear, pool.transform);
-                //aux.transform.GetComponent<GearItem>().SetGearColor();
+                Instantiate(gearItem, pool.transform);
             }
         }
     }
@@ -304,6 +313,57 @@ public class GearManager : MonoBehaviour
             else if (statType == 2)
             {
                 charGO.transform.GetComponent<Character>().info.stats.extraHp -= amount;
+            }
+        }
+    }
+
+    public void WeaponsTabBtn()
+    {
+        btns[0].interactable = false;
+        btns[1].interactable = true;
+        weaponsTabPanel.SetActive(true);
+        armorTabPanel.SetActive(false);
+        ChangeInventory();
+    }
+
+    public void ArmorTabBtn()
+    {
+        btns[1].interactable = false;
+        btns[0].interactable = true;
+        armorTabPanel.SetActive(true);
+        weaponsTabPanel.SetActive(false);
+        ChangeInventory();
+    }
+
+    void ChangeInventory()
+    {
+        foreach (Transform child in pool.transform)
+        {
+            Destroy(child.gameObject);
+        }
+
+        if (!btns[0].interactable)
+        {
+            foreach (Gear.Info g in gearList)
+            {
+                weaponItem.GetComponent<Gear>().info = g;
+                weaponItem.GetComponent<GearDragHandler>().slotParent = pool.transform;
+                if (weaponItem.GetComponent<Gear>().info.objType > 5 && weaponItem.GetComponent<Gear>().info.equiped != true)
+                {
+                    Instantiate(weaponItem, pool.transform);
+                }
+            }
+        }
+        else
+        {
+            foreach (Gear.Info g in gearList)
+            {
+                gearItem.GetComponent<Gear>().info = g;
+                gearItem.GetComponent<GearDragHandler>().slotParent = pool.transform;
+                if (gearItem.GetComponent<Gear>().info.objType < 6 && gearItem.GetComponent<Gear>().info.equiped != true)
+                {
+                    Instantiate(gearItem, pool.transform);
+                }
             }
         }
     }
