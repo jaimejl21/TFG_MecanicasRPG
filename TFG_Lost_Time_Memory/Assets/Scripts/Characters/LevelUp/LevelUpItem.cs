@@ -9,7 +9,7 @@ public class LevelUpItem : MonoBehaviour, IPointerClickHandler, IPointerDownHand
     public TextMeshProUGUI typeTxt, amountTxt;
 
     public int expAm, amount, type;
-    private int interval = 20;
+    int interval = 20;
     public bool selected;
     bool pointerDown = false;
 

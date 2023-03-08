@@ -148,6 +148,8 @@ m_ResolvedPackages:
     - 9.0.0
     - 9.0.1
     - 10.0.0-pre.1
+    - 10.0.0-pre.2
+    - 10.0.0
     compatible:
     - 7.0.9
     verified: 7.0.9
@@ -360,6 +362,7 @@ m_ResolvedPackages:
     - 6.0.4
     - 6.0.5
     - 6.0.6
+    - 6.0.7
     - 7.0.0-pre.3
     - 7.0.0-pre.4
     - 7.0.0
@@ -370,10 +373,14 @@ m_ResolvedPackages:
     - 8.0.0-pre.3
     - 8.0.0
     - 8.0.1
+    - 8.0.2
     - 9.0.0-pre.1
+    - 9.0.0-pre.2
+    - 9.0.0
     compatible:
     - 6.0.6
-    verified: 6.0.6
+    - 6.0.7
+    verified: 6.0.7
   dependencies:
   - name: com.unity.2d.animation
     version: 7.0.8
@@ -579,6 +586,8 @@ m_ResolvedPackages:
     - 9.0.0
     - 9.0.1
     - 10.0.0-pre.1
+    - 10.0.0-pre.2
+    - 10.0.0
     compatible:
     - 7.0.6
     verified: 7.0.6
@@ -775,6 +784,8 @@ m_ResolvedPackages:
     - 2.0.0-preview.20
     - 2.0.0-preview.21
     - 2.0.0-preview.22
+    - 2.0.0
+    - 2.0.1
     - 2.1.0-preview.3
     - 2.1.0-preview.5
     - 2.1.0-preview.6
@@ -787,6 +798,8 @@ m_ResolvedPackages:
     - 2.0.0-preview.20
     - 2.0.0-preview.21
     - 2.0.0-preview.22
+    - 2.0.0
+    - 2.0.1
     - 2.1.0-preview.3
     - 2.1.0-preview.5
     - 2.1.0-preview.6
@@ -852,7 +865,7 @@ m_ResolvedPackages:
     email: 
     url: 
   category: 
-  type: 
+  type: asset
   description: The JetBrains Rider Editor package provides an integration for using
     the JetBrains Rider IDE as a code editor for Unity. It adds support for generating
     .csproj files for code completion and auto-discovery of installations.
@@ -892,9 +905,13 @@ m_ResolvedPackages:
     - 3.0.14
     - 3.0.15
     - 3.0.16
+    - 3.0.17
+    - 3.0.18
     compatible:
     - 3.0.16
-    verified: 3.0.16
+    - 3.0.17
+    - 3.0.18
+    verified: 3.0.18
   dependencies:
   - name: com.unity.ext.nunit
     version: 1.0.6
@@ -910,7 +927,7 @@ m_ResolvedPackages:
     isDefault: 1
     capabilities: 7
     configSource: 0
-  hideInEditor: 1
+  hideInEditor: 0
   isAssetStorePackage: 0
   datePublishedTicks: 638011833630000000
   documentationUrl: 
@@ -937,7 +954,7 @@ m_ResolvedPackages:
     email: 
     url: 
   category: 
-  type: 
+  type: asset
   description: Code editor integration for supporting Visual Studio as code editor
     for unity. Adds support for generating csproj files for intellisense purposes,
     auto discovery of installations, etc.
@@ -964,9 +981,11 @@ m_ResolvedPackages:
     - 2.0.14
     - 2.0.15
     - 2.0.16
+    - 2.0.17
     compatible:
     - 2.0.16
-    verified: 2.0.16
+    - 2.0.17
+    verified: 2.0.17
   dependencies:
   - name: com.unity.test-framework
     version: 1.1.9
@@ -988,7 +1007,7 @@ m_ResolvedPackages:
     isDefault: 1
     capabilities: 7
     configSource: 0
-  hideInEditor: 1
+  hideInEditor: 0
   isAssetStorePackage: 0
   datePublishedTicks: 637914298680000000
   documentationUrl: 
@@ -1120,8 +1139,10 @@ m_ResolvedPackages:
     - 1.4.2
     - 1.4.3
     - 1.4.4
+    - 1.5.0
     compatible:
     - 1.4.4
+    - 1.5.0
     verified: 1.4.4
   dependencies:
   - name: com.unity.modules.uielements
@@ -1223,6 +1244,8 @@ m_ResolvedPackages:
     - 1.1.33
     - 1.3.0
     - 1.3.1
+    - 1.3.2
+    - 1.3.3
     - 2.0.1-exp.1
     - 2.0.1-exp.2
     - 2.0.1-pre.12
@@ -1232,6 +1255,8 @@ m_ResolvedPackages:
     - 1.1.33
     - 1.3.0
     - 1.3.1
+    - 1.3.2
+    - 1.3.3
     - 2.0.1-exp.1
     - 2.0.1-exp.2
     - 2.0.1-pre.12
@@ -1289,7 +1314,7 @@ m_ResolvedPackages:
     email: 
     url: 
   category: Text Rendering
-  type: 
+  type: asset
   description: 'TextMeshPro is the ultimate text solution for Unity. It''s the perfect
     replacement for Unity''s UI Text and the legacy Text Mesh.
 
@@ -1397,12 +1422,15 @@ m_ResolvedPackages:
     - 3.2.0-pre.1
     - 3.2.0-pre.2
     - 3.2.0-pre.3
+    - 3.2.0-pre.4
     - 4.0.0-pre.1
+    - 4.0.0-pre.2
     compatible:
     - 3.0.6
     - 3.2.0-pre.1
     - 3.2.0-pre.2
     - 3.2.0-pre.3
+    - 3.2.0-pre.4
     verified: 3.0.6
   dependencies:
   - name: com.unity.ugui
@@ -1428,7 +1456,7 @@ m_ResolvedPackages:
     isDefault: 1
     capabilities: 7
     configSource: 0
-  hideInEditor: 1
+  hideInEditor: 0
   isAssetStorePackage: 0
   datePublishedTicks: 637547111200000000
   documentationUrl: 
@@ -1535,7 +1563,9 @@ m_ResolvedPackages:
     - 1.7.0
     - 1.7.1
     - 1.7.2
+    - 1.7.3
     - 1.8.0
+    - 1.8.1
     compatible:
     - 1.6.4
     - 1.7.0-pre.1
@@ -1543,7 +1573,9 @@ m_ResolvedPackages:
     - 1.7.0
     - 1.7.1
     - 1.7.2
+    - 1.7.3
     - 1.8.0
+    - 1.8.1
     verified: 1.6.4
   dependencies:
   - name: com.unity.modules.director
@@ -3528,8 +3560,14 @@ m_ResolvedPackages:
     - 1.4.3
     - 1.5.2
     - 1.6.0
+    - 1.7.0
+    - 1.7.1
+    - 1.8.1
     compatible:
     - 1.6.0
+    - 1.7.0
+    - 1.7.1
+    - 1.8.1
     verified: 1.6.0
   dependencies:
   - name: com.unity.modules.unitywebrequest
@@ -3700,6 +3738,8 @@ m_ResolvedPackages:
     - 8.0.0
     - 8.0.1
     - 9.0.0-pre.1
+    - 9.0.0-pre.2
+    - 9.0.0
     compatible:
     - 6.0.6
     verified: 6.0.6
@@ -4032,6 +4072,7 @@ m_ResolvedPackages:
     - 1.8.0
     - 1.8.1
     - 1.8.2
+    - 1.8.3
     compatible:
     - 1.6.6
     - 1.7.0-pre.1
@@ -4045,6 +4086,7 @@ m_ResolvedPackages:
     - 1.8.0
     - 1.8.1
     - 1.8.2
+    - 1.8.3
     verified: 1.6.6
   dependencies:
   - name: com.unity.mathematics

@@ -1618,6 +1618,7 @@ MonoBehaviour:
   - {fileID: 1448149170}
   - {fileID: 1269165080}
   - {fileID: 1761056429}
+  - {fileID: 1470697989}
   charPos: {fileID: 878082961}
   statsTxt:
   - {fileID: 1745892663}

@@ -34,7 +34,6 @@ public class GearManager : MonoBehaviour
         Instantiate(charGO, charPos);
 
         GearSlots();
-        //GearInventory();
         WeaponsTabBtn();
         GearStats();
         InitBaseStatsTxt();
@@ -47,7 +46,7 @@ public class GearManager : MonoBehaviour
     {
         for (int i = 0; i < gearList.Count; i++)
         {
-            if (gearList[i].equiped && gearList[i].characterId == charGO.transform.GetComponent<Character>().info.id && gearList[i].objType > 6)
+            if (gearList[i].equiped && gearList[i].characterId == charGO.transform.GetComponent<Character>().info.id && gearList[i].objType < 6)
             {
                 gearItem.transform.GetComponent<Gear>().info = gearList[i];
                 int pos = gearList[i].objType;
@@ -67,22 +66,9 @@ public class GearManager : MonoBehaviour
         }
     }
 
-    void GearInventory()
-    {
-        foreach (Gear.Info g in gearList)
-        {
-            gearItem.GetComponent<Gear>().info = g;
-            gearItem.GetComponent<GearDragHandler>().slotParent = pool.transform;
-            if (gearItem.GetComponent<Gear>().info.equiped != true)
-            {
-                Instantiate(gearItem, pool.transform);
-            }
-        }
-    }
-
     void GearStats()
     {
-        for(int i = 0; i < gearSlots.Length; i++)
+        for(int i = 0; i < 6; i++)
         {
             if(gearSlots[i].transform.childCount != 0)
             {
@@ -146,9 +132,9 @@ public class GearManager : MonoBehaviour
 
     public void UpdateCharStats(bool add, Gear.Info ginfo)
     {
-        if(add)
+        if (add)
         {
-            if (ginfo.objType == 0 || ginfo.objType == 3)
+            if (ginfo.objType == 0 || ginfo.objType == 3 || ginfo.objType > 5)
             {
                 charGO.transform.GetComponent<Character>().info.stats.extraAtk += ginfo.statAmount;
             }
@@ -163,7 +149,7 @@ public class GearManager : MonoBehaviour
         }
         else
         {
-            if (ginfo.objType == 0 || ginfo.objType == 3)
+            if (ginfo.objType == 0 || ginfo.objType == 3 || ginfo.objType > 5)
             {
                 charGO.transform.GetComponent<Character>().info.stats.extraAtk -= ginfo.statAmount;
             }
@@ -262,11 +248,32 @@ public class GearManager : MonoBehaviour
 
     public bool CanDropGear()
     {
-        if (atkGears <= 0 && defGears <= 0 && hpGears <= 0)
+        if(btns[0].interactable == false)
         {
-            return false;
+            if(GearDragHandler.itemDragging.GetComponent<Gear>().info.objType < 6)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
         }
-        else return true;
+        else
+        {
+            if (GearDragHandler.itemDragging.GetComponent<Gear>().info.objType > 5)
+            {
+                return false;
+            }
+            else if(atkGears <= 0 && defGears <= 0 && hpGears <= 0)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
     }
 
     void InitBaseStatsTxt()
@@ -370,7 +377,7 @@ public class GearManager : MonoBehaviour
 
     public void SaveGear()
     {
-        for (int i = 0; i < 6; i++)
+        for (int i = 0; i < gearSlots.Length; i++)
         {
             if (gearSlots[i].GetComponent<GearDropSlot>().item != null)
             {

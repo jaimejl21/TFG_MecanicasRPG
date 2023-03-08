@@ -85,7 +85,7 @@ public class GameManager : MonoBehaviour
                 if(i<6)
                 {
                     allGear.Add(new Gear.Info(i, 5, i, 0, 0, 0, 0, false, -1));
-                    allEnemies.Add(new Character.Info(i, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
+                    allEnemies.Add(new Character.Info(i, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
                 }
                 else if((i > 5) && (i < 12))
                 {
@@ -108,7 +108,7 @@ public class GameManager : MonoBehaviour
                     allGear.Add(new Gear.Info(i, 30, (i - 26), -1, 2, 0, 0, false, -1));
                 }
                 idGearCount++;
-                allChar.Add(new Character.Info(i, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
+                allChar.Add(new Character.Info(i, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
                 idCharCount++;
             }
 
