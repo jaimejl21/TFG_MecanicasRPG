@@ -16,6 +16,7 @@ public class FightCharacter : MonoBehaviour, IPointerClickHandler, IPointerDownH
     public GameObject specialBar;
     Character.Info charInfo;
     ComboController cc;
+    Color typeColor;
 
     public int position;
     int target;
@@ -31,6 +32,7 @@ public class FightCharacter : MonoBehaviour, IPointerClickHandler, IPointerDownH
 
         charInfo = transform.GetComponent<Character>().info;
         gameObject.transform.GetChild(2).gameObject.GetComponent<TextMeshPro>().text = "" + charInfo.id;
+        SetTypeColor();
 
         scaleI = lifeBar.transform.localScale.x;
         maxLife = charInfo.stats.hp;
@@ -402,5 +404,36 @@ public class FightCharacter : MonoBehaviour, IPointerClickHandler, IPointerDownH
     {
         this.select.SetActive(select);
         //Debug.Log("Select: " + select);
+    }
+
+    void SetTypeColor()
+    {
+        switch (transform.GetComponent<Character>().info.type)
+        {
+            case 0:
+                typeColor = Color.white;
+                break;
+            case 1:
+                typeColor = new Color(.5f, .2f, .6f, 1f);
+                break;
+            case 2:
+                typeColor = new Color(.5f, .3f, 0f, 1f);
+                break;
+            case 3:
+                typeColor = Color.green;
+                break;
+            case 4:
+                typeColor = Color.yellow;
+                break;
+            case 5:
+                typeColor = Color.blue;
+                break;
+            case 6:
+                typeColor = Color.red;
+                break;
+            default:
+                break;
+        }
+        gameObject.transform.GetComponent<SpriteRenderer>().color = typeColor;
     }
 }

@@ -82,14 +82,58 @@ public class GameManager : MonoBehaviour
             Gear.Info gi = new Gear.Info(-1, 10, -1, -1, 0, 0, 0, false, -1);
             for (int i = 0; i < 39; i++)
             {
-                if(i<6)
+                if(i < 6)
                 {
                     allGear.Add(new Gear.Info(i, 5, i, 0, 0, 0, 0, false, -1));
-                    allEnemies.Add(new Character.Info(i, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
+                    if(i == 0)
+                    {
+                        allEnemies.Add(new Character.Info(i, 0, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
+                        allChar.Add(new Character.Info(i, 0, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
+                        idCharCount++;
+                    }
+                    else if(i == 1)
+                    {
+                        allEnemies.Add(new Character.Info(i, 1, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
+                        allChar.Add(new Character.Info(i, 1, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
+                        idCharCount++;
+                    }
+                    else if (i == 2)
+                    {
+                        allEnemies.Add(new Character.Info(i, 2, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
+                        allChar.Add(new Character.Info(i, 2, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
+                        idCharCount++;
+                    }
+                    else if ((i > 2) && (i < 5))
+                    {
+                        allEnemies.Add(new Character.Info(i, 3, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
+                        allChar.Add(new Character.Info(i, 3, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
+                        idCharCount++;
+                    }
+                    else
+                    {
+                        allEnemies.Add(new Character.Info(i, 4, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
+                        allChar.Add(new Character.Info(i, 4, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
+                        idCharCount++;
+                    }
                 }
                 else if((i > 5) && (i < 12))
                 {
                     allGear.Add(new Gear.Info(i, 3, (i-6), 1, 1, 0, 0, false, -1));
+                    if(i == 6)
+                    {
+                        allChar.Add(new Character.Info(i, 4, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
+                        idCharCount++;
+                    }
+                    if ((i > 6) && (i < 9))
+                    {
+                        allChar.Add(new Character.Info(i, 5, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
+                        idCharCount++;
+                    }
+                    else if ((i > 8) && (i < 11))
+                    {
+                        allChar.Add(new Character.Info(i, 6, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
+                        idCharCount++;
+                    }
                 }
                 else if ((i > 11) && (i < 18))
                 {
@@ -108,8 +152,6 @@ public class GameManager : MonoBehaviour
                     allGear.Add(new Gear.Info(i, 30, (i - 26), -1, 2, 0, 0, false, -1));
                 }
                 idGearCount++;
-                allChar.Add(new Character.Info(i, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
-                idCharCount++;
             }
 
             SaveListsToJson();
