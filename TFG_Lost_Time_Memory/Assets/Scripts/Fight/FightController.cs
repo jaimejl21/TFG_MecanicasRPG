@@ -27,15 +27,17 @@ public class FightController : MonoBehaviour
     [SerializeField]
     GameObject player, enemy, attackButtons;
 
-    public TextMeshProUGUI resultText, comboTxt;
+    public TextMeshProUGUI resultText, comboTxt, typeBonusTxt;
     public GameObject enemies, players, buttonsDown;
     public ComboController comboCntrl;
 
     private void Start()
-    {
+    {       
+        allEnemiesList = new List<Character.Info>();
+
         auxCharList = GameManager.allChar.ToList();
-        teamList = new List<Character.Info>() { null, null, null, null, null, null };
         allEnemiesList = GameManager.allEnemies.ToList();
+        teamList = new List<Character.Info>() { null, null, null, null, null, null };
 
         for (int i = 0; i < auxCharList.Count; i++)
         {

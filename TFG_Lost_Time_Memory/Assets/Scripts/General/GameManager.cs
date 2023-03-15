@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
     public static GameManager inst;
 
     public int charToEquipGear = 0;
-    public bool restartPP;
+    public bool restartPP, initialized = false;
     public int coins, idGearCount, idCharCount, awMats, upMats;
 
     [SerializeField]
@@ -180,6 +180,7 @@ public class GameManager : MonoBehaviour
             GetPlayerPrefs("upMats", ref upMats, 90);
             GetPlayerPrefs("awMats", ref awMats, 90);
         }
+        initialized = true;
     }
 
     void GetPlayerPrefs(string name, ref int toGet, int num)
