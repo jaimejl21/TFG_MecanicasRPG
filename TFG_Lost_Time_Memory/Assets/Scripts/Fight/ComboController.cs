@@ -90,7 +90,7 @@ public class ComboController : MonoBehaviour
                 break;
         }
 
-        switch (timesCombo)
+        switch (fc.auxTimesCombo)
         {
             case 1:
                 timesAtkVar = 0;

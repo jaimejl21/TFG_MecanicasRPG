@@ -174,6 +174,14 @@ public class GameManager : MonoBehaviour
             allChar = lists.charList;
             allGear = lists.gearList;
 
+            Gear.Info gi = new Gear.Info(-1, 10, -1, -1, 0, 0, 0, false, -1);
+            allEnemies.Add(new Character.Info(0, 0, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
+            allEnemies.Add(new Character.Info(1, 1, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
+            allEnemies.Add(new Character.Info(2, 2, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
+            allEnemies.Add(new Character.Info(3, 3, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
+            allEnemies.Add(new Character.Info(4, 4, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
+            allEnemies.Add(new Character.Info(5, 5, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
+
             GetPlayerPrefs("idGearCount", ref idGearCount, 0);
             GetPlayerPrefs("idCharCount", ref idCharCount, 0);
             GetPlayerPrefs("coins", ref coins, 50000);

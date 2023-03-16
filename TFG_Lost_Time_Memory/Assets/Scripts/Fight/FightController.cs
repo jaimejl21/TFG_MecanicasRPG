@@ -33,7 +33,7 @@ public class FightController : MonoBehaviour
 
     private void Start()
     {       
-        allEnemiesList = new List<Character.Info>();
+        //allEnemiesList = new List<Character.Info>();
 
         auxCharList = GameManager.allChar.ToList();
         allEnemiesList = GameManager.allEnemies.ToList();
