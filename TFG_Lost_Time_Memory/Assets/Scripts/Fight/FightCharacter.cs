@@ -18,7 +18,7 @@ public class FightCharacter : MonoBehaviour, IPointerClickHandler, IPointerDownH
     ComboController cc;
     Color typeColor;
 
-    public int position;
+    public int position, atkBuff, atkDebuff, defBuff, defDebuff;
     int target, effectiveType, weakType, charType;
     public bool type, specialActivated = false;
     public string abilityType;
@@ -43,6 +43,7 @@ public class FightCharacter : MonoBehaviour, IPointerClickHandler, IPointerDownH
 
         attack = charInfo.stats.atk;
         defense = charInfo.stats.def;
+
 
         if (type)
         {
@@ -111,7 +112,7 @@ public class FightCharacter : MonoBehaviour, IPointerClickHandler, IPointerDownH
                 break;
             case "attackAll":
                 StartCoroutine(AnimAttack());
-                for(int i=0; i<6; i++)
+                for(int i = 0; i < 6; i++)
                 {
                     DamageCharacters(i);
                 }
@@ -188,6 +189,30 @@ public class FightCharacter : MonoBehaviour, IPointerClickHandler, IPointerDownH
                         DamageCharacters(5);
                     }
                 }
+                break;
+            case "buffAtkAll":
+                for (int i = 0; i < 6; i++)
+                {
+                    DeBuffStatChars(i, true, ref attack, 10f);
+                }                   
+                break;
+            case "debuffAtkAll":
+                for (int i = 0; i < 6; i++)
+                {
+                    DeBuffStatChars(i, false, ref attack, 10f);
+                }                   
+                break;
+            case "buffDefAll":
+                for (int i = 0; i < 6; i++)
+                {
+                    DeBuffStatChars(i, true, ref defense, 10f);
+                }                   
+                break;
+            case "debuffDefAll":
+                for (int i = 0; i < 6; i++)
+                {
+                    DeBuffStatChars(i, false, ref defense, 10f);
+                }                
                 break;
             default:
                 break;
@@ -277,6 +302,63 @@ public class FightCharacter : MonoBehaviour, IPointerClickHandler, IPointerDownH
             else
             {
                 life += amount;
+            }
+        }
+    }
+
+    public void DeBuffStat(bool buff, ref float stat, float amount)
+    {
+        if(buff)
+        {
+            stat += amount;
+        }
+        else
+        {
+            if((stat - amount) >= 0)
+            {
+                stat -= amount;
+            }
+            else
+            {
+                stat = 0;
+            }
+        }       
+    }
+
+    void DeBuffStatChars(int position, bool buff, ref float stat, float amount)
+    {
+        if (type)
+        {
+            if(buff)
+            {
+                if (fightCntrl.playersPositions.Contains(position))
+                {
+                    GameObject.Find("Players").transform.GetChild(position).GetChild(0).GetComponent<FightCharacter>().DeBuffStat(buff, ref stat, amount);
+                }
+            }
+            else
+            {
+                if (fightCntrl.enemiesPositions.Contains(position))
+                {
+                    GameObject.Find("Enemies").transform.GetChild(position).GetChild(0).GetComponent<FightCharacter>().DeBuffStat(buff, ref stat, amount);
+                }                  
+            }           
+        }
+        else
+        {
+            if (buff)
+            {
+                if (fightCntrl.enemiesPositions.Contains(position))
+                {
+                    GameObject.Find("Enemies").transform.GetChild(position).GetChild(0).GetComponent<FightCharacter>().DeBuffStat(buff, ref stat, amount);
+                }
+            }
+            else
+            {
+                if (fightCntrl.playersPositions.Contains(position))
+                {
+                    GameObject.Find("Players").transform.GetChild(position).GetChild(0).GetComponent<FightCharacter>().DeBuffStat(buff, ref stat, amount);
+                }
             }
         }
     }
