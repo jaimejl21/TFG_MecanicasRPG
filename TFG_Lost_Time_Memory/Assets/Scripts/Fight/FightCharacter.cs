@@ -18,12 +18,12 @@ public class FightCharacter : MonoBehaviour, IPointerClickHandler, IPointerDownH
     ComboController cc;
     Color typeColor;
 
-    public int position, atkBuff, atkDebuff, defBuff, defDebuff;
+    public int position, atkBuffTurns = 0, atkDebuffTurns = 0, defBuffTurns = 0, defDebuffTurns = 0;
     int target, effectiveType, weakType, charType;
     public bool type, specialActivated = false;
     public string abilityType;
     public float life, special;
-    float maxLife, maxSpecial, attack, defense, scaleI;
+    float maxLife, maxSpecial, attack, defense, scaleI, atkBuff, atkDebuff, defBuff, defDebuff;
 
     private  void Start()
     {
@@ -43,7 +43,6 @@ public class FightCharacter : MonoBehaviour, IPointerClickHandler, IPointerDownH
 
         attack = charInfo.stats.atk;
         defense = charInfo.stats.def;
-
 
         if (type)
         {
@@ -108,7 +107,20 @@ public class FightCharacter : MonoBehaviour, IPointerClickHandler, IPointerDownH
         switch (abilityType)
         {
             case "healAll":
-                HealCharacters();
+                for (int i = 0; i < 6; i++)
+                {
+                    HealCharacters(i, 10f);
+                }
+                break;
+            case "heal":
+                if(type)
+                {
+                    HealCharacters(fightCntrl.playerSelect, 10f);
+                }
+                else
+                {
+                    HealCharacters(fightCntrl.enemySelect, 10f);
+                }
                 break;
             case "attackAll":
                 StartCoroutine(AnimAttack());
@@ -193,26 +205,66 @@ public class FightCharacter : MonoBehaviour, IPointerClickHandler, IPointerDownH
             case "buffAtkAll":
                 for (int i = 0; i < 6; i++)
                 {
-                    DeBuffStatChars(i, true, ref attack, 10f);
+                    DeBuffStatChars(i, true, ref attack, ref atkBuff, 10f);
                 }                   
                 break;
             case "debuffAtkAll":
                 for (int i = 0; i < 6; i++)
                 {
-                    DeBuffStatChars(i, false, ref attack, 10f);
+                    DeBuffStatChars(i, false, ref attack, ref atkDebuff, 10f);
                 }                   
                 break;
             case "buffDefAll":
                 for (int i = 0; i < 6; i++)
                 {
-                    DeBuffStatChars(i, true, ref defense, 10f);
+                    DeBuffStatChars(i, true, ref defense, ref defBuff, 10f);
                 }                   
                 break;
             case "debuffDefAll":
                 for (int i = 0; i < 6; i++)
                 {
-                    DeBuffStatChars(i, false, ref defense, 10f);
+                    DeBuffStatChars(i, false, ref defense, ref defDebuff, 10f);
                 }                
+                break;
+            case "buffAtk":
+                if(type)
+                {
+                    DeBuffStatChars(fightCntrl.playerSelect, true, ref attack, ref atkBuff, 10f);
+                }
+                else
+                {
+                    DeBuffStatChars(fightCntrl.enemySelect, true, ref attack, ref atkBuff, 10f);
+                }               
+                break;
+            case "debuffAtk":
+                if (!type)
+                {
+                    DeBuffStatChars(fightCntrl.playerSelect, false, ref attack, ref atkDebuff, 10f);
+                }
+                else
+                {
+                    DeBuffStatChars(fightCntrl.enemySelect, false, ref attack, ref atkDebuff, 10f);
+                }
+                break;
+            case "buffDef":
+                if (type)
+                {
+                    DeBuffStatChars(fightCntrl.playerSelect, true, ref defense, ref defBuff, 10f);
+                }
+                else
+                {
+                    DeBuffStatChars(fightCntrl.enemySelect, true, ref defense, ref defBuff, 10f);
+                }
+                break;
+            case "debuffDef":
+                if (!type)
+                {
+                    DeBuffStatChars(fightCntrl.playerSelect, false, ref defense, ref defDebuff, 10f);
+                }
+                else
+                {
+                    DeBuffStatChars(fightCntrl.enemySelect, false, ref defense, ref defDebuff, 10f);
+                }
                 break;
             default:
                 break;
@@ -271,27 +323,26 @@ public class FightCharacter : MonoBehaviour, IPointerClickHandler, IPointerDownH
         } 
     }
 
-    public void HealCharacters()
+    public void HealCharacters(int position, float amount)
     {
         if (type)
         {
-            for (int i = 0; i < fightCntrl.playersPositions.Count; i++)
+            if (fightCntrl.playersPositions.Contains(position))
             {
-                GameObject.Find("Players").transform.GetChild(fightCntrl.playersPositions[i]).GetChild(0).GetComponent<FightCharacter>().Heal();
+                GameObject.Find("Players").transform.GetChild(position).GetChild(0).GetComponent<FightCharacter>().Heal(amount);
             }
         }
         else
         {
-            for (int i = 0; i < fightCntrl.enemiesPositions.Count; i++)
+            if (fightCntrl.enemiesPositions.Contains(position))
             {
-                GameObject.Find("Enemies").transform.GetChild(fightCntrl.enemiesPositions[i]).GetChild(0).GetComponent<FightCharacter>().Heal();
+                GameObject.Find("Enemies").transform.GetChild(position).GetChild(0).GetComponent<FightCharacter>().Heal(amount);
             }
         }
     }
 
-    public void Heal()
+    public void Heal(float amount)
     {
-        int amount = 10;
         if (life < maxLife)
         {
             StartCoroutine(AnimHeal(amount));
@@ -306,26 +357,29 @@ public class FightCharacter : MonoBehaviour, IPointerClickHandler, IPointerDownH
         }
     }
 
-    public void DeBuffStat(bool buff, ref float stat, float amount)
+    public void DeBuffStat(bool buff, ref float stat, ref float statInc, float amount)
     {
         if(buff)
         {
             stat += amount;
+            statInc = amount;
         }
         else
         {
             if((stat - amount) >= 0)
             {
                 stat -= amount;
+                statInc = amount;
             }
             else
             {
+                statInc = stat;
                 stat = 0;
             }
         }       
     }
 
-    void DeBuffStatChars(int position, bool buff, ref float stat, float amount)
+    void DeBuffStatChars(int position, bool buff, ref float stat, ref float statInc, float amount)
     {
         if (type)
         {
@@ -333,14 +387,14 @@ public class FightCharacter : MonoBehaviour, IPointerClickHandler, IPointerDownH
             {
                 if (fightCntrl.playersPositions.Contains(position))
                 {
-                    GameObject.Find("Players").transform.GetChild(position).GetChild(0).GetComponent<FightCharacter>().DeBuffStat(buff, ref stat, amount);
+                    GameObject.Find("Players").transform.GetChild(position).GetChild(0).GetComponent<FightCharacter>().DeBuffStat(buff, ref stat, ref statInc, amount);
                 }
             }
             else
             {
                 if (fightCntrl.enemiesPositions.Contains(position))
                 {
-                    GameObject.Find("Enemies").transform.GetChild(position).GetChild(0).GetComponent<FightCharacter>().DeBuffStat(buff, ref stat, amount);
+                    GameObject.Find("Enemies").transform.GetChild(position).GetChild(0).GetComponent<FightCharacter>().DeBuffStat(buff, ref stat, ref statInc, amount);
                 }                  
             }           
         }
@@ -350,16 +404,37 @@ public class FightCharacter : MonoBehaviour, IPointerClickHandler, IPointerDownH
             {
                 if (fightCntrl.enemiesPositions.Contains(position))
                 {
-                    GameObject.Find("Enemies").transform.GetChild(position).GetChild(0).GetComponent<FightCharacter>().DeBuffStat(buff, ref stat, amount);
+                    GameObject.Find("Enemies").transform.GetChild(position).GetChild(0).GetComponent<FightCharacter>().DeBuffStat(buff, ref stat, ref statInc, amount);
                 }
             }
             else
             {
                 if (fightCntrl.playersPositions.Contains(position))
                 {
-                    GameObject.Find("Players").transform.GetChild(position).GetChild(0).GetComponent<FightCharacter>().DeBuffStat(buff, ref stat, amount);
+                    GameObject.Find("Players").transform.GetChild(position).GetChild(0).GetComponent<FightCharacter>().DeBuffStat(buff, ref stat, ref statInc, amount);
                 }
             }
+        }
+    }
+
+    public void CheckDeBuffsTurns()
+    {
+        CheckDeBuffsTurnsAux(true, ref atkBuffTurns, ref atkBuff);
+        CheckDeBuffsTurnsAux(false, ref atkDebuffTurns, ref atkDebuff);
+        CheckDeBuffsTurnsAux(true, ref defBuffTurns, ref defBuff);
+        CheckDeBuffsTurnsAux(false, ref defDebuffTurns, ref defDebuff);
+    }
+
+    public void CheckDeBuffsTurnsAux(bool buff, ref int deBuffTurns, ref float statInc)
+    {       
+        if(deBuffTurns > 1)
+        {
+            deBuffTurns--;
+        }
+        else if(deBuffTurns == 1)
+        {
+            deBuffTurns--;
+
         }
     }
 

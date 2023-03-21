@@ -234,9 +234,22 @@ public class FightController : MonoBehaviour
             if (playersN >= 0 && enemiesN >= 0)
             {
                 turn = true;
+                CheckAllDeBuffsTurns();
                 ActivateBtns();
                 ActivateSpBtns();
             }
+        }
+    }
+
+    void CheckAllDeBuffsTurns()
+    {
+        for (int i = 0; i < enemiesPositions.Count; i++)
+        {
+            enemies.transform.GetChild(enemiesPositions[i]).GetChild(0).GetComponent<FightCharacter>().CheckDeBuffsTurns();
+        }
+        for (int i = 0; i <playersPositions.Count; i++)
+        {
+            players.transform.GetChild(playersPositions[i]).GetChild(0).GetComponent<FightCharacter>().CheckDeBuffsTurns();
         }
     }
 
