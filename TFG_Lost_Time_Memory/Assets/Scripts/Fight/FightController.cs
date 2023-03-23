@@ -83,11 +83,11 @@ public class FightController : MonoBehaviour
                 playersPositions.Add(player.GetComponent<FightCharacter>().position);
                 if ((i % 2) == 0)
                 {
-                    player.GetComponent<FightCharacter>().abilityType = "attackRow";
+                    player.GetComponent<FightCharacter>().abilityType = "buffAtk";
                 }
                 else
                 {
-                    player.GetComponent<FightCharacter>().abilityType = "attackColumn";
+                    player.GetComponent<FightCharacter>().abilityType = "buffDef";
                 }
                 GameObject p = Instantiate(player, playerSlots[player.GetComponent<FightCharacter>().position].transform);
                 GameObject ab = Instantiate(attackButtons, buttonsDown.transform);
@@ -100,11 +100,11 @@ public class FightController : MonoBehaviour
             enemiesPositions.Add(enemy.GetComponent<FightCharacter>().position);
             if ((i % 2) == 0)
             {
-                enemy.GetComponent<FightCharacter>().abilityType = "attackRow";
+                enemy.GetComponent<FightCharacter>().abilityType = "debuffAtk";
             }
             else
             {
-                enemy.GetComponent<FightCharacter>().abilityType = "attackColumn";
+                enemy.GetComponent<FightCharacter>().abilityType = "debuffDef";
             }
             Instantiate(enemy, enemieSlots[enemy.GetComponent<FightCharacter>().position].transform);
         }

@@ -192,9 +192,13 @@ MonoBehaviour:
   lifeBar: {fileID: 4260373143183458908}
   specialBar: {fileID: 9078674980496426343}
   position: 0
+  atkBuffTurns: 0
+  atkDebuffTurns: 0
+  defBuffTurns: 0
+  defDebuffTurns: 0
   type: 1
   specialActivated: 0
-  abilityType: attack
+  abilityType: buff
   life: 100
   special: 0
 --- !u!114 &3154994693928878976
