@@ -8,12 +8,10 @@ using UnityEngine.UI;
 
 public class FightCharacter : MonoBehaviour, IPointerClickHandler, IPointerDownHandler, IPointerUpHandler
 {
-    public GameObject select;
+    public GameObject select, lifeBar, specialBar, deBuffsUI;
     GameObject targets;
     FightController fightCntrl;
     public SpriteRenderer sr;
-    public GameObject lifeBar;
-    public GameObject specialBar;
     Character.Info charInfo;
     ComboController cc;
     Color typeColor;
@@ -205,65 +203,66 @@ public class FightCharacter : MonoBehaviour, IPointerClickHandler, IPointerDownH
             case "buffAtkAll":
                 for (int i = 0; i < 6; i++)
                 {
-                    DeBuffStatChars(i, true, ref attack, ref atkBuff, ref atkBuffTurns, 10f);
+                    DeBuffStatChars(i, true, ref attack, ref atkBuff, ref atkBuffTurns, 10f, true);
                 }                   
                 break;
             case "debuffAtkAll":
                 for (int i = 0; i < 6; i++)
                 {
-                    DeBuffStatChars(i, false, ref attack, ref atkDebuff, ref atkDebuffTurns, 10f);
+                    DeBuffStatChars(i, false, ref attack, ref atkDebuff, ref atkDebuffTurns, 10f, true);
                 }                   
                 break;
             case "buffDefAll":
                 for (int i = 0; i < 6; i++)
                 {
-                    DeBuffStatChars(i, true, ref defense, ref defBuff, ref defBuffTurns, 10f);
+                    DeBuffStatChars(i, true, ref defense, ref defBuff, ref defBuffTurns, 10f, false);
                 }                   
                 break;
             case "debuffDefAll":
                 for (int i = 0; i < 6; i++)
                 {
-                    DeBuffStatChars(i, false, ref defense, ref defDebuff, ref defDebuffTurns, 10f);
+                    DeBuffStatChars(i, false, ref defense, ref defDebuff, ref defDebuffTurns, 10f, false);
                 }                
                 break;
             case "buffAtk":
                 if(type)
                 {
-                    DeBuffStatChars(fightCntrl.playerSelect, true, ref attack, ref atkBuff, ref atkBuffTurns, 10f);
+                    DeBuffStatChars(fightCntrl.playerSelect, true, ref attack, ref atkBuff, ref atkBuffTurns, 10f, true);
+
                 }
                 else
                 {
-                    DeBuffStatChars(fightCntrl.enemySelect, true, ref attack, ref atkBuff, ref atkBuffTurns, 10f);
+                    DeBuffStatChars(fightCntrl.enemySelect, true, ref attack, ref atkBuff, ref atkBuffTurns, 10f, true);
                 }               
                 break;
             case "debuffAtk":
                 if (!type)
                 {
-                    DeBuffStatChars(fightCntrl.playerSelect, false, ref attack, ref atkDebuff, ref atkDebuffTurns, 10f);
+                    DeBuffStatChars(fightCntrl.playerSelect, false, ref attack, ref atkDebuff, ref atkDebuffTurns, 10f, true);
                 }
                 else
                 {
-                    DeBuffStatChars(fightCntrl.enemySelect, false, ref attack, ref atkDebuff, ref atkDebuffTurns, 10f);
+                    DeBuffStatChars(fightCntrl.enemySelect, false, ref attack, ref atkDebuff, ref atkDebuffTurns, 10f, true);
                 }
                 break;
             case "buffDef":
                 if (type)
                 {
-                    DeBuffStatChars(fightCntrl.playerSelect, true, ref defense, ref defBuff, ref defBuffTurns, 10f);
+                    DeBuffStatChars(fightCntrl.playerSelect, true, ref defense, ref defBuff, ref defBuffTurns, 10f, false);
                 }
                 else
                 {
-                    DeBuffStatChars(fightCntrl.enemySelect, true, ref defense, ref defBuff, ref defBuffTurns, 10f);
+                    DeBuffStatChars(fightCntrl.enemySelect, true, ref defense, ref defBuff, ref defBuffTurns, 10f, false);
                 }
                 break;
             case "debuffDef":
                 if (!type)
                 {
-                    DeBuffStatChars(fightCntrl.playerSelect, false, ref defense, ref defDebuff, ref defDebuffTurns, 10f);
+                    DeBuffStatChars(fightCntrl.playerSelect, false, ref defense, ref defDebuff, ref defDebuffTurns, 10f, false);
                 }
                 else
                 {
-                    DeBuffStatChars(fightCntrl.enemySelect, false, ref defense, ref defDebuff, ref defDebuffTurns, 10f);
+                    DeBuffStatChars(fightCntrl.enemySelect, false, ref defense, ref defDebuff, ref defDebuffTurns, 10f, false);
                 }
                 break;
             default:
@@ -357,7 +356,7 @@ public class FightCharacter : MonoBehaviour, IPointerClickHandler, IPointerDownH
         }
     }
 
-    public void DeBuffStat(bool buff, ref float stat, ref float statInc, ref int deBuffTurns, float amount)
+    public void DeBuffStat(bool buff, ref float stat, ref float statInc, ref int deBuffTurns, float amount, bool atk)
     {
         if(buff)
         {
@@ -385,10 +384,12 @@ public class FightCharacter : MonoBehaviour, IPointerClickHandler, IPointerDownH
         {
             deBuffTurns += 3;
         }
-        Debug.Log("Buff: " + buff + "Stat: " + nameof(stat) + " Turns: " + deBuffTurns);
+        DeBuffsUIManager(true, atk, buff);
+
+        Debug.Log("Buff: " + buff + " Atk: " + atk + " Turns: " + deBuffTurns);
     }
 
-    void DeBuffStatChars(int position, bool buff, ref float stat, ref float statInc, ref int deBuffTurns, float amount)
+    void DeBuffStatChars(int position, bool buff, ref float stat, ref float statInc, ref int deBuffTurns, float amount, bool atk)
     {
         if (type)
         {
@@ -396,14 +397,14 @@ public class FightCharacter : MonoBehaviour, IPointerClickHandler, IPointerDownH
             {
                 if (fightCntrl.playersPositions.Contains(position))
                 {
-                    GameObject.Find("Players").transform.GetChild(position).GetChild(0).GetComponent<FightCharacter>().DeBuffStat(buff, ref stat, ref statInc, ref deBuffTurns, amount);
+                    GameObject.Find("Players").transform.GetChild(position).GetChild(0).GetComponent<FightCharacter>().DeBuffStat(buff, ref stat, ref statInc, ref deBuffTurns, amount, atk);
                 }
             }
             else
             {
                 if (fightCntrl.enemiesPositions.Contains(position))
                 {
-                    GameObject.Find("Enemies").transform.GetChild(position).GetChild(0).GetComponent<FightCharacter>().DeBuffStat(buff, ref stat, ref statInc, ref deBuffTurns, amount);
+                    GameObject.Find("Enemies").transform.GetChild(position).GetChild(0).GetComponent<FightCharacter>().DeBuffStat(buff, ref stat, ref statInc, ref deBuffTurns, amount, atk);
                 }                  
             }           
         }
@@ -413,28 +414,58 @@ public class FightCharacter : MonoBehaviour, IPointerClickHandler, IPointerDownH
             {
                 if (fightCntrl.enemiesPositions.Contains(position))
                 {
-                    GameObject.Find("Enemies").transform.GetChild(position).GetChild(0).GetComponent<FightCharacter>().DeBuffStat(buff, ref stat, ref statInc, ref deBuffTurns, amount);
+                    GameObject.Find("Enemies").transform.GetChild(position).GetChild(0).GetComponent<FightCharacter>().DeBuffStat(buff, ref stat, ref statInc, ref deBuffTurns, amount, atk);
                 }
             }
             else
             {
                 if (fightCntrl.playersPositions.Contains(position))
                 {
-                    GameObject.Find("Players").transform.GetChild(position).GetChild(0).GetComponent<FightCharacter>().DeBuffStat(buff, ref stat, ref statInc, ref deBuffTurns, amount);
+                    GameObject.Find("Players").transform.GetChild(position).GetChild(0).GetComponent<FightCharacter>().DeBuffStat(buff, ref stat, ref statInc, ref deBuffTurns, amount, atk);
                 }
+            }
+        }
+    }
+
+    public void DeBuffsUIManager(bool active, bool atk, bool buff)
+    {
+        if(atk)
+        {
+            if (active) { deBuffsUI.transform.GetChild(0).gameObject.SetActive(true); }
+
+            if (buff)
+            {
+                deBuffsUI.transform.GetChild(0).GetChild(1).gameObject.SetActive(active);
+            }
+            else
+            {
+                deBuffsUI.transform.GetChild(0).GetChild(2).gameObject.SetActive(active);
+            }
+        }
+        else
+        {
+            if (active) { deBuffsUI.transform.GetChild(1).gameObject.SetActive(true); }
+
+            if (buff)
+            {
+                deBuffsUI.transform.GetChild(1).GetChild(1).gameObject.SetActive(active);
+            }
+            else
+            {
+                deBuffsUI.transform.GetChild(1).GetChild(2).gameObject.SetActive(active);
             }
         }
     }
 
     public void CheckDeBuffsTurns()
     {
-        CheckDeBuffsTurnsAux(true, ref attack, ref atkBuffTurns, ref atkBuff);
-        CheckDeBuffsTurnsAux(false, ref attack, ref atkDebuffTurns, ref atkDebuff);
-        CheckDeBuffsTurnsAux(true, ref defense, ref defBuffTurns, ref defBuff);
-        CheckDeBuffsTurnsAux(false, ref defense, ref defDebuffTurns, ref defDebuff);
+        CheckDeBuffsTurnsAux(true, ref attack, ref atkBuffTurns, ref atkBuff, true);
+        CheckDeBuffsTurnsAux(false, ref attack, ref atkDebuffTurns, ref atkDebuff, true);
+        CheckDeBuffsTurnsAux(true, ref defense, ref defBuffTurns, ref defBuff, false);
+        CheckDeBuffsTurnsAux(false, ref defense, ref defDebuffTurns, ref defDebuff, false);
     }
 
-    public void CheckDeBuffsTurnsAux(bool buff, ref float stat, ref int deBuffTurns, ref float statInc)
+    public void CheckDeBuffsTurnsAux(bool buff, ref float stat, ref int deBuffTurns, ref float statInc, bool atk)
     {       
         if(deBuffTurns > 1)
         {
@@ -450,6 +481,15 @@ public class FightCharacter : MonoBehaviour, IPointerClickHandler, IPointerDownH
             else
             {
                 stat += statInc;
+            }
+            DeBuffsUIManager(false, atk, buff);
+            if(atkBuffTurns == 0  && atkDebuffTurns == 0)
+            {                
+                deBuffsUI.transform.GetChild(0).gameObject.SetActive(false);
+            }
+            if (defBuffTurns == 0 && defDebuffTurns == 0)
+            {
+                deBuffsUI.transform.GetChild(1).gameObject.SetActive(false);
             }
         }
         Debug.Log("Buff: " + buff + "Stat: " + nameof(stat) + " Turns: " + deBuffTurns);
