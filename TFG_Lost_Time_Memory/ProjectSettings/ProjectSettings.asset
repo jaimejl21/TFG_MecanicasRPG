@@ -666,9 +666,9 @@ PlayerSettings:
   webGLPowerPreference: 2
   scriptingDefineSymbols:
     Android: USE_PHYSICS2D
-    Standalone: USE_PHYSICS2D
+    Standalone: USE_PHYSICS2D;TMP_PRESENT
     WebGL: USE_PHYSICS2D
-    Windows Store Apps: USE_PHYSICS2D
+    Windows Store Apps: USE_PHYSICS2D;TMP_PRESENT
   additionalCompilerArguments: {}
   platformArchitecture: {}
   scriptingBackend: {}

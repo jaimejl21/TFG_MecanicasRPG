@@ -118,6 +118,7 @@
 -define:ENABLE_INPUT_SYSTEM
 -define:ENABLE_LEGACY_INPUT_MANAGER
 -define:USE_PHYSICS2D
+-define:TMP_PRESENT
 -define:CSHARP_7_OR_LATER
 -define:CSHARP_7_3_OR_NEWER
 -r:"C:/Program Files/Unity/Hub/Editor/2021.3.15f1/Editor/Data/Managed/Unity.CompilationPipeline.Common.dll"
