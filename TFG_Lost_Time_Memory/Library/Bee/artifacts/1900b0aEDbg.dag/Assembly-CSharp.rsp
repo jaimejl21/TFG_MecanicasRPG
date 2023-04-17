@@ -418,6 +418,8 @@
 "Assets/Scripts/MainCharacter/IsometricPlayerMovement.cs"
 "Assets/Scripts/Merchant/MerchantItem.cs"
 "Assets/Scripts/Merchant/MerchantManager.cs"
+"Assets/Scripts/NodeMap/MapNode.cs"
+"Assets/Scripts/NodeMap/NodesMapManager.cs"
 "Assets/Scripts/NPC/FollowMainChar.cs"
 "Assets/Scripts/NPC/InteractGUI.cs"
 "Assets/Scripts/NPC/NpcController.cs"
