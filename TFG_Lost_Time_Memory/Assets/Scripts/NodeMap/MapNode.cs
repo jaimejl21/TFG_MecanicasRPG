@@ -2,25 +2,53 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class MapNode : MonoBehaviour
 {
     public int id, type;
-    bool selected = false;
-    string txt;
+    int nodeSelected;
+    TextMeshProUGUI btnTMP;
 
     public List<MapNode> nextNodes, prevNodes;
-    public GameObject parentColumn; 
+    public GameObject parentColumn;
+    Button btn; 
 
     void Start()
     {
-        txt = gameObject.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text;
-        SetTypeVars();
+        btnTMP = gameObject.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
+        parentColumn = gameObject.transform.parent.gameObject;
+        btn = gameObject.GetComponent<Button>();
+
+        if (PlayerPrefs.HasKey("nodeSelected" + id))
+        {
+            nodeSelected = PlayerPrefs.GetInt("nodeSelected" + id);
+        }
+        else
+        {
+            nodeSelected = -1;
+            SetNodeSelected(-1);
+        }
     }
 
     public void SelectNode()
     {
-        selected = true;
+        SetNodeSelected(1);
+        SetTypeVars();
+        ColorBlock cb = btn.colors;
+        cb.disabledColor = new Color(0, 1, 0, .5f);
+        btn.colors = cb;
+        for(int i = 0; i < parentColumn.transform.childCount; i++)
+        {
+            parentColumn.transform.GetChild(i).GetComponent<Button>().interactable = false;
+            parentColumn.transform.GetChild(i).GetComponent<MapNode>().SetNodeSelected(0);
+        }
+    }
+
+    public void SetNodeSelected(int mode)
+    {
+        nodeSelected = mode;
+        PlayerPrefs.SetInt("nodeSelected" + id, nodeSelected);
     }
 
     void SetTypeVars()
@@ -28,19 +56,19 @@ public class MapNode : MonoBehaviour
         switch(type)
         {
             case 0:
-                txt = "Fight";
+                btnTMP.text = "Fight";
                 break;
             case 1:
-                txt = "Merchant";
+                btnTMP.text = "Merchant";
                 break;
             case 2:
-                txt = "Blacksmith";
+                btnTMP.text = "Blacksmith";
                 break;
             case 3:
-                txt = "Team";
+                btnTMP.text = "Team";
                 break;
             case 4:
-                txt = "Recruit";
+                btnTMP.text = "Recruit";
                 break;
             default:
                 break;
