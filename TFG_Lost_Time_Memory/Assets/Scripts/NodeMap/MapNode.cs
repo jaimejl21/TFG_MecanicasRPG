@@ -9,14 +9,17 @@ public class MapNode : MonoBehaviour
     public int id, type;
     public bool selected;
     int nodeSelected;
-    TextMeshProUGUI btnTMP;
 
+    TextMeshProUGUI btnTMP;
+    Button btn;
     public List<MapNode> nextNodes, prevNodes;
     public GameObject parentColumn;
-    Button btn; 
+    NodesMapManager nmm;
 
     void Start()
     {
+        nmm = FindObjectOfType<NodesMapManager>();
+        
         btnTMP = gameObject.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
         parentColumn = gameObject.transform.parent.gameObject;
         btn = gameObject.GetComponent<Button>();
@@ -51,6 +54,7 @@ public class MapNode : MonoBehaviour
                 parentColumn.transform.GetChild(i).GetComponent<MapNode>().SetNodeSelected(0);
             }
         }
+        nmm.ManageColumns();
     }
 
     public void SetNodeSelected(int mode)

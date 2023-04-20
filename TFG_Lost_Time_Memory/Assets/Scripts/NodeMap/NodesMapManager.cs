@@ -4,17 +4,19 @@ using UnityEngine;
 
 public class NodesMapManager : MonoBehaviour
 {
-    //public List<MapNode> nodesIds;
+    public List<GameObject> columnsList;
+
+    int actualCol;
 
     void Start()
     {
-        //nodesIds = new List<MapNode>();
-
-        //for(int i=0; i<6; i++)
-        //{
-            
-        //}
+        actualCol = 0;
     }
 
+    public void ManageColumns()
+    {
+        actualCol++;
+        columnsList[actualCol].SetActive(true);
+    }
 
 }
