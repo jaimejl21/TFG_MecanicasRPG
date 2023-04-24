@@ -8,7 +8,7 @@ public class MapNode : MonoBehaviour
 {
     public int id, type;
     public bool selected;
-    int nodeSelected;
+    public int nodeSelected;
 
     TextMeshProUGUI btnTMP;
     Button btn;
@@ -27,13 +27,13 @@ public class MapNode : MonoBehaviour
         if (PlayerPrefs.HasKey("nodeSelected" + id))
         {
             nodeSelected = PlayerPrefs.GetInt("nodeSelected" + id);
-            Debug.Log("Has key  nodeSelected " + id + ": " + nodeSelected);
+            //Debug.Log("Has key  nodeSelected " + id + ": " + nodeSelected);
         }
         else
         {
             nodeSelected = -1;
             SetNodeSelected(-1);
-            Debug.Log("Has no key  nodeSelected " + id + ": " + nodeSelected);
+            //Debug.Log("Has no key  nodeSelected " + id + ": " + nodeSelected);
         }
         SetButton();
     }
@@ -61,7 +61,7 @@ public class MapNode : MonoBehaviour
     {
         nodeSelected = mode;
         PlayerPrefs.SetInt("nodeSelected" + id, nodeSelected);
-        Debug.Log("nodeSelected " + id + ": " + nodeSelected);
+        //Debug.Log("nodeSelected " + id + ": " + nodeSelected);
     }
 
     void SetButton()
