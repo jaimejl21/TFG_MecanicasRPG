@@ -10,7 +10,8 @@ public class GameManager : MonoBehaviour
 
     public int charToEquipGear = 0;
     public bool restartPP, initialized = false;
-    public int coins, idGearCount, idCharCount, awMats, upMats;
+    public int coins, idGearCount, idCharCount, awMats, upMats, enemyTeam;
+    public string converName = "";
 
     [SerializeField]
     string filename;
@@ -87,32 +88,32 @@ public class GameManager : MonoBehaviour
                     allGear.Add(new Gear.Info(i, 5, i, 0, 0, 0, 0, false, -1));
                     if(i == 0)
                     {
-                        allEnemies.Add(new Character.Info(i, 0, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
-                        allChar.Add(new Character.Info(i, 0, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
+                        allEnemies.Add(new Character.Info(i, 0, 0, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
+                        allChar.Add(new Character.Info(i, 0, 0, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
                         idCharCount++;
                     }
                     else if(i == 1)
                     {
-                        allEnemies.Add(new Character.Info(i, 1, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
-                        allChar.Add(new Character.Info(i, 1, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
+                        allEnemies.Add(new Character.Info(i, 1, 0, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
+                        allChar.Add(new Character.Info(i, 1, 0, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
                         idCharCount++;
                     }
                     else if (i == 2)
                     {
-                        allEnemies.Add(new Character.Info(i, 2, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
-                        allChar.Add(new Character.Info(i, 2, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
+                        allEnemies.Add(new Character.Info(i, 2, 0, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
+                        allChar.Add(new Character.Info(i, 2, 0, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
                         idCharCount++;
                     }
                     else if ((i > 2) && (i < 5))
                     {
-                        allEnemies.Add(new Character.Info(i, 3, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
-                        allChar.Add(new Character.Info(i, 3, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
+                        allEnemies.Add(new Character.Info(i, 3, 1, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
+                        allChar.Add(new Character.Info(i, 3, 0, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
                         idCharCount++;
                     }
                     else
                     {
-                        allEnemies.Add(new Character.Info(i, 4, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
-                        allChar.Add(new Character.Info(i, 4, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
+                        allEnemies.Add(new Character.Info(i, 4, 1, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
+                        allChar.Add(new Character.Info(i, 4, 0, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
                         idCharCount++;
                     }
                 }
@@ -121,17 +122,17 @@ public class GameManager : MonoBehaviour
                     allGear.Add(new Gear.Info(i, 3, (i-6), 1, 1, 0, 0, false, -1));
                     if(i == 6)
                     {
-                        allChar.Add(new Character.Info(i, 4, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
+                        allChar.Add(new Character.Info(i, 4, 0, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
                         idCharCount++;
                     }
                     if ((i > 6) && (i < 9))
                     {
-                        allChar.Add(new Character.Info(i, 5, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
+                        allChar.Add(new Character.Info(i, 5, 0, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
                         idCharCount++;
                     }
                     else if ((i > 8) && (i < 11))
                     {
-                        allChar.Add(new Character.Info(i, 6, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
+                        allChar.Add(new Character.Info(i, 6, 0, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
                         idCharCount++;
                     }
                 }
@@ -175,12 +176,12 @@ public class GameManager : MonoBehaviour
             allGear = lists.gearList;
 
             Gear.Info gi = new Gear.Info(-1, 10, -1, -1, 0, 0, 0, false, -1);
-            allEnemies.Add(new Character.Info(0, 0, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
-            allEnemies.Add(new Character.Info(1, 1, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
-            allEnemies.Add(new Character.Info(2, 2, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
-            allEnemies.Add(new Character.Info(3, 3, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
-            allEnemies.Add(new Character.Info(4, 4, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
-            allEnemies.Add(new Character.Info(5, 5, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
+            allEnemies.Add(new Character.Info(0, 0, 0, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
+            allEnemies.Add(new Character.Info(1, 1, 0, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
+            allEnemies.Add(new Character.Info(2, 2, 0, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
+            allEnemies.Add(new Character.Info(3, 3, 1, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
+            allEnemies.Add(new Character.Info(4, 4, 1, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
+            allEnemies.Add(new Character.Info(5, 5, 1, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
 
             GetPlayerPrefs("idGearCount", ref idGearCount, 0);
             GetPlayerPrefs("idCharCount", ref idCharCount, 0);

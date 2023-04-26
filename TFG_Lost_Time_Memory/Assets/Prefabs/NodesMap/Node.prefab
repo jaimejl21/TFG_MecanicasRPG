@@ -135,6 +135,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 8138539264565449675}
+        m_TargetAssemblyTypeName: MapNode, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &8138539264565449673
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -149,6 +161,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   type: 0
+  selected: 0
+  nodeSelected: 0
   nextNodes: []
   prevNodes: []
   parentColumn: {fileID: 0}

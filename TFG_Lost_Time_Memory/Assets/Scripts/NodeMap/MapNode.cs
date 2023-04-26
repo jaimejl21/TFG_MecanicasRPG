@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class MapNode : MonoBehaviour
 {
     public int id, type;
     public bool selected;
     public int nodeSelected;
+
+    string toSceneName = "";
 
     TextMeshProUGUI btnTMP;
     Button btn;
@@ -91,21 +94,38 @@ public class MapNode : MonoBehaviour
         {
             case 0:
                 btnTMP.text = "Fight";
+                toSceneName = "Fight";
                 break;
             case 1:
                 btnTMP.text = "Merchant";
+                toSceneName = "Merchant";
                 break;
             case 2:
                 btnTMP.text = "Blacksmith";
+                toSceneName = "Blacksmith";
                 break;
             case 3:
                 btnTMP.text = "Team";
+                toSceneName = "Team";
                 break;
             case 4:
-                btnTMP.text = "Recruit";
+                btnTMP.text = "Dialogue";
+                toSceneName = "Dialogue";
                 break;
             default:
                 break;
         }
+    }
+
+    public void ChangeToDialogueScene(string conver)
+    {
+        SceneManager.LoadScene(toSceneName);
+        GameManager.inst.converName = conver;
+    }
+
+    public void ChangeToFightScene(int enemyTeam)
+    {
+        SceneManager.LoadScene(toSceneName);
+        GameManager.inst.enemyTeam = enemyTeam;
     }
 }
