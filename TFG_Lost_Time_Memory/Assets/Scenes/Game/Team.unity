@@ -154,9 +154,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   charToEquipGear: 0
   restartPP: 0
+  initialized: 0
   coins: 0
   idGearCount: 0
   idCharCount: 0
+  awMats: 0
+  upMats: 0
+  enemyTeam: 0
+  converName: 
   filename: 
 --- !u!4 &235209504
 Transform:
@@ -1044,6 +1049,7 @@ MonoBehaviour:
   - {fileID: 1724674973}
   - {fileID: 612949515}
   allCharList: []
+  dragging: 0
 --- !u!4 &860649842
 Transform:
   m_ObjectHideFlags: 0
@@ -1297,7 +1303,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 368536758}
   m_HandleRect: {fileID: 368536757}
   m_Direction: 2
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -1647,7 +1653,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Lobby
+          m_StringArgument: NodesMap
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1716201762

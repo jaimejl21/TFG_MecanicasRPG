@@ -112,6 +112,10 @@ public class MapNode : MonoBehaviour
                 btnTMP.text = "Dialogue";
                 toSceneName = "Dialogue";
                 break;
+            case 5:
+                btnTMP.text = "Characters";
+                toSceneName = "Characters";
+                break;
             default:
                 break;
         }
@@ -127,5 +131,10 @@ public class MapNode : MonoBehaviour
     {
         SceneManager.LoadScene(toSceneName);
         GameManager.inst.enemyTeam = enemyTeam;
+    }
+
+    public void ChangeToScene()
+    {
+        SceneManager.LoadScene(toSceneName);
     }
 }

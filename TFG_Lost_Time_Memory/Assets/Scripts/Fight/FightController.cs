@@ -30,11 +30,12 @@ public class FightController : MonoBehaviour
     public TextMeshProUGUI resultText, comboTxt, typeBonusTxt;
     public GameObject enemies, players, buttonsDown;
     public ComboController comboCntrl;
+    public EnemyTeamGenerator etg;
 
     private void Start()
     {       
         auxCharList = GameManager.allChar.ToList();
-        allEnemiesList = GameManager.allEnemies.ToList();
+        allEnemiesList = etg.GenerateEnemyTeam(GameManager.inst.enemyTeam);
         teamList = new List<Character.Info>() { null, null, null, null, null, null };
 
         for (int i = 0; i < auxCharList.Count; i++)

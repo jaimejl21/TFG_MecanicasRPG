@@ -12,12 +12,28 @@ public class NodesMapManager : MonoBehaviour
 
     void Start()
     {
-        actualCol = 0;
+        if (PlayerPrefs.HasKey("actualCol"))
+        {
+            actualCol = PlayerPrefs.GetInt("actualCol");
+            Debug.Log("key " + actualCol);
+        }
+        else
+        {
+            actualCol = 0;
+            Debug.Log("No key");
+        }
+
+        for(int i = 0; i < (actualCol + 1); i++)
+        {
+            columnsList[i].SetActive(true);
+            Debug.Log("column " + i + " active");
+        }        
     }
 
     public void ManageColumns()
     {
         actualCol++;
+        PlayerPrefs.SetInt("actualCol", actualCol);
         if (actualCol < columnsList.Count)
         {
             columnsList[actualCol].SetActive(true);
@@ -30,7 +46,7 @@ public class NodesMapManager : MonoBehaviour
                     int j = 0;
                     bool aux = false;
                     bool isActive = false;
-                    Debug.Log("aux " + aux);
+                    //Debug.Log("aux " + aux);
                     while(!aux)
                     {
                         //Debug.Log("nodeSelected = " + columnsList[actualCol].transform.GetChild(i).GetComponent<MapNode>().prevNodes[j].GetComponent<MapNode>().nodeSelected);
@@ -41,14 +57,14 @@ public class NodesMapManager : MonoBehaviour
                             aux = true;
                         }
                         j++;
-                        Debug.Log("j = " + j + " // prevNodes.Count = " + columnsList[actualCol].transform.GetChild(i).GetComponent<MapNode>().prevNodes.Count);
+                        //Debug.Log("j = " + j + " // prevNodes.Count = " + columnsList[actualCol].transform.GetChild(i).GetComponent<MapNode>().prevNodes.Count);
                         if (j >= columnsList[actualCol].transform.GetChild(i).GetComponent<MapNode>().prevNodes.Count)
                         {
                             aux = true;
                         }
                         
                     }
-                    Debug.Log("isActive " + isActive);
+                    //Debug.Log("isActive " + isActive);
                     if (!isActive)
                     {
                         columnsList[actualCol].transform.GetChild(i).GetComponent<MapNode>().SetNodeSelected(0);
