@@ -85,41 +85,36 @@ public class GameManager : MonoBehaviour
             {
                 if(i < 6)
                 {
-                    allGear.Add(new Gear.Info(i, 5, i, 0, 0, 0, 0, false, -1));
+                    allGear.Add(new Gear.Info(i, AuxSetStatAmount(i, 0), i, 0, 0, 0, 0, false, -1));
                     if(i == 0)
                     {
-                        //allEnemies.Add(new Character.Info(i, 0, 0, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
                         allChar.Add(new Character.Info(i, 0, 0, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
                         idCharCount++;
                     }
                     else if(i == 1)
                     {
-                        //allEnemies.Add(new Character.Info(i, 1, 0, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
                         allChar.Add(new Character.Info(i, 1, 0, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
                         idCharCount++;
                     }
                     else if (i == 2)
                     {
-                        //allEnemies.Add(new Character.Info(i, 2, 0, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
                         allChar.Add(new Character.Info(i, 2, 0, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
                         idCharCount++;
                     }
                     else if ((i > 2) && (i < 5))
                     {
-                        //allEnemies.Add(new Character.Info(i, 3, 1, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
                         allChar.Add(new Character.Info(i, 3, 0, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
                         idCharCount++;
                     }
                     else
                     {
-                        //allEnemies.Add(new Character.Info(i, 4, 1, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
                         allChar.Add(new Character.Info(i, 4, 0, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
                         idCharCount++;
                     }
                 }
                 else if((i > 5) && (i < 12))
                 {
-                    allGear.Add(new Gear.Info(i, 3, (i-6), 1, 1, 0, 0, false, -1));
+                    allGear.Add(new Gear.Info(i, AuxSetStatAmount((i-6), 1), (i-6), 1, 1, 0, 0, false, -1));
                     if(i == 6)
                     {
                         allChar.Add(new Character.Info(i, 4, 0, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
@@ -138,7 +133,7 @@ public class GameManager : MonoBehaviour
                 }
                 else if ((i > 11) && (i < 18))
                 {
-                    allGear.Add(new Gear.Info(i, 50, (i - 12), 2, 2, 0, 0, false, -1));
+                    allGear.Add(new Gear.Info(i, AuxSetStatAmount((i-12), 2), (i - 12), 2, 2, 0, 0, false, -1));
                 }
                 else if ((i > 17) && (i < 25))
                 {
@@ -175,14 +170,6 @@ public class GameManager : MonoBehaviour
             allChar = lists.charList;
             allGear = lists.gearList;
 
-            //Gear.Info gi = new Gear.Info(-1, 10, -1, -1, 0, 0, 0, false, -1);
-            //allEnemies.Add(new Character.Info(0, 0, 0, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
-            //allEnemies.Add(new Character.Info(1, 1, 0, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
-            //allEnemies.Add(new Character.Info(2, 2, 0, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
-            //allEnemies.Add(new Character.Info(3, 3, 1, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
-            //allEnemies.Add(new Character.Info(4, 4, 1, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
-            //allEnemies.Add(new Character.Info(5, 5, 1, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
-
             GetPlayerPrefs("idGearCount", ref idGearCount, 0);
             GetPlayerPrefs("idCharCount", ref idCharCount, 0);
             GetPlayerPrefs("coins", ref coins, 50000);
@@ -192,7 +179,54 @@ public class GameManager : MonoBehaviour
         initialized = true;
     }
 
-    void GetPlayerPrefs(string name, ref int toGet, int num)
+    int AuxSetStatAmount(int objType, int rarity)
+    {
+        if (objType == 0 || objType == 3)
+        {
+            switch(rarity)
+            {
+                case 0:
+                    return 5;
+                case 1:
+                    return 10;
+                case 2:
+                    return 20;
+                default:
+                    return 0;
+            }
+        }
+        else if (objType == 1 || objType == 4)
+        {
+            switch (rarity)
+            {
+                case 0:
+                    return 3;
+                case 1:
+                    return 6;
+                case 2:
+                    return 12;
+                default:
+                    return 0;
+            }
+        }
+        else if (objType == 2 || objType == 5)
+        {
+            switch (rarity)
+            {
+                case 0:
+                    return 50;
+                case 1:
+                    return 100;
+                case 2:
+                    return 200;
+                default:
+                    return 0;
+            }
+        }
+        else return 0;
+    }
+
+    public void GetPlayerPrefs(string name, ref int toGet, int num)
     {
         if (PlayerPrefs.HasKey(name))
         {

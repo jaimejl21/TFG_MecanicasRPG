@@ -248,32 +248,37 @@ public class GearManager : MonoBehaviour
 
     public bool CanDropGear()
     {
-        if(btns[0].interactable == false)
+        if (GearDragHandler.itemDragging != null)
         {
-            if(GearDragHandler.itemDragging.GetComponent<Gear>().info.objType < 6)
+            if (btns[0].interactable == false)
             {
-                return false;
+                if (GearDragHandler.itemDragging.GetComponent<Gear>().info.objType < 6)
+                {
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
             }
             else
             {
-                return true;
+                if (GearDragHandler.itemDragging.GetComponent<Gear>().info.objType > 5)
+                {
+                    return false;
+                }
+
+                else if (atkGears <= 0 && defGears <= 0 && hpGears <= 0)
+                {
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
             }
         }
-        else
-        {
-            if (GearDragHandler.itemDragging.GetComponent<Gear>().info.objType > 5)
-            {
-                return false;
-            }
-            else if(atkGears <= 0 && defGears <= 0 && hpGears <= 0)
-            {
-                return false;
-            }
-            else
-            {
-                return true;
-            }
-        }
+        else return false;      
     }
 
     void InitBaseStatsTxt()
