@@ -378,7 +378,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 570, y: 81.25}
+  m_SizeDelta: {x: 1471.0336, y: 105.8994}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &187902793
 MonoBehaviour:
@@ -519,7 +519,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 570, y: 81.25}
+  m_SizeDelta: {x: 1471.0336, y: 105.8994}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &281899284
 MonoBehaviour:
@@ -795,7 +795,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 16, y: -16}
-  m_SizeDelta: {x: -31.999695, y: 400}
+  m_SizeDelta: {x: -31.9998, y: 451.4479}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &458130110
 MonoBehaviour:
@@ -903,7 +903,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 570, y: 81.25}
+  m_SizeDelta: {x: 1471.0336, y: 105.8994}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &482399528
 MonoBehaviour:
@@ -2167,8 +2167,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -576.9}
-  m_SizeDelta: {x: 600, y: 400}
+  m_AnchoredPosition: {x: 34.2229, y: -526.0068}
+  m_SizeDelta: {x: 1505.0029, y: 501.7865}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1173436397
 MonoBehaviour:
@@ -2383,7 +2383,7 @@ MonoBehaviour:
   allowBarksDuringConversations: 0
   skipBarkIfNoValidEntries: 0
   cacheBarkLines: 0
-  conversation: New Conversation 2
+  conversation: New Conversation 3
   conversationConversant: {fileID: 0}
   conversationActor: {fileID: 0}
   startConversationEntryID: -1
@@ -2404,7 +2404,7 @@ MonoBehaviour:
   useConversationTitlePicker: 1
   useBarkTitlePicker: 1
   useQuestNamePicker: 1
-  selectedDatabase: {fileID: 11400000, guid: eb1a4b504a06891408edd479743ccd70, type: 2}
+  selectedDatabase: {fileID: 11400000, guid: e4a1954ebfb534a4295db3b0a7525f8c, type: 2}
 --- !u!4 &1317826362
 Transform:
   m_ObjectHideFlags: 0
@@ -2478,7 +2478,7 @@ PrefabInstance:
     - target: {fileID: 11426072, guid: 58ac37417e60e534f91138088a3e6f70, type: 3}
       propertyPath: initialDatabase
       value: 
-      objectReference: {fileID: 11400000, guid: eb1a4b504a06891408edd479743ccd70, type: 2}
+      objectReference: {fileID: 11400000, guid: e4a1954ebfb534a4295db3b0a7525f8c, type: 2}
     - target: {fileID: 11426072, guid: 58ac37417e60e534f91138088a3e6f70, type: 3}
       propertyPath: displaySettings.dialogueUI
       value: 
@@ -2688,7 +2688,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 33.900024, y: -14.280029}
+  m_AnchoredPosition: {x: 33.899902, y: -14.280029}
   m_SizeDelta: {x: -33.899952, y: 54.7}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1949534074
@@ -2827,7 +2827,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 570, y: 81.25}
+  m_SizeDelta: {x: 1471.0336, y: 105.8994}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1999461383
 MonoBehaviour:
