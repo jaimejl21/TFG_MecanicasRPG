@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
 
     public int charToEquipGear = 0;
     public bool restartPP, initialized = false;
-    public int coins, idGearCount, idCharCount, awMats, upMats, enemyTeam;
+    public int coins, idGearCount, idCharCount, awMats, upMats, enemyTeam, lvlUpMatC, lvlUpMatR, lvlUpMatSR;
     public string converName = "";
 
     [SerializeField]
@@ -18,7 +18,6 @@ public class GameManager : MonoBehaviour
 
     public static List<Character.Info> allChar;
     public static List<Gear.Info> allGear;
-    //public static List<Character.Info> allEnemies;
 
     int started;
 
@@ -54,7 +53,6 @@ public class GameManager : MonoBehaviour
     {
         allChar = new List<Character.Info>();
         allGear = new List<Gear.Info>();
-        //allEnemies = new List<Character.Info>();
 
         //Debug.Log("Started: " + started);
 
@@ -137,15 +135,15 @@ public class GameManager : MonoBehaviour
                 }
                 else if ((i > 17) && (i < 25))
                 {
-                    allGear.Add(new Gear.Info(i, 10, (i - 12), -1, 0, 0, 0, false, -1));
+                    allGear.Add(new Gear.Info(i, AuxSetStatAmount((i-12), 0), (i - 12), -1, 0, 0, 0, false, -1));
                 }
                 else if ((i > 24) && (i < 32))
                 {
-                    allGear.Add(new Gear.Info(i, 20, (i - 19), -1, 1, 0, 0, false, -1));
+                    allGear.Add(new Gear.Info(i, AuxSetStatAmount((i-19), 1), (i - 19), -1, 1, 0, 0, false, -1));
                 }
                 else
                 {
-                    allGear.Add(new Gear.Info(i, 30, (i - 26), -1, 2, 0, 0, false, -1));
+                    allGear.Add(new Gear.Info(i, AuxSetStatAmount((i-26), 2), (i - 26), -1, 2, 0, 0, false, -1));
                 }
                 idGearCount++;
             }
@@ -156,6 +154,9 @@ public class GameManager : MonoBehaviour
             coins = 50000;
             awMats = 90;
             upMats = 90;
+            lvlUpMatC = 100;
+            lvlUpMatR = 100;
+            lvlUpMatSR = 100;
 
             PlayerPrefs.SetInt("started", started);
             PlayerPrefs.SetInt("idGearCount", idGearCount);
@@ -163,6 +164,9 @@ public class GameManager : MonoBehaviour
             PlayerPrefs.SetInt("coins", coins);
             PlayerPrefs.SetInt("awMats", awMats); 
             PlayerPrefs.SetInt("upMats", upMats);
+            PlayerPrefs.SetInt("amountC", lvlUpMatC);
+            PlayerPrefs.SetInt("amountR", lvlUpMatR);
+            PlayerPrefs.SetInt("amountSR", lvlUpMatSR);
         }
         else
         {
@@ -175,15 +179,18 @@ public class GameManager : MonoBehaviour
             GetPlayerPrefs("coins", ref coins, 50000);
             GetPlayerPrefs("upMats", ref upMats, 90);
             GetPlayerPrefs("awMats", ref awMats, 90);
+            GetPlayerPrefs("amountC", ref lvlUpMatC, 100);
+            GetPlayerPrefs("amountR", ref lvlUpMatR, 100);
+            GetPlayerPrefs("amountSR", ref lvlUpMatSR, 100);
         }
         initialized = true;
     }
 
-    int AuxSetStatAmount(int objType, int rarity)
+    public int AuxSetStatAmount(int objType, int rarity)
     {
         if (objType == 0 || objType == 3)
         {
-            switch(rarity)
+            switch (rarity)
             {
                 case 0:
                     return 5;
@@ -223,7 +230,20 @@ public class GameManager : MonoBehaviour
                     return 0;
             }
         }
-        else return 0;
+        else
+        {
+            switch (rarity)
+            {
+                case 0:
+                    return 10;
+                case 1:
+                    return 20;
+                case 2:
+                    return 30;
+                default:
+                    return 0;
+            }
+        }
     }
 
     public void GetPlayerPrefs(string name, ref int toGet, int num)

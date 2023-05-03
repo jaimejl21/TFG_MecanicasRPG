@@ -116,6 +116,10 @@ public class MapNode : MonoBehaviour
                 btnTMP.text = "Characters";
                 toSceneName = "Characters";
                 break;
+            case 6:
+                btnTMP.text = "Item";
+                toSceneName = "Item";
+                break;
             default:
                 break;
         }

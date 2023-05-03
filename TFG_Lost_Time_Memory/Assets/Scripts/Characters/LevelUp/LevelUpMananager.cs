@@ -42,28 +42,12 @@ public class LevelUpMananager : MonoBehaviour
 
         lvTxt.text = "Lv. " + level;
 
-        SetAmounts();
+        amountC = GameManager.inst.lvlUpMatC;
+        amountR = GameManager.inst.lvlUpMatR;
+        amountSR = GameManager.inst.lvlUpMatSR;
+
         MaterialsInventory();
         UpdateBaseStatsTxt();
-    }
-
-    void SetAmounts()
-    {
-        GetPlayerPrefs("amountC", ref amountC, 100);
-        GetPlayerPrefs("amountR", ref amountR, 100);
-        GetPlayerPrefs("amountSR", ref amountSR, 100);
-    }
-
-    void GetPlayerPrefs(string name, ref int var, int num)
-    {
-        if (PlayerPrefs.HasKey(name))
-        {
-            var = PlayerPrefs.GetInt(name);
-        }
-        else
-        {
-            var = num;
-        }
     }
 
     void MaterialsInventory()
@@ -289,6 +273,10 @@ public class LevelUpMananager : MonoBehaviour
 
     public void SaveAmounts()
     {
+        GameManager.inst.lvlUpMatC = amountC;
+        GameManager.inst.lvlUpMatR = amountR;
+        GameManager.inst.lvlUpMatSR = amountSR;
+
         PlayerPrefs.SetInt("amountC", amountC);
         PlayerPrefs.SetInt("amountR", amountR);
         PlayerPrefs.SetInt("amountSR", amountSR);
