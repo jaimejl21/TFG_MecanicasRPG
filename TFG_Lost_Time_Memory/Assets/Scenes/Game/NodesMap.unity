@@ -1620,7 +1620,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8138539264565449672, guid: 0d1bfda12a432f94090622cb3058e6fb, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
-      value: Questioning
+      value: Herrero
       objectReference: {fileID: 0}
     - target: {fileID: 8138539264565449672, guid: 0d1bfda12a432f94090622cb3058e6fb, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -1920,7 +1920,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8138539264565449672, guid: 0d1bfda12a432f94090622cb3058e6fb, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
-      value: Questioning
+      value: Herrero
       objectReference: {fileID: 0}
     - target: {fileID: 8138539264565449672, guid: 0d1bfda12a432f94090622cb3058e6fb, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -3040,6 +3040,9 @@ MonoBehaviour:
   awMats: 0
   upMats: 0
   enemyTeam: 0
+  lvlUpMatC: 0
+  lvlUpMatR: 0
+  lvlUpMatSR: 0
   converName: 
   filename: CharactersDB.json
 --- !u!4 &1198946785
