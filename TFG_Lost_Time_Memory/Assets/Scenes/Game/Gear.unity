@@ -421,7 +421,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -132.19, y: -0.34999847}
+  m_AnchoredPosition: {x: -132.19006, y: -0.3500061}
   m_SizeDelta: {x: 171, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &64668192
@@ -1131,11 +1131,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   charToEquipGear: 0
   restartPP: 1
+  initialized: 0
   coins: 0
   idGearCount: 0
   idCharCount: 0
   awMats: 0
   upMats: 0
+  enemyTeam: 0
+  lvlUpMatC: 0
+  lvlUpMatR: 0
+  lvlUpMatSR: 0
+  converName: 
   filename: CharactersDB.json
 --- !u!4 &235209504
 Transform:
@@ -1632,6 +1638,7 @@ MonoBehaviour:
   - {fileID: 217615791}
   - {fileID: 1627534753}
   - {fileID: 971172194}
+  weaponTxt: {fileID: 64668192}
   btns:
   - {fileID: 9395819}
   - {fileID: 2110610694}

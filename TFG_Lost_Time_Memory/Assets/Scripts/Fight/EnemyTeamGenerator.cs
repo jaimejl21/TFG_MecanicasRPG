@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = System.Random;
 
 public class EnemyTeamGenerator : MonoBehaviour
 {
@@ -23,15 +24,15 @@ public class EnemyTeamGenerator : MonoBehaviour
             case 0:
                 for (int i = 0; i < 6; i++)
                 {
-                    type = Random.Range(0, 7);
-                    enemyTeamList.Add(new Character.Info(i, type, 0, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
+                    type = new Random().Next(0, 7);
+                    enemyTeamList.Add(new Character.Info(i, type, 0, -1, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
                 }
                 break;
             case 1:
                 for (int i = 0; i < 6; i++)
                 {
-                    type = Random.Range(0, 7);
-                    enemyTeamList.Add(new Character.Info(i, type, 1, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
+                    type = new Random().Next(0, 7);
+                    enemyTeamList.Add(new Character.Info(i, type, 1, -1, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
                 }
                 break;
             case 2:

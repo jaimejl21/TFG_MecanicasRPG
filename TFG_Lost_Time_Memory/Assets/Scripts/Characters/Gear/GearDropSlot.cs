@@ -28,6 +28,11 @@ public class GearDropSlot : MonoBehaviour, IDropHandler
                 item.GetComponent<GearDragHandler>().slotParent = transform;
                 item.GetComponent<Gear>().info.equiped = true;
                 item.GetComponent<Gear>().info.characterId = gearManager.charGO.transform.GetComponent<Character>().info.id;
+                if(item.GetComponent<Gear>().info.objType == gearManager.charGO.transform.GetComponent<Character>().info.weapon)
+                {
+                    gearManager.weaponTxt.color = Color.green;
+                }
+                else gearManager.weaponTxt.color = Color.red;
                 for (int i = 0; i < gearManager.gearList.Count; i++)
                 {
                     if (gearManager.gearList[i].id == item.GetComponent<Gear>().info.id)
@@ -64,6 +69,11 @@ public class GearDropSlot : MonoBehaviour, IDropHandler
                     item.GetComponent<GearDragHandler>().slotParent = transform;
                     item.GetComponent<Gear>().info.equiped = true;
                     item.GetComponent<Gear>().info.characterId = gearManager.charGO.transform.GetComponent<Character>().info.id;
+                    if (item.GetComponent<Gear>().info.objType == gearManager.charGO.transform.GetComponent<Character>().info.weapon)
+                    {
+                        gearManager.weaponTxt.color = Color.green;
+                    }
+                    else gearManager.weaponTxt.color = Color.red;
                     for (int i = 0; i < gearManager.gearList.Count; i++)
                     {
                         if (gearManager.gearList[i].id == item.GetComponent<Gear>().info.id)
