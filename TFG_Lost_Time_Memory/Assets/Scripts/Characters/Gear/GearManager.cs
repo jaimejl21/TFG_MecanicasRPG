@@ -12,7 +12,6 @@ public class GearManager : MonoBehaviour
     public GameObject[] gearSlots;
     public Transform charPos;
     public TextMeshProUGUI[] statsTxt, bonusTxt, statsBonusTxt;
-    public TextMeshProUGUI weaponTxt;
     public Button[] btns;
 
     public int idToEquip;
@@ -137,21 +136,7 @@ public class GearManager : MonoBehaviour
         {
             if (ginfo.objType == 0 || ginfo.objType == 3 || ginfo.objType > 5)
             {
-                if(ginfo.objType > 5)
-                {
-                    if(ginfo.objType == charGO.transform.GetComponent<Character>().info.weapon)
-                    {
-                        charGO.transform.GetComponent<Character>().info.stats.extraAtk += (ginfo.statAmount * 2);
-                    }
-                    else
-                    {
-                        charGO.transform.GetComponent<Character>().info.stats.extraAtk += (ginfo.statAmount / 2);
-                    }
-                }
-                else
-                {
-                    charGO.transform.GetComponent<Character>().info.stats.extraAtk += ginfo.statAmount;
-                }             
+                charGO.transform.GetComponent<Character>().info.stats.extraAtk += ginfo.statAmount;
             }
             else if (ginfo.objType == 1 || ginfo.objType == 4)
             {
@@ -166,21 +151,7 @@ public class GearManager : MonoBehaviour
         {
             if (ginfo.objType == 0 || ginfo.objType == 3 || ginfo.objType > 5)
             {
-                if (ginfo.objType > 5)
-                {
-                    if (ginfo.objType == charGO.transform.GetComponent<Character>().info.weapon)
-                    {
-                        charGO.transform.GetComponent<Character>().info.stats.extraAtk -= (ginfo.statAmount * 2);
-                    }
-                    else
-                    {
-                        charGO.transform.GetComponent<Character>().info.stats.extraAtk -= (ginfo.statAmount / 2);
-                    }
-                }
-                else
-                {
-                    charGO.transform.GetComponent<Character>().info.stats.extraAtk += ginfo.statAmount;
-                }
+                charGO.transform.GetComponent<Character>().info.stats.extraAtk -= ginfo.statAmount;
             }
             else if (ginfo.objType == 1 || ginfo.objType == 4)
             {

@@ -86,27 +86,27 @@ public class GameManager : MonoBehaviour
                     allGear.Add(new Gear.Info(i, AuxSetStatAmount(i, 0), i, 0, 0, 0, 0, false, -1));
                     if(i == 0)
                     {
-                        allChar.Add(new Character.Info(i, 0, 0, 6, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
+                        allChar.Add(new Character.Info(i, 0, 0, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
                         idCharCount++;
                     }
                     else if(i == 1)
                     {
-                        allChar.Add(new Character.Info(i, 1, 0, 7, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
+                        allChar.Add(new Character.Info(i, 1, 0, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
                         idCharCount++;
                     }
                     else if (i == 2)
                     {
-                        allChar.Add(new Character.Info(i, 2, 0, 8, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
+                        allChar.Add(new Character.Info(i, 2, 0, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
                         idCharCount++;
                     }
                     else if ((i > 2) && (i < 5))
                     {
-                        allChar.Add(new Character.Info(i, 3, 0, 9, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
+                        allChar.Add(new Character.Info(i, 3, 0, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
                         idCharCount++;
                     }
                     else
                     {
-                        allChar.Add(new Character.Info(i, 4, 0, 10, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
+                        allChar.Add(new Character.Info(i, 4, 0, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
                         idCharCount++;
                     }
                 }
@@ -115,17 +115,17 @@ public class GameManager : MonoBehaviour
                     allGear.Add(new Gear.Info(i, AuxSetStatAmount((i-6), 1), (i-6), 1, 1, 0, 0, false, -1));
                     if(i == 6)
                     {
-                        allChar.Add(new Character.Info(i, 4, 0, 11, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
+                        allChar.Add(new Character.Info(i, 4, 0, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
                         idCharCount++;
                     }
                     if ((i > 6) && (i < 9))
                     {
-                        allChar.Add(new Character.Info(i, 5, 0, 12, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
+                        allChar.Add(new Character.Info(i, 5, 0, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
                         idCharCount++;
                     }
                     else if ((i > 8) && (i < 11))
                     {
-                        allChar.Add(new Character.Info(i, 6, 0, 6, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
+                        allChar.Add(new Character.Info(i, 6, 0, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
                         idCharCount++;
                     }
                 }
