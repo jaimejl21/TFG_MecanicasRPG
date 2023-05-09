@@ -7,10 +7,9 @@ using UnityEngine.UI;
 
 public class NodesMapManager : MonoBehaviour
 {
-    public List<GameObject> columnsList;
+    public List<GameObject> columnsList, pointsGroupList;
 
     public GameObject objAlertPn;
-    //Random rnd;
 
     int actualCol, idGearCount;
 
@@ -19,23 +18,15 @@ public class NodesMapManager : MonoBehaviour
         GameManager.inst.GetPlayerPrefs("actualCol", ref actualCol, 0);
         GameManager.inst.GetPlayerPrefs("idGearCount", ref idGearCount, 0);
 
-        //rnd = new Random();
-
-        //if (PlayerPrefs.HasKey("actualCol"))
-        //{
-        //    actualCol = PlayerPrefs.GetInt("actualCol");
-        //    Debug.Log("key " + actualCol);
-        //}
-        //else
-        //{
-        //    actualCol = 0;
-        //    Debug.Log("No key");
-        //}
-
         for (int i = 0; i < (actualCol + 1); i++)
         {
             columnsList[i].SetActive(true);
             Debug.Log("column " + i + " active");
+            if ((i-1) >= 0)
+            {
+                pointsGroupList[i - 1].SetActive(true);
+                Debug.Log("point group " + (i-1) + " active");
+            }           
         }        
     }
 
@@ -45,7 +36,8 @@ public class NodesMapManager : MonoBehaviour
         PlayerPrefs.SetInt("actualCol", actualCol);
         if (actualCol < columnsList.Count)
         {
-            columnsList[actualCol].SetActive(true);
+            if(columnsList[actualCol] != null) columnsList[actualCol].SetActive(true);
+            if (pointsGroupList[actualCol-1] != null) pointsGroupList[actualCol-1].SetActive(true);
             int nodesCount = columnsList[actualCol].transform.childCount;
             for (int i = 0; i < nodesCount; i++)
             {
