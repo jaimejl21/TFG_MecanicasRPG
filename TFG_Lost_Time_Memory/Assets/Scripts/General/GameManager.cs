@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
     public static GameManager inst;
 
     public int charToEquipGear = 0;
-    public bool restartPP, initialized = false;
+    public bool restartPP, initialized = false, objectAlert = false;
     public int coins, idGearCount, idCharCount, awMats, upMats, enemyTeam, lvlUpMatC, lvlUpMatR, lvlUpMatSR;
     public string converName = "";
 
@@ -86,7 +86,7 @@ public class GameManager : MonoBehaviour
                     allGear.Add(new Gear.Info(i, AuxSetStatAmount(i, 0), i, 0, 0, 0, 0, false, -1));
                     if(i == 0)
                     {
-                        allChar.Add(new Character.Info(i, 0, 0, 6 ,-1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
+                        allChar.Add(new Character.Info(i, 0, 0, 6, 1, true, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
                         idCharCount++;
                     }
                     else if(i == 1)

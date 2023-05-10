@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Random = System.Random;
 
 public class MyDialogueManager : MonoBehaviour
 {
@@ -45,6 +46,32 @@ public class MyDialogueManager : MonoBehaviour
     public void ChangeToScene(string sceneName)
     {
         SceneManager.LoadScene(sceneName);
+    }
+
+    public void ChangeToFightScene(int enemyTeam)
+    {
+        SceneManager.LoadScene("Fight");
+        GameManager.inst.enemyTeam = enemyTeam;
+    }
+
+    public void NMObjectAlert()
+    {
+        GameManager.inst.objectAlert = true;
+    }
+
+    public void HelpAction()
+    {
+        int rnd = new Random().Next(0, 2);
+        switch(rnd)
+        {
+            case 0:
+                ChangeToFightScene(new Random().Next(0, 2));
+                break;
+            case 1:
+                break;
+            default:
+                break;
+        }
     }
 
 
