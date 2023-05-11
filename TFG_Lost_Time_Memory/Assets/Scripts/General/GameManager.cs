@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
 
     public int charToEquipGear = 0;
     public bool restartPP, initialized = false, objectAlert = false;
-    public int coins, idGearCount, idCharCount, awMats, upMats, enemyTeam, lvlUpMatC, lvlUpMatR, lvlUpMatSR;
+    public int coins, idGearCount, idCharCount, awMats, upMats, enemyTeam, lvlUpMatC, lvlUpMatR, lvlUpMatSR, nNodesMaps;
     public string converName = "";
 
     [SerializeField]
@@ -157,6 +157,7 @@ public class GameManager : MonoBehaviour
             lvlUpMatC = 100;
             lvlUpMatR = 100;
             lvlUpMatSR = 100;
+            nNodesMaps = 0;
 
             PlayerPrefs.SetInt("started", started);
             PlayerPrefs.SetInt("idGearCount", idGearCount);
@@ -167,6 +168,7 @@ public class GameManager : MonoBehaviour
             PlayerPrefs.SetInt("amountC", lvlUpMatC);
             PlayerPrefs.SetInt("amountR", lvlUpMatR);
             PlayerPrefs.SetInt("amountSR", lvlUpMatSR);
+            PlayerPrefs.SetInt("nNodesMaps", nNodesMaps);
         }
         else
         {
@@ -182,6 +184,7 @@ public class GameManager : MonoBehaviour
             GetPlayerPrefs("amountC", ref lvlUpMatC, 100);
             GetPlayerPrefs("amountR", ref lvlUpMatR, 100);
             GetPlayerPrefs("amountSR", ref lvlUpMatSR, 100);
+            GetPlayerPrefs("nNodesMaps", ref nNodesMaps, 0);
         }
         initialized = true;
     }

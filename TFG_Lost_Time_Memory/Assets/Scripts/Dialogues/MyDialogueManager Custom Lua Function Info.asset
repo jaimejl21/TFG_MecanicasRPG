@@ -17,3 +17,9 @@ MonoBehaviour:
   - functionName: ChangeToScene
     parameters: 02000000
     returnValue: 0
+  - functionName: ReturnToNodesMap
+    parameters: 
+    returnValue: 0
+  - functionName: HelpAction
+    parameters: 
+    returnValue: 0

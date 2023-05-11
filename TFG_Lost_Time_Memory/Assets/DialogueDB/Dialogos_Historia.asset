@@ -19078,7 +19078,7 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks: []
       conditionsString: 
-      userScript: 
+      userScript: ReturnToNodesMap()
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -19143,7 +19143,7 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks: []
       conditionsString: 
-      userScript: 
+      userScript: HelpAction()
       onExecute:
         m_PersistentCalls:
           m_Calls: []

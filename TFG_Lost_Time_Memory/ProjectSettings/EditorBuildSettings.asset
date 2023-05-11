@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Game/Lobby.unity
     guid: 3bbfffa8552b4f14ebd98d52428558cc
   - enabled: 1
-    path: Assets/Scenes/Game/NodesMap.unity
+    path: Assets/Scenes/Game/NodesMap0.unity
     guid: 6e518c7eb54f3f74ba045ec2703b8ce4
   - enabled: 1
     path: Assets/Scenes/Game/Characters.unity

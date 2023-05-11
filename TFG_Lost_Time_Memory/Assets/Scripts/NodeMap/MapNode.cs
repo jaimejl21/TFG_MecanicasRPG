@@ -16,7 +16,7 @@ public class MapNode : MonoBehaviour
     TextMeshProUGUI btnTMP;
     Button btn;
     public List<MapNode> nextNodes, prevNodes;
-    public GameObject parentColumn;
+    public GameObject parentPanel;
     NodesMapManager nmm;
 
     void Start()
@@ -24,7 +24,7 @@ public class MapNode : MonoBehaviour
         nmm = FindObjectOfType<NodesMapManager>();
         
         btnTMP = gameObject.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
-        parentColumn = gameObject.transform.parent.gameObject;
+        parentPanel = gameObject.transform.parent.gameObject;
         btn = gameObject.GetComponent<Button>();
 
         if (PlayerPrefs.HasKey("nodeSelected" + id))
@@ -49,12 +49,12 @@ public class MapNode : MonoBehaviour
         ColorBlock cb = btn.colors;
         cb.disabledColor = new Color(0, 1, 0, .5f);
         btn.colors = cb;
-        for(int i = 0; i < parentColumn.transform.childCount; i++)
+        for(int i = 0; i < parentPanel.transform.childCount; i++)
         {
-            parentColumn.transform.GetChild(i).GetComponent<Button>().interactable = false;
-            if(parentColumn.transform.GetChild(i).GetComponent<MapNode>().selected != true)
+            parentPanel.transform.GetChild(i).GetComponent<Button>().interactable = false;
+            if(parentPanel.transform.GetChild(i).GetComponent<MapNode>().selected != true)
             {
-                parentColumn.transform.GetChild(i).GetComponent<MapNode>().SetNodeSelected(0);
+                parentPanel.transform.GetChild(i).GetComponent<MapNode>().SetNodeSelected(0);
             }
         }
         nmm.ManageColumns();

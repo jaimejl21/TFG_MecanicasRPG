@@ -292,8 +292,7 @@ public class FightController : MonoBehaviour
             {
                 listAttackButtons[i].GetComponent<AttackButton>().specialButton.interactable = true;
             }
-        }
-            
+        }          
     }
 
     public void DesactivateAllSpBtns()
@@ -304,7 +303,6 @@ public class FightController : MonoBehaviour
         }
     }
 
-
     public void  SetResult()
     {
         DesactivateAllBtns();
@@ -313,6 +311,7 @@ public class FightController : MonoBehaviour
         {
             fightResult = true;
             resultText.text = "WIN";
+            GameManager.inst.objectAlert = true;
         }
         else if (enemiesN > -1 && playersN < 0)
         {

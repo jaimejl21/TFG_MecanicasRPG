@@ -68,11 +68,17 @@ public class MyDialogueManager : MonoBehaviour
                 ChangeToFightScene(new Random().Next(0, 2));
                 break;
             case 1:
+                NMObjectAlert();
+                ReturnToNodesMap();
                 break;
             default:
                 break;
         }
     }
 
-
+    public void ReturnToNodesMap()
+    {
+        int nNodesMaps = PlayerPrefs.GetInt("nNodesMaps");
+        SceneManager.LoadScene("NodesMap" + nNodesMaps);
+    }
 }

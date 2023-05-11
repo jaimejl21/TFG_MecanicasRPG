@@ -27,7 +27,7 @@ public class NodesMapManager : MonoBehaviour
                 pointsGroupList[i - 1].SetActive(true);
                 Debug.Log("point group " + (i-1) + " active");
             }           
-        }        
+        }
     }
 
     public void ManageColumns()
@@ -145,6 +145,7 @@ public class NodesMapManager : MonoBehaviour
                 objNameTMP.text = "" + lvlUpMats + " " + SetRarityName(rarity) + " Level Up materials";
                 break;
         }
+        GameManager.inst.objectAlert = false;
     }
 
     string SetName(int objType)
