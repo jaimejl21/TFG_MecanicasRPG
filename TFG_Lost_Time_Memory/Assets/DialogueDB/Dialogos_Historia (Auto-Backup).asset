@@ -936,7 +936,7 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks: []
       conditionsString: 
-      userScript: 
+      userScript: ReturnToNodesMap()
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -2439,7 +2439,7 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks: []
       conditionsString: 
-      userScript: 
+      userScript: ReturnToNodesMap()
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -2449,7 +2449,7 @@ MonoBehaviour:
         y: 1120
         width: 160
         height: 30
-    canvasScrollPosition: {x: 0, y: 11.146698}
+    canvasScrollPosition: {x: 27.472534, y: 808.94885}
     canvasZoom: 0.9100001
   - id: 2
     fields:
@@ -18341,7 +18341,7 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks: []
       conditionsString: 
-      userScript: 
+      userScript: ChangeToScene("Blacksmith")
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -18406,14 +18406,14 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks: []
       conditionsString: 
-      userScript: 
+      userScript: ReturnToNodesMap()
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
         x: 210
-        y: 120
+        y: 119
         width: 160
         height: 30
     - id: 188
@@ -18596,71 +18596,6 @@ MonoBehaviour:
         y: 20
         width: 160
         height: 30
-    - id: 146
-      fields:
-      - title: Title
-        value: 
-        type: 0
-        typeString: 
-      - title: Pictures
-        value: '[]'
-        type: 3
-        typeString: CustomFieldType_Files
-      - title: Description
-        value: 
-        type: 0
-        typeString: 
-      - title: Actor
-        value: 1
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Conversant
-        value: 23
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Menu Text
-        value: 
-        type: 0
-        typeString: 
-      - title: Dialogue Text
-        value: Comprar
-        type: 0
-        typeString: 
-      - title: Parenthetical
-        value: 
-        type: 0
-        typeString: 
-      - title: Audio Files
-        value: '[]'
-        type: 3
-        typeString: CustomFieldType_Files
-      - title: Video File
-        value: 
-        type: 0
-        typeString: 
-      - title: Sequence
-        value: 
-        type: 0
-        typeString: 
-      conversationID: 6
-      isRoot: 0
-      isGroup: 0
-      nodeColor: 
-      delaySimStatus: 0
-      falseConditionAction: Block
-      conditionPriority: 2
-      outgoingLinks: []
-      conditionsString: 
-      userScript: 
-      onExecute:
-        m_PersistentCalls:
-          m_Calls: []
-      canvasRect:
-        serializedVersion: 2
-        x: 210
-        y: 120
-        width: 160
-        height: 30
     - id: 149
       fields:
       - title: Title
@@ -18688,7 +18623,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: Vender
+        value: Comerciar
         type: 0
         typeString: 
       - title: Parenthetical
@@ -18716,14 +18651,14 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks: []
       conditionsString: 
-      userScript: 
+      userScript: ChangeToScene("Merchant")
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 30
-        y: 120
+        x: 195
+        y: 121
         width: 160
         height: 30
     - id: 150
@@ -18781,14 +18716,14 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks: []
       conditionsString: 
-      userScript: 
+      userScript: ReturnToNodesMap()
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 390
-        y: 120
+        x: 378
+        y: 118
         width: 160
         height: 30
     - id: 151
@@ -18915,12 +18850,6 @@ MonoBehaviour:
         originDialogueID: 152
         destinationConversationID: 6
         destinationDialogueID: 149
-        isConnector: 0
-        priority: 2
-      - originConversationID: 6
-        originDialogueID: 152
-        destinationConversationID: 6
-        destinationDialogueID: 146
         isConnector: 0
         priority: 2
       - originConversationID: 6
@@ -19193,14 +19122,14 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks: []
       conditionsString: 
-      userScript: 
+      userScript: ReturnToNodesMap()
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
         x: 30
-        y: 120
+        y: 119
         width: 160
         height: 30
     - id: 3
@@ -19258,7 +19187,7 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks: []
       conditionsString: 
-      userScript: 
+      userScript: HelpAction()
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -19469,11 +19398,11 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Actor
-        value: 1
+        value: -1
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
-        value: 2
+        value: 1
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
@@ -19531,7 +19460,7 @@ MonoBehaviour:
     - id: 3
       fields:
       - title: Title
-        value: New Dialogue Entry
+        value: 
         type: 0
         typeString: 
       - title: Pictures
@@ -19543,11 +19472,11 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Actor
-        value: 2
+        value: 1
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
-        value: 1
+        value: -1
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
@@ -19555,7 +19484,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: 
+        value: Seguir tu camino.
         type: 0
         typeString: 
       - title: Parenthetical
@@ -19583,7 +19512,7 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks: []
       conditionsString: 
-      userScript: 
+      userScript: ReturnToNodesMap()
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -26852,7 +26781,7 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks: []
       conditionsString: 
-      userScript: 
+      userScript: ReturnToNodesMap()
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -28215,7 +28144,7 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks: []
       conditionsString: 
-      userScript: 
+      userScript: ReturnToNodesMap()
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -28225,8 +28154,8 @@ MonoBehaviour:
         y: 1020
         width: 160
         height: 30
-    canvasScrollPosition: {x: 11.650482, y: 11.650513}
-    canvasZoom: 1.03
+    canvasScrollPosition: {x: 0, y: 679.85876}
+    canvasZoom: 1.09
   - id: 15
     fields:
     - title: Title
@@ -37498,7 +37427,7 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks: []
       conditionsString: 
-      userScript: 
+      userScript: ReturnToNodesMap()
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -37508,7 +37437,7 @@ MonoBehaviour:
         y: 770
         width: 160
         height: 30
-    canvasScrollPosition: {x: 0, y: 576}
+    canvasScrollPosition: {x: 0, y: 472}
     canvasZoom: 1
   - id: 22
     fields:
@@ -39886,11 +39815,11 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Actor
-        value: 1
+        value: -1
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
-        value: 2
+        value: 1
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
@@ -39959,11 +39888,11 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Actor
-        value: 2
+        value: 1
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
-        value: 1
+        value: -1
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
@@ -39971,7 +39900,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: 
+        value: Seguir tu camino.
         type: 0
         typeString: 
       - title: Parenthetical
@@ -40005,7 +39934,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 30
+        x: 29
         y: 170
         width: 160
         height: 30

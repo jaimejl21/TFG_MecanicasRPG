@@ -9,4 +9,10 @@ public class ScenesManager : MonoBehaviour
     {
         SceneManager.LoadScene(sceneName);
     }
+
+    public void ReturnToNodesMap()
+    {
+        int nNodesMaps = PlayerPrefs.GetInt("nNodesMaps");
+        SceneManager.LoadScene("NodesMap" + nNodesMaps);
+    }
 }

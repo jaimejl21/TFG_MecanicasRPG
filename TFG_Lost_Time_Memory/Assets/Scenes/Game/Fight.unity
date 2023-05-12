@@ -788,12 +788,17 @@ MonoBehaviour:
   charToEquipGear: 0
   restartPP: 1
   initialized: 0
+  objectAlert: 0
   coins: 0
   idGearCount: 0
   idCharCount: 0
   awMats: 0
   upMats: 0
   enemyTeam: 0
+  lvlUpMatC: 0
+  lvlUpMatR: 0
+  lvlUpMatSR: 0
+  nNodesMaps: 0
   converName: 
   filename: CharactersDB.json
 --- !u!4 &573066238
@@ -1129,8 +1134,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1596630911}
         m_TargetAssemblyTypeName: ScenesManager, Assembly-CSharp
-        m_MethodName: ChangeScene
-        m_Mode: 5
+        m_MethodName: ReturnToNodesMap
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

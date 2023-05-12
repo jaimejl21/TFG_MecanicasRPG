@@ -393,6 +393,7 @@ MonoBehaviour:
   charToEquipGear: 0
   restartPP: 1
   initialized: 0
+  objectAlert: 0
   coins: 0
   idGearCount: 0
   idCharCount: 0
@@ -402,6 +403,7 @@ MonoBehaviour:
   lvlUpMatC: 0
   lvlUpMatR: 0
   lvlUpMatSR: 0
+  nNodesMaps: 0
   converName: 
   filename: CharactersDB.json
 --- !u!4 &397772045
@@ -1330,6 +1332,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2108295186}
   - component: {fileID: 2108295185}
+  - component: {fileID: 2108295187}
   m_Layer: 0
   m_Name: TavernManager
   m_TagString: Untagged
@@ -1364,3 +1367,15 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2108295187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2108295184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4f24f49c89cb6d4eab190272aa4ccb4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

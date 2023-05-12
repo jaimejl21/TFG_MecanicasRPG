@@ -396,11 +396,18 @@ MonoBehaviour:
   charToEquipGear: 0
   restartPP: 1
   initialized: 0
+  objectAlert: 0
   coins: 0
   idGearCount: 0
   idCharCount: 0
   awMats: 0
   upMats: 0
+  enemyTeam: 0
+  lvlUpMatC: 0
+  lvlUpMatR: 0
+  lvlUpMatSR: 0
+  nNodesMaps: 0
+  converName: 
   filename: CharactersDB.json
 --- !u!4 &397772045
 Transform:
@@ -1412,7 +1419,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: NodesMap
+          m_StringArgument: NodesMap0
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &886975138
