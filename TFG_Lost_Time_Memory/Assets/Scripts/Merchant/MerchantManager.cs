@@ -14,6 +14,7 @@ public class MerchantManager : MonoBehaviour
     public TextMeshProUGUI[] itemInfoTxts;
     public TextMeshProUGUI coinsTxt;
     public Button[] btns;
+    public ScrollRect sr;
 
     public int coins, idGearCount;
 
@@ -55,6 +56,7 @@ public class MerchantManager : MonoBehaviour
             }
             BuyTabBtn();
         }
+        sr.verticalNormalizedPosition = 1f;
     }
 
     void UpdateCoinsTxt()

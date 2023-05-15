@@ -1204,6 +1204,7 @@ MonoBehaviour:
   - {fileID: 75445575}
   objAlertPn: {fileID: 1731214605}
   sb: {fileID: 38927903}
+  sr: {fileID: 1890437427}
 --- !u!1 &155718510
 GameObject:
   m_ObjectHideFlags: 0

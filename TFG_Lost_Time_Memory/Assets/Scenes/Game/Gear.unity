@@ -1132,6 +1132,7 @@ MonoBehaviour:
   charToEquipGear: 0
   restartPP: 1
   initialized: 0
+  objectAlert: 0
   coins: 0
   idGearCount: 0
   idCharCount: 0
@@ -1141,6 +1142,7 @@ MonoBehaviour:
   lvlUpMatC: 0
   lvlUpMatR: 0
   lvlUpMatSR: 0
+  nNodesMaps: 0
   converName: 
   filename: CharactersDB.json
 --- !u!4 &235209504
@@ -1642,6 +1644,7 @@ MonoBehaviour:
   btns:
   - {fileID: 9395819}
   - {fileID: 2110610694}
+  sr: {fileID: 60920997}
   idToEquip: 0
   atkGears: 0
   defGears: 0

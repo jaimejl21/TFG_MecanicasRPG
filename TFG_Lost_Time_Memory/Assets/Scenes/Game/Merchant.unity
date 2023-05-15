@@ -1386,6 +1386,7 @@ MonoBehaviour:
   - {fileID: 93486139}
   - {fileID: 1384858607}
   - {fileID: 1327375343}
+  sr: {fileID: 370923816}
   coins: 0
   idGearCount: 0
 --- !u!1 &875895279

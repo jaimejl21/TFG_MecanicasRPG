@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class TeamManager : MonoBehaviour
 {
     public GameObject pool;
+    public ScrollRect sr;
 
     [SerializeField]
     GameObject character;
@@ -26,6 +28,7 @@ public class TeamManager : MonoBehaviour
 
         CharInventory();
         TeamSlots();
+        sr.verticalNormalizedPosition = 1f;
     }
 
     void TeamSlots()

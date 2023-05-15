@@ -1045,6 +1045,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pool: {fileID: 806822605}
+  sr: {fileID: 370923816}
   character: {fileID: 6430165257657577314, guid: eaca7fdb2f057b44dab3fab57408eaad, type: 3}
   teamSlots:
   - {fileID: 1897751537}

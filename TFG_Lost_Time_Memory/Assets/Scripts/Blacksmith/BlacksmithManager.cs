@@ -14,6 +14,7 @@ public class BlacksmithManager : MonoBehaviour
     public TextMeshProUGUI[] itemInfoTxts;
     public TextMeshProUGUI coinsTxt, upMatsTxt, awMatsTxt;
     public Button[] btns;
+    public ScrollRect sr;
 
     public int coins, awMats, upMats;
 
@@ -30,6 +31,7 @@ public class BlacksmithManager : MonoBehaviour
         awMatsTxt.text = "AwMats: " + awMats;
 
         WeaponsTabBtn();
+        sr.verticalNormalizedPosition = 1f;
     }
 
     public void ChangeItemInfo(GameObject go)

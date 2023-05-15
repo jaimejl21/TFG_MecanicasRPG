@@ -14,6 +14,7 @@ public class GearManager : MonoBehaviour
     public TextMeshProUGUI[] statsTxt, bonusTxt, statsBonusTxt;
     public TextMeshProUGUI weaponTxt;
     public Button[] btns;
+    public ScrollRect sr;
 
     public int idToEquip;
     public int atkGears = 0, defGears = 0, hpGears = 0;
@@ -41,6 +42,8 @@ public class GearManager : MonoBehaviour
         UpdateStatsTxt();
         UpdateBonusTxt(false);
         initialized = true;
+
+        sr.verticalNormalizedPosition = 1f;
     }
 
     void GearSlots()

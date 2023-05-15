@@ -23,7 +23,12 @@ public class MyDialogueManager : MonoBehaviour
 
     void OnEnable()
     {
+        //Lua.RegisterFunction("AddOne", this, SymbolExtensions.GetMethodInfo(() => AddOne((double)0)));
         Lua.RegisterFunction("ChangeToScene", this, SymbolExtensions.GetMethodInfo(() => ChangeToScene(string.Empty)));
+        Lua.RegisterFunction("ReturnToNodesMap", this, SymbolExtensions.GetMethodInfo(() => ReturnToNodesMap()));
+        Lua.RegisterFunction("HelpAction", this, SymbolExtensions.GetMethodInfo(() => HelpAction()));
+        Lua.RegisterFunction("ChangeToFightScene", this, SymbolExtensions.GetMethodInfo(() => ChangeToFightScene((int)0)));
+        Lua.RegisterFunction("NMObjectAlert", this, SymbolExtensions.GetMethodInfo(() => NMObjectAlert()));
     }
 
     void OnDisable()
@@ -31,6 +36,10 @@ public class MyDialogueManager : MonoBehaviour
         if (unregisterOnDisable)
         {
             Lua.UnregisterFunction("ChangeToScene");
+            Lua.UnregisterFunction("ReturnToNodesMap"); 
+            Lua.UnregisterFunction("HelpAction"); 
+            Lua.UnregisterFunction("ChangeToFightScene"); 
+            Lua.UnregisterFunction("NMObjectAlert");
         }
     }
 

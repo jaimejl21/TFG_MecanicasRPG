@@ -1727,6 +1727,7 @@ MonoBehaviour:
   - {fileID: 1703731150}
   - {fileID: 1595034411}
   - {fileID: 40326613}
+  sr: {fileID: 370923816}
   coins: 0
   awMats: 0
   upMats: 0

@@ -559,6 +559,7 @@ MonoBehaviour:
   pool: {fileID: 2038243491}
   charSlotGO: {fileID: 6430165257657577314, guid: 145794a600cb42b4bac294e750e82313, type: 3}
   auxCharList: []
+  sr: {fileID: 370923816}
 --- !u!4 &860649842
 Transform:
   m_ObjectHideFlags: 0

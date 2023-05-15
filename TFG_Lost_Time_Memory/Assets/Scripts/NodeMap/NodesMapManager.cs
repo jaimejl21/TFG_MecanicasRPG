@@ -10,7 +10,7 @@ public class NodesMapManager : MonoBehaviour
     public List<GameObject> columnsList, pointsGroupList;
 
     public GameObject objAlertPn;
-    public Scrollbar sb;
+    public ScrollRect sr;
 
     int actualCol, idGearCount;
 
@@ -29,7 +29,7 @@ public class NodesMapManager : MonoBehaviour
                 Debug.Log("point group " + (i-1) + " active");
             }           
         }
-        sb.value = 0;
+        sr.horizontalNormalizedPosition = 0;
     }
 
     public void ManageColumns()
