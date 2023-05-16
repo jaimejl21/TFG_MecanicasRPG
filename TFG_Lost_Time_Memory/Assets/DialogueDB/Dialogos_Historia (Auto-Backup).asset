@@ -20020,7 +20020,7 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks: []
       conditionsString: 
-      userScript: 
+      userScript: ReturnToNodesMap()
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -21156,7 +21156,7 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks: []
       conditionsString: 
-      userScript: 
+      userScript: ReturnToNodesMap()
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -21166,8 +21166,8 @@ MonoBehaviour:
         y: 870
         width: 160
         height: 30
-    canvasScrollPosition: {x: 0, y: 0}
-    canvasZoom: 0.94000006
+    canvasScrollPosition: {x: 0, y: 624.4242}
+    canvasZoom: 0.97
   - id: 11
     fields:
     - title: Title
@@ -28401,7 +28401,7 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks: []
       conditionsString: 
-      userScript: 
+      userScript: ReturnToNodesMap()
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -29401,17 +29401,17 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks: []
       conditionsString: 
-      userScript: 
+      userScript: ReturnToNodesMap()
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 120
+        x: 119
         y: 770
         width: 160
         height: 30
-    canvasScrollPosition: {x: 1, y: 10}
+    canvasScrollPosition: {x: 0, y: 327}
     canvasZoom: 1
   - id: 16
     fields:
@@ -31766,7 +31766,7 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks: []
       conditionsString: 
-      userScript: 
+      userScript: ReturnToNodesMap()
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -33114,7 +33114,7 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks: []
       conditionsString: 
-      userScript: 
+      userScript: ReturnToNodesMap()
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -33124,8 +33124,8 @@ MonoBehaviour:
         y: 1080.3699
         width: 160
         height: 30
-    canvasScrollPosition: {x: 0, y: 777.34644}
-    canvasZoom: 0.97
+    canvasScrollPosition: {x: 45.74469, y: 600.34033}
+    canvasZoom: 0.94
   - id: 18
     fields:
     - title: Title
@@ -41116,11 +41116,11 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Actor
-        value: 1
+        value: -1
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
-        value: -1
+        value: 1
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
@@ -41177,7 +41177,7 @@ MonoBehaviour:
     - id: 9
       fields:
       - title: Title
-        value: New Dialogue Entry
+        value: 
         type: 0
         typeString: 
       - title: Pictures
@@ -41189,11 +41189,11 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Actor
-        value: -1
+        value: 1
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
-        value: 1
+        value: -1
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
@@ -41201,7 +41201,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: 
+        value: Sigues tu amino.
         type: 0
         typeString: 
       - title: Parenthetical
@@ -41229,7 +41229,7 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks: []
       conditionsString: 
-      userScript: 
+      userScript: ReturnToNodesMap()
       onExecute:
         m_PersistentCalls:
           m_Calls: []

@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Game/NodesMap0.unity
     guid: 6e518c7eb54f3f74ba045ec2703b8ce4
   - enabled: 1
+    path: Assets/Scenes/Game/NodesMap1.unity
+    guid: 5c1ca0410d1a61f4b83f5d911e2dc67b
+  - enabled: 1
     path: Assets/Scenes/Game/Characters.unity
     guid: b86a8385f958dba49a8f661e88fec473
   - enabled: 1
@@ -41,9 +44,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Game/Dialogue.unity
     guid: 0610ae9577b8f9b43a4830200685d521
-  - enabled: 1
-    path: Assets/Scenes/Game/NodesMap1.unity
-    guid: 5c1ca0410d1a61f4b83f5d911e2dc67b
   - enabled: 1
     path: Assets/Scenes/Game/Tavern.unity
     guid: 8f80a60357bd31e4c80d0c7c078bdd75

@@ -79,7 +79,7 @@ public class MapNode : MonoBehaviour
             case 1:
                 SetTypeVars();
                 ColorBlock cb = btn.colors;
-                cb.disabledColor = new Color(0, 1, 0, .5f);
+                cb.disabledColor = new Color(0, 1, 0, 1f);
                 btn.colors = cb;
                 gameObject.GetComponent<Button>().interactable = false;
                 break;

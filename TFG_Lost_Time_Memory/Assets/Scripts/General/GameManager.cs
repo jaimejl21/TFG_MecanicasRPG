@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
 
     public static List<Character.Info> allChar;
     public static List<Gear.Info> allGear;
+    public static List<NodesLines.Info> nodesLinesList;
 
     int started;
 
@@ -53,6 +54,7 @@ public class GameManager : MonoBehaviour
     {
         allChar = new List<Character.Info>();
         allGear = new List<Gear.Info>();
+        nodesLinesList = new List<NodesLines.Info>();
 
         //Debug.Log("Started: " + started);
 

@@ -4,43 +4,78 @@ using TMPro;
 using UnityEngine;
 using Random = System.Random;
 using UnityEngine.UI;
+using System.Linq;
 
 public class NodesMapManager : MonoBehaviour
 {
-    public List<GameObject> columnsList, pointsGroupList;
+    public List<GameObject> columnsList, linesGroupList;
 
     public GameObject objAlertPn;
     public ScrollRect sr;
+    public GameObject lineGO, linesParent;
 
     int actualCol, idGearCount;
+
+    public List<NodesLines.Info> nodesLinesList;
 
     void Start()
     {
         GameManager.inst.GetPlayerPrefs("actualCol", ref actualCol, 0);
         GameManager.inst.GetPlayerPrefs("idGearCount", ref idGearCount, 0);
 
-        for (int i = 0; i < (actualCol + 1); i++)
+        nodesLinesList = GameManager.nodesLinesList.ToList();
+
+        for (int j = 0; j <= actualCol; j++)
         {
-            columnsList[i].SetActive(true);
-            Debug.Log("column " + i + " active");
-            if ((i-1) >= 0)
-            {
-                pointsGroupList[i - 1].SetActive(true);
-                Debug.Log("point group " + (i-1) + " active");
-            }           
+            columnsList[j].SetActive(true);
+            //DrawAllLines();
         }
         sr.horizontalNormalizedPosition = 0;
+
+        if(nodesLinesList.Count > 0)
+        {
+            foreach (NodesLines.Info nli in nodesLinesList)
+            {
+                GameObject line = Instantiate(nli.lineGO, nli.linePos, Quaternion.identity);
+                line.transform.SetParent(linesParent.transform);
+            }
+        }     
+    }
+
+    public void DrawAllLines()
+    {
+        int nodesCount;
+        for (int j = 0; j <= actualCol; j++)
+        {
+            nodesCount = columnsList[j].transform.childCount;
+            for (int i = 0; i < nodesCount; i++)
+            {
+                if (columnsList[j].transform.GetChild(i).GetComponent<MapNode>().nextNodes.Count > 0)
+                {
+                    for (int n = 0; n < columnsList[j].transform.GetChild(i).GetComponent<MapNode>().nextNodes.Count; n++)
+                    {
+                        GameObject a = columnsList[j].transform.GetChild(i).gameObject;
+                        GameObject b = columnsList[j].transform.GetChild(i).GetComponent<MapNode>().nextNodes[n].gameObject;
+                        DrawLine(a, b);
+                        Debug.Log("Draw line from node " + a.GetComponent<MapNode>().id + " to " + b.GetComponent<MapNode>().id);
+                    }
+                }
+            }
+        }
+        GameManager.nodesLinesList = nodesLinesList;
     }
 
     public void ManageColumns()
     {
+        DrawAllLines();
+        int nodesCount;
         actualCol++;
         PlayerPrefs.SetInt("actualCol", actualCol);
         if (actualCol < columnsList.Count)
         {
-            if(columnsList[actualCol] != null) columnsList[actualCol].SetActive(true);
-            if (pointsGroupList[actualCol-1] != null) pointsGroupList[actualCol-1].SetActive(true);
-            int nodesCount = columnsList[actualCol].transform.childCount;
+            if (columnsList[actualCol] != null) columnsList[actualCol].SetActive(true);
+            //if (linesGroupList[actualCol - 1] != null) linesGroupList[actualCol - 1].SetActive(true);
+            nodesCount = columnsList[actualCol].transform.childCount;
             for (int i = 0; i < nodesCount; i++)
             {
                 if (columnsList[actualCol].transform.GetChild(i).GetComponent<MapNode>().prevNodes.Count > 0)
@@ -48,7 +83,7 @@ public class NodesMapManager : MonoBehaviour
                     int j = 0;
                     bool aux = false;
                     bool isActive = false;
-                    while(!aux)
+                    while (!aux)
                     {
                         if (columnsList[actualCol].transform.GetChild(i).GetComponent<MapNode>().prevNodes[j].GetComponent<MapNode>().nodeSelected == 1)
                         {
@@ -60,13 +95,13 @@ public class NodesMapManager : MonoBehaviour
                         if (j >= columnsList[actualCol].transform.GetChild(i).GetComponent<MapNode>().prevNodes.Count)
                         {
                             aux = true;
-                        }                        
+                        }
                     }
                     if (!isActive)
                     {
                         columnsList[actualCol].transform.GetChild(i).GetComponent<MapNode>().SetNodeSelected(0);
                         columnsList[actualCol].transform.GetChild(i).GetComponent<Button>().interactable = false;
-                        if(nodesCount == 1)
+                        if (nodesCount == 1)
                         {
                             ManageColumns();
                         }
@@ -148,6 +183,33 @@ public class NodesMapManager : MonoBehaviour
                 break;
         }
         GameManager.inst.objectAlert = false;
+    }
+
+    public void DrawLine(GameObject objA, GameObject objB)
+    {
+        /*spawn a prefab image "lineConnection" as angleBar*/
+        GameObject angleBar = Instantiate(lineGO, objB.transform.position, Quaternion.identity);
+        /**/
+        /*calculate angle*/
+        Vector2 diference = objA.transform.position - objB.transform.position;
+        float sign = (objA.transform.position.y < objB.transform.position.y) ? -1.0f : 1.0f;
+        float angle = Vector2.Angle(Vector2.right, diference) * sign;
+        angleBar.transform.Rotate(0, 0, angle);
+        /**/
+        /*calculate length of bar*/
+        float height = 10;
+        float width = Vector2.Distance(objB.transform.position, objA.transform.position);
+        angleBar.GetComponent<RectTransform>().sizeDelta = new Vector2(width, height);
+        /**/
+        /*calculate midpoint position*/
+        float newposX = objB.transform.position.x + (objA.transform.position.x - objB.transform.position.x) / 2;
+        float newposY = objB.transform.position.y + (objA.transform.position.y - objB.transform.position.y) / 2;
+        angleBar.transform.position = new Vector3(newposX, newposY, 0);
+        /***/
+        /*set parent to objB*/
+        angleBar.transform.SetParent(linesParent.transform, true);
+
+        nodesLinesList.Add(new NodesLines.Info(angleBar, angleBar.transform.position));
     }
 
     string SetName(int objType)
