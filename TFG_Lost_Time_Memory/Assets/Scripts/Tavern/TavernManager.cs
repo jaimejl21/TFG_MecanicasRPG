@@ -4,15 +4,27 @@ using UnityEngine;
 
 public class TavernManager : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public bool canAdvance;
+    int nNodesMaps;
+
     void Start()
     {
-        
-    }
+        nNodesMaps = PlayerPrefs.GetInt("nNodesMaps");
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if (GameManager.inst.death == true)
+        {
+            canAdvance = false;
+            GameManager.inst.death = false;
+        }
+        else
+        {
+            canAdvance = true;
+        }
+
+        if(canAdvance)
+        {
+            nNodesMaps++;
+            PlayerPrefs.SetInt("nNodesMaps", nNodesMaps);
+        }
     }
 }

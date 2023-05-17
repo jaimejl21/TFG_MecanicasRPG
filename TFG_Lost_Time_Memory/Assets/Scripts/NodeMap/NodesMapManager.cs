@@ -34,10 +34,15 @@ public class NodesMapManager : MonoBehaviour
 
         if(nodesLinesList.Count > 0)
         {
+            
             foreach (NodesLines.Info nli in nodesLinesList)
             {
-                GameObject line = Instantiate(nli.lineGO, nli.linePos, Quaternion.identity);
-                line.transform.SetParent(linesParent.transform);
+                GameObject line = Instantiate(lineGO, linesParent.transform);
+
+                float angle = Vector2.Angle(Vector2.right, nli.diference) * nli.sign; ;
+                line.transform.Rotate(0, 0, angle);
+                line.GetComponent<RectTransform>().sizeDelta = new Vector2(nli.width, nli.heigth);
+                line.transform.position = nli.linePos;               
             }
         }     
     }
@@ -189,27 +194,33 @@ public class NodesMapManager : MonoBehaviour
     {
         /*spawn a prefab image "lineConnection" as angleBar*/
         GameObject angleBar = Instantiate(lineGO, objB.transform.position, Quaternion.identity);
+        NodesLines.Info nli = new NodesLines.Info();
         /**/
         /*calculate angle*/
         Vector2 diference = objA.transform.position - objB.transform.position;
+        nli.diference = diference;
         float sign = (objA.transform.position.y < objB.transform.position.y) ? -1.0f : 1.0f;
+        nli.sign = sign;
         float angle = Vector2.Angle(Vector2.right, diference) * sign;
         angleBar.transform.Rotate(0, 0, angle);
         /**/
         /*calculate length of bar*/
         float height = 10;
         float width = Vector2.Distance(objB.transform.position, objA.transform.position);
+        nli.heigth = height;
+        nli.width = width;
         angleBar.GetComponent<RectTransform>().sizeDelta = new Vector2(width, height);
         /**/
         /*calculate midpoint position*/
         float newposX = objB.transform.position.x + (objA.transform.position.x - objB.transform.position.x) / 2;
         float newposY = objB.transform.position.y + (objA.transform.position.y - objB.transform.position.y) / 2;
         angleBar.transform.position = new Vector3(newposX, newposY, 0);
+        nli.linePos = angleBar.transform.position;
         /***/
         /*set parent to objB*/
         angleBar.transform.SetParent(linesParent.transform, true);
 
-        nodesLinesList.Add(new NodesLines.Info(angleBar, angleBar.transform.position));
+        nodesLinesList.Add(nli);
     }
 
     string SetName(int objType)

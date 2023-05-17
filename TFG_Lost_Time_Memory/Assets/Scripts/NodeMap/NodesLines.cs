@@ -11,12 +11,20 @@ public class NodesLines : MonoBehaviour
 
     public class Info
     {
-        public GameObject lineGO;
+        public Vector2 diference;
+        public float sign;
+        public float heigth;
+        public float width;
         public Vector3 linePos;
 
-        public Info(GameObject lineGO, Vector3 linePos)
+        public Info() { }
+
+        public Info(Vector2 diference, float sign, float heigth, float width, Vector3 linePos)
         {
-            this.lineGO = lineGO;
+            this.diference = diference;
+            this.sign = sign;
+            this.heigth = heigth;
+            this.width = width;
             this.linePos = linePos;
         }
     }

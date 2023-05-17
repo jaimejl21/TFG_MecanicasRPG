@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
     public static GameManager inst;
 
     public int charToEquipGear = 0;
-    public bool restartPP, initialized = false, objectAlert = false;
+    public bool restartPP, initialized = false, objectAlert = false, death = false;
     public int coins, idGearCount, idCharCount, awMats, upMats, enemyTeam, lvlUpMatC, lvlUpMatR, lvlUpMatSR, nNodesMaps;
     public string converName = "";
 
