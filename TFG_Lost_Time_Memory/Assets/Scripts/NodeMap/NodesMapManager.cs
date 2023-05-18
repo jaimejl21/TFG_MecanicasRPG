@@ -17,6 +17,7 @@ public class NodesMapManager : MonoBehaviour
     int actualCol, idGearCount;
 
     public List<NodesLines.Info> nodesLinesList;
+    //List<int> nextNodesColIds;
 
     void Start()
     {
@@ -25,10 +26,11 @@ public class NodesMapManager : MonoBehaviour
 
         nodesLinesList = GameManager.nodesLinesList.ToList();
 
+        if (actualCol >= columnsList.Count) actualCol = columnsList.Count - 1;
+
         for (int j = 0; j <= actualCol; j++)
         {
             columnsList[j].SetActive(true);
-            //DrawAllLines();
         }
         sr.horizontalNormalizedPosition = 0;
 
@@ -62,7 +64,9 @@ public class NodesMapManager : MonoBehaviour
                         GameObject a = columnsList[j].transform.GetChild(i).gameObject;
                         GameObject b = columnsList[j].transform.GetChild(i).GetComponent<MapNode>().nextNodes[n].gameObject;
                         DrawLine(a, b);
-                        Debug.Log("Draw line from node " + a.GetComponent<MapNode>().id + " to " + b.GetComponent<MapNode>().id);
+                        //b.GetComponent<MapNode>().SetColId();
+                        //nextNodesColIds.Add(b.GetComponent<MapNode>().colId);
+                        //Debug.Log("Draw line from node " + a.GetComponent<MapNode>().id + " to " + b.GetComponent<MapNode>().id);
                     }
                 }
             }
@@ -70,12 +74,30 @@ public class NodesMapManager : MonoBehaviour
         GameManager.nodesLinesList = nodesLinesList;
     }
 
+    //void SetActualCol()
+    //{
+    //    actualCol++;
+    //    auxActualCol = actualCol;
+    //    int aux = actualCol;
+    //    foreach (int i in nextNodesColIds)
+    //    {
+    //        if (i > aux)
+    //        {
+    //            aux = i;
+    //        }
+    //    }
+    //    nextNodesColIds.Clear();
+    //    actualCol = aux;
+    //    PlayerPrefs.SetInt("actualCol", actualCol);
+    //}
+
     public void ManageColumns()
     {
         DrawAllLines();
-        int nodesCount;
+        //SetActualCol();
         actualCol++;
         PlayerPrefs.SetInt("actualCol", actualCol);
+        int nodesCount;
         if (actualCol < columnsList.Count)
         {
             if (columnsList[actualCol] != null) columnsList[actualCol].SetActive(true);
@@ -106,7 +128,7 @@ public class NodesMapManager : MonoBehaviour
                     {
                         columnsList[actualCol].transform.GetChild(i).GetComponent<MapNode>().SetNodeSelected(0);
                         columnsList[actualCol].transform.GetChild(i).GetComponent<Button>().interactable = false;
-                        if (nodesCount == 1)
+                        if (nodesCount == 1 || i == (nodesCount - 1))
                         {
                             ManageColumns();
                         }

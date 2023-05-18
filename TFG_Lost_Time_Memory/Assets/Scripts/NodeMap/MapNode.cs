@@ -4,12 +4,12 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System;
 
 public class MapNode : MonoBehaviour
 {
-    public int id, type;
+    public int id, type, nodeSelected, colId;
     public bool selected;
-    public int nodeSelected;
 
     string toSceneName = "";
 
@@ -39,6 +39,7 @@ public class MapNode : MonoBehaviour
             //Debug.Log("Has no key  nodeSelected " + id + ": " + nodeSelected);
         }
         SetButton();
+        //SetColId();
     }
 
     public void SelectNode()
@@ -47,7 +48,7 @@ public class MapNode : MonoBehaviour
         SetNodeSelected(1);
         SetTypeVars();
         ColorBlock cb = btn.colors;
-        cb.disabledColor = new Color(0, 1, 0, .5f);
+        cb.disabledColor = new Color(0, 1, 0, 1f);
         btn.colors = cb;
         for(int i = 0; i < parentPanel.transform.childCount; i++)
         {
@@ -64,9 +65,25 @@ public class MapNode : MonoBehaviour
     {
         nodeSelected = mode;
         PlayerPrefs.SetInt("nodeSelected" + id, nodeSelected);
-        //Debug.Log("nodeSelected " + id + ": " + nodeSelected);
+        Debug.Log("nodeSelected " + id + ": " + nodeSelected);
     }
 
+    //public void SetColId()
+    //{
+    //    string auxName = String.Copy(gameObject.transform.parent.gameObject.transform.parent.name);
+    //    char[] parentName = auxName.ToCharArray();
+    //    Debug.Log("" + parentName[8] + parentName[9]);
+    //    if (parentName[8].Equals("0"))
+    //    {
+    //        string aux = "" + parentName[9];
+    //        colId = Int32.Parse(aux);
+    //    }
+    //    else
+    //    {
+    //        string aux = "" + parentName[8] + parentName[9];
+    //        colId = Int32.Parse(aux);
+    //    }
+    //}
     void SetButton()
     {
         switch(nodeSelected)

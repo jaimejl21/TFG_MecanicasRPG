@@ -163,10 +163,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8138539264565449673, guid: 0d1bfda12a432f94090622cb3058e6fb, type: 3}
-      propertyPath: parentCol
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 8138539264565449673, guid: 0d1bfda12a432f94090622cb3058e6fb, type: 3}
       propertyPath: nextNodes.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -594,7 +590,7 @@ GameObject:
   - component: {fileID: 59109125}
   - component: {fileID: 59109127}
   m_Layer: 5
-  m_Name: Column (03)
+  m_Name: Column (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -752,7 +748,7 @@ GameObject:
   - component: {fileID: 155718513}
   - component: {fileID: 155718515}
   m_Layer: 5
-  m_Name: Column (07)
+  m_Name: Column (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1069,10 +1065,6 @@ PrefabInstance:
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8138539264565449673, guid: 0d1bfda12a432f94090622cb3058e6fb, type: 3}
-      propertyPath: parentCol
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 8138539264565449673, guid: 0d1bfda12a432f94090622cb3058e6fb, type: 3}
       propertyPath: nextNodes.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -1276,7 +1268,7 @@ GameObject:
   - component: {fileID: 216317605}
   - component: {fileID: 216317607}
   m_Layer: 5
-  m_Name: Column (06)
+  m_Name: Column (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1501,10 +1493,6 @@ PrefabInstance:
     - target: {fileID: 8138539264565449673, guid: 0d1bfda12a432f94090622cb3058e6fb, type: 3}
       propertyPath: type
       value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 8138539264565449673, guid: 0d1bfda12a432f94090622cb3058e6fb, type: 3}
-      propertyPath: parentCol
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8138539264565449673, guid: 0d1bfda12a432f94090622cb3058e6fb, type: 3}
       propertyPath: nextNodes.Array.size
@@ -2095,7 +2083,7 @@ GameObject:
   - component: {fileID: 717049985}
   - component: {fileID: 717049987}
   m_Layer: 5
-  m_Name: Column (02)
+  m_Name: Column (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2314,10 +2302,6 @@ PrefabInstance:
     - target: {fileID: 8138539264565449673, guid: 0d1bfda12a432f94090622cb3058e6fb, type: 3}
       propertyPath: type
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8138539264565449673, guid: 0d1bfda12a432f94090622cb3058e6fb, type: 3}
-      propertyPath: parentCol
-      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8138539264565449673, guid: 0d1bfda12a432f94090622cb3058e6fb, type: 3}
       propertyPath: nextNodes.Array.size
@@ -2646,10 +2630,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8138539264565449673, guid: 0d1bfda12a432f94090622cb3058e6fb, type: 3}
-      propertyPath: parentCol
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8138539264565449673, guid: 0d1bfda12a432f94090622cb3058e6fb, type: 3}
       propertyPath: nextNodes.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -2973,10 +2953,6 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8138539264565449673, guid: 0d1bfda12a432f94090622cb3058e6fb, type: 3}
-      propertyPath: parentCol
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 8138539264565449673, guid: 0d1bfda12a432f94090622cb3058e6fb, type: 3}
       propertyPath: nextNodes.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -3158,10 +3134,6 @@ PrefabInstance:
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8138539264565449673, guid: 0d1bfda12a432f94090622cb3058e6fb, type: 3}
-      propertyPath: parentCol
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 8138539264565449673, guid: 0d1bfda12a432f94090622cb3058e6fb, type: 3}
       propertyPath: nextNodes.Array.size
       value: 0
       objectReference: {fileID: 0}
@@ -3329,10 +3301,6 @@ PrefabInstance:
     - target: {fileID: 8138539264565449673, guid: 0d1bfda12a432f94090622cb3058e6fb, type: 3}
       propertyPath: type
       value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 8138539264565449673, guid: 0d1bfda12a432f94090622cb3058e6fb, type: 3}
-      propertyPath: parentCol
-      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8138539264565449673, guid: 0d1bfda12a432f94090622cb3058e6fb, type: 3}
       propertyPath: nextNodes.Array.size
@@ -3659,10 +3627,6 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8138539264565449673, guid: 0d1bfda12a432f94090622cb3058e6fb, type: 3}
-      propertyPath: parentCol
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8138539264565449673, guid: 0d1bfda12a432f94090622cb3058e6fb, type: 3}
       propertyPath: nextNodes.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -3910,7 +3874,7 @@ GameObject:
   - component: {fileID: 1037855099}
   - component: {fileID: 1037855101}
   m_Layer: 5
-  m_Name: Column (05)
+  m_Name: Column (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4140,10 +4104,6 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8138539264565449673, guid: 0d1bfda12a432f94090622cb3058e6fb, type: 3}
-      propertyPath: parentCol
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8138539264565449673, guid: 0d1bfda12a432f94090622cb3058e6fb, type: 3}
       propertyPath: nextNodes.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -4367,7 +4327,7 @@ GameObject:
   - component: {fileID: 1156181535}
   - component: {fileID: 1156181537}
   m_Layer: 5
-  m_Name: Column (00)
+  m_Name: Column
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4546,10 +4506,6 @@ PrefabInstance:
     - target: {fileID: 8138539264565449673, guid: 0d1bfda12a432f94090622cb3058e6fb, type: 3}
       propertyPath: type
       value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 8138539264565449673, guid: 0d1bfda12a432f94090622cb3058e6fb, type: 3}
-      propertyPath: parentCol
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8138539264565449673, guid: 0d1bfda12a432f94090622cb3058e6fb, type: 3}
       propertyPath: nextNodes.Array.size
@@ -4790,10 +4746,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8138539264565449673, guid: 0d1bfda12a432f94090622cb3058e6fb, type: 3}
-      propertyPath: parentCol
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8138539264565449673, guid: 0d1bfda12a432f94090622cb3058e6fb, type: 3}
       propertyPath: nextNodes.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -4932,7 +4884,7 @@ GameObject:
   - component: {fileID: 1243567695}
   - component: {fileID: 1243567697}
   m_Layer: 5
-  m_Name: Column (04)
+  m_Name: Column (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5055,10 +5007,6 @@ PrefabInstance:
     - target: {fileID: 8138539264565449673, guid: 0d1bfda12a432f94090622cb3058e6fb, type: 3}
       propertyPath: type
       value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 8138539264565449673, guid: 0d1bfda12a432f94090622cb3058e6fb, type: 3}
-      propertyPath: parentCol
-      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8138539264565449673, guid: 0d1bfda12a432f94090622cb3058e6fb, type: 3}
       propertyPath: nextNodes.Array.size
@@ -5254,10 +5202,6 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8138539264565449673, guid: 0d1bfda12a432f94090622cb3058e6fb, type: 3}
-      propertyPath: parentCol
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8138539264565449673, guid: 0d1bfda12a432f94090622cb3058e6fb, type: 3}
       propertyPath: nextNodes.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -5424,7 +5368,7 @@ GameObject:
   - component: {fileID: 1393857542}
   - component: {fileID: 1393857544}
   m_Layer: 5
-  m_Name: Column (08)
+  m_Name: Column (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5731,10 +5675,6 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8138539264565449673, guid: 0d1bfda12a432f94090622cb3058e6fb, type: 3}
-      propertyPath: parentCol
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8138539264565449673, guid: 0d1bfda12a432f94090622cb3058e6fb, type: 3}
       propertyPath: nextNodes.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -6035,10 +5975,6 @@ PrefabInstance:
     - target: {fileID: 8138539264565449673, guid: 0d1bfda12a432f94090622cb3058e6fb, type: 3}
       propertyPath: type
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8138539264565449673, guid: 0d1bfda12a432f94090622cb3058e6fb, type: 3}
-      propertyPath: parentCol
-      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8138539264565449673, guid: 0d1bfda12a432f94090622cb3058e6fb, type: 3}
       propertyPath: nextNodes.Array.size
@@ -6908,7 +6844,7 @@ GameObject:
   - component: {fileID: 1962175483}
   - component: {fileID: 1962175485}
   m_Layer: 5
-  m_Name: Column (01)
+  m_Name: Column (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7035,10 +6971,6 @@ PrefabInstance:
     - target: {fileID: 8138539264565449673, guid: 0d1bfda12a432f94090622cb3058e6fb, type: 3}
       propertyPath: type
       value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 8138539264565449673, guid: 0d1bfda12a432f94090622cb3058e6fb, type: 3}
-      propertyPath: parentCol
-      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8138539264565449673, guid: 0d1bfda12a432f94090622cb3058e6fb, type: 3}
       propertyPath: nextNodes.Array.size
