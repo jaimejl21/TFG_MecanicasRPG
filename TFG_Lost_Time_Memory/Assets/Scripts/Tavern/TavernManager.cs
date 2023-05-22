@@ -27,8 +27,6 @@ public class TavernManager : MonoBehaviour
             nNodesMaps++;
             PlayerPrefs.SetInt("nNodesMaps", nNodesMaps);
         }
-
-        GameManager.nodesLinesList.Clear();
         actualCol = 0;
         PlayerPrefs.SetInt("actualCol", actualCol);
     }

@@ -18,7 +18,6 @@ public class GameManager : MonoBehaviour
 
     public static List<Character.Info> allChar;
     public static List<Gear.Info> allGear;
-    public static List<NodesLines.Info> nodesLinesList;
 
     int started;
 
@@ -54,7 +53,6 @@ public class GameManager : MonoBehaviour
     {
         allChar = new List<Character.Info>();
         allGear = new List<Gear.Info>();
-        nodesLinesList = new List<NodesLines.Info>();
 
         //Debug.Log("Started: " + started);
 
@@ -159,7 +157,7 @@ public class GameManager : MonoBehaviour
             lvlUpMatC = 100;
             lvlUpMatR = 100;
             lvlUpMatSR = 100;
-            nNodesMaps = 1;
+            nNodesMaps = 0;
 
             PlayerPrefs.SetInt("started", started);
             PlayerPrefs.SetInt("idGearCount", idGearCount);
@@ -178,15 +176,15 @@ public class GameManager : MonoBehaviour
             allChar = lists.charList;
             allGear = lists.gearList;
 
-            GetPlayerPrefs("idGearCount", ref idGearCount, 0);
-            GetPlayerPrefs("idCharCount", ref idCharCount, 0);
-            GetPlayerPrefs("coins", ref coins, 50000);
-            GetPlayerPrefs("upMats", ref upMats, 90);
-            GetPlayerPrefs("awMats", ref awMats, 90);
-            GetPlayerPrefs("amountC", ref lvlUpMatC, 100);
-            GetPlayerPrefs("amountR", ref lvlUpMatR, 100);
-            GetPlayerPrefs("amountSR", ref lvlUpMatSR, 100);
-            GetPlayerPrefs("nNodesMaps", ref nNodesMaps, 0);
+            GetIntPlayerPrefs("idGearCount", ref idGearCount, 0);
+            GetIntPlayerPrefs("idCharCount", ref idCharCount, 0);
+            GetIntPlayerPrefs("coins", ref coins, 50000);
+            GetIntPlayerPrefs("upMats", ref upMats, 90);
+            GetIntPlayerPrefs("awMats", ref awMats, 90);
+            GetIntPlayerPrefs("amountC", ref lvlUpMatC, 100);
+            GetIntPlayerPrefs("amountR", ref lvlUpMatR, 100);
+            GetIntPlayerPrefs("amountSR", ref lvlUpMatSR, 100);
+            GetIntPlayerPrefs("nNodesMaps", ref nNodesMaps, 0);
         }
         initialized = true;
     }
@@ -251,11 +249,23 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void GetPlayerPrefs(string name, ref int toGet, int num)
+    public void GetIntPlayerPrefs(string name, ref int toGet, int num)
     {
         if (PlayerPrefs.HasKey(name))
         {
             toGet = PlayerPrefs.GetInt(name);
+        }
+        else
+        {
+            toGet = num;
+        }
+    }
+
+    public void GetFloatPlayerPrefs(string name, ref float toGet, float num)
+    {
+        if (PlayerPrefs.HasKey(name))
+        {
+            toGet = PlayerPrefs.GetFloat(name);
         }
         else
         {
