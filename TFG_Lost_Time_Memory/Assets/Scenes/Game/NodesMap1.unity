@@ -735,6 +735,7 @@ MonoBehaviour:
   sr: {fileID: 1890437427}
   lineGO: {fileID: 7427643652284059326, guid: 01e3627ab3969d341b19ff8eb521c75d, type: 3}
   linesParent: {fileID: 1086823210}
+  srPosX: 0
 --- !u!1 &155718510
 GameObject:
   m_ObjectHideFlags: 0
@@ -11485,7 +11486,7 @@ MonoBehaviour:
   m_Viewport: {fileID: 829145010}
   m_HorizontalScrollbar: {fileID: 38927903}
   m_VerticalScrollbar: {fileID: 0}
-  m_HorizontalScrollbarVisibility: 0
+  m_HorizontalScrollbarVisibility: 1
   m_VerticalScrollbarVisibility: 0
   m_HorizontalScrollbarSpacing: 0
   m_VerticalScrollbarSpacing: 0

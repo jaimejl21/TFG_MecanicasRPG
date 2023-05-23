@@ -8,10 +8,10 @@ using System;
 
 public class MapNode : MonoBehaviour
 {
-    public int id, type, nodeSelected, colId;
+    public int id, type, nodeSelected;
     public bool selected;
 
-    string toSceneName = "";
+    string toSceneName;
 
     TextMeshProUGUI btnTMP;
     Button btn;
@@ -38,6 +38,7 @@ public class MapNode : MonoBehaviour
             SetNodeSelected(-1);
             //Debug.Log("Has no key  nodeSelected " + id + ": " + nodeSelected);
         }
+        SetTypeName();
         SetButton();
     }
 
@@ -45,7 +46,7 @@ public class MapNode : MonoBehaviour
     {
         selected = true;
         SetNodeSelected(1);
-        SetTypeVars();
+        SetTypeTxt();
         ColorBlock cb = btn.colors;
         cb.disabledColor = new Color(0, 1, 0, 1f);
         btn.colors = cb;
@@ -78,7 +79,7 @@ public class MapNode : MonoBehaviour
                 gameObject.GetComponent<Button>().interactable = false;
                 break;
             case 1:
-                SetTypeVars();
+                SetTypeTxt();
                 ColorBlock cb = btn.colors;
                 cb.disabledColor = new Color(0, 1, 0, 1f);
                 btn.colors = cb;
@@ -89,41 +90,66 @@ public class MapNode : MonoBehaviour
         }
     }
 
-    void SetTypeVars()
+    void SetTypeName()
+    {
+        switch (type)
+        {
+            case 0:
+                toSceneName = "Fight";
+                break;
+            case 1:
+                toSceneName = "Merchant";
+                break;
+            case 2:
+                toSceneName = "Blacksmith";
+                break;
+            case 3:
+                toSceneName = "Team";
+                break;
+            case 4:
+                toSceneName = "Dialogue";
+                break;
+            case 5:
+                toSceneName = "Characters";
+                break;
+            case 6:
+                toSceneName = "Item";
+                break;
+            case 7:
+                toSceneName = "Tavern";
+                break;
+            default:
+                break;
+        }
+    }
+
+    void SetTypeTxt()
     {
         switch(type)
         {
             case 0:
                 btnTMP.text = "Fight";
-                toSceneName = "Fight";
                 break;
             case 1:
                 btnTMP.text = "Merchant";
-                toSceneName = "Merchant";
                 break;
             case 2:
                 btnTMP.text = "Blacksmith";
-                toSceneName = "Blacksmith";
                 break;
             case 3:
                 btnTMP.text = "Team";
-                toSceneName = "Team";
                 break;
             case 4:
                 btnTMP.text = "Dialogue";
-                toSceneName = "Dialogue";
                 break;
             case 5:
                 btnTMP.text = "Characters";
-                toSceneName = "Characters";
                 break;
             case 6:
-                btnTMP.text = "Item";
-                toSceneName = "Item";
+                btnTMP.text = "Item";;
                 break;
             case 7:
                 btnTMP.text = "Tavern";
-                toSceneName = "Tavern";
                 break;
             default:
                 break;
@@ -140,6 +166,12 @@ public class MapNode : MonoBehaviour
     {
         SceneManager.LoadScene(toSceneName);
         GameManager.inst.enemyTeam = enemyTeam;
+    }
+
+    public void ChangeToTavernScene(int nextNodeMap)
+    {
+        SceneManager.LoadScene(toSceneName);
+        GameManager.inst.nNodesMaps = nextNodeMap;
     }
 
     public void ChangeToScene()

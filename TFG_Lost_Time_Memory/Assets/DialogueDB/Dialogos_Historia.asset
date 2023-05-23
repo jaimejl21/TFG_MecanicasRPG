@@ -2405,8 +2405,8 @@ MonoBehaviour:
         y: 1120
         width: 160
         height: 30
-    canvasScrollPosition: {x: 27.472534, y: 808.94885}
-    canvasZoom: 0.9100001
+    canvasScrollPosition: {x: 27.835083, y: 0}
+    canvasZoom: 0.97
   - id: 2
     fields:
     - title: Title
@@ -39899,7 +39899,7 @@ MonoBehaviour:
   - id: 24
     fields:
     - title: Title
-      value: 'Mercenario '
+      value: Mercenario
       type: 0
       typeString: 
     - title: Pictures

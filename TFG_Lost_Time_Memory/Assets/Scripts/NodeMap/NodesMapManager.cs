@@ -4,7 +4,6 @@ using TMPro;
 using UnityEngine;
 using Random = System.Random;
 using UnityEngine.UI;
-using System.Linq;
 
 public class NodesMapManager : MonoBehaviour
 {
@@ -70,6 +69,7 @@ public class NodesMapManager : MonoBehaviour
                     DrawLine(a, b);
                     //Debug.Log("Draw line from node " + a.GetComponent<MapNode>().id + " to " + b.GetComponent<MapNode>().id);
                     //Debug.Log("Column " + actualCol + " node " + i + " prev node " + n);
+                    Debug.Log("Draw line from pos a " + a.transform.position + " to pos b " + b.transform.position);
                 }
             }
         }
@@ -89,7 +89,7 @@ public class NodesMapManager : MonoBehaviour
         if (actualCol < columnsList.Count)
         {
             if(type == 6)
-            {              
+            {
                 if (columnsList[actualCol] != null) columnsList[actualCol].SetActive(true);
                 DrawNextLines();
             }
@@ -222,8 +222,10 @@ public class NodesMapManager : MonoBehaviour
         float newposX = objB.transform.position.x + (objA.transform.position.x - objB.transform.position.x) / 2;
         float newposY = objB.transform.position.y + (objA.transform.position.y - objB.transform.position.y) / 2;
         angleBar.transform.position = new Vector3(newposX, newposY, 0);
+        //Debug.Log("antes: " + angleBar.transform.position);
 
-        angleBar.transform.SetParent(linesParent.transform);
+        angleBar.transform.SetParent(linesParent.transform, true);
+        //Debug.Log("despues: " + angleBar.transform.position);
     }
 
     string SetName(int objType)
