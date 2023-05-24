@@ -1820,7 +1820,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8138539264565449672, guid: 0d1bfda12a432f94090622cb3058e6fb, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8138539264565449672, guid: 0d1bfda12a432f94090622cb3058e6fb, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
@@ -1828,7 +1828,11 @@ PrefabInstance:
       objectReference: {fileID: 272558950}
     - target: {fileID: 8138539264565449672, guid: 0d1bfda12a432f94090622cb3058e6fb, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: ChangeToScene
+      value: ChangeToTavernScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 8138539264565449672, guid: 0d1bfda12a432f94090622cb3058e6fb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_IntArgument
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8138539264565449672, guid: 0d1bfda12a432f94090622cb3058e6fb, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
@@ -5551,12 +5555,20 @@ PrefabInstance:
     m_TransformParent: {fileID: 164196757}
     m_Modifications:
     - target: {fileID: 8138539264565449672, guid: 0d1bfda12a432f94090622cb3058e6fb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8138539264565449672, guid: 0d1bfda12a432f94090622cb3058e6fb, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 935386909}
     - target: {fileID: 8138539264565449672, guid: 0d1bfda12a432f94090622cb3058e6fb, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: ChangeToScene
+      value: ChangeToTavernScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 8138539264565449672, guid: 0d1bfda12a432f94090622cb3058e6fb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_IntArgument
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8138539264565449672, guid: 0d1bfda12a432f94090622cb3058e6fb, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -7328,12 +7340,20 @@ PrefabInstance:
     m_TransformParent: {fileID: 1072102342}
     m_Modifications:
     - target: {fileID: 8138539264565449672, guid: 0d1bfda12a432f94090622cb3058e6fb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8138539264565449672, guid: 0d1bfda12a432f94090622cb3058e6fb, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1178381619}
     - target: {fileID: 8138539264565449672, guid: 0d1bfda12a432f94090622cb3058e6fb, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: ChangeToScene
+      value: ChangeToTavernScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 8138539264565449672, guid: 0d1bfda12a432f94090622cb3058e6fb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_IntArgument
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8138539264565449672, guid: 0d1bfda12a432f94090622cb3058e6fb, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName

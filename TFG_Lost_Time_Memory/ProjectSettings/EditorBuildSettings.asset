@@ -21,6 +21,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Game/NodesMap2.unity
     guid: 572ea55dfb2a5bd43b13afb9a15b237f
   - enabled: 1
+    path: Assets/Scenes/Game/NodesMap3.unity
+    guid: e157423b3b98ec5418c847ba351bcb4c
+  - enabled: 1
     path: Assets/Scenes/Game/Characters.unity
     guid: b86a8385f958dba49a8f661e88fec473
   - enabled: 1
