@@ -157,7 +157,7 @@ public class GameManager : MonoBehaviour
             lvlUpMatC = 100;
             lvlUpMatR = 100;
             lvlUpMatSR = 100;
-            nNodesMaps = 3;
+            nNodesMaps = 4;
 
             PlayerPrefs.SetInt("started", started);
             PlayerPrefs.SetInt("idGearCount", idGearCount);

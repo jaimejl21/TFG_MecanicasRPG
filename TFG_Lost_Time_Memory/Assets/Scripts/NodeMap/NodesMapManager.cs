@@ -34,6 +34,10 @@ public class NodesMapManager : MonoBehaviour
 
     public void DrawAllLines()
     {
+        foreach (Transform child in linesParent.transform)
+        {
+            GameObject.Destroy(child.gameObject);
+        }
         int nodesCount;
         for (int j = 0; j <= actualCol; j++)
         {
@@ -66,10 +70,11 @@ public class NodesMapManager : MonoBehaviour
                 {
                     GameObject a = columnsList[actualCol].transform.GetChild(i).gameObject;
                     GameObject b = columnsList[actualCol].transform.GetChild(i).GetComponent<MapNode>().prevNodes[n].gameObject;
+                    Debug.Log("Before: draw line from pos a " + a.transform.position + " to pos b " + b.transform.position);
                     DrawLine(a, b);
                     //Debug.Log("Draw line from node " + a.GetComponent<MapNode>().id + " to " + b.GetComponent<MapNode>().id);
                     //Debug.Log("Column " + actualCol + " node " + i + " prev node " + n);
-                    Debug.Log("Draw line from pos a " + a.transform.position + " to pos b " + b.transform.position);
+                    Debug.Log("After: draw line from pos a " + a.transform.position + " to pos b " + b.transform.position);
                 }
             }
         }
@@ -88,10 +93,10 @@ public class NodesMapManager : MonoBehaviour
         int nodesCount;
         if (actualCol < columnsList.Count)
         {
-            if(type == 6)
+            if (type == 6)
             {
                 if (columnsList[actualCol] != null) columnsList[actualCol].SetActive(true);
-                DrawNextLines();
+                DrawAllLines();
             }
             nodesCount = columnsList[actualCol].transform.childCount;
             bool anyNodeActive = false;
