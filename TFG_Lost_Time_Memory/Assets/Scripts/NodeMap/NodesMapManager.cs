@@ -22,7 +22,7 @@ public class NodesMapManager : MonoBehaviour
         GameManager.inst.GetIntPlayerPrefs("idGearCount", ref idGearCount, 0);
         GameManager.inst.GetFloatPlayerPrefs("srPosX", ref srPosX, 0);
 
-        if (actualCol >= columnsList.Count) actualCol = columnsList.Count - 1;
+        //if (actualCol >= columnsList.Count) actualCol = columnsList.Count - 1;
 
         for (int j = 0; j <= actualCol; j++)
         {
@@ -70,11 +70,11 @@ public class NodesMapManager : MonoBehaviour
                 {
                     GameObject a = columnsList[actualCol].transform.GetChild(i).gameObject;
                     GameObject b = columnsList[actualCol].transform.GetChild(i).GetComponent<MapNode>().prevNodes[n].gameObject;
-                    Debug.Log("Before: draw line from pos a " + a.transform.position + " to pos b " + b.transform.position);
+                    //Debug.Log("Before: draw line from pos a " + a.transform.position + " to pos b " + b.transform.position);
                     DrawLine(a, b);
-                    //Debug.Log("Draw line from node " + a.GetComponent<MapNode>().id + " to " + b.GetComponent<MapNode>().id);
+                    Debug.Log("Draw line from node " + a.GetComponent<MapNode>().id + " to " + b.GetComponent<MapNode>().id);
                     //Debug.Log("Column " + actualCol + " node " + i + " prev node " + n);
-                    Debug.Log("After: draw line from pos a " + a.transform.position + " to pos b " + b.transform.position);
+                    //Debug.Log("After: draw line from pos a " + a.transform.position + " to pos b " + b.transform.position);
                 }
             }
         }
@@ -96,7 +96,7 @@ public class NodesMapManager : MonoBehaviour
             if (type == 6)
             {
                 if (columnsList[actualCol] != null) columnsList[actualCol].SetActive(true);
-                DrawAllLines();
+                DrawNextLines();
             }
             nodesCount = columnsList[actualCol].transform.childCount;
             bool anyNodeActive = false;
