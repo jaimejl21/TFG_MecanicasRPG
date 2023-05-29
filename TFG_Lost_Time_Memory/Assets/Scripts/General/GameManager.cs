@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager inst;
 
-    public int charToEquipGear = 0;
+    public int charToEquipGear = 0, actualCol = 0;
     public bool restartPP, initialized = false, objectAlert = false, death = false;
     public int coins, idGearCount, idCharCount, awMats, upMats, enemyTeam, lvlUpMatC, lvlUpMatR, lvlUpMatSR, nNodesMaps;
     public string converName = "";
@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
 
     public static List<Character.Info> allChar;
     public static List<Gear.Info> allGear;
+    public static List<string> nodesPrefsList;
 
     int started;
 
@@ -53,6 +54,7 @@ public class GameManager : MonoBehaviour
     {
         allChar = new List<Character.Info>();
         allGear = new List<Gear.Info>();
+        nodesPrefsList = new List<string>();
 
         //Debug.Log("Started: " + started);
 
@@ -157,7 +159,7 @@ public class GameManager : MonoBehaviour
             lvlUpMatC = 100;
             lvlUpMatR = 100;
             lvlUpMatSR = 100;
-            nNodesMaps = 5;
+            nNodesMaps = 1;
 
             PlayerPrefs.SetInt("started", started);
             PlayerPrefs.SetInt("idGearCount", idGearCount);

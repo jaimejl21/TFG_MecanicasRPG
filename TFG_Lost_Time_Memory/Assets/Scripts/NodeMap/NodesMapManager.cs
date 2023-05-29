@@ -4,10 +4,12 @@ using TMPro;
 using UnityEngine;
 using Random = System.Random;
 using UnityEngine.UI;
+using System.Linq;
 
 public class NodesMapManager : MonoBehaviour
 {
     public List<GameObject> columnsList, linesGroupList;
+    public List<string> nodesPrefsList;
 
     public GameObject objAlertPn;
     public ScrollRect sr;
@@ -18,12 +20,23 @@ public class NodesMapManager : MonoBehaviour
 
     void Start()
     {
+        nodesPrefsList = GameManager.nodesPrefsList.ToList();
+        
         GameManager.inst.GetIntPlayerPrefs("actualCol", ref actualCol, 0);
         GameManager.inst.GetIntPlayerPrefs("idGearCount", ref idGearCount, 0);
         GameManager.inst.GetFloatPlayerPrefs("srPosX", ref srPosX, 0);
 
-        //if (actualCol >= columnsList.Count) actualCol = columnsList.Count - 1;
-
+        if(GameManager.inst.death == true)
+        {
+            foreach(string s in nodesPrefsList)
+            {
+                PlayerPrefs.DeleteKey(s);
+            }
+            nodesPrefsList.Clear();
+            GameManager.nodesPrefsList = nodesPrefsList;
+            GameManager.inst.death = false;
+        }
+        
         for (int j = 0; j <= actualCol; j++)
         {
             columnsList[j].SetActive(true);
@@ -72,7 +85,7 @@ public class NodesMapManager : MonoBehaviour
                     GameObject b = columnsList[actualCol].transform.GetChild(i).GetComponent<MapNode>().prevNodes[n].gameObject;
                     //Debug.Log("Before: draw line from pos a " + a.transform.position + " to pos b " + b.transform.position);
                     DrawLine(a, b);
-                    Debug.Log("Draw line from node " + a.GetComponent<MapNode>().id + " to " + b.GetComponent<MapNode>().id);
+                    //Debug.Log("Draw line from node " + a.GetComponent<MapNode>().id + " to " + b.GetComponent<MapNode>().id);
                     //Debug.Log("Column " + actualCol + " node " + i + " prev node " + n);
                     //Debug.Log("After: draw line from pos a " + a.transform.position + " to pos b " + b.transform.position);
                 }
@@ -231,6 +244,20 @@ public class NodesMapManager : MonoBehaviour
 
         angleBar.transform.SetParent(linesParent.transform, true);
         //Debug.Log("despues: " + angleBar.transform.position);
+    }
+
+    public void AddItemToNodesPrefsList(string id)
+    {
+        bool prefIsAdded = false;
+        foreach (string item in nodesPrefsList)
+        {
+            if (item.Contains("nodeSelected" + id))
+            {
+                prefIsAdded = true;
+            }
+        }
+        if (!prefIsAdded) nodesPrefsList.Add("nodeSelected" + id);
+        GameManager.nodesPrefsList = nodesPrefsList;
     }
 
     string SetName(int objType)

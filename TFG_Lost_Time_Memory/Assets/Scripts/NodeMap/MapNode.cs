@@ -5,6 +5,7 @@ using TMPro;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System;
+using System.Linq;
 
 public class MapNode : MonoBehaviour
 {
@@ -17,7 +18,7 @@ public class MapNode : MonoBehaviour
     Button btn;
     public List<MapNode> nextNodes, prevNodes;
     public GameObject parentPanel;
-    NodesMapManager nmm;
+    public NodesMapManager nmm;
 
     void Start()
     {
@@ -38,6 +39,7 @@ public class MapNode : MonoBehaviour
             SetNodeSelected(-1);
             //Debug.Log("Has no key  nodeSelected " + id + ": " + nodeSelected);
         }
+        nmm.AddItemToNodesPrefsList(id.ToString());
         SetTypeName();
         SetButton();
     }

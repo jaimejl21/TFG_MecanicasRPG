@@ -15,7 +15,6 @@ public class TavernManager : MonoBehaviour
         if (GameManager.inst.death == true)
         {
             canAdvance = false;
-            GameManager.inst.death = false;
         }
         else
         {
@@ -24,7 +23,6 @@ public class TavernManager : MonoBehaviour
 
         if(canAdvance)
         {
-            nNodesMaps++;
             PlayerPrefs.SetInt("nNodesMaps", nNodesMaps);
         }
         actualCol = 0;

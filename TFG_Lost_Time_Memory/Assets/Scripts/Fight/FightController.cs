@@ -10,7 +10,7 @@ public class FightController : MonoBehaviour
     public int enemySelect, playerSelect, pointerPlayer, pointerEnemy;
     int timesAttacked = 0;
     bool turn = true;
-    public bool fightResult;
+    public bool fightResult = true;
 
     public List<Character.Info> auxCharList;
     public List<Character.Info> teamList;
@@ -31,6 +31,7 @@ public class FightController : MonoBehaviour
     public GameObject enemies, players, buttonsDown;
     public ComboController comboCntrl;
     public EnemyTeamGenerator etg;
+    public ScenesManager sm;
 
     private void Start()
     {       
@@ -317,6 +318,20 @@ public class FightController : MonoBehaviour
         {
             fightResult = false;
             resultText.text = "LOSE";
+            GameManager.inst.death = true;
+        }
+    }
+
+    public void ReturnFromFight()
+    {
+        if(fightResult == true)
+        {
+            sm.ReturnToNodesMap();
+        }
+        else
+        {
+            GameManager.inst.death = true;
+            sm.ChangeScene("Tavern");
         }
     }
 

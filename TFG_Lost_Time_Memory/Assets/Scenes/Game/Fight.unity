@@ -789,6 +789,7 @@ MonoBehaviour:
   restartPP: 1
   initialized: 0
   objectAlert: 0
+  death: 0
   coins: 0
   idGearCount: 0
   idCharCount: 0
@@ -1132,9 +1133,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1596630911}
-        m_TargetAssemblyTypeName: ScenesManager, Assembly-CSharp
-        m_MethodName: ReturnToNodesMap
+      - m_Target: {fileID: 1596630913}
+        m_TargetAssemblyTypeName: FightController, Assembly-CSharp
+        m_MethodName: ReturnFromFight
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2172,6 +2173,7 @@ MonoBehaviour:
   buttonsDown: {fileID: 1424547847}
   comboCntrl: {fileID: 84880836}
   etg: {fileID: 1596630914}
+  sm: {fileID: 1596630911}
 --- !u!114 &1596630914
 MonoBehaviour:
   m_ObjectHideFlags: 0
