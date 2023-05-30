@@ -10,7 +10,7 @@ public class FightController : MonoBehaviour
     public int enemySelect, playerSelect, pointerPlayer, pointerEnemy;
     int timesAttacked = 0;
     bool turn = true;
-    public bool fightResult = true;
+    public bool fightResult;
 
     public List<Character.Info> auxCharList;
     public List<Character.Info> teamList;
@@ -318,7 +318,7 @@ public class FightController : MonoBehaviour
         {
             fightResult = false;
             resultText.text = "LOSE";
-            GameManager.inst.death = true;
+            PlayerPrefs.SetInt("death", 1);
         }
     }
 
@@ -330,7 +330,7 @@ public class FightController : MonoBehaviour
         }
         else
         {
-            GameManager.inst.death = true;
+            PlayerPrefs.SetInt("death", 1);
             sm.ChangeScene("Tavern");
         }
     }

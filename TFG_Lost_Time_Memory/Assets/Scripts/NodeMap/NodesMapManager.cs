@@ -9,34 +9,40 @@ using System.Linq;
 public class NodesMapManager : MonoBehaviour
 {
     public List<GameObject> columnsList, linesGroupList;
-    public List<string> nodesPrefsList;
+    //public List<int> nodesPrefsList;
 
     public GameObject objAlertPn;
     public ScrollRect sr;
     public GameObject lineGO, linesParent;
 
     public float srPosX;
-    int actualCol, idGearCount;
+    public int actualCol, idGearCount, firstNodeId, lastNodeId, death;
 
     void Start()
     {
-        nodesPrefsList = GameManager.nodesPrefsList.ToList();
+        //nodesPrefsList = GameManager.nodesPrefsList.ToList();
         
         GameManager.inst.GetIntPlayerPrefs("actualCol", ref actualCol, 0);
         GameManager.inst.GetIntPlayerPrefs("idGearCount", ref idGearCount, 0);
+        GameManager.inst.GetIntPlayerPrefs("death", ref death, 0);
         GameManager.inst.GetFloatPlayerPrefs("srPosX", ref srPosX, 0);
 
-        if(GameManager.inst.death == true)
+
+        if (death == 1)
         {
-            foreach(string s in nodesPrefsList)
+            for(int i = firstNodeId; i <= lastNodeId; i++)
             {
-                PlayerPrefs.DeleteKey(s);
+                if (PlayerPrefs.HasKey("nodeSelected" + i))
+                {
+                    PlayerPrefs.DeleteKey("nodeSelected" + i);
+                }
             }
-            nodesPrefsList.Clear();
-            GameManager.nodesPrefsList = nodesPrefsList;
-            GameManager.inst.death = false;
+            //nodesPrefsList.Clear();
+            //GameManager.nodesPrefsList = nodesPrefsList;
+            death = 0;
+            PlayerPrefs.SetInt("death", death);
         }
-        
+
         for (int j = 0; j <= actualCol; j++)
         {
             columnsList[j].SetActive(true);
@@ -246,19 +252,19 @@ public class NodesMapManager : MonoBehaviour
         //Debug.Log("despues: " + angleBar.transform.position);
     }
 
-    public void AddItemToNodesPrefsList(string id)
-    {
-        bool prefIsAdded = false;
-        foreach (string item in nodesPrefsList)
-        {
-            if (item.Contains("nodeSelected" + id))
-            {
-                prefIsAdded = true;
-            }
-        }
-        if (!prefIsAdded) nodesPrefsList.Add("nodeSelected" + id);
-        GameManager.nodesPrefsList = nodesPrefsList;
-    }
+    //public void AddItemToNodesPrefsList(string id)
+    //{
+    //    bool prefIsAdded = false;
+    //    foreach (string item in nodesPrefsList)
+    //    {
+    //        if (item.Contains("nodeSelected" + id))
+    //        {
+    //            prefIsAdded = true;
+    //        }
+    //    }
+    //    if (!prefIsAdded) nodesPrefsList.Add("nodeSelected" + id);
+    //    GameManager.nodesPrefsList = nodesPrefsList;
+    //}
 
     string SetName(int objType)
     {

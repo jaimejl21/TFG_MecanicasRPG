@@ -718,11 +718,16 @@ MonoBehaviour:
   - {fileID: 164196756}
   - {fileID: 779929155}
   linesGroupList: []
+  nodesPrefsList: []
   objAlertPn: {fileID: 1731214605}
   sr: {fileID: 1890437427}
   lineGO: {fileID: 7427643652284059326, guid: 01e3627ab3969d341b19ff8eb521c75d, type: 3}
   linesParent: {fileID: 1086823210}
   srPosX: 0
+  actualCol: 0
+  idGearCount: 0
+  firstNodeId: 120
+  lastNodeId: 144
 --- !u!1 &161621759
 GameObject:
   m_ObjectHideFlags: 0
@@ -4610,7 +4615,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29df927127ab34b40aff19a979bed9ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  charToEquipGear: 0
   restartPP: 1
   initialized: 0
   objectAlert: 0
@@ -4625,6 +4629,8 @@ MonoBehaviour:
   lvlUpMatR: 0
   lvlUpMatSR: 0
   nNodesMaps: 0
+  charToEquipGear: 0
+  actualCol: 0
   converName: 
   filename: CharactersDB.json
 --- !u!4 &1198946785

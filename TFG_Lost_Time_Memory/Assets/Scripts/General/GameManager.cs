@@ -8,9 +8,8 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager inst;
 
-    public int charToEquipGear = 0, actualCol = 0;
-    public bool restartPP, initialized = false, objectAlert = false, death = false;
-    public int coins, idGearCount, idCharCount, awMats, upMats, enemyTeam, lvlUpMatC, lvlUpMatR, lvlUpMatSR, nNodesMaps;
+    public bool restartPP, initialized = false, objectAlert = false;
+    public int coins, idGearCount, idCharCount, awMats, upMats, enemyTeam, lvlUpMatC, lvlUpMatR, lvlUpMatSR, nNodesMaps, charToEquipGear = 0, actualCol, death;
     public string converName = "";
 
     [SerializeField]
@@ -18,7 +17,7 @@ public class GameManager : MonoBehaviour
 
     public static List<Character.Info> allChar;
     public static List<Gear.Info> allGear;
-    public static List<string> nodesPrefsList;
+    public static List<int> nodesPrefsList;
 
     int started;
 
@@ -54,7 +53,7 @@ public class GameManager : MonoBehaviour
     {
         allChar = new List<Character.Info>();
         allGear = new List<Gear.Info>();
-        nodesPrefsList = new List<string>();
+        nodesPrefsList = new List<int>();
 
         //Debug.Log("Started: " + started);
 
@@ -159,7 +158,8 @@ public class GameManager : MonoBehaviour
             lvlUpMatC = 100;
             lvlUpMatR = 100;
             lvlUpMatSR = 100;
-            nNodesMaps = 1;
+            actualCol = 0;
+            nNodesMaps = 0;
 
             PlayerPrefs.SetInt("started", started);
             PlayerPrefs.SetInt("idGearCount", idGearCount);
@@ -170,7 +170,9 @@ public class GameManager : MonoBehaviour
             PlayerPrefs.SetInt("amountC", lvlUpMatC);
             PlayerPrefs.SetInt("amountR", lvlUpMatR);
             PlayerPrefs.SetInt("amountSR", lvlUpMatSR);
+            PlayerPrefs.SetInt("actualCol", actualCol);
             PlayerPrefs.SetInt("nNodesMaps", nNodesMaps);
+            PlayerPrefs.SetInt("death", death);
         }
         else
         {
@@ -186,7 +188,9 @@ public class GameManager : MonoBehaviour
             GetIntPlayerPrefs("amountC", ref lvlUpMatC, 100);
             GetIntPlayerPrefs("amountR", ref lvlUpMatR, 100);
             GetIntPlayerPrefs("amountSR", ref lvlUpMatSR, 100);
+            GetIntPlayerPrefs("actualCol", ref actualCol, 0);
             GetIntPlayerPrefs("nNodesMaps", ref nNodesMaps, 0);
+            GetIntPlayerPrefs("death", ref death, 0);
         }
         initialized = true;
     }

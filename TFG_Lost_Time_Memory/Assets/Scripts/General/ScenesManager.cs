@@ -23,4 +23,9 @@ public class ScenesManager : MonoBehaviour
         }
         
     }
+    public void ChangeToFightScene(int enemyTeam)
+    {
+        SceneManager.LoadScene("Fight");
+        GameManager.inst.enemyTeam = enemyTeam;
+    }
 }

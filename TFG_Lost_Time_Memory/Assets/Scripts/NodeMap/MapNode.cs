@@ -39,7 +39,7 @@ public class MapNode : MonoBehaviour
             SetNodeSelected(-1);
             //Debug.Log("Has no key  nodeSelected " + id + ": " + nodeSelected);
         }
-        nmm.AddItemToNodesPrefsList(id.ToString());
+        //nmm.AddItemToNodesPrefsList(id.ToString());
         SetTypeName();
         SetButton();
     }
@@ -173,7 +173,7 @@ public class MapNode : MonoBehaviour
     public void ChangeToTavernScene(int nextNodeMap)
     {
         SceneManager.LoadScene(toSceneName);
-        GameManager.inst.nNodesMaps = nextNodeMap;
+        PlayerPrefs.SetInt("nNodesMaps", nextNodeMap);
     }
 
     public void ChangeToScene()

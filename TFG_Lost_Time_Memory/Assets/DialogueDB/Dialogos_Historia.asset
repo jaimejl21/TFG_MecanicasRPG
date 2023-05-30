@@ -19019,7 +19019,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 120
+        x: 121
         y: 70
         width: 160
         height: 30
