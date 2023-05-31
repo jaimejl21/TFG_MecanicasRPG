@@ -20,8 +20,6 @@ public class NodesMapManager : MonoBehaviour
 
     void Start()
     {
-        //nodesPrefsList = GameManager.nodesPrefsList.ToList();
-        
         GameManager.inst.GetIntPlayerPrefs("actualCol", ref actualCol, 0);
         GameManager.inst.GetIntPlayerPrefs("idGearCount", ref idGearCount, 0);
         GameManager.inst.GetIntPlayerPrefs("death", ref death, 0);
@@ -37,8 +35,6 @@ public class NodesMapManager : MonoBehaviour
                     PlayerPrefs.DeleteKey("nodeSelected" + i);
                 }
             }
-            //nodesPrefsList.Clear();
-            //GameManager.nodesPrefsList = nodesPrefsList;
             death = 0;
             PlayerPrefs.SetInt("death", death);
         }
@@ -47,7 +43,18 @@ public class NodesMapManager : MonoBehaviour
         {
             columnsList[j].SetActive(true);
         }
-        sr.horizontalNormalizedPosition = srPosX;
+        Debug.Log("restartSr: " + GameManager.inst.restartSr);
+        if(GameManager.inst.restartSr)
+        {
+
+            GameManager.inst.restartSr = false; 
+            sr.horizontalNormalizedPosition = srPosX;
+        }
+        else
+        {
+            sr.horizontalNormalizedPosition = 0f;
+        }
+        
         if (actualCol > 0) DrawAllLines();
     }
 

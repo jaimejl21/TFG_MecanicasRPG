@@ -90,4 +90,51 @@ public class MyDialogueManager : MonoBehaviour
         int nNodesMaps = PlayerPrefs.GetInt("nNodesMaps");
         SceneManager.LoadScene("NodesMap" + nNodesMaps);
     }
+
+    public void AddCharacter(int character)
+    {
+        Gear.Info gi = new Gear.Info(-1, 10, -1, -1, 0, 0, 0, false, -1);
+        int idCharCount;
+        switch (character)
+        {
+            case 0:
+                //Velkra
+                idCharCount = PlayerPrefs.GetInt("idCharCount");
+                GameManager.allChar.Add(new Character.Info(idCharCount, 0, 0, 7, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
+                idCharCount++;
+                PlayerPrefs.SetInt("idCharCount", idCharCount);
+                break;
+            case 1:
+                //Freydam
+                idCharCount = PlayerPrefs.GetInt("idCharCount");
+                GameManager.allChar.Add(new Character.Info(idCharCount, 5, 0, 0, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
+                idCharCount++;
+                PlayerPrefs.SetInt("idCharCount", idCharCount);
+                break;
+            case 2:
+                //Karris
+                break;
+            case 3:
+                //Belaran
+                break;
+            case 4:
+                //Oriel 
+                break;
+            case 5:
+                //Glokku
+                break;
+            case 6:
+                //Yonlud
+                break;
+            case 7:
+                //Dramor
+                break;
+            case 8:
+                //Godrick
+                break;
+            default:
+                break;
+
+        }
+    }
 }

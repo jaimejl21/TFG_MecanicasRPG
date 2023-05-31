@@ -695,36 +695,43 @@ public class FightCharacter : MonoBehaviour, IPointerClickHandler, IPointerDownH
         switch (charType)
         {
             case 0:
+                //Ancestral
                 typeColor = Color.white;
                 effectiveType = 1;
                 weakType = 2;
                 break;
             case 1:
+                //Oscura
                 typeColor = new Color(.5f, .2f, .6f, 1f);
                 effectiveType = 2;
                 weakType = 0;
                 break;
             case 2:
+                //Naturaleza
                 typeColor = new Color(.5f, .3f, 0f, 1f);
                 effectiveType = 0;
                 weakType = 1;
                 break;
             case 3:
+                //Astucia
                 typeColor = Color.green;
                 effectiveType = 4;
                 weakType = 6;
                 break;
             case 4:
+                //Vitalidad
                 typeColor = Color.yellow;
                 effectiveType = 5;
                 weakType = 3;
                 break;
             case 5:
+                //Velocidad
                 typeColor = Color.blue;
                 effectiveType = 6;
                 weakType = 4;
                 break;
             case 6:
+                //Fuerza
                 typeColor = Color.red;
                 effectiveType = 3;
                 weakType = 5;

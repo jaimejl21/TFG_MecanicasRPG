@@ -393,9 +393,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29df927127ab34b40aff19a979bed9ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  restartPP: 0
+  restartPP: 1
   initialized: 0
   objectAlert: 0
+  restartSr: 0
   coins: 0
   idGearCount: 0
   idCharCount: 0

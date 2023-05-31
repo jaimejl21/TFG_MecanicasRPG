@@ -14,7 +14,7 @@ public class EnemyTeamGenerator : MonoBehaviour
 
     public List<Character.Info> GenerateEnemyTeam(int enemyTeam)
     {
-        // id  type  race  pos  inTeam  List<Gear.Info> gear  level  exp  expNextLv  Stats stats;
+        // id  type  race  pos  inTeam  List<Gear.Info> gear  level  exp  expNextLv  Stats stats
 
         List<Character.Info> enemyTeamList = new List<Character.Info>();
         int type;
