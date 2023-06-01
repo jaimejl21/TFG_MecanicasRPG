@@ -536,7 +536,6 @@ MonoBehaviour:
   - {fileID: 1072102341}
   - {fileID: 164196756}
   linesGroupList: []
-  nodesPrefsList: []
   objAlertPn: {fileID: 1731214605}
   sr: {fileID: 1890437427}
   lineGO: {fileID: 7427643652284059326, guid: 01e3627ab3969d341b19ff8eb521c75d, type: 3}
@@ -546,6 +545,7 @@ MonoBehaviour:
   idGearCount: 0
   firstNodeId: 81
   lastNodeId: 91
+  death: 0
 --- !u!1 &161621759
 GameObject:
   m_ObjectHideFlags: 0
@@ -1866,7 +1866,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8138539264565449672, guid: 0d1bfda12a432f94090622cb3058e6fb, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8138539264565449672, guid: 0d1bfda12a432f94090622cb3058e6fb, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
@@ -1874,7 +1874,11 @@ PrefabInstance:
       objectReference: {fileID: 761401678}
     - target: {fileID: 8138539264565449672, guid: 0d1bfda12a432f94090622cb3058e6fb, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: ChangeToScene
+      value: ChangeToDialogueScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 8138539264565449672, guid: 0d1bfda12a432f94090622cb3058e6fb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
+      value: Mercader
       objectReference: {fileID: 0}
     - target: {fileID: 8138539264565449672, guid: 0d1bfda12a432f94090622cb3058e6fb, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -3862,7 +3866,7 @@ MonoBehaviour:
   restartPP: 1
   initialized: 0
   objectAlert: 0
-  death: 0
+  restartSr: 0
   coins: 0
   idGearCount: 0
   idCharCount: 0
@@ -3875,6 +3879,7 @@ MonoBehaviour:
   nNodesMaps: 0
   charToEquipGear: 0
   actualCol: 0
+  death: 0
   converName: 
   filename: CharactersDB.json
 --- !u!4 &1198946785
@@ -4184,7 +4189,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8138539264565449672, guid: 0d1bfda12a432f94090622cb3058e6fb, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8138539264565449672, guid: 0d1bfda12a432f94090622cb3058e6fb, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
@@ -4192,11 +4197,11 @@ PrefabInstance:
       objectReference: {fileID: 1351174504}
     - target: {fileID: 8138539264565449672, guid: 0d1bfda12a432f94090622cb3058e6fb, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: ChangeToScene
+      value: ChangeToDialogueScene
       objectReference: {fileID: 0}
     - target: {fileID: 8138539264565449672, guid: 0d1bfda12a432f94090622cb3058e6fb, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
-      value: 
+      value: Herrero
       objectReference: {fileID: 0}
     - target: {fileID: 8138539264565449672, guid: 0d1bfda12a432f94090622cb3058e6fb, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName

@@ -27,8 +27,9 @@ public class MyDialogueManager : MonoBehaviour
         Lua.RegisterFunction("ChangeToScene", this, SymbolExtensions.GetMethodInfo(() => ChangeToScene(string.Empty)));
         Lua.RegisterFunction("ReturnToNodesMap", this, SymbolExtensions.GetMethodInfo(() => ReturnToNodesMap()));
         Lua.RegisterFunction("HelpAction", this, SymbolExtensions.GetMethodInfo(() => HelpAction()));
-        Lua.RegisterFunction("ChangeToFightScene", this, SymbolExtensions.GetMethodInfo(() => ChangeToFightScene((int)0)));
+        Lua.RegisterFunction("ChangeToFightScene", this, SymbolExtensions.GetMethodInfo(() => ChangeToFightScene((double)0)));
         Lua.RegisterFunction("NMObjectAlert", this, SymbolExtensions.GetMethodInfo(() => NMObjectAlert()));
+        Lua.RegisterFunction("AddCharacter", this, SymbolExtensions.GetMethodInfo(() => AddCharacter((double)0)));
     }
 
     void OnDisable()
@@ -40,6 +41,7 @@ public class MyDialogueManager : MonoBehaviour
             Lua.UnregisterFunction("HelpAction"); 
             Lua.UnregisterFunction("ChangeToFightScene"); 
             Lua.UnregisterFunction("NMObjectAlert");
+            Lua.UnregisterFunction("AddCharacter");
         }
     }
 
@@ -57,10 +59,10 @@ public class MyDialogueManager : MonoBehaviour
         SceneManager.LoadScene(sceneName);
     }
 
-    public void ChangeToFightScene(int enemyTeam)
+    public void ChangeToFightScene(double enemyTeam)
     {
         SceneManager.LoadScene("Fight");
-        GameManager.inst.enemyTeam = enemyTeam;
+        GameManager.inst.enemyTeam = (int)enemyTeam;
     }
 
     public void NMObjectAlert()
@@ -74,7 +76,7 @@ public class MyDialogueManager : MonoBehaviour
         switch(rnd)
         {
             case 0:
-                ChangeToFightScene(new Random().Next(0, 2));
+                ChangeToFightScene(2);
                 break;
             case 1:
                 NMObjectAlert();
@@ -91,7 +93,7 @@ public class MyDialogueManager : MonoBehaviour
         SceneManager.LoadScene("NodesMap" + nNodesMaps);
     }
 
-    public void AddCharacter(int character)
+    public void AddCharacter(double character)
     {
         Gear.Info gi = new Gear.Info(-1, 10, -1, -1, 0, 0, 0, false, -1);
         int idCharCount;
@@ -107,30 +109,58 @@ public class MyDialogueManager : MonoBehaviour
             case 1:
                 //Freydam
                 idCharCount = PlayerPrefs.GetInt("idCharCount");
-                GameManager.allChar.Add(new Character.Info(idCharCount, 5, 0, 0, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
+                GameManager.allChar.Add(new Character.Info(idCharCount, 5, 0, 6, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
                 idCharCount++;
                 PlayerPrefs.SetInt("idCharCount", idCharCount);
                 break;
             case 2:
                 //Karris
+                idCharCount = PlayerPrefs.GetInt("idCharCount");
+                GameManager.allChar.Add(new Character.Info(idCharCount, 6, 0, 6, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
+                idCharCount++;
+                PlayerPrefs.SetInt("idCharCount", idCharCount); 
                 break;
             case 3:
                 //Belaran
+                idCharCount = PlayerPrefs.GetInt("idCharCount");
+                GameManager.allChar.Add(new Character.Info(idCharCount, 5, 0, 11, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
+                idCharCount++;
+                PlayerPrefs.SetInt("idCharCount", idCharCount);
                 break;
             case 4:
-                //Oriel 
+                //Oriel
+                idCharCount = PlayerPrefs.GetInt("idCharCount");
+                GameManager.allChar.Add(new Character.Info(idCharCount, 3, 0, 9, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
+                idCharCount++;
+                PlayerPrefs.SetInt("idCharCount", idCharCount);
                 break;
             case 5:
                 //Glokku
+                idCharCount = PlayerPrefs.GetInt("idCharCount");
+                GameManager.allChar.Add(new Character.Info(idCharCount, 2, 0, 10, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
+                idCharCount++;
+                PlayerPrefs.SetInt("idCharCount", idCharCount);
                 break;
             case 6:
                 //Yonlud
+                idCharCount = PlayerPrefs.GetInt("idCharCount");
+                GameManager.allChar.Add(new Character.Info(idCharCount, 3, 0, 6, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
+                idCharCount++;
+                PlayerPrefs.SetInt("idCharCount", idCharCount);
                 break;
             case 7:
                 //Dramor
+                idCharCount = PlayerPrefs.GetInt("idCharCount");
+                GameManager.allChar.Add(new Character.Info(idCharCount, 1, 0, 10, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
+                idCharCount++;
+                PlayerPrefs.SetInt("idCharCount", idCharCount);
                 break;
             case 8:
                 //Godrick
+                idCharCount = PlayerPrefs.GetInt("idCharCount");
+                GameManager.allChar.Add(new Character.Info(idCharCount, 6, 0, 6, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
+                idCharCount++;
+                PlayerPrefs.SetInt("idCharCount", idCharCount);
                 break;
             default:
                 break;

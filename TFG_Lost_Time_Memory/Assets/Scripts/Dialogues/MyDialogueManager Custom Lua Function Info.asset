@@ -23,3 +23,9 @@ MonoBehaviour:
   - functionName: HelpAction
     parameters: 
     returnValue: 0
+  - functionName: AddCharacter
+    parameters: 01000000
+    returnValue: 0
+  - functionName: ChangeToFightScene
+    parameters: 01000000
+    returnValue: 0

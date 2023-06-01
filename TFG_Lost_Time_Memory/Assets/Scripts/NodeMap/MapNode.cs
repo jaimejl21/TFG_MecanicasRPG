@@ -100,10 +100,10 @@ public class MapNode : MonoBehaviour
                 toSceneName = "Fight";
                 break;
             case 1:
-                toSceneName = "Merchant";
+                toSceneName = "Dialogue";
                 break;
             case 2:
-                toSceneName = "Blacksmith";
+                toSceneName = "Dialogue";
                 break;
             case 3:
                 toSceneName = "Team";

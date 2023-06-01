@@ -56,6 +56,11 @@ public class NodesMapManager : MonoBehaviour
         }
         
         if (actualCol > 0) DrawAllLines();
+
+        if(GameManager.inst.objectAlert)
+        {
+            ObjectAlert();
+        }
     }
 
     public void DrawAllLines()

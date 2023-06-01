@@ -22,6 +22,7 @@ public class EnemyTeamGenerator : MonoBehaviour
         switch (enemyTeam)
         {
             case 0:
+                //Humanos random
                 for (int i = 0; i < 6; i++)
                 {
                     type = new Random().Next(0, 7);
@@ -29,6 +30,7 @@ public class EnemyTeamGenerator : MonoBehaviour
                 }
                 break;
             case 1:
+                //Orcos random
                 for (int i = 0; i < 6; i++)
                 {
                     type = new Random().Next(0, 7);
@@ -36,6 +38,9 @@ public class EnemyTeamGenerator : MonoBehaviour
                 }
                 break;
             case 2:
+                //Herrero mercader random
+                type = new Random().Next(0, 7);
+                enemyTeamList.Add(new Character.Info(0, type, 0, -1, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
                 break;
             case 3:
                 break;

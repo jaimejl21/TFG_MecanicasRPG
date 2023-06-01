@@ -326,11 +326,11 @@ public class FightController : MonoBehaviour
     {
         if(fightResult == true)
         {
+            GameManager.inst.objectAlert = true;
             sm.ReturnToNodesMap();
         }
         else
         {
-            PlayerPrefs.SetInt("death", 1);
             sm.ChangeScene("Tavern");
         }
     }
