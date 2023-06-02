@@ -59,4 +59,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Game/Tavern.unity
     guid: 8f80a60357bd31e4c80d0c7c078bdd75
+  - enabled: 1
+    path: Assets/Scenes/Game/PrologueDialogue.unity
+    guid: 44e647e163ba2594a8df64d776150a86
   m_configObjects: {}

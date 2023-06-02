@@ -28,4 +28,10 @@ public class ScenesManager : MonoBehaviour
         SceneManager.LoadScene("Fight");
         GameManager.inst.enemyTeam = enemyTeam;
     }
+
+    public void ChangeToDialogueScene(string conver)
+    {
+        SceneManager.LoadScene("Dialogue");
+        GameManager.inst.converName = conver;
+    }
 }
