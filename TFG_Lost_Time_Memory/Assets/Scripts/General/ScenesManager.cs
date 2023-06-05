@@ -34,4 +34,10 @@ public class ScenesManager : MonoBehaviour
         SceneManager.LoadScene("Dialogue");
         GameManager.inst.converName = conver;
     }
+
+    public void ChangeToPrologueScene(string conver)
+    {
+        SceneManager.LoadScene("PrologueDialogue");
+        GameManager.inst.converName = conver;
+    }
 }
