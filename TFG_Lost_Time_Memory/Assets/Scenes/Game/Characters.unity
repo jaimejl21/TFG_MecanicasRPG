@@ -152,10 +152,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29df927127ab34b40aff19a979bed9ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  charToEquipGear: 0
   restartPP: 0
   initialized: 0
   objectAlert: 0
+  restartSr: 0
   coins: 0
   idGearCount: 0
   idCharCount: 0
@@ -166,6 +166,9 @@ MonoBehaviour:
   lvlUpMatR: 0
   lvlUpMatSR: 0
   nNodesMaps: 0
+  charToEquipGear: 0
+  actualCol: 0
+  death: 0
   converName: 
   filename: CharactersDB.json
 --- !u!4 &235209504
