@@ -7,17 +7,16 @@ public class FadeInOut : MonoBehaviour
 {
     public Animator animator;
 
-    int sceneToLoad;
+    string sceneName;
 
-    public void FadeToScene(int sceneIndex)
+    public void FadeToScene(string scene)
     {
-        sceneToLoad = sceneIndex;
+        sceneName = scene;
         animator.SetTrigger("FadeOut");
     }
 
     public void OnFadeComplete()
     {
-        //GameManager.inst.converName = dialogue;
-        SceneManager.LoadScene(sceneToLoad);
+        SceneManager.LoadScene(sceneName);
     }
 }

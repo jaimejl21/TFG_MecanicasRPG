@@ -19,11 +19,14 @@ public class MapNode : MonoBehaviour
     public List<MapNode> nextNodes, prevNodes;
     public GameObject parentPanel;
     public NodesMapManager nmm;
+    FadeInOut fio;
 
     void Start()
     {
         nmm = FindObjectOfType<NodesMapManager>();
-        
+        fio = FindObjectOfType<FadeInOut>();
+
+
         btnTMP = gameObject.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
         parentPanel = gameObject.transform.parent.gameObject;
         btn = gameObject.GetComponent<Button>();
@@ -160,24 +163,28 @@ public class MapNode : MonoBehaviour
 
     public void ChangeToDialogueScene(string conver)
     {
-        SceneManager.LoadScene(toSceneName);
         GameManager.inst.converName = conver;
+        //SceneManager.LoadScene(toSceneName); 
+        fio.FadeToScene(toSceneName);
     }
 
     public void ChangeToFightScene(int enemyTeam)
     {
-        SceneManager.LoadScene(toSceneName);
         GameManager.inst.enemyTeam = enemyTeam;
+        //SceneManager.LoadScene(toSceneName);
+        fio.FadeToScene(toSceneName);
     }
 
     public void ChangeToTavernScene(int nextNodeMap)
     {
-        SceneManager.LoadScene(toSceneName);
         PlayerPrefs.SetInt("nNodesMaps", nextNodeMap);
+        //SceneManager.LoadScene(toSceneName);
+        fio.FadeToScene(toSceneName);
     }
 
     public void ChangeToScene()
     {
-        SceneManager.LoadScene(toSceneName);
+        //SceneManager.LoadScene(toSceneName);
+        fio.FadeToScene(toSceneName);
     }
 }

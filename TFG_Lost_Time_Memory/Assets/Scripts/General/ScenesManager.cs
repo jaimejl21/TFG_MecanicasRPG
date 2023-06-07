@@ -5,9 +5,23 @@ using UnityEngine.SceneManagement;
 
 public class ScenesManager : MonoBehaviour
 {
+    FadeInOut fio;
+
+    private void Start()
+    {
+        fio = FindObjectOfType<FadeInOut>();
+    }
+
     public void ChangeScene(string sceneName)
     {
-        SceneManager.LoadScene(sceneName);
+        if (fio != null)
+        {
+            fio.FadeToScene(sceneName);
+        }
+        else
+        {
+            SceneManager.LoadScene(sceneName);
+        }
     }
 
     public void ReturnToNodesMap()
@@ -15,29 +29,64 @@ public class ScenesManager : MonoBehaviour
         int nNodesMaps = PlayerPrefs.GetInt("nNodesMaps");
         if(nNodesMaps == 6)
         {
-            SceneManager.LoadScene("Lobby");
+            if (fio != null)
+            {
+                fio.FadeToScene("Lobby");
+            }
+            else
+            {
+                SceneManager.LoadScene("Lobby");
+            }
         }
         else
         {
-            SceneManager.LoadScene("NodesMap" + nNodesMaps);
+            if (fio != null)
+            {
+                fio.FadeToScene("NodesMap" + nNodesMaps);
+            }
+            else
+            {
+                SceneManager.LoadScene("NodesMap" + nNodesMaps);
+            }
         }
         
     }
     public void ChangeToFightScene(int enemyTeam)
     {
-        SceneManager.LoadScene("Fight");
         GameManager.inst.enemyTeam = enemyTeam;
+        if (fio != null)
+        {
+            fio.FadeToScene("Fight");
+        }
+        else
+        {
+            SceneManager.LoadScene("Fight");
+        }
     }
 
     public void ChangeToDialogueScene(string conver)
     {
-        SceneManager.LoadScene("Dialogue");
         GameManager.inst.converName = conver;
+        if (fio != null)
+        {
+            fio.FadeToScene("Dialogue");
+        }
+        else
+        {
+            SceneManager.LoadScene("Dialogue");
+        }
     }
 
     public void ChangeToPrologueScene(string conver)
     {
-        SceneManager.LoadScene("PrologueDialogue");
         GameManager.inst.converName = conver;
+        if (fio != null)
+        {
+            fio.FadeToScene("PrologueDialogue");
+        }
+        else
+        {
+            SceneManager.LoadScene("PrologueDialogue");
+        }
     }
 }
