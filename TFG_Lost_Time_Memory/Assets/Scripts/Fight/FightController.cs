@@ -331,6 +331,7 @@ public class FightController : MonoBehaviour
         }
         else
         {
+            PlayerPrefs.SetInt("death", 1);
             sm.ChangeScene("Tavern");
         }
     }

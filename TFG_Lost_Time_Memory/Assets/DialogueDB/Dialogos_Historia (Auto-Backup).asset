@@ -46537,14 +46537,14 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks: []
       conditionsString: 
-      userScript: 
+      userScript: ChangeToDialogueScene("Prologo 2")
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 30
-        y: 370
+        x: 32
+        y: 368
         width: 160
         height: 30
     - id: 107
@@ -47555,7 +47555,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "[De acuerdo. Te contar\xE9 todo mi viaje hasta llegar aqu\xED."
+        value: "De acuerdo. Te contar\xE9 todo mi viaje hasta llegar aqu\xED."
         type: 0
         typeString: 
       - title: Parenthetical
@@ -47583,14 +47583,14 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks: []
       conditionsString: 
-      userScript: 
+      userScript: ReturnToNodesMap()
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
         x: 30
-        y: 1370
+        y: 1368.7341
         width: 160
         height: 30
     - id: 109
@@ -48746,8 +48746,8 @@ MonoBehaviour:
         y: 370
         width: 160
         height: 30
-    canvasScrollPosition: {x: 0, y: 0}
-    canvasZoom: 0.9400001
+    canvasScrollPosition: {x: 0, y: 726.58203}
+    canvasZoom: 0.7900003
   syncInfo:
     syncActors: 0
     syncItems: 0
