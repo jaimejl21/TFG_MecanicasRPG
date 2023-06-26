@@ -210,7 +210,7 @@ MonoBehaviour:
   preloadResources: 1
   warmUpConversationController: 0
   instantiateDatabase: 0
-  dontDestroyOnLoad: 1
+  dontDestroyOnLoad: 0
   allowOnlyOneInstance: 1
   dialogueTimeMode: 0
   debugLevel: 2
@@ -262,7 +262,7 @@ MonoBehaviour:
   backButtons:
   - Cancel
   submitButton: Submit
-  singleton: 1
+  singleton: 0
   onUseKeyboard:
     m_PersistentCalls:
       m_Calls: []

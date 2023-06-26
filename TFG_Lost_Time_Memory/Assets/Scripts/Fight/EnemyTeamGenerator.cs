@@ -43,6 +43,8 @@ public class EnemyTeamGenerator : MonoBehaviour
                 enemyTeamList.Add(new Character.Info(0, type, 0, -1, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
                 break;
             case 3:
+                type = new Random().Next(0, 7);
+                enemyTeamList.Add(new Character.Info(0, type, 1, -1, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
                 break;
             case 4:
                 break;
