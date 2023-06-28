@@ -26,7 +26,10 @@ public class GearItemPool : MonoBehaviour, IDropHandler
                 if (item.GetComponent<Gear>().info.equiped)
                 {
                     item.GetComponent<Gear>().info.equiped = false;
-                    gearManager.weaponTxt.color = Color.white;
+                    if (item.GetComponent<Gear>().info.objType > 5)
+                    {
+                        gearManager.weaponTxt.color = Color.white;
+                    }
                     for (int i = 0; i < gearManager.gearList.Count; i++)
                     {
                         if (gearManager.gearList[i].id == item.GetComponent<Gear>().info.id)

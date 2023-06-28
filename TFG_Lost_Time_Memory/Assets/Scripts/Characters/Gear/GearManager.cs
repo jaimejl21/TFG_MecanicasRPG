@@ -145,24 +145,29 @@ public class GearManager : MonoBehaviour
                     if (ginfo.objType == charGO.transform.GetComponent<Character>().info.weapon)
                     {
                         charGO.transform.GetComponent<Character>().info.stats.extraAtk += (ginfo.statAmount * 2);
+                        Debug.Log("atk +" + (ginfo.statAmount * 2));
                     }
                     else
                     {
                         charGO.transform.GetComponent<Character>().info.stats.extraAtk += (ginfo.statAmount / 2);
+                        Debug.Log("atk +" + (ginfo.statAmount / 2));
                     }
                 }
                 else
                 {
                     charGO.transform.GetComponent<Character>().info.stats.extraAtk += ginfo.statAmount;
+                    Debug.Log("atk +" + ginfo.statAmount);
                 }
             }
             else if (ginfo.objType == 1 || ginfo.objType == 4)
             {
                 charGO.transform.GetComponent<Character>().info.stats.extraDef += ginfo.statAmount;
+                Debug.Log("def +" + ginfo.statAmount);
             }
             else if (ginfo.objType == 2 || ginfo.objType == 5)
             {
                 charGO.transform.GetComponent<Character>().info.stats.extraHp += ginfo.statAmount;
+                Debug.Log("hp +" + ginfo.statAmount);
             }
         }
         else
@@ -174,24 +179,29 @@ public class GearManager : MonoBehaviour
                     if (ginfo.objType == charGO.transform.GetComponent<Character>().info.weapon)
                     {
                         charGO.transform.GetComponent<Character>().info.stats.extraAtk -= (ginfo.statAmount * 2);
+                        Debug.Log("atk -" + (ginfo.statAmount * 2));
                     }
                     else
                     {
                         charGO.transform.GetComponent<Character>().info.stats.extraAtk -= (ginfo.statAmount / 2);
+                        Debug.Log("atk -" + (ginfo.statAmount / 2));
                     }
                 }
                 else
                 {
                     charGO.transform.GetComponent<Character>().info.stats.extraAtk -= ginfo.statAmount;
+                    Debug.Log("atk -" + ginfo.statAmount);
                 }
             }
             else if (ginfo.objType == 1 || ginfo.objType == 4)
             {
                 charGO.transform.GetComponent<Character>().info.stats.extraDef -= ginfo.statAmount;
+                Debug.Log("atk -" + ginfo.statAmount);
             }
             else if (ginfo.objType == 2 || ginfo.objType == 5)
             {
                 charGO.transform.GetComponent<Character>().info.stats.extraHp -= ginfo.statAmount;
+                Debug.Log("atk -" + ginfo.statAmount);
             }
         }
         charGO.transform.GetComponent<Character>().info.stats.UpdateStats();
