@@ -95,8 +95,19 @@ public class FightController : MonoBehaviour
                 ab.GetComponent<AttackButton>().charPos = p.GetComponent<FightCharacter>().position;
                 listAttackButtons.Add(ab);
             }
+        }
+
+        for(int i = 0; i < allEnemiesList.Count; i++)
+        {
             enemy.GetComponent<Character>().info = allEnemiesList[i];
-            enemy.GetComponent<FightCharacter>().position = i;
+            if(allEnemiesList.Count == 1)
+            {
+                enemy.GetComponent<FightCharacter>().position = 1;
+            }
+            else
+            {
+                enemy.GetComponent<FightCharacter>().position = i;
+            }  
             enemiesPositions.Add(enemy.GetComponent<FightCharacter>().position);
             if ((i % 2) == 0)
             {

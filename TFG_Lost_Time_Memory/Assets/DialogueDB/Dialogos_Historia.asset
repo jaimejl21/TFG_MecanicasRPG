@@ -22650,7 +22650,7 @@ MonoBehaviour:
         typeString: 
       - title: Dialogue Text
         value: "Es un error. Me acerqu\xE9 al cuerpo y me manch\xE9. \xA1\xA1Deben
-          creerme!!\n\nElla...Ella...Era mi Dira."
+          creerme!!\nElla...Ella...Era mi Dira."
         type: 0
         typeString: 
       - title: Parenthetical
@@ -23336,8 +23336,8 @@ MonoBehaviour:
         y: 120
         width: 160
         height: 30
-    canvasScrollPosition: {x: 0, y: 0}
-    canvasZoom: 0.85000014
+    canvasScrollPosition: {x: 0, y: 606.1123}
+    canvasZoom: 0.7900002
   - id: 14
     fields:
     - title: Title
@@ -45592,8 +45592,8 @@ MonoBehaviour:
         y: 370
         width: 160
         height: 30
-    canvasScrollPosition: {x: 0, y: 0}
-    canvasZoom: 0.8800001
+    canvasScrollPosition: {x: 0, y: 967.39484}
+    canvasZoom: 0.9100001
   - id: 45
     fields:
     - title: Title
@@ -45780,7 +45780,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 125
+        x: 126.06383
         y: 192
         width: 160
         height: 30
@@ -45923,7 +45923,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 125
-        y: 292
+        y: 293.06384
         width: 160
         height: 30
     - id: 177
@@ -46065,7 +46065,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 125
+        x: 123.93617
         y: 392
         width: 160
         height: 30
@@ -46281,7 +46281,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 125
-        y: 542
+        y: 540.96906
         width: 160
         height: 30
     - id: 182
@@ -46423,7 +46423,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 125
-        y: 642
+        y: 643.03094
         width: 160
         height: 30
     - id: 184
@@ -46789,7 +46789,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 125
+        x: 121.90723
         y: 892
         width: 160
         height: 30
@@ -46933,7 +46933,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 35
+        x: 36.03093
         y: 992
         width: 160
         height: 30
@@ -49015,8 +49015,8 @@ MonoBehaviour:
         y: 1742
         width: 160
         height: 30
-    canvasScrollPosition: {x: 0, y: 1237.4998}
-    canvasZoom: 0.8800001
+    canvasScrollPosition: {x: 0, y: 1116.7126}
+    canvasZoom: 1
   syncInfo:
     syncActors: 0
     syncItems: 0
