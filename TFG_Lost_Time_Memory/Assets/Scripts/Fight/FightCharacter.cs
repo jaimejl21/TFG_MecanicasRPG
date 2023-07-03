@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -24,10 +25,13 @@ public class FightCharacter : MonoBehaviour, IPointerClickHandler, IPointerDownH
     public float life, special;
     float maxLife, maxSpecial, attack, defense, scaleI, atkBuff, atkDebuff, defBuff, defDebuff;
 
+    public List<Character.Info> allCharList;
+
     private  void Start()
     {
         fightCntrl = FindObjectOfType<FightController>();
         cc = fightCntrl.comboCntrl;
+        allCharList = GameManager.allChar.ToList();
 
         charInfo = transform.GetComponent<Character>().info;
         gameObject.transform.GetChild(2).gameObject.GetComponent<TextMeshPro>().text = "" + charInfo.id;
@@ -43,7 +47,7 @@ public class FightCharacter : MonoBehaviour, IPointerClickHandler, IPointerDownH
         attack = charInfo.stats.atk;
         defense = charInfo.stats.def;
 
-        SetUlti(true, "");
+        SetUlti(charInfo.special);
 
         if (type)
         {
@@ -103,59 +107,65 @@ public class FightCharacter : MonoBehaviour, IPointerClickHandler, IPointerDownH
         AddSpecial();
     }
 
-    public void SetUlti(bool rdm, string name)
+    public void SetUlti(int sp)
     {
-        if(rdm)
+        switch (sp)
         {
-            int rand = new Random().Next(0, 13);
-            switch(rand)
-            {
-                case 0:
-                    abilityType = "healAll";                   
-                    break;
-                case 1:
-                    abilityType = "heal";
-                    break;
-                case 2:
-                    abilityType = "attackAll";
-                    break;
-                case 3:
-                    abilityType = "attackRow";
-                    break;
-                case 4:
-                    abilityType = "attackColumn";
-                    break;
-                case 5:
-                    abilityType = "buffAtkAll";
-                    break;
-                case 6:
-                    abilityType = "debuffAtkAll";
-                    break;
-                case 7:
-                    abilityType = "buffDefAll";
-                    break;
-                case 8:
-                    abilityType = "debuffDefAll";
-                    break;
-                case 9:
-                    abilityType = "buffAtk";
-                    break;
-                case 10:
-                    abilityType = "debuffAtk";
-                    break;
-                case 11:
-                    abilityType = "buffDef";
-                    break;
-                case 12:
-                    abilityType = "debuffDef";
-                    break;
-                default:
-                    break;
-            }
-        }
-        else
-        {
-            abilityType = name;
+            case -1:
+                int rand = new Random().Next(0, 13);
+                transform.GetComponent<Character>().info.special = rand;
+                for (int i = 0; i < allCharList.Count; i++)
+                {
+                    if (allCharList[i].id == charInfo.id)
+                    {
+                        allCharList[i] = transform.GetComponent<Character>().info;
+                    }
+                }
+                GameManager.allChar = allCharList;
+                GameManager.inst.SaveListsToJson();
+                SetUlti(rand);
+                break;
+            case 0:
+                abilityType = "healAll";
+                break;
+            case 1:
+                abilityType = "heal";
+                break;
+            case 2:
+                abilityType = "attackAll";
+                break;
+            case 3:
+                abilityType = "attackRow";
+                break;
+            case 4:
+                abilityType = "attackColumn";
+                break;
+            case 5:
+                abilityType = "buffAtkAll";
+                break;
+            case 6:
+                abilityType = "debuffAtkAll";
+                break;
+            case 7:
+                abilityType = "buffDefAll";
+                break;
+            case 8:
+                abilityType = "debuffDefAll";
+                break;
+            case 9:
+                abilityType = "buffAtk";
+                break;
+            case 10:
+                abilityType = "debuffAtk";
+                break;
+            case 11:
+                abilityType = "buffDef";
+                break;
+            case 12:
+                abilityType = "debuffDef";
+                break;
+            default:
+                break;
         }
     }
 

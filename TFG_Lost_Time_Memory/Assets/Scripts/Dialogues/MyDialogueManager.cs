@@ -56,10 +56,6 @@ public class MyDialogueManager : MonoBehaviour
         Debug.Log(message);
     }
 
-    public double AddOne(double value)
-    { // Note: Lua always passes numbers as doubles.
-        return value + 1;
-    }
     public void ChangeToScene(string sceneName)
     {
         SceneManager.LoadScene(sceneName);
@@ -146,63 +142,63 @@ public class MyDialogueManager : MonoBehaviour
             case 0:
                 //Velkra
                 idCharCount = PlayerPrefs.GetInt("idCharCount");
-                GameManager.allChar.Add(new Character.Info(idCharCount, 0, 0, 7, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
+                GameManager.allChar.Add(new Character.Info(idCharCount, "Velkra", 0, 0, 7, 0, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
                 idCharCount++;
                 PlayerPrefs.SetInt("idCharCount", idCharCount);
                 break;
             case 1:
                 //Freydam
                 idCharCount = PlayerPrefs.GetInt("idCharCount");
-                GameManager.allChar.Add(new Character.Info(idCharCount, 5, 0, 6, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
+                GameManager.allChar.Add(new Character.Info(idCharCount, "Freydam", 5, 0, 6, 3, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
                 idCharCount++;
                 PlayerPrefs.SetInt("idCharCount", idCharCount);
                 break;
             case 2:
                 //Karris
                 idCharCount = PlayerPrefs.GetInt("idCharCount");
-                GameManager.allChar.Add(new Character.Info(idCharCount, 6, 0, 6, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
+                GameManager.allChar.Add(new Character.Info(idCharCount, "Karris", 6, 0, 6, 4, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
                 idCharCount++;
                 PlayerPrefs.SetInt("idCharCount", idCharCount); 
                 break;
             case 3:
                 //Belaran
                 idCharCount = PlayerPrefs.GetInt("idCharCount");
-                GameManager.allChar.Add(new Character.Info(idCharCount, 5, 0, 11, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
+                GameManager.allChar.Add(new Character.Info(idCharCount, "Belaran", 5, 0, 11, 2, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
                 idCharCount++;
                 PlayerPrefs.SetInt("idCharCount", idCharCount);
                 break;
             case 4:
                 //Oriel
                 idCharCount = PlayerPrefs.GetInt("idCharCount");
-                GameManager.allChar.Add(new Character.Info(idCharCount, 3, 0, 9, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
+                GameManager.allChar.Add(new Character.Info(idCharCount, "Oriel", 3, 0, 9, 5, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
                 idCharCount++;
                 PlayerPrefs.SetInt("idCharCount", idCharCount);
                 break;
             case 5:
                 //Glokku
                 idCharCount = PlayerPrefs.GetInt("idCharCount");
-                GameManager.allChar.Add(new Character.Info(idCharCount, 2, 0, 10, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
+                GameManager.allChar.Add(new Character.Info(idCharCount, "Glokku", 2, 0, 10, 6, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
                 idCharCount++;
                 PlayerPrefs.SetInt("idCharCount", idCharCount);
                 break;
             case 6:
                 //Yonlud
                 idCharCount = PlayerPrefs.GetInt("idCharCount");
-                GameManager.allChar.Add(new Character.Info(idCharCount, 3, 0, 6, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
+                GameManager.allChar.Add(new Character.Info(idCharCount, "Yonlud", 3, 0, 6, 11, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
                 idCharCount++;
                 PlayerPrefs.SetInt("idCharCount", idCharCount);
                 break;
             case 7:
                 //Dramor
                 idCharCount = PlayerPrefs.GetInt("idCharCount");
-                GameManager.allChar.Add(new Character.Info(idCharCount, 1, 0, 10, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
+                GameManager.allChar.Add(new Character.Info(idCharCount, "Dramor", 1, 0, 10, 10, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
                 idCharCount++;
                 PlayerPrefs.SetInt("idCharCount", idCharCount);
                 break;
             case 8:
                 //Godrick
                 idCharCount = PlayerPrefs.GetInt("idCharCount");
-                GameManager.allChar.Add(new Character.Info(idCharCount, 6, 0, 6, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
+                GameManager.allChar.Add(new Character.Info(idCharCount, "Godrick", 6, 0, 6, 7, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
                 idCharCount++;
                 PlayerPrefs.SetInt("idCharCount", idCharCount);
                 break;

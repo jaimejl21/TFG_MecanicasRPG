@@ -25,25 +25,25 @@ public class WeaponItem : MonoBehaviour
         switch(type)
         {
             case 6:
-                typeName = "Sword";
+                typeName = "Espada";
                 break;
             case 7:
-                typeName = "Spear";
+                typeName = "Lanza";
                 break;
             case 8:
-                typeName = "Scythe";
+                typeName = "Guadaña";
                 break;
             case 9:
-                typeName = "Dagger";
+                typeName = "Daga";
                 break;
             case 10:
-                typeName = "Staff";
+                typeName = "Bastón";
                 break;
             case 11:
-                typeName = "Bow";
+                typeName = "Brco";
                 break;
             case 12:
-                typeName = "Axe";
+                typeName = "Hacha";
                 break;
             default:
                 break;

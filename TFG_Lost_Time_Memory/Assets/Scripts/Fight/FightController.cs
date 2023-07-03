@@ -52,7 +52,7 @@ public class FightController : MonoBehaviour
             if (teamList[i] == null)
             {
                 teamList.RemoveAt(i);
-                teamList.Insert(i, new Character.Info(-1, -1, -1, -1, -1, false, new List<Gear.Info>(), 1, 0, 320, new Character.Stats()));
+                teamList.Insert(i, new Character.Info(-1, "", -1, -1, -1, -1, -1, false, new List<Gear.Info>(), 1, 0, 320, new Character.Stats()));
             }
         }
         ordTeamList = teamList.OrderBy(character => character.pos).ToList();
