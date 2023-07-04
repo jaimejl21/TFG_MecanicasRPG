@@ -133,28 +133,28 @@ public class MapNode : MonoBehaviour
         switch(type)
         {
             case 0:
-                btnTMP.text = "Fight";
+                btnTMP.text = "Pelea";
                 break;
             case 1:
-                btnTMP.text = "Merchant";
+                btnTMP.text = "Mercader";
                 break;
             case 2:
-                btnTMP.text = "Blacksmith";
+                btnTMP.text = "Herrero";
                 break;
             case 3:
-                btnTMP.text = "Team";
+                btnTMP.text = "Equipo";
                 break;
             case 4:
-                btnTMP.text = "Dialogue";
+                btnTMP.text = "Evento";
                 break;
             case 5:
-                btnTMP.text = "Characters";
+                btnTMP.text = "Personajes";
                 break;
             case 6:
-                btnTMP.text = "Item";;
+                btnTMP.text = "Objeto";
                 break;
             case 7:
-                btnTMP.text = "Tavern";
+                btnTMP.text = "Taberna";
                 break;
             default:
                 break;

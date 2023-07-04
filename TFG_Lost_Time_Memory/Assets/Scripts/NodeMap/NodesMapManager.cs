@@ -207,7 +207,7 @@ public class NodesMapManager : MonoBehaviour
                 PlayerPrefs.SetInt("upMats", GameManager.inst.upMats);
 
                 objNameTMP.color = SetGearStatColor(-1);
-                objNameTMP.text = "" + upMats + " Upgrade materials";
+                objNameTMP.text = "" + upMats + " materiales de mejora";
                 break;
             case 2:
                 int awMats = new Random().Next(1, 4);
@@ -215,7 +215,7 @@ public class NodesMapManager : MonoBehaviour
                 PlayerPrefs.SetInt("awMats", GameManager.inst.awMats);
 
                 objNameTMP.color = SetGearStatColor(-1);
-                objNameTMP.text = "" + awMats + " Awake materials";
+                objNameTMP.text = "" + awMats + " materiales de despertar";
                 break;
             case 3:
                 int lvlUpMats = new Random().Next(5, 16);
@@ -236,7 +236,7 @@ public class NodesMapManager : MonoBehaviour
                 }
 
                 objNameTMP.color = SetGearStatColor(-1);
-                objNameTMP.text = "" + lvlUpMats + " " + SetRarityName(rarity) + " Level Up materials";
+                objNameTMP.text = "" + lvlUpMats + " " + SetRarityName(rarity) + " materiales de subir nivel";
                 break;
         }
         GameManager.inst.objectAlert = false;
@@ -283,31 +283,31 @@ public class NodesMapManager : MonoBehaviour
         switch (objType)
         {
             case 0:
-                return "Bracer";
+                return "Brazalete";
             case 1:
-                return "Neck";
+                return "Collar";
             case 2:
-                return "Belt";
+                return "Cinturón";
             case 3:
-                return "Ring";
+                return "Anillo";
             case 4:
-                return "Earring";
+                return "Pendientes";
             case 5:
-                return "Orb";
+                return "Orbe";
             case 6:
-                return "Sword";
+                return "Espada";
             case 7:
-                return "Spear";
+                return "Lanza";
             case 8:
-                return "Scythe";
+                return "Guadaña";
             case 9:
-                return "Dagger";
+                return "Daga";
             case 10:
-                return "Staff";
+                return "Bastón";
             case 11:
-                return "Bow";
+                return "Arco";
             case 12:
-                return "Axe";
+                return "Hacha";
             default:
                 return "";
         }

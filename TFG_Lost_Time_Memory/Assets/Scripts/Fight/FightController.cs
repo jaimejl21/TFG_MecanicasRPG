@@ -322,13 +322,13 @@ public class FightController : MonoBehaviour
         if (enemiesN < 0 && playersN > -1)
         {
             fightResult = true;
-            resultText.text = "WIN";
+            resultText.text = "GANAS";
             GameManager.inst.objectAlert = true;
         }
         else if (enemiesN > -1 && playersN < 0)
         {
             fightResult = false;
-            resultText.text = "LOSE";
+            resultText.text = "PIERDES";
             PlayerPrefs.SetInt("death", 1);
         }
     }

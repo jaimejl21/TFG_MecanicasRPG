@@ -26,9 +26,9 @@ public class BlacksmithManager : MonoBehaviour
         awMats = GameManager.inst.awMats;
         upMats = GameManager.inst.upMats;
 
-        coinsTxt.text = "Coins: " + coins;
-        upMatsTxt.text = "UpMats: " + upMats;
-        awMatsTxt.text = "AwMats: " + awMats;
+        coinsTxt.text = "Monedas: " + coins;
+        upMatsTxt.text = "MejoMats: " + upMats;
+        awMatsTxt.text = "DespMats: " + awMats;
 
         WeaponsTabBtn();
         sr.verticalNormalizedPosition = 1f;
@@ -43,22 +43,22 @@ public class BlacksmithManager : MonoBehaviour
         }
         blacksmithItem.GetComponent<Gear>().info = go.GetComponent<Gear>().info;
         Instantiate(blacksmithItem, itemPos);
-        itemInfoTxts[0].text = "Augment: " + blacksmithItem.GetComponent<Gear>().info.augment;
-        itemInfoTxts[1].text = "Stars: " + blacksmithItem.GetComponent<Gear>().info.stars;
-        itemInfoTxts[2].text = "Stats: " + blacksmithItem.GetComponent<Gear>().info.statAmount;
+        itemInfoTxts[0].text = "Aumentos: " + blacksmithItem.GetComponent<Gear>().info.augment;
+        itemInfoTxts[1].text = "Estrellas: " + blacksmithItem.GetComponent<Gear>().info.stars;
+        itemInfoTxts[2].text = "Estad: " + blacksmithItem.GetComponent<Gear>().info.statAmount;
         if (goSelected.GetComponent<BlacksmithItem>().upgrade)
         {
             ChangeUpAwBtn(true, false, true, false);
             CanUpAwGear(goSelected.GetComponent<BlacksmithItem>().upPrice, 0, goSelected.GetComponent<BlacksmithItem>().upMat, upMats);
-            itemInfoTxts[3].text = "UpgMats: " + goSelected.GetComponent<BlacksmithItem>().upMat;
-            itemInfoTxts[4].text = "Coins: " + goSelected.GetComponent<BlacksmithItem>().upPrice;    
+            itemInfoTxts[3].text = "MejoMats: " + goSelected.GetComponent<BlacksmithItem>().upMat;
+            itemInfoTxts[4].text = "Monedas: " + goSelected.GetComponent<BlacksmithItem>().upPrice;    
         }
         else
         {
             ChangeUpAwBtn(false, true, false, true);
             CanUpAwGear(goSelected.GetComponent<BlacksmithItem>().awPrice, 1, goSelected.GetComponent<BlacksmithItem>().awMat, awMats);
-            itemInfoTxts[3].text = "AwaMats: " + goSelected.GetComponent<BlacksmithItem>().awMat;
-            itemInfoTxts[4].text = "Coins: " + goSelected.GetComponent<BlacksmithItem>().awPrice;
+            itemInfoTxts[3].text = "DespMats: " + goSelected.GetComponent<BlacksmithItem>().awMat;
+            itemInfoTxts[4].text = "Monedas: " + goSelected.GetComponent<BlacksmithItem>().awPrice;
         }      
     }
 
@@ -104,11 +104,11 @@ public class BlacksmithManager : MonoBehaviour
         {
             Destroy(itemPos.GetChild(0).gameObject);
         }
-        itemInfoTxts[0].text = "Augment: ";
-        itemInfoTxts[1].text = "Stars: ";
-        itemInfoTxts[2].text = "Stats: ";
-        itemInfoTxts[3].text = "Materials: ";
-        itemInfoTxts[4].text = "Coins: ";
+        itemInfoTxts[0].text = "Aumentos: ";
+        itemInfoTxts[1].text = "Estrellas: ";
+        itemInfoTxts[2].text = "Estad: ";
+        itemInfoTxts[3].text = "Materiales: ";
+        itemInfoTxts[4].text = "Monedas: ";
 
         ChangeUpAwBtn(true, false, false, false);
 
@@ -117,9 +117,9 @@ public class BlacksmithManager : MonoBehaviour
 
     void UpdateHeaderTexts()
     {
-        coinsTxt.text = "Coins: " + coins;
-        upMatsTxt.text = "UpMats: " + upMats;
-        awMatsTxt.text = "AwMats: " + awMats;
+        coinsTxt.text = "Monedas: " + coins;
+        upMatsTxt.text = "MejoMats: " + upMats;
+        awMatsTxt.text = "DespMats: " + awMats;
 
         GameManager.inst.coins = coins;
         GameManager.inst.awMats = awMats;
@@ -262,18 +262,18 @@ public class BlacksmithManager : MonoBehaviour
 
     void UpdateUpAwTexts()
     {
-        itemInfoTxts[0].text = "Augment: " + blacksmithItem.GetComponent<Gear>().info.augment;
-        itemInfoTxts[1].text = "Stars: " + blacksmithItem.GetComponent<Gear>().info.stars;
-        itemInfoTxts[2].text = "Stats: " + blacksmithItem.GetComponent<Gear>().info.statAmount;
+        itemInfoTxts[0].text = "Aumentos: " + blacksmithItem.GetComponent<Gear>().info.augment;
+        itemInfoTxts[1].text = "Estrellas: " + blacksmithItem.GetComponent<Gear>().info.stars;
+        itemInfoTxts[2].text = "Estad: " + blacksmithItem.GetComponent<Gear>().info.statAmount;
         if (goSelected.GetComponent<BlacksmithItem>().upgrade)
         {
-            itemInfoTxts[3].text = "UpgMats: " + goSelected.GetComponent<BlacksmithItem>().upMat;
-            itemInfoTxts[4].text = "Coins: " + goSelected.GetComponent<BlacksmithItem>().upPrice;
+            itemInfoTxts[3].text = "MejoMats: " + goSelected.GetComponent<BlacksmithItem>().upMat;
+            itemInfoTxts[4].text = "Monedas: " + goSelected.GetComponent<BlacksmithItem>().upPrice;
         }
         else
         {
-            itemInfoTxts[3].text = "AwaMats: " + goSelected.GetComponent<BlacksmithItem>().awMat;
-            itemInfoTxts[4].text = "Coins: " + goSelected.GetComponent<BlacksmithItem>().awPrice;
+            itemInfoTxts[3].text = "DespMats: " + goSelected.GetComponent<BlacksmithItem>().awMat;
+            itemInfoTxts[4].text = "Monedas: " + goSelected.GetComponent<BlacksmithItem>().awPrice;
         }
     }
 }

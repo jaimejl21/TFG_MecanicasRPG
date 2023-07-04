@@ -16,15 +16,15 @@ public class ComboController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.gameObject.tag == "Good")
+        if (col.gameObject.tag == "Bien")
         {
             comboType = 1;
         }
-        if (col.gameObject.tag == "Great")
+        if (col.gameObject.tag == "Genial")
         {
             comboType = 2;
         }
-        if (col.gameObject.tag == "Perfect")
+        if (col.gameObject.tag == "Perfecto")
         {
             comboType = 3;
         }
@@ -75,15 +75,15 @@ public class ComboController : MonoBehaviour
                 nameAtkVar = 1;
                 break;
             case 1:
-                comboName = "Good";
+                comboName = "Bien";
                 nameAtkVar = 2;
                 break;
             case 2:
-                comboName = "Great";
+                comboName = "Genial";
                 nameAtkVar = 3;
                 break;
             case 3:
-                comboName = "Perfect";
+                comboName = "Perfecto";
                 nameAtkVar = 4;
                 break;
             default:
