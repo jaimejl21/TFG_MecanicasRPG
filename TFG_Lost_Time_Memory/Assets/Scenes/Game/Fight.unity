@@ -270,7 +270,7 @@ MonoBehaviour:
   startedCombo: 0
   decidedCombo: 0
   comboName: 
-  anim: {fileID: 84880839}
+  comboAnim: {fileID: 84880839}
   comboGO: {fileID: 1222705993}
   fc: {fileID: 1596630913}
   am: {fileID: 1450987633}
@@ -436,7 +436,6 @@ GameObject:
   - component: {fileID: 207516957}
   - component: {fileID: 207516956}
   - component: {fileID: 207516958}
-  - component: {fileID: 207516959}
   m_Layer: 5
   m_Name: ComboTxt
   m_TagString: Untagged
@@ -581,18 +580,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &207516959
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 207516954}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a11e3b26e19a3a4c9392f480c230e21, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &240728816
 GameObject:
   m_ObjectHideFlags: 0
@@ -2357,8 +2344,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -106}
-  m_SizeDelta: {x: 250, y: 50}
+  m_AnchoredPosition: {x: 0, y: -100.7}
+  m_SizeDelta: {x: 250, y: 71.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1652146201
 MonoBehaviour:
@@ -2610,8 +2597,8 @@ GameObject:
   - component: {fileID: 2033694179}
   - component: {fileID: 2033694183}
   - component: {fileID: 2033694182}
-  - component: {fileID: 2033694181}
   - component: {fileID: 2033694180}
+  - component: {fileID: 2033694184}
   m_Layer: 5
   m_Name: TypeBonusTxt
   m_TagString: Untagged
@@ -2636,8 +2623,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 371.79}
-  m_SizeDelta: {x: 250, y: 50}
+  m_AnchoredPosition: {x: 0, y: 365.6}
+  m_SizeDelta: {x: 250, y: 64.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2033694180
 MonoBehaviour:
@@ -2651,26 +2638,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a11e3b26e19a3a4c9392f480c230e21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!95 &2033694181
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2033694178}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: a0cef6f20f3a9f5489887249e2d4d40e, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &2033694182
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2718,8 +2685,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 50
-  m_fontSizeBase: 50
+  m_fontSize: 63
+  m_fontSizeBase: 63
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2768,6 +2735,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2033694178}
   m_CullTransparentMesh: 1
+--- !u!95 &2033694184
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2033694178}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d87557c886c4208438309299d9007a95, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2075085160
 GameObject:
   m_ObjectHideFlags: 0

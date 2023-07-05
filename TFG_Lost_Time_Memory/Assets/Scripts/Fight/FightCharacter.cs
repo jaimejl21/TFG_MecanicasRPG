@@ -657,7 +657,6 @@ public class FightCharacter : MonoBehaviour, IPointerClickHandler, IPointerDownH
         transform.position = new Vector3(transform.position.x + mov, transform.position.y, transform.position.z);
         yield return new WaitForSecondsRealtime(0.2f);
         transform.position = new Vector3(transform.position.x - mov, transform.position.y, transform.position.z);
-        fightCntrl.typeBonusTxt.text = "";
     }
 
     IEnumerator AnimDamage(float damage)

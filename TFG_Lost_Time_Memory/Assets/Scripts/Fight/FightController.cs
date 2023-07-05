@@ -242,6 +242,7 @@ public class FightController : MonoBehaviour
                 }
                 yield return new WaitForSecondsRealtime(1f);
             }
+            typeBonusTxt.text = "";
             if (playersN >= 0 && enemiesN >= 0)
             {
                 turn = true;
