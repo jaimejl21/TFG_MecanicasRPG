@@ -32,6 +32,7 @@ public class FightController : MonoBehaviour
     public ComboController comboCntrl;
     public EnemyTeamGenerator etg;
     public ScenesManager sm;
+    public Animator dmgTxtAnim;
 
     private void Start()
     {       

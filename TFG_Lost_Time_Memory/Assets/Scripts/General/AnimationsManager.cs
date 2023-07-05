@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class AnimationsManager : MonoBehaviour
 {
-    public Animator animComboTxt;
+    public Animator animComboTxt, animDmgTxt;
 
     void Start()
     {
         animComboTxt = GameObject.Find("ComboTxt").GetComponent<Animator>();
+        animDmgTxt = GameObject.Find("TypeBonusTxt").GetComponent<Animator>();
     }
 
     public void PlayAnimState(Animator anim, string state)

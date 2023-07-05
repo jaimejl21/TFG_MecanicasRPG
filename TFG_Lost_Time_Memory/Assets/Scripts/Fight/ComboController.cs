@@ -62,6 +62,7 @@ public class ComboController : MonoBehaviour
         startedCombo = false;
         timesCombo = 0;
         fc.comboTxt.text = "";
+        fc.typeBonusTxt.text = "";
     }
 
     public void SetAttackingTrue() {}

@@ -97,11 +97,13 @@ public class FightCharacter : MonoBehaviour, IPointerClickHandler, IPointerDownH
             {
                 targets.transform.GetChild(target).GetChild(0).GetComponent<FightCharacter>().Damage(typeBonus * attack * cc.nameAtkVar + cc.timesAtkVar);
                 fightCntrl.typeBonusTxt.text = (typeBonus * attack * cc.nameAtkVar + cc.timesAtkVar).ToString();
+                fightCntrl.dmgTxtAnim.SetBool("Dmg", true);
             }
             else
             {
                 targets.transform.GetChild(target).GetChild(0).GetComponent<FightCharacter>().Damage(typeBonus * attack);
                 fightCntrl.typeBonusTxt.text = (typeBonus * attack).ToString();
+                fightCntrl.dmgTxtAnim.SetBool("Dmg", true);
             }
         }
         AddSpecial();
@@ -176,17 +178,17 @@ public class FightCharacter : MonoBehaviour, IPointerClickHandler, IPointerDownH
             case "healAll":
                 for (int i = 0; i < 6; i++)
                 {
-                    HealCharacters(i, 10f);
+                    HealCharacters(i, attack);
                 }
                 break;
             case "heal":
                 if(type)
                 {
-                    HealCharacters(fightCntrl.playerSelect, 10f);
+                    HealCharacters(fightCntrl.playerSelect, attack);
                 }
                 else
                 {
-                    HealCharacters(fightCntrl.enemySelect, 10f);
+                    HealCharacters(fightCntrl.enemySelect, attack);
                 }
                 break;
             case "attackAll":
@@ -364,11 +366,13 @@ public class FightCharacter : MonoBehaviour, IPointerClickHandler, IPointerDownH
                 {
                     GameObject.Find("Enemies").transform.GetChild(position).GetChild(0).GetComponent<FightCharacter>().Damage(typeBonus * attack * cc.nameAtkVar + cc.timesAtkVar);
                     fightCntrl.typeBonusTxt.text = (typeBonus * attack * cc.nameAtkVar + cc.timesAtkVar).ToString();
+                    fightCntrl.dmgTxtAnim.SetBool("Dmg", true);
                 }
                 else
                 {
                     GameObject.Find("Enemies").transform.GetChild(position).GetChild(0).GetComponent<FightCharacter>().Damage(typeBonus * attack);
                     fightCntrl.typeBonusTxt.text = (typeBonus * attack).ToString();
+                    fightCntrl.dmgTxtAnim.SetBool("Dmg", true);
                 }
             }
         }
@@ -381,11 +385,13 @@ public class FightCharacter : MonoBehaviour, IPointerClickHandler, IPointerDownH
                 {
                     GameObject.Find("Players").transform.GetChild(position).GetChild(0).GetComponent<FightCharacter>().Damage(typeBonus * attack * cc.nameAtkVar + cc.timesAtkVar);
                     fightCntrl.typeBonusTxt.text = (typeBonus * attack * cc.nameAtkVar + cc.timesAtkVar).ToString();
+                    fightCntrl.dmgTxtAnim.SetBool("Dmg", true);
                 }
                 else
                 {
-                    GameObject.Find("Players").transform.GetChild(position).GetChild(0).GetComponent<FightCharacter>().Damage(typeBonus * attack);
+                    GameObject.Find("Players").transform.GetChild(position).GetChild(0).GetComponent<FightCharacter>().Damage(typeBonus * attack);     
                     fightCntrl.typeBonusTxt.text = (typeBonus * attack).ToString();
+                    fightCntrl.dmgTxtAnim.SetBool("Dmg", true);
                 }
             }
         } 

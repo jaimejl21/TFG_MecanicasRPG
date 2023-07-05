@@ -11,8 +11,13 @@ public class Scr_ComboTxt : MonoBehaviour
         am = GameObject.Find("AnimationsManager").GetComponent<AnimationsManager>();
     }
 
-    public void AnimFinished()
+    public void ComboAnimFinished()
     {
         am.animComboTxt.SetBool("Combo", false);
+    }
+
+    public void DmgAnimFinished()
+    {
+        am.animDmgTxt.SetBool("Dmg", false);
     }
 }
