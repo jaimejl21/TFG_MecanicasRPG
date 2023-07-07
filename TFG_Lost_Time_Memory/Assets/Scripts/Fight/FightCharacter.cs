@@ -178,7 +178,7 @@ public class FightCharacter : MonoBehaviour, IPointerClickHandler, IPointerDownH
             case "healAll":
                 for (int i = 0; i < 6; i++)
                 {
-                    HealCharacters(i, attack);
+                    HealCharacters(i, ((70/100) * attack));
                 }
                 break;
             case "heal":
@@ -195,7 +195,7 @@ public class FightCharacter : MonoBehaviour, IPointerClickHandler, IPointerDownH
                 StartCoroutine(AnimAttack());
                 for(int i = 0; i < 6; i++)
                 {
-                    DamageCharacters(i);
+                    DamageCharacters(i, ((60 / 100) * attack));
                 }
                 break;
             case "attackRow":
@@ -204,36 +204,36 @@ public class FightCharacter : MonoBehaviour, IPointerClickHandler, IPointerDownH
                 {
                     if (fightCntrl.enemySelect == 0 || fightCntrl.enemySelect == 3)
                     {
-                        DamageCharacters(0);
-                        DamageCharacters(3);
+                        DamageCharacters(0, ((80 / 100) * attack));
+                        DamageCharacters(3, ((80 / 100) * attack));
                     }
                     else if (fightCntrl.enemySelect == 1 || fightCntrl.enemySelect == 4)
                     {
-                        DamageCharacters(1);
-                        DamageCharacters(4);
+                        DamageCharacters(1, ((80 / 100) * attack));
+                        DamageCharacters(4, ((80 / 100) * attack));
                     }
                     else
                     {
-                        DamageCharacters(2);
-                        DamageCharacters(5);
+                        DamageCharacters(2, ((80 / 100) * attack));
+                        DamageCharacters(5, ((80 / 100) * attack));
                     }
                 }
                 else
                 {
                     if (fightCntrl.playerSelect == 0 || fightCntrl.playerSelect == 3)
                     {
-                        DamageCharacters(0);
-                        DamageCharacters(3);
+                        DamageCharacters(0, ((80 / 100) * attack));
+                        DamageCharacters(3, ((80 / 100) * attack));
                     }
                     else if (fightCntrl.playerSelect == 1 || fightCntrl.playerSelect == 4)
                     {
-                        DamageCharacters(1);
-                        DamageCharacters(4);
+                        DamageCharacters(1, ((80 / 100) * attack));
+                        DamageCharacters(4, ((80 / 100) * attack));
                     }
                     else
                     {
-                        DamageCharacters(2);
-                        DamageCharacters(5);
+                        DamageCharacters(2, ((80 / 100) * attack));
+                        DamageCharacters(5, ((80 / 100) * attack));
                     }
                 }
                 
@@ -244,96 +244,96 @@ public class FightCharacter : MonoBehaviour, IPointerClickHandler, IPointerDownH
                 {
                     if (fightCntrl.enemySelect == 0 || fightCntrl.enemySelect == 1 || fightCntrl.enemySelect == 2)
                     {
-                        DamageCharacters(0);
-                        DamageCharacters(1);
-                        DamageCharacters(2);
+                        DamageCharacters(0, ((70 / 100) * attack));
+                        DamageCharacters(1, ((70 / 100) * attack));
+                        DamageCharacters(2, ((70 / 100) * attack));
                     }
                     else
                     {
-                        DamageCharacters(3);
-                        DamageCharacters(4);
-                        DamageCharacters(5);
+                        DamageCharacters(3, ((70 / 100) * attack));
+                        DamageCharacters(4, ((70 / 100) * attack));
+                        DamageCharacters(5, ((70 / 100) * attack));
                     }
                 }
                 else
                 {
                     if (fightCntrl.playerSelect == 0 || fightCntrl.playerSelect == 1 || fightCntrl.playerSelect == 2)
                     {
-                        DamageCharacters(0);
-                        DamageCharacters(1);
-                        DamageCharacters(2);
+                        DamageCharacters(0, ((70 / 100) * attack));
+                        DamageCharacters(1, ((70 / 100) * attack));
+                        DamageCharacters(2, ((70 / 100) * attack));
                     }
                     else
                     {
-                        DamageCharacters(3);
-                        DamageCharacters(4);
-                        DamageCharacters(5);
+                        DamageCharacters(3, ((70 / 100) * attack));
+                        DamageCharacters(4, ((70 / 100) * attack));
+                        DamageCharacters(5, ((70 / 100) * attack));
                     }
                 }
                 break;
             case "buffAtkAll":
                 for (int i = 0; i < 6; i++)
                 {
-                    DeBuffStatChars(i, true, ref attack, ref atkBuff, ref atkBuffTurns, 10f, true);
+                    DeBuffStatChars(i, true, ref attack, ref atkBuff, ref atkBuffTurns, ((30 / 100) * attack), true);
                 }                   
                 break;
             case "debuffAtkAll":
                 for (int i = 0; i < 6; i++)
                 {
-                    DeBuffStatChars(i, false, ref attack, ref atkDebuff, ref atkDebuffTurns, 10f, true);
+                    DeBuffStatChars(i, false, ref attack, ref atkDebuff, ref atkDebuffTurns, ((30 / 100) * attack), true);
                 }                   
                 break;
             case "buffDefAll":
                 for (int i = 0; i < 6; i++)
                 {
-                    DeBuffStatChars(i, true, ref defense, ref defBuff, ref defBuffTurns, 10f, false);
+                    DeBuffStatChars(i, true, ref defense, ref defBuff, ref defBuffTurns, ((30 / 100) * attack), false);
                 }                   
                 break;
             case "debuffDefAll":
                 for (int i = 0; i < 6; i++)
                 {
-                    DeBuffStatChars(i, false, ref defense, ref defDebuff, ref defDebuffTurns, 10f, false);
+                    DeBuffStatChars(i, false, ref defense, ref defDebuff, ref defDebuffTurns, ((30 / 100) * attack), false);
                 }                
                 break;
             case "buffAtk":
                 if(type)
                 {
-                    DeBuffStatChars(fightCntrl.playerSelect, true, ref attack, ref atkBuff, ref atkBuffTurns, 10f, true);
+                    DeBuffStatChars(fightCntrl.playerSelect, true, ref attack, ref atkBuff, ref atkBuffTurns, ((60 / 100) * attack), true);
 
                 }
                 else
                 {
-                    DeBuffStatChars(fightCntrl.enemySelect, true, ref attack, ref atkBuff, ref atkBuffTurns, 10f, true);
+                    DeBuffStatChars(fightCntrl.enemySelect, true, ref attack, ref atkBuff, ref atkBuffTurns, ((60 / 100) * attack), true);
                 }               
                 break;
             case "debuffAtk":
                 if (!type)
                 {
-                    DeBuffStatChars(fightCntrl.playerSelect, false, ref attack, ref atkDebuff, ref atkDebuffTurns, 10f, true);
+                    DeBuffStatChars(fightCntrl.playerSelect, false, ref attack, ref atkDebuff, ref atkDebuffTurns, ((60 / 100) * attack), true);
                 }
                 else
                 {
-                    DeBuffStatChars(fightCntrl.enemySelect, false, ref attack, ref atkDebuff, ref atkDebuffTurns, 10f, true);
+                    DeBuffStatChars(fightCntrl.enemySelect, false, ref attack, ref atkDebuff, ref atkDebuffTurns, ((60 / 100) * attack), true);
                 }
                 break;
             case "buffDef":
                 if (type)
                 {
-                    DeBuffStatChars(fightCntrl.playerSelect, true, ref defense, ref defBuff, ref defBuffTurns, 10f, false);
+                    DeBuffStatChars(fightCntrl.playerSelect, true, ref defense, ref defBuff, ref defBuffTurns, ((50 / 100) * attack), false);
                 }
                 else
                 {
-                    DeBuffStatChars(fightCntrl.enemySelect, true, ref defense, ref defBuff, ref defBuffTurns, 10f, false);
+                    DeBuffStatChars(fightCntrl.enemySelect, true, ref defense, ref defBuff, ref defBuffTurns, ((50 / 100) * attack), false);
                 }
                 break;
             case "debuffDef":
                 if (!type)
                 {
-                    DeBuffStatChars(fightCntrl.playerSelect, false, ref defense, ref defDebuff, ref defDebuffTurns, 10f, false);
+                    DeBuffStatChars(fightCntrl.playerSelect, false, ref defense, ref defDebuff, ref defDebuffTurns, ((50 / 100) * attack), false);
                 }
                 else
                 {
-                    DeBuffStatChars(fightCntrl.enemySelect, false, ref defense, ref defDebuff, ref defDebuffTurns, 10f, false);
+                    DeBuffStatChars(fightCntrl.enemySelect, false, ref defense, ref defDebuff, ref defDebuffTurns, ((50 / 100) * attack), false);
                 }
                 break;
             default:
@@ -355,7 +355,7 @@ public class FightCharacter : MonoBehaviour, IPointerClickHandler, IPointerDownH
         specialActivated = false;
     }
 
-    public void DamageCharacters(int position)
+    public void DamageCharacters(int position, float attack)
     {
         if(type)
         {
