@@ -171,74 +171,90 @@ public class NodesMapManager : MonoBehaviour
     public void ObjectAlert()
     {
         objAlertPn.SetActive(true);
-        TextMeshProUGUI objNameTMP = objAlertPn.transform.GetChild(0).GetChild(1).GetComponent<TextMeshProUGUI>();
-        int obj = new Random().Next(0, 4);
-        int rarity = new Random().Next(0, 3);
+        ObjectAlert oa = objAlertPn.transform.GetChild(0).GetComponent<ObjectAlert>();
+        List<int> objToGet = new List<int> { 0, 1, 2, 3 };
+        int amount = new Random().Next(1, 4);
+        oa.ActivateTexts(amount+1);
 
-        switch (obj)
+        for(int i = 0; i <= amount; i++)
         {
-            case 0:
-                // int id  int statAmount  int objType  int statType  int rarity  int augment  int stars  bool equiped  int characterId
-                int objType = new Random().Next(0, 13);
-                int statType;
-                if (objType > 5)
-                {
-                    statType = -1;
-                }
-                else
-                {
-                    statType = new Random().Next(0, 3);
-                }
-                
-                Gear.Info gi = new Gear.Info(idGearCount, GameManager.inst.AuxSetStatAmount(objType, rarity), objType, statType, rarity, 0, 0, false, -1);
+            int pos = new Random().Next(0, objToGet.Count);
+            int rarity = new Random().Next(0, 3);
 
-                idGearCount++;
-                PlayerPrefs.SetInt("idGearCount", idGearCount);
-                GameManager.inst.idGearCount = idGearCount;
-                GameManager.allGear.Add(gi);
-                GameManager.inst.SaveListsToJson();
+            switch (objToGet[pos])
+            {
+                case 0:
+                    // int id  int statAmount  int objType  int statType  int rarity  int augment  int stars  bool equiped  int characterId
+                    int objType = new Random().Next(0, 13);
+                    int statType;
+                    if (objType > 5)
+                    {
+                        statType = -1;
+                    }
+                    else
+                    {
+                        statType = new Random().Next(0, 3);
+                    }
 
-                objNameTMP.color = SetGearStatColor(statType);
-                objNameTMP.text = "" + SetRarityName(rarity) + " " + SetName(objType);
-                break;
-            case 1:
-                int upMats = new Random().Next(5, 11);
-                GameManager.inst.upMats += upMats;
-                PlayerPrefs.SetInt("upMats", GameManager.inst.upMats);
+                    Gear.Info gi = new Gear.Info(idGearCount, GameManager.inst.AuxSetStatAmount(objType, rarity), objType, statType, rarity, 0, 0, false, -1);
 
-                objNameTMP.color = SetGearStatColor(-1);
-                objNameTMP.text = "" + upMats + " materiales de mejora";
-                break;
-            case 2:
-                int awMats = new Random().Next(1, 4);
-                GameManager.inst.awMats += awMats;
-                PlayerPrefs.SetInt("awMats", GameManager.inst.awMats);
+                    idGearCount++;
+                    PlayerPrefs.SetInt("idGearCount", idGearCount);
+                    GameManager.inst.idGearCount = idGearCount;
+                    GameManager.allGear.Add(gi);
+                    GameManager.inst.SaveListsToJson();
 
-                objNameTMP.color = SetGearStatColor(-1);
-                objNameTMP.text = "" + awMats + " materiales de despertar";
-                break;
-            case 3:
-                int lvlUpMats = new Random().Next(5, 16);
-                if(rarity == 0)
-                {
-                    GameManager.inst.lvlUpMatC += lvlUpMats;
-                    PlayerPrefs.SetInt("amountC", GameManager.inst.lvlUpMatC);
-                }
-                else if(rarity == 1)
-                {
-                    GameManager.inst.lvlUpMatR += lvlUpMats;
-                    PlayerPrefs.SetInt("amountR", GameManager.inst.lvlUpMatR);
-                }
-                else
-                {
-                    GameManager.inst.lvlUpMatSR += lvlUpMats;
-                    PlayerPrefs.SetInt("amountSR", GameManager.inst.lvlUpMatSR);
-                }
+                    oa.objTxts[i].color = SetGearStatColor(statType);
+                    oa.objTxts[i].text = "" + SetRarityName(rarity) + " " + SetName(objType);
+                    break;
+                case 1:
+                    int upMats = new Random().Next(14, 25);
+                    GameManager.inst.upMats += upMats;
+                    PlayerPrefs.SetInt("upMats", GameManager.inst.upMats);
 
-                objNameTMP.color = SetGearStatColor(-1);
-                objNameTMP.text = "" + lvlUpMats + " " + SetRarityName(rarity) + " materiales de subir nivel";
-                break;
+                    oa.objTxts[i].color = SetGearStatColor(-1);
+                    oa.objTxts[i].text = "" + upMats + " materiales de mejora";
+                    break;
+                case 2:
+                    int awMats = new Random().Next(1, 4);
+                    GameManager.inst.awMats += awMats;
+                    PlayerPrefs.SetInt("awMats", GameManager.inst.awMats);
+
+                    oa.objTxts[i].color = SetGearStatColor(-1);
+                    oa.objTxts[i].text = "" + awMats + " materiales de despertar";
+                    break;
+                case 3:
+                    int lvlUpMats = new Random().Next(5, 16);
+                    if (rarity == 0)
+                    {
+                        GameManager.inst.lvlUpMatC += lvlUpMats;
+                        PlayerPrefs.SetInt("amountC", GameManager.inst.lvlUpMatC);
+                    }
+                    else if (rarity == 1)
+                    {
+                        GameManager.inst.lvlUpMatR += lvlUpMats;
+                        PlayerPrefs.SetInt("amountR", GameManager.inst.lvlUpMatR);
+                    }
+                    else
+                    {
+                        GameManager.inst.lvlUpMatSR += lvlUpMats;
+                        PlayerPrefs.SetInt("amountSR", GameManager.inst.lvlUpMatSR);
+                    }
+
+                    oa.objTxts[i].color = SetGearStatColor(-1);
+                    oa.objTxts[i].text = "" + lvlUpMats + " " + SetRarityName(rarity) + " materiales de subir nivel";
+                    break;
+            }
+            objToGet.RemoveAll(item => item == objToGet[pos]);
         }
+
+        
+        int coins = new Random().Next(700, 2001);
+        GameManager.inst.coins += coins;
+        PlayerPrefs.SetInt("coins", GameManager.inst.coins);
+        oa.objTxts[amount].color = SetGearStatColor(-1);
+        oa.objTxts[amount].text = "" + coins + " monedas";
+
         GameManager.inst.objectAlert = false;
     }
 
