@@ -326,12 +326,14 @@ public class FightController : MonoBehaviour
             fightResult = true;
             resultText.text = "GANAS";
             GameManager.inst.objectAlert = true;
+            sm.ReturnToNodesMap(true);
         }
         else if (enemiesN > -1 && playersN < 0)
         {
             fightResult = false;
             resultText.text = "PIERDES";
             PlayerPrefs.SetInt("death", 1);
+            sm.ChangeScene("Tavern");
         }
     }
 
@@ -340,7 +342,7 @@ public class FightController : MonoBehaviour
         if(fightResult == true)
         {
             GameManager.inst.objectAlert = true;
-            sm.ReturnToNodesMap();
+            sm.ReturnToNodesMap(true);
         }
         else
         {

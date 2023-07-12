@@ -29,7 +29,7 @@ public class MyDialogueManager : MonoBehaviour
         //Lua.RegisterFunction("AddOne", this, SymbolExtensions.GetMethodInfo(() => AddOne((double)0)));
         Lua.RegisterFunction("ChangeToScene", this, SymbolExtensions.GetMethodInfo(() => ChangeToScene(string.Empty)));
         Lua.RegisterFunction("ChangeToDialogueScene", this, SymbolExtensions.GetMethodInfo(() => ChangeToDialogueScene(string.Empty)));
-        Lua.RegisterFunction("ReturnToNodesMap", this, SymbolExtensions.GetMethodInfo(() => ReturnToNodesMap()));
+        Lua.RegisterFunction("ReturnToNodesMap", this, SymbolExtensions.GetMethodInfo(() => ReturnToNodesMap((bool)false)));
         Lua.RegisterFunction("HelpAction", this, SymbolExtensions.GetMethodInfo(() => HelpAction()));
         Lua.RegisterFunction("ChangeToFightScene", this, SymbolExtensions.GetMethodInfo(() => ChangeToFightScene((double)0)));
         Lua.RegisterFunction("NMObjectAlert", this, SymbolExtensions.GetMethodInfo(() => NMObjectAlert()));
@@ -119,8 +119,12 @@ public class MyDialogueManager : MonoBehaviour
         //}
     }
 
-    public void ReturnToNodesMap()
+    public void ReturnToNodesMap(bool objAlert)
     {
+        if(objAlert)
+        {
+            NMObjectAlert();
+        }
         int nNodesMaps = PlayerPrefs.GetInt("nNodesMaps");
         SceneManager.LoadScene("NodesMap" + nNodesMaps);
         if (fio != null)

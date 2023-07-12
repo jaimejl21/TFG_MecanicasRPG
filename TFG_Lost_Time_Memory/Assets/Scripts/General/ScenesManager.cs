@@ -24,8 +24,12 @@ public class ScenesManager : MonoBehaviour
         }
     }
 
-    public void ReturnToNodesMap()
+    public void ReturnToNodesMap(bool objAlert)
     {
+        if(objAlert)
+        {
+            GameManager.inst.objectAlert = true;
+        }
         int nNodesMaps = PlayerPrefs.GetInt("nNodesMaps");
         if(nNodesMaps == 6)
         {

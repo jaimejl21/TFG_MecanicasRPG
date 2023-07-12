@@ -3333,7 +3333,7 @@ MonoBehaviour:
       - m_Target: {fileID: 860649843}
         m_TargetAssemblyTypeName: ScenesManager, Assembly-CSharp
         m_MethodName: ReturnToNodesMap
-        m_Mode: 1
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

@@ -21,7 +21,7 @@ MonoBehaviour:
     parameters: 02000000
     returnValue: 0
   - functionName: ReturnToNodesMap
-    parameters: 
+    parameters: 00000000
     returnValue: 0
   - functionName: HelpAction
     parameters: 
