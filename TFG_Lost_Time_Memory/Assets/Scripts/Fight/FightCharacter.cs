@@ -96,16 +96,10 @@ public class FightCharacter : MonoBehaviour, IPointerClickHandler, IPointerDownH
             if(type)
             {
                 targets.transform.GetChild(target).GetChild(0).GetComponent<FightCharacter>().Damage(typeBonus * attack * cc.nameAtkVar + cc.timesAtkVar);
-                //fightCntrl.typeBonusTxt.text = (typeBonus * attack * cc.nameAtkVar + cc.timesAtkVar).ToString();
-                //Debug.Log("typeBonus " + typeBonus + " * attack " + attack + " * cc.nameAtkVar " + cc.nameAtkVar + " + cc.timesAtkVar " + cc.timesAtkVar);
-                //fightCntrl.dmgTxtAnim.SetBool("Dmg", true);
             }
             else
             {
                 targets.transform.GetChild(target).GetChild(0).GetComponent<FightCharacter>().Damage(typeBonus * attack);
-                //fightCntrl.typeBonusTxt.text = (typeBonus * attack).ToString();
-                //Debug.Log("typeBonus " + typeBonus + " * attack " + attack);
-                //fightCntrl.dmgTxtAnim.SetBool("Dmg", true);
             }
         }
         AddSpecial();
@@ -180,7 +174,7 @@ public class FightCharacter : MonoBehaviour, IPointerClickHandler, IPointerDownH
             case "healAll":
                 for (int i = 0; i < 6; i++)
                 {
-                    HealCharacters(i, ((70/100) * attack));
+                    HealCharacters(i, ((70f/100f) * attack));
                 }
                 break;
             case "heal":
@@ -190,14 +184,14 @@ public class FightCharacter : MonoBehaviour, IPointerClickHandler, IPointerDownH
                 }
                 else
                 {
-                    HealCharacters(fightCntrl.enemySelect, attack);
+                    HealCharacters(position, attack);
                 }
                 break;
             case "attackAll":
                 StartCoroutine(AnimAttack());
                 for(int i = 0; i < 6; i++)
                 {
-                    DamageCharacters(i, ((60 / 100) * attack));
+                    DamageCharacters(i, ((60f / 100f) * attack));
                 }
                 break;
             case "attackRow":
@@ -206,36 +200,36 @@ public class FightCharacter : MonoBehaviour, IPointerClickHandler, IPointerDownH
                 {
                     if (fightCntrl.enemySelect == 0 || fightCntrl.enemySelect == 3)
                     {
-                        DamageCharacters(0, ((80 / 100) * attack));
-                        DamageCharacters(3, ((80 / 100) * attack));
+                        DamageCharacters(0, ((80f / 100f) * attack));
+                        DamageCharacters(3, ((80f / 100f) * attack));
                     }
                     else if (fightCntrl.enemySelect == 1 || fightCntrl.enemySelect == 4)
                     {
-                        DamageCharacters(1, ((80 / 100) * attack));
-                        DamageCharacters(4, ((80 / 100) * attack));
+                        DamageCharacters(1, ((80f / 100f) * attack));
+                        DamageCharacters(4, ((80f / 100f) * attack));
                     }
                     else
                     {
-                        DamageCharacters(2, ((80 / 100) * attack));
-                        DamageCharacters(5, ((80 / 100) * attack));
+                        DamageCharacters(2, ((80f / 100f) * attack));
+                        DamageCharacters(5, ((80f / 100f) * attack));
                     }
                 }
                 else
                 {
                     if (fightCntrl.playerSelect == 0 || fightCntrl.playerSelect == 3)
                     {
-                        DamageCharacters(0, ((80 / 100) * attack));
-                        DamageCharacters(3, ((80 / 100) * attack));
+                        DamageCharacters(0, ((80f / 100f) * attack));
+                        DamageCharacters(3, ((80f / 100f) * attack));
                     }
                     else if (fightCntrl.playerSelect == 1 || fightCntrl.playerSelect == 4)
                     {
-                        DamageCharacters(1, ((80 / 100) * attack));
-                        DamageCharacters(4, ((80 / 100) * attack));
+                        DamageCharacters(1, ((80f / 100f) * attack));
+                        DamageCharacters(4, ((80f / 100f) * attack));
                     }
                     else
                     {
-                        DamageCharacters(2, ((80 / 100) * attack));
-                        DamageCharacters(5, ((80 / 100) * attack));
+                        DamageCharacters(2, ((80f / 100f) * attack));
+                        DamageCharacters(5, ((80f / 100f) * attack));
                     }
                 }
                 
@@ -246,96 +240,96 @@ public class FightCharacter : MonoBehaviour, IPointerClickHandler, IPointerDownH
                 {
                     if (fightCntrl.enemySelect == 0 || fightCntrl.enemySelect == 1 || fightCntrl.enemySelect == 2)
                     {
-                        DamageCharacters(0, ((70 / 100) * attack));
-                        DamageCharacters(1, ((70 / 100) * attack));
-                        DamageCharacters(2, ((70 / 100) * attack));
+                        DamageCharacters(0, ((70f / 100f) * attack));
+                        DamageCharacters(1, ((70f / 100f) * attack));
+                        DamageCharacters(2, ((70f / 100f) * attack));
                     }
                     else
                     {
-                        DamageCharacters(3, ((70 / 100) * attack));
-                        DamageCharacters(4, ((70 / 100) * attack));
-                        DamageCharacters(5, ((70 / 100) * attack));
+                        DamageCharacters(3, ((70f / 100f) * attack));
+                        DamageCharacters(4, ((70f / 100f) * attack));
+                        DamageCharacters(5, ((70f / 100f) * attack));
                     }
                 }
                 else
                 {
                     if (fightCntrl.playerSelect == 0 || fightCntrl.playerSelect == 1 || fightCntrl.playerSelect == 2)
                     {
-                        DamageCharacters(0, ((70 / 100) * attack));
-                        DamageCharacters(1, ((70 / 100) * attack));
-                        DamageCharacters(2, ((70 / 100) * attack));
+                        DamageCharacters(0, ((70f / 100f) * attack));
+                        DamageCharacters(1, ((70f / 100f) * attack));
+                        DamageCharacters(2, ((70f / 100f) * attack));
                     }
                     else
                     {
-                        DamageCharacters(3, ((70 / 100) * attack));
-                        DamageCharacters(4, ((70 / 100) * attack));
-                        DamageCharacters(5, ((70 / 100) * attack));
+                        DamageCharacters(3, ((70f / 100f) * attack));
+                        DamageCharacters(4, ((70f / 100f) * attack));
+                        DamageCharacters(5, ((70f / 100f) * attack));
                     }
                 }
                 break;
             case "buffAtkAll":
                 for (int i = 0; i < 6; i++)
                 {
-                    DeBuffStatChars(i, true, ref attack, ref atkBuff, ref atkBuffTurns, ((30 / 100) * attack), true);
+                    DeBuffStatChars(i, true, true, 3, ((30f / 100f) * attack));
                 }                   
                 break;
             case "debuffAtkAll":
                 for (int i = 0; i < 6; i++)
                 {
-                    DeBuffStatChars(i, false, ref attack, ref atkDebuff, ref atkDebuffTurns, ((30 / 100) * attack), true);
+                    DeBuffStatChars(i, false, true, 3, ((30f / 100f) * attack));
                 }                   
                 break;
             case "buffDefAll":
                 for (int i = 0; i < 6; i++)
                 {
-                    DeBuffStatChars(i, true, ref defense, ref defBuff, ref defBuffTurns, ((30 / 100) * attack), false);
+                    DeBuffStatChars(i, true, false, 3, ((30f / 100f) * attack));
                 }                   
                 break;
             case "debuffDefAll":
                 for (int i = 0; i < 6; i++)
                 {
-                    DeBuffStatChars(i, false, ref defense, ref defDebuff, ref defDebuffTurns, ((30 / 100) * attack), false);
+                    DeBuffStatChars(i, false, false, 3, ((30f / 100f) * attack));
                 }                
                 break;
             case "buffAtk":
                 if(type)
                 {
-                    DeBuffStatChars(fightCntrl.playerSelect, true, ref attack, ref atkBuff, ref atkBuffTurns, ((60 / 100) * attack), true);
+                    DeBuffStatChars(fightCntrl.playerSelect, true, true, 3, ((30f / 100f) * attack));
 
                 }
                 else
                 {
-                    DeBuffStatChars(fightCntrl.enemySelect, true, ref attack, ref atkBuff, ref atkBuffTurns, ((60 / 100) * attack), true);
+                    DeBuffStatChars(position, true, true, 3, ((30f / 100f) * attack));
                 }               
                 break;
             case "debuffAtk":
                 if (!type)
                 {
-                    DeBuffStatChars(fightCntrl.playerSelect, false, ref attack, ref atkDebuff, ref atkDebuffTurns, ((60 / 100) * attack), true);
+                    DeBuffStatChars(fightCntrl.playerSelect, false, true, 3, ((30f / 100f) * attack));
                 }
                 else
                 {
-                    DeBuffStatChars(fightCntrl.enemySelect, false, ref attack, ref atkDebuff, ref atkDebuffTurns, ((60 / 100) * attack), true);
+                    DeBuffStatChars(fightCntrl.enemySelect, false, true, 3, ((30f / 100f) * attack));
                 }
                 break;
             case "buffDef":
                 if (type)
                 {
-                    DeBuffStatChars(fightCntrl.playerSelect, true, ref defense, ref defBuff, ref defBuffTurns, ((50 / 100) * attack), false);
+                    DeBuffStatChars(fightCntrl.playerSelect, true, false, 3, ((30f / 100f) * attack));
                 }
                 else
                 {
-                    DeBuffStatChars(fightCntrl.enemySelect, true, ref defense, ref defBuff, ref defBuffTurns, ((50 / 100) * attack), false);
+                    DeBuffStatChars(position, true, false, 3, ((30f / 100f) * attack));
                 }
                 break;
             case "debuffDef":
                 if (!type)
                 {
-                    DeBuffStatChars(fightCntrl.playerSelect, false, ref defense, ref defDebuff, ref defDebuffTurns, ((50 / 100) * attack), false);
+                    DeBuffStatChars(fightCntrl.playerSelect, false, false, 3, ((30f / 100f) * attack));
                 }
                 else
                 {
-                    DeBuffStatChars(fightCntrl.enemySelect, false, ref defense, ref defDebuff, ref defDebuffTurns, ((50 / 100) * attack), false);
+                    DeBuffStatChars(fightCntrl.enemySelect, false, false, 3, ((30f / 100f) * attack));
                 }
                 break;
             default:
@@ -359,7 +353,7 @@ public class FightCharacter : MonoBehaviour, IPointerClickHandler, IPointerDownH
 
     public void DamageCharacters(int position, float attack)
     {
-        if(type)
+        if (type)
         {
             if (fightCntrl.enemiesPositions.Contains(position))
             {
@@ -367,14 +361,10 @@ public class FightCharacter : MonoBehaviour, IPointerClickHandler, IPointerDownH
                 if (type)
                 {
                     GameObject.Find("Enemies").transform.GetChild(position).GetChild(0).GetComponent<FightCharacter>().Damage(typeBonus * attack * cc.nameAtkVar + cc.timesAtkVar);
-                    //fightCntrl.typeBonusTxt.text = (typeBonus * attack * cc.nameAtkVar + cc.timesAtkVar).ToString();
-                    //fightCntrl.dmgTxtAnim.SetBool("Dmg", true);
                 }
                 else
                 {
                     GameObject.Find("Enemies").transform.GetChild(position).GetChild(0).GetComponent<FightCharacter>().Damage(typeBonus * attack);
-                    //fightCntrl.typeBonusTxt.text = (typeBonus * attack).ToString();
-                    //fightCntrl.dmgTxtAnim.SetBool("Dmg", true);
                 }
             }
         }
@@ -386,14 +376,10 @@ public class FightCharacter : MonoBehaviour, IPointerClickHandler, IPointerDownH
                 if (type)
                 {
                     GameObject.Find("Players").transform.GetChild(position).GetChild(0).GetComponent<FightCharacter>().Damage(typeBonus * attack * cc.nameAtkVar + cc.timesAtkVar);
-                    //fightCntrl.typeBonusTxt.text = (typeBonus * attack * cc.nameAtkVar + cc.timesAtkVar).ToString();
-                    //fightCntrl.dmgTxtAnim.SetBool("Dmg", true);
                 }
                 else
                 {
                     GameObject.Find("Players").transform.GetChild(position).GetChild(0).GetComponent<FightCharacter>().Damage(typeBonus * attack);     
-                    //fightCntrl.typeBonusTxt.text = (typeBonus * attack).ToString();
-                    //fightCntrl.dmgTxtAnim.SetBool("Dmg", true);
                 }
             }
         } 
@@ -419,6 +405,7 @@ public class FightCharacter : MonoBehaviour, IPointerClickHandler, IPointerDownH
 
     public void Heal(float amount)
     {
+        //Debug.Log("Amount heal: " + amount);
         if (life < maxLife)
         {
             StartCoroutine(AnimHeal(amount));
@@ -433,57 +420,108 @@ public class FightCharacter : MonoBehaviour, IPointerClickHandler, IPointerDownH
         }
     }
 
-    public void DeBuffStat(bool buff, ref float stat, ref float statInc, ref int deBuffTurns, float amount, bool atk)
+    public void DeBuffStat(bool buff, bool atk, int turns, float amount)
     {
-        if(buff)
+        //Debug.Log("Amount deBuff: " + amount);
+        if (buff)
         {
-            stat += amount;
-            statInc = amount;
-        }
-        else
-        {
-            if((stat - amount) >= 0)
+            if(atk)
             {
-                stat -= amount;
-                statInc = amount;
+                attack += amount;
+                atkBuff = amount;
+                if (atkBuffTurns <= 0)
+                {
+                    atkBuffTurns = turns;
+                }
+                else
+                {
+                    atkBuffTurns += turns;
+                }
+                Debug.Log("Id: " + charInfo.id + " Buff atk " + atkBuff + " " + atkBuffTurns + " turns");
             }
             else
             {
-                statInc = stat;
-                stat = 0;
+                defense += amount;
+                defBuff = amount;
+                if (defBuffTurns <= 0)
+                {
+                    defBuffTurns = turns;
+                }
+                else
+                {
+                    defBuffTurns += turns;
+                }
+                Debug.Log("Id: " + charInfo.id + " Buff def " +defBuff + " " + defBuffTurns + " turns");
             }
-        }
-        if(deBuffTurns <= 0)
-        {
-            deBuffTurns = 3;
         }
         else
         {
-            deBuffTurns += 3;
+            if (atk)
+            {
+                if((attack - amount) >= 0)
+                {
+                    attack -= amount;
+                    atkDebuff = amount;
+                }
+                else
+                {
+                    atkDebuff = (attack - 1);
+                    attack = 1;
+                }
+                if (atkDebuffTurns <= 0)
+                {
+                    atkDebuffTurns = turns;
+                }
+                else
+                {
+                    atkDebuffTurns += turns;
+                }
+                Debug.Log("Id: " + charInfo.id + " Debuff atk " + atkDebuff + " " + atkDebuffTurns + " turns");
+            }
+            else
+            {
+                if ((defense - amount) >= 0)
+                {
+                    defense -= amount;
+                    defDebuff = amount;
+                }
+                else
+                {
+                    defDebuff = (defense - 1);
+                    defense = 1;
+                }
+                if (defDebuffTurns <= 0)
+                {
+                    defDebuffTurns = turns;
+                }
+                else
+                {
+                    defDebuffTurns += turns;
+                }
+                Debug.Log("Id: " + charInfo.id + " Debuff def " + defDebuff + " " + defDebuffTurns + " turns");
+            }
         }
         DeBuffsUIManager(true, atk, buff);
-
-        Debug.Log("Id: " + charInfo.id + " Buff: " + buff + " Atk/Def: " + atk + " Turns: " + deBuffTurns);
     }
 
-    void DeBuffStatChars(int position, bool buff, ref float stat, ref float statInc, ref int deBuffTurns, float amount, bool atk)
+    void DeBuffStatChars(int position, bool buff, bool atk, int turns, float amount)
     {
         if (type)
         {
-            if(buff)
+            if (buff)
             {
                 if (fightCntrl.playersPositions.Contains(position))
                 {
-                    GameObject.Find("Players").transform.GetChild(position).GetChild(0).GetComponent<FightCharacter>().DeBuffStat(buff, ref stat, ref statInc, ref deBuffTurns, amount, atk);
+                    GameObject.Find("Players").transform.GetChild(position).GetChild(0).GetComponent<FightCharacter>().DeBuffStat(buff, atk, turns, amount);
                 }
             }
             else
             {
                 if (fightCntrl.enemiesPositions.Contains(position))
                 {
-                    GameObject.Find("Enemies").transform.GetChild(position).GetChild(0).GetComponent<FightCharacter>().DeBuffStat(buff, ref stat, ref statInc, ref deBuffTurns, amount, atk);
-                }                  
-            }           
+                    GameObject.Find("Enemies").transform.GetChild(position).GetChild(0).GetComponent<FightCharacter>().DeBuffStat(buff, atk, turns, amount);
+                }
+            }
         }
         else
         {
@@ -491,14 +529,14 @@ public class FightCharacter : MonoBehaviour, IPointerClickHandler, IPointerDownH
             {
                 if (fightCntrl.enemiesPositions.Contains(position))
                 {
-                    GameObject.Find("Enemies").transform.GetChild(position).GetChild(0).GetComponent<FightCharacter>().DeBuffStat(buff, ref stat, ref statInc, ref deBuffTurns, amount, atk);
+                    GameObject.Find("Enemies").transform.GetChild(position).GetChild(0).GetComponent<FightCharacter>().DeBuffStat(buff, atk, turns, amount);
                 }
             }
             else
             {
                 if (fightCntrl.playersPositions.Contains(position))
                 {
-                    GameObject.Find("Players").transform.GetChild(position).GetChild(0).GetComponent<FightCharacter>().DeBuffStat(buff, ref stat, ref statInc, ref deBuffTurns, amount, atk);
+                    GameObject.Find("Players").transform.GetChild(position).GetChild(0).GetComponent<FightCharacter>().DeBuffStat(buff, atk, turns, amount);
                 }
             }
         }
@@ -536,40 +574,104 @@ public class FightCharacter : MonoBehaviour, IPointerClickHandler, IPointerDownH
 
     public void CheckDeBuffsTurns()
     {
-        CheckDeBuffsTurnsAux(true, ref attack, ref atkBuffTurns, ref atkBuff, true);
-        CheckDeBuffsTurnsAux(false, ref attack, ref atkDebuffTurns, ref atkDebuff, true);
-        CheckDeBuffsTurnsAux(true, ref defense, ref defBuffTurns, ref defBuff, false);
-        CheckDeBuffsTurnsAux(false, ref defense, ref defDebuffTurns, ref defDebuff, false);
+        CheckDeBuffsTurnsAux(true, true);
+        CheckDeBuffsTurnsAux(false, true);
+        CheckDeBuffsTurnsAux(true, false);
+        CheckDeBuffsTurnsAux(false, false);
     }
 
-    public void CheckDeBuffsTurnsAux(bool buff, ref float stat, ref int deBuffTurns, ref float statInc, bool atk)
-    {       
-        if(deBuffTurns > 1)
+    public void CheckDeBuffsTurnsAux(bool buff, bool atk)
+    {
+        if(buff)
         {
-            deBuffTurns--;
-        }
-        else if(deBuffTurns == 1)
-        {
-            deBuffTurns--;
-            if(buff)
+            if(atk)
             {
-                stat -= statInc;
+                if (atkBuffTurns > 1)
+                {
+                    atkBuffTurns--;
+                }
+                else if (atkBuffTurns == 1)
+                {
+                    atkBuffTurns--;
+                    attack -= atkBuff;
+                    DeBuffsUIManager(false, atk, buff);
+                    if (atkBuffTurns == 0 && atkDebuffTurns == 0)
+                    {
+                        deBuffsUI.transform.GetChild(0).gameObject.SetActive(false);
+                    }
+                    if (defBuffTurns == 0 && defDebuffTurns == 0)
+                    {
+                        deBuffsUI.transform.GetChild(1).gameObject.SetActive(false);
+                    }
+                }
             }
             else
             {
-                stat += statInc;
-            }
-            DeBuffsUIManager(false, atk, buff);
-            if(atkBuffTurns == 0  && atkDebuffTurns == 0)
-            {                
-                deBuffsUI.transform.GetChild(0).gameObject.SetActive(false);
-            }
-            if (defBuffTurns == 0 && defDebuffTurns == 0)
-            {
-                deBuffsUI.transform.GetChild(1).gameObject.SetActive(false);
+                if (defBuffTurns > 1)
+                {
+                    defBuffTurns--;
+                }
+                else if (defBuffTurns == 1)
+                {
+                    defBuffTurns--;
+                    defense -= defBuff;
+                    DeBuffsUIManager(false, atk, buff);
+                    if (atkBuffTurns == 0 && atkDebuffTurns == 0)
+                    {
+                        deBuffsUI.transform.GetChild(0).gameObject.SetActive(false);
+                    }
+                    if (defBuffTurns == 0 && defDebuffTurns == 0)
+                    {
+                        deBuffsUI.transform.GetChild(1).gameObject.SetActive(false);
+                    }
+                }
             }
         }
-        //Debug.Log("Buff: " + buff + " Stat: " + nameof(stat) + " Turns: " + deBuffTurns);
+        else
+        {
+            if (atk)
+            {
+                if (atkDebuffTurns > 1)
+                {
+                    atkDebuffTurns--;
+                }
+                else if (atkDebuffTurns == 1)
+                {
+                    atkDebuffTurns--;
+                    attack += atkDebuff;
+                    DeBuffsUIManager(false, atk, buff);
+                    if (atkBuffTurns == 0 && atkDebuffTurns == 0)
+                    {
+                        deBuffsUI.transform.GetChild(0).gameObject.SetActive(false);
+                    }
+                    if (defBuffTurns == 0 && defDebuffTurns == 0)
+                    {
+                        deBuffsUI.transform.GetChild(1).gameObject.SetActive(false);
+                    }
+                }
+            }
+            else
+            {
+                if (defDebuffTurns > 1)
+                {
+                    defDebuffTurns--;
+                }
+                else if (defDebuffTurns == 1)
+                {
+                    defDebuffTurns--;
+                    defense += defDebuff;
+                    DeBuffsUIManager(false, atk, buff);
+                    if (atkBuffTurns == 0 && atkDebuffTurns == 0)
+                    {
+                        deBuffsUI.transform.GetChild(0).gameObject.SetActive(false);
+                    }
+                    if (defBuffTurns == 0 && defDebuffTurns == 0)
+                    {
+                        deBuffsUI.transform.GetChild(1).gameObject.SetActive(false);
+                    }
+                }
+            }
+        }
     }
 
     public void AddSpecial()
@@ -600,9 +702,10 @@ public class FightCharacter : MonoBehaviour, IPointerClickHandler, IPointerDownH
 
     public void Damage(float amount)
     {
+        //Debug.Log("Amount dmg: " + amount);
         amount -= defense;
+        if (amount <= 0) amount = 1;
         fightCntrl.typeBonusTxt.text = amount.ToString();
-        Debug.Log("Damage: " + amount);
         fightCntrl.dmgTxtAnim.SetBool("Dmg", true);
         life -= amount;
         StartCoroutine(AnimDamage(amount));

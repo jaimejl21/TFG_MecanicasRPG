@@ -46,6 +46,8 @@ public class FightController : MonoBehaviour
             {
                 teamList.RemoveAt(auxCharList[i].pos);
                 teamList.Insert(auxCharList[i].pos, auxCharList[i]);
+                Debug.Log("Id: " + auxCharList[i].id + " pos: " + auxCharList[i].pos);
+                Debug.Log("Id: " + teamList[auxCharList[i].pos].id + " pos: " + teamList[auxCharList[i].pos].pos);
             }
         }
         for (int i = 0; i < 6; i++)
