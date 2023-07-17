@@ -46,8 +46,8 @@ public class FightController : MonoBehaviour
             {
                 teamList.RemoveAt(auxCharList[i].pos);
                 teamList.Insert(auxCharList[i].pos, auxCharList[i]);
-                Debug.Log("Id: " + auxCharList[i].id + " pos: " + auxCharList[i].pos);
-                Debug.Log("Id: " + teamList[auxCharList[i].pos].id + " pos: " + teamList[auxCharList[i].pos].pos);
+                //Debug.Log("Id: " + auxCharList[i].id + " pos: " + auxCharList[i].pos);
+                //Debug.Log("Id: " + teamList[auxCharList[i].pos].id + " pos: " + teamList[auxCharList[i].pos].pos);
             }
         }
         for (int i = 0; i < 6; i++)
@@ -69,7 +69,7 @@ public class FightController : MonoBehaviour
         playersN = playersPositions.Count - 1;
 
         enemiesN = enemiesPositions.Count - 1;
-        enemySelect = enemiesPositions[0]; ;
+        enemySelect = enemiesPositions[0];
         pointerEnemy = 0;
 
         enemies.transform.GetChild(enemySelect).GetChild(0).GetComponent<FightCharacter>().Select(true);
@@ -109,17 +109,17 @@ public class FightController : MonoBehaviour
             }
             else
             {
-                enemy.GetComponent<FightCharacter>().position = i;
+                enemy.GetComponent<FightCharacter>().position = allEnemiesList[i].pos;
             }  
             enemiesPositions.Add(enemy.GetComponent<FightCharacter>().position);
-            if ((i % 2) == 0)
-            {
-                enemy.GetComponent<FightCharacter>().abilityType = "debuffAtk";
-            }
-            else
-            {
-                enemy.GetComponent<FightCharacter>().abilityType = "debuffDef";
-            }
+            //if ((i % 2) == 0)
+            //{
+            //    enemy.GetComponent<FightCharacter>().abilityType = "debuffAtk";
+            //}
+            //else
+            //{
+            //    enemy.GetComponent<FightCharacter>().abilityType = "debuffDef";
+            //}
             Instantiate(enemy, enemieSlots[enemy.GetComponent<FightCharacter>().position].transform);
         }
 
