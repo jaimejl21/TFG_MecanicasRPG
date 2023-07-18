@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,6 +16,11 @@ public class EnemyTeamGenerator : MonoBehaviour
 
     void Start()
     {
+        
+    }
+
+    public void AuxStart()
+    {
         gi = new Gear.Info(-1, 10, -1, -1, 0, 0, 0, false, -1);
 
         auxCharList = new List<Character.Info>();
@@ -22,20 +28,22 @@ public class EnemyTeamGenerator : MonoBehaviour
         posPos = new List<int>() { 0, 1, 2, 3, 4, 5, 6 };
 
         pAtk = 0;
-        pDef = 0; 
+        pDef = 0;
         pHp = 0;
         eAtk = 0;
         eDef = 0;
         eHp = 0;
-        pNum = 0; 
+        pNum = 0;
         eNum = 0;
-
-        GetStatsFromChars();
     }
 
     public List<Character.Info> GenerateEnemyTeam(int enemyTeam)
     {
         // id  type  race  pos  inTeam  List<Gear.Info> gear  level  exp  expNextLv  Stats stats
+
+        AuxStart();
+
+        GetStatsFromChars();
 
         List<Character.Info> enemyTeamList = new List<Character.Info>();
         int type;
@@ -47,12 +55,13 @@ public class EnemyTeamGenerator : MonoBehaviour
                 //for (int i = 0; i < 6; i++)
                 //{
                 //    type = new Random().Next(0, 7);
-                //    enemyTeamList.Add(new Character.Info(i, "Humano " + i, type, 0, -1, -1, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
+                //    enemyTeamList.Add(new Character.Info(i, "Humano " + i, type, 0, -1, -1, RandomPos(6), false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
                 //}
                 for (int i = 0; i < eNum; i++)
                 {
                     type = new Random().Next(0, 7);
-                    enemyTeamList.Add(new Character.Info(i, "Humano " + i, type, 0, -1, -1, RandomPos(eNum), false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats(eAtk, eDef, eHp, 0, 0, 0)));
+                    enemyTeamList.Add(new Character.Info(i, "Humano " + i, type, 0, -1, -1, RandomPos(i), false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats(eAtk, eDef, eHp, 0, 0, 0)));
+                    Debug.Log("Id: " + enemyTeamList[i].id + " Pos: " + enemyTeamList[i].pos + " Stats: " + enemyTeamList[i].stats.atk + "/" + enemyTeamList[i].stats.def + "/" + enemyTeamList[i].stats.hp);
                 }
                 break;
             case 1:
@@ -65,7 +74,8 @@ public class EnemyTeamGenerator : MonoBehaviour
                 for (int i = 0; i < eNum; i++)
                 {
                     type = new Random().Next(0, 7);
-                    enemyTeamList.Add(new Character.Info(i, "Orco " + i, type, 1, -1, -1, RandomPos(eNum), false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats(eAtk, eDef, eHp, 0, 0, 0)));
+                    enemyTeamList.Add(new Character.Info(i, "Orco " + i, type, 1, -1, -1, RandomPos(i), false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats(eAtk, eDef, eHp, 0, 0, 0)));
+                    Debug.Log("Id: " + enemyTeamList[i].id + " Pos: " + enemyTeamList[i].pos + " Stats: " + enemyTeamList[i].stats.atk + "/" + enemyTeamList[i].stats.def + "/" + enemyTeamList[i].stats.hp);
                 }
                 break;
             case 2:
@@ -105,36 +115,32 @@ public class EnemyTeamGenerator : MonoBehaviour
 
         eNum = new Random().Next(pNum, 7);
 
-        eAtk = pAtk / (float) eNum;
-        eDef = pDef / (float) eNum;
-        eHp = pHp / (float) eNum;
+        eAtk = pAtk / eNum;
+        eDef = pDef / eNum;
+        eHp = pHp / eNum;
+
+        eAtk = (float) Math.Round(eAtk, 0);
+        eDef = (float)Math.Round(eDef, 0);
+        eHp = (float)Math.Round(eHp, 0);
+
+        Debug.Log("eNum: " + eNum + " eAtk: " + eAtk + " eDef: " + eDef + " eHp " + eHp);
     }
 
-    int RandomPos(int max)
+    int RandomPos(int i)
     {
-        if (max == 1)
+        int pos = -1;
+        if (i == 0)
         {
-            return 1;
+            posPos.RemoveAll(item => item == 1);
+            pos = 1;
         }
         else
         {
-            int pos = -1;
-            for (int i = 0; i < max; i++)
-            {
-                if (i == 0)
-                {
-                    posPos.RemoveAll(item => item == 1);
-                    pos = 1;
-                }
-                else
-                {
-                    int pos1 = new Random().Next(0, posPos.Count);
-                    int pos2 = posPos[pos1];
-                    posPos.RemoveAll(item => item == pos2);
-                    pos =  pos2;
-                }
-            }
-            return pos;
+            int pos1 = new Random().Next(0, posPos.Count);
+            int pos2 = posPos[pos1];
+            posPos.RemoveAll(item => item == pos2);
+            pos = pos2;
         }
+        return pos;
     }
 }
