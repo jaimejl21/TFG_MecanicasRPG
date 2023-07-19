@@ -14,18 +14,13 @@ public class EnemyTeamGenerator : MonoBehaviour
     float pAtk, pDef, pHp, eAtk, eDef, eHp;
     int pNum, eNum;
 
-    void Start()
-    {
-        
-    }
-
     public void AuxStart()
     {
         gi = new Gear.Info(-1, 10, -1, -1, 0, 0, 0, false, -1);
 
         auxCharList = new List<Character.Info>();
         auxCharList = GameManager.allChar.ToList();
-        posPos = new List<int>() { 0, 1, 2, 3, 4, 5, 6 };
+        posPos = new List<int>() { 0, 1, 2, 3, 4, 5};
 
         pAtk = 0;
         pDef = 0;
@@ -52,30 +47,20 @@ public class EnemyTeamGenerator : MonoBehaviour
         {
             case 0:
                 ////Humanos random
-                //for (int i = 0; i < 6; i++)
-                //{
-                //    type = new Random().Next(0, 7);
-                //    enemyTeamList.Add(new Character.Info(i, "Humano " + i, type, 0, -1, -1, RandomPos(6), false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
-                //}
                 for (int i = 0; i < eNum; i++)
                 {
                     type = new Random().Next(0, 7);
                     enemyTeamList.Add(new Character.Info(i, "Humano " + i, type, 0, -1, -1, RandomPos(i), false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats(eAtk, eDef, eHp, 0, 0, 0)));
-                    Debug.Log("Id: " + enemyTeamList[i].id + " Pos: " + enemyTeamList[i].pos + " Stats: " + enemyTeamList[i].stats.atk + "/" + enemyTeamList[i].stats.def + "/" + enemyTeamList[i].stats.hp);
+                    //Debug.Log("Id: " + enemyTeamList[i].id + " Pos: " + enemyTeamList[i].pos + " Stats: " + enemyTeamList[i].stats.atk + "/" + enemyTeamList[i].stats.def + "/" + enemyTeamList[i].stats.hp);
                 }
                 break;
             case 1:
                 //Orcos random
-                //for (int i = 0; i < 6; i++)
-                //{
-                //    type = new Random().Next(0, 7);
-                //    enemyTeamList.Add(new Character.Info(i, "Orco " + i, type, 1, -1, -1, -1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
-                //}
                 for (int i = 0; i < eNum; i++)
                 {
                     type = new Random().Next(0, 7);
                     enemyTeamList.Add(new Character.Info(i, "Orco " + i, type, 1, -1, -1, RandomPos(i), false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats(eAtk, eDef, eHp, 0, 0, 0)));
-                    Debug.Log("Id: " + enemyTeamList[i].id + " Pos: " + enemyTeamList[i].pos + " Stats: " + enemyTeamList[i].stats.atk + "/" + enemyTeamList[i].stats.def + "/" + enemyTeamList[i].stats.hp);
+                    //Debug.Log("Id: " + enemyTeamList[i].id + " Pos: " + enemyTeamList[i].pos + " Stats: " + enemyTeamList[i].stats.atk + "/" + enemyTeamList[i].stats.def + "/" + enemyTeamList[i].stats.hp);
                 }
                 break;
             case 2:
@@ -96,7 +81,6 @@ public class EnemyTeamGenerator : MonoBehaviour
             default:
                 break;
         }
-
         return enemyTeamList;
     }
 
@@ -123,7 +107,7 @@ public class EnemyTeamGenerator : MonoBehaviour
         eDef = (float)Math.Round(eDef, 0);
         eHp = (float)Math.Round(eHp, 0);
 
-        Debug.Log("eNum: " + eNum + " eAtk: " + eAtk + " eDef: " + eDef + " eHp " + eHp);
+        //Debug.Log("eNum: " + eNum + " eAtk: " + eAtk + " eDef: " + eDef + " eHp " + eHp);
     }
 
     int RandomPos(int i)

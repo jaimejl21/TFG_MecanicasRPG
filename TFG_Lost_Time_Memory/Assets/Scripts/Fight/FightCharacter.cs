@@ -120,7 +120,7 @@ public class FightCharacter : MonoBehaviour, IPointerClickHandler, IPointerDownH
                     }
                 }
                 GameManager.allChar = allCharList;
-                GameManager.inst.SaveListsToJson();
+                if(type) GameManager.inst.SaveListsToJson();
                 SetUlti(rand);
                 break;
             case 0:
@@ -387,6 +387,7 @@ public class FightCharacter : MonoBehaviour, IPointerClickHandler, IPointerDownH
 
     public void HealCharacters(int position, float amount)
     {
+        amount = (float)Math.Round(amount, 0);
         if (type)
         {
             if (fightCntrl.playersPositions.Contains(position))
@@ -405,6 +406,7 @@ public class FightCharacter : MonoBehaviour, IPointerClickHandler, IPointerDownH
 
     public void Heal(float amount)
     {
+        amount = (float)Math.Round(amount, 0);
         //Debug.Log("Amount heal: " + amount);
         if (life < maxLife)
         {
@@ -422,6 +424,7 @@ public class FightCharacter : MonoBehaviour, IPointerClickHandler, IPointerDownH
 
     public void DeBuffStat(bool buff, bool atk, int turns, float amount)
     {
+        amount = (float)Math.Round(amount, 0);
         //Debug.Log("Amount deBuff: " + amount);
         if (buff)
         {
@@ -676,7 +679,7 @@ public class FightCharacter : MonoBehaviour, IPointerClickHandler, IPointerDownH
 
     public void AddSpecial()
     {
-        int amount = 50;
+        int amount = 25;
         if (special < maxSpecial)
         {
             StartCoroutine(AnimChargeSpecial(amount));
@@ -702,15 +705,18 @@ public class FightCharacter : MonoBehaviour, IPointerClickHandler, IPointerDownH
 
     public void Damage(float amount)
     {
-        //Debug.Log("Amount dmg: " + amount);
+        amount = (float)Math.Round(amount, 0);
         amount -= defense;
         if (amount <= 0) amount = 1;
+        Debug.Log("Amount dmg: " + amount);
         fightCntrl.typeBonusTxt.text = amount.ToString();
         fightCntrl.dmgTxtAnim.SetBool("Dmg", true);
         life -= amount;
+        Debug.Log("life = " + life);
         StartCoroutine(AnimDamage(amount));
         if(life <= 0)
         {
+            Debug.Log("Dead // life = " + life);
             if(type)
             {
                 if (fightCntrl.playersN == 0)

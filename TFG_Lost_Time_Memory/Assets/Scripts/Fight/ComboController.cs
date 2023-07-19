@@ -108,7 +108,7 @@ public class ComboController : MonoBehaviour
             default:
                 break;
         }
-        Debug.Log(comboName + " " + timesAtkVar);
+        //Debug.Log(comboName + " " + timesAtkVar);
     }
 
     public void ComboAction()

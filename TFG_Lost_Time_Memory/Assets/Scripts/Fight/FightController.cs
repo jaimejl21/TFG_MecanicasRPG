@@ -35,7 +35,9 @@ public class FightController : MonoBehaviour
     public Animator dmgTxtAnim;
 
     private void Start()
-    {       
+    {
+        allEnemiesList = new List<Character.Info>();
+        auxCharList = new List<Character.Info>();
         auxCharList = GameManager.allChar.ToList();
         allEnemiesList = etg.GenerateEnemyTeam(GameManager.inst.enemyTeam);
         teamList = new List<Character.Info>() { null, null, null, null, null, null };
@@ -84,14 +86,6 @@ public class FightController : MonoBehaviour
                 player.GetComponent<Character>().info = teamList[i];
                 player.GetComponent<FightCharacter>().position = player.GetComponent<Character>().info.pos;
                 playersPositions.Add(player.GetComponent<FightCharacter>().position);
-                if ((i % 2) == 0)
-                {
-                    player.GetComponent<FightCharacter>().abilityType = "buffAtk";
-                }
-                else
-                {
-                    player.GetComponent<FightCharacter>().abilityType = "buffDef";
-                }
                 GameObject p = Instantiate(player, playerSlots[player.GetComponent<FightCharacter>().position].transform);
                 GameObject ab = Instantiate(attackButtons, buttonsDown.transform);
                 ab.GetComponent<AttackButton>().id = p.GetComponent<Character>().info.id;
@@ -110,16 +104,9 @@ public class FightController : MonoBehaviour
             else
             {
                 enemy.GetComponent<FightCharacter>().position = allEnemiesList[i].pos;
-            }  
+            }
             enemiesPositions.Add(enemy.GetComponent<FightCharacter>().position);
-            //if ((i % 2) == 0)
-            //{
-            //    enemy.GetComponent<FightCharacter>().abilityType = "debuffAtk";
-            //}
-            //else
-            //{
-            //    enemy.GetComponent<FightCharacter>().abilityType = "debuffDef";
-            //}
+            Debug.Log("Instantiate in pos " + enemy.GetComponent<FightCharacter>().position);
             Instantiate(enemy, enemieSlots[enemy.GetComponent<FightCharacter>().position].transform);
         }
 
