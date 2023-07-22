@@ -40,6 +40,7 @@ public class FightCharacter : MonoBehaviour, IPointerClickHandler, IPointerDownH
 
         scaleI = lifeBar.transform.localScale.x;
         maxLife = charInfo.stats.hp;
+        life = maxLife;
 
         maxSpecial = maxLife;
         special = 0;
@@ -102,7 +103,7 @@ public class FightCharacter : MonoBehaviour, IPointerClickHandler, IPointerDownH
                 targets.transform.GetChild(target).GetChild(0).GetComponent<FightCharacter>().Damage(typeBonus * attack);
             }
         }
-        AddSpecial();
+        AddSpecial(attack * 2);
     }
 
     public void SetUlti(int sp)
@@ -440,7 +441,7 @@ public class FightCharacter : MonoBehaviour, IPointerClickHandler, IPointerDownH
                 {
                     atkBuffTurns += turns;
                 }
-                Debug.Log("Id: " + charInfo.id + " Buff atk " + atkBuff + " " + atkBuffTurns + " turns");
+                //Debug.Log("Id: " + charInfo.id + " Buff atk " + atkBuff + " " + atkBuffTurns + " turns");
             }
             else
             {
@@ -454,7 +455,7 @@ public class FightCharacter : MonoBehaviour, IPointerClickHandler, IPointerDownH
                 {
                     defBuffTurns += turns;
                 }
-                Debug.Log("Id: " + charInfo.id + " Buff def " +defBuff + " " + defBuffTurns + " turns");
+                //Debug.Log("Id: " + charInfo.id + " Buff def " +defBuff + " " + defBuffTurns + " turns");
             }
         }
         else
@@ -479,7 +480,7 @@ public class FightCharacter : MonoBehaviour, IPointerClickHandler, IPointerDownH
                 {
                     atkDebuffTurns += turns;
                 }
-                Debug.Log("Id: " + charInfo.id + " Debuff atk " + atkDebuff + " " + atkDebuffTurns + " turns");
+                //Debug.Log("Id: " + charInfo.id + " Debuff atk " + atkDebuff + " " + atkDebuffTurns + " turns");
             }
             else
             {
@@ -501,7 +502,7 @@ public class FightCharacter : MonoBehaviour, IPointerClickHandler, IPointerDownH
                 {
                     defDebuffTurns += turns;
                 }
-                Debug.Log("Id: " + charInfo.id + " Debuff def " + defDebuff + " " + defDebuffTurns + " turns");
+                //Debug.Log("Id: " + charInfo.id + " Debuff def " + defDebuff + " " + defDebuffTurns + " turns");
             }
         }
         DeBuffsUIManager(true, atk, buff);
@@ -677,9 +678,10 @@ public class FightCharacter : MonoBehaviour, IPointerClickHandler, IPointerDownH
         }
     }
 
-    public void AddSpecial()
+    public void AddSpecial(float amount)
     {
-        int amount = 25;
+        amount = (float)Math.Round(amount, 0);
+        if (amount < 5) amount = 5;
         if (special < maxSpecial)
         {
             StartCoroutine(AnimChargeSpecial(amount));
@@ -707,12 +709,12 @@ public class FightCharacter : MonoBehaviour, IPointerClickHandler, IPointerDownH
     {
         amount = (float)Math.Round(amount, 0);
         amount -= defense;
-        if (amount <= 0) amount = 1;
-        Debug.Log("Amount dmg: " + amount);
+        if (amount < 5) amount = 5;
+        //Debug.Log("Amount dmg: " + amount);
         fightCntrl.typeBonusTxt.text = amount.ToString();
         fightCntrl.dmgTxtAnim.SetBool("Dmg", true);
         life -= amount;
-        Debug.Log("life = " + life);
+        //Debug.Log("life = " + life);
         StartCoroutine(AnimDamage(amount));
         if(life <= 0)
         {
@@ -781,7 +783,8 @@ public class FightCharacter : MonoBehaviour, IPointerClickHandler, IPointerDownH
 
     IEnumerator AnimDamage(float damage)
     {
-        lifeBar.transform.localScale = new Vector3(lifeBar.transform.localScale.x - (damage / maxLife) * scaleI, lifeBar.transform.localScale.y, lifeBar.transform.localScale.z);
+        //Debug.Log("damage " + damage + "/ maxLife " + maxLife + " = " + damage / maxLife);
+        lifeBar.transform.localScale = new Vector3(lifeBar.transform.localScale.x - ((float)Math.Round(damage / maxLife, 2)) * scaleI, lifeBar.transform.localScale.y, lifeBar.transform.localScale.z);
         for(int i=0; i<10; i++)
         {
             sr.enabled = !sr.enabled;
@@ -796,7 +799,7 @@ public class FightCharacter : MonoBehaviour, IPointerClickHandler, IPointerDownH
             amount = maxSpecial - special;
         }
         yield return new WaitForSecondsRealtime(0.2f);
-        specialBar.transform.localScale = new Vector3(specialBar.transform.localScale.x + (amount / maxSpecial) * scaleI, specialBar.transform.localScale.y, specialBar.transform.localScale.z);
+        specialBar.transform.localScale = new Vector3(specialBar.transform.localScale.x + ((float)Math.Round(amount / maxLife, 2)) * scaleI, specialBar.transform.localScale.y, specialBar.transform.localScale.z);
     }
 
     IEnumerator AnimHeal(float heal)
@@ -805,7 +808,7 @@ public class FightCharacter : MonoBehaviour, IPointerClickHandler, IPointerDownH
         {
             heal = maxLife - life;
         }
-        lifeBar.transform.localScale = new Vector3(lifeBar.transform.localScale.x + (heal / maxLife) * scaleI, lifeBar.transform.localScale.y, lifeBar.transform.localScale.z);
+        lifeBar.transform.localScale = new Vector3(lifeBar.transform.localScale.x + ((float)Math.Round(heal / maxLife, 2)) * scaleI, lifeBar.transform.localScale.y, lifeBar.transform.localScale.z);
         for (int i = 0; i < 10; i++)
         {
             sr.enabled = !sr.enabled;
