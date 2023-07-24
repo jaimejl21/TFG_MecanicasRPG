@@ -121,19 +121,33 @@ public class MyDialogueManager : MonoBehaviour
 
     public void ReturnToNodesMap(bool objAlert)
     {
-        if(objAlert)
+        if (GameManager.inst.mode == GameManager.modeEnum.Game)
         {
-            NMObjectAlert();
-        }
-        int nNodesMaps = PlayerPrefs.GetInt("nNodesMaps");
-        SceneManager.LoadScene("NodesMap" + nNodesMaps);
-        if (fio != null)
-        {
-            fio.FadeToScene("NodesMap" + nNodesMaps);
+            if (objAlert)
+            {
+                NMObjectAlert();
+            }
+            int nNodesMaps = PlayerPrefs.GetInt("nNodesMaps");
+            SceneManager.LoadScene("NodesMap" + nNodesMaps);
+            if (fio != null)
+            {
+                fio.FadeToScene("NodesMap" + nNodesMaps);
+            }
+            else
+            {
+                SceneManager.LoadScene("NodesMap" + nNodesMaps);
+            }
         }
         else
         {
-            SceneManager.LoadScene("NodesMap" + nNodesMaps);
+            if (fio != null)
+            {
+                fio.FadeToScene("Lobby");
+            }
+            else
+            {
+                SceneManager.LoadScene("Lobby");
+            }
         }
     }
 

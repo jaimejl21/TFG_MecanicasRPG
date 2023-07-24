@@ -19,7 +19,15 @@ public class GameManager : MonoBehaviour
     public static List<Gear.Info> allGear;
     public static List<int> nodesPrefsList;
 
+    public modeEnum mode;
+
     int started;
+
+    public enum modeEnum
+    {
+        Game,
+        Tool
+    }
 
     [System.Serializable]
     public class ListsToJson
@@ -56,6 +64,11 @@ public class GameManager : MonoBehaviour
         nodesPrefsList = new List<int>();
 
         //Debug.Log("Started: " + started);
+
+        if (mode == modeEnum.Game) 
+        {
+            restartPP = false;
+        }
 
         if (!restartPP)
         {
@@ -193,6 +206,17 @@ public class GameManager : MonoBehaviour
             GetIntPlayerPrefs("death", ref death, 0);
         }
         initialized = true;
+    }
+
+    public void ShowTeam()
+    {
+        for (int i = 0; i < allChar.Count; i++)
+        {
+            if (allChar[i].inTeam)
+            {
+                Debug.Log("Id: " + allChar[i].id + " pos: " + allChar[i].pos);
+            }
+        }
     }
 
     public int AuxSetStatAmount(int objType, int rarity)

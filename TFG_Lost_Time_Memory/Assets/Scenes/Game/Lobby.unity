@@ -549,6 +549,7 @@ MonoBehaviour:
   death: 0
   converName: 
   filename: CharactersDB.json
+  mode: 1
 --- !u!4 &397772045
 Transform:
   m_ObjectHideFlags: 0
@@ -1552,14 +1553,14 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2108295185}
         m_TargetAssemblyTypeName: ScenesManager, Assembly-CSharp
-        m_MethodName: ReturnToNodesMap
-        m_Mode: 6
+        m_MethodName: ChangeScene
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: NodesMap1
+          m_StringArgument: NodesMap0
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &886975138

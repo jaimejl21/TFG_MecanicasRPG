@@ -110,20 +110,6 @@ public class FightCharacter : MonoBehaviour, IPointerClickHandler, IPointerDownH
     {
         switch (sp)
         {
-            case -1:
-                int rand = new Random().Next(0, 13);
-                transform.GetComponent<Character>().info.special = rand;
-                for (int i = 0; i < allCharList.Count; i++)
-                {
-                    if (allCharList[i].id == charInfo.id)
-                    {
-                        allCharList[i] = transform.GetComponent<Character>().info;
-                    }
-                }
-                GameManager.allChar = allCharList;
-                if(type) GameManager.inst.SaveListsToJson();
-                SetUlti(rand);
-                break;
             case 0:
                 abilityType = "healAll";
                 break;
@@ -709,7 +695,7 @@ public class FightCharacter : MonoBehaviour, IPointerClickHandler, IPointerDownH
     {
         amount = (float)Math.Round(amount, 0);
         amount -= defense;
-        if (amount < 5) amount = 5;
+        if (amount <= 0) amount = 1;
         //Debug.Log("Amount dmg: " + amount);
         fightCntrl.typeBonusTxt.text = amount.ToString();
         fightCntrl.dmgTxtAnim.SetBool("Dmg", true);
@@ -718,7 +704,7 @@ public class FightCharacter : MonoBehaviour, IPointerClickHandler, IPointerDownH
         StartCoroutine(AnimDamage(amount));
         if(life <= 0)
         {
-            Debug.Log("Dead // life = " + life);
+            //Debug.Log("Dead // life = " + life);
             if(type)
             {
                 if (fightCntrl.playersN == 0)
@@ -809,10 +795,10 @@ public class FightCharacter : MonoBehaviour, IPointerClickHandler, IPointerDownH
             heal = maxLife - life;
         }
         lifeBar.transform.localScale = new Vector3(lifeBar.transform.localScale.x + ((float)Math.Round(heal / maxLife, 2)) * scaleI, lifeBar.transform.localScale.y, lifeBar.transform.localScale.z);
-        for (int i = 0; i < 10; i++)
+        for (int i = 0; i < 4; i++)
         {
             sr.enabled = !sr.enabled;
-            yield return new WaitForSecondsRealtime(0.05f);
+            yield return new WaitForSecondsRealtime(0.1f);
         }
     }
 

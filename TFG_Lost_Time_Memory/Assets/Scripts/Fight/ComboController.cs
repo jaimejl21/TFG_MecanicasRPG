@@ -42,7 +42,10 @@ public class ComboController : MonoBehaviour
 
     public void StopAnim()
     {
-        anim.SetBool("Attack", false);
+        if(comboGO.activeSelf)
+        {
+            anim.SetBool("Attack", false);
+        }  
     }
 
     public void SetActiveComboGO(bool ac)

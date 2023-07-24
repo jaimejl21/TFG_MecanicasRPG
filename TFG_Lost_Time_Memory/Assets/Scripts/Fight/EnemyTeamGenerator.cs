@@ -41,7 +41,7 @@ public class EnemyTeamGenerator : MonoBehaviour
         GetStatsFromChars();
 
         List<Character.Info> enemyTeamList = new List<Character.Info>();
-        int type;
+        int type, ulti;
 
         switch (enemyTeam)
         {
@@ -50,7 +50,8 @@ public class EnemyTeamGenerator : MonoBehaviour
                 for (int i = 0; i < eNum; i++)
                 {
                     type = new Random().Next(0, 7);
-                    enemyTeamList.Add(new Character.Info(i, "Humano " + i, type, 0, -1, -1, RandomPos(i), false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats(eAtk, eDef, eHp, 0, 0, 0)));
+                    ulti = new Random().Next(0, 13);
+                    enemyTeamList.Add(new Character.Info(i, "Humano " + i, type, 0, -1, ulti, RandomPos(i), false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats(eAtk, eDef, eHp, 0, 0, 0)));
                     //Debug.Log("Id: " + enemyTeamList[i].id + " Pos: " + enemyTeamList[i].pos + " Stats: " + enemyTeamList[i].stats.atk + "/" + enemyTeamList[i].stats.def + "/" + enemyTeamList[i].stats.hp);
                 }
                 break;
@@ -59,27 +60,30 @@ public class EnemyTeamGenerator : MonoBehaviour
                 for (int i = 0; i < eNum; i++)
                 {
                     type = new Random().Next(0, 7);
-                    enemyTeamList.Add(new Character.Info(i, "Orco " + i, type, 1, -1, -1, RandomPos(i), false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats(eAtk, eDef, eHp, 0, 0, 0)));
+                    ulti = new Random().Next(0, 13);
+                    enemyTeamList.Add(new Character.Info(i, "Orco " + i, type, 1, -1, ulti, RandomPos(i), false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats(eAtk, eDef, eHp, 0, 0, 0)));
                     //Debug.Log("Id: " + enemyTeamList[i].id + " Pos: " + enemyTeamList[i].pos + " Stats: " + enemyTeamList[i].stats.atk + "/" + enemyTeamList[i].stats.def + "/" + enemyTeamList[i].stats.hp);
                 }
                 break;
             case 2:
                 //Herrero mercader random
                 type = new Random().Next(0, 7);
-                enemyTeamList.Add(new Character.Info(0, "Humano", type, 0, -1, -1, 1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
+                ulti = new Random().Next(0, 13);
+                enemyTeamList.Add(new Character.Info(0, "Humano", type, 0, -1, ulti, 1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
                 break;
             case 3:
                 type = new Random().Next(0, 7);
-                enemyTeamList.Add(new Character.Info(0, "Orco", type, 1, -1, -1, 1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
+                ulti = new Random().Next(0, 13);
+                enemyTeamList.Add(new Character.Info(0, "Orco", type, 1, -1, ulti, 1, false, new List<Gear.Info>() { gi, gi, gi, gi, gi, gi, gi }, 1, 0, 320, new Character.Stats()));
                 break;
-            case 4:
-                break;
-            case 5:  
-                break;
-            case 6:
-                break;
-            default:
-                break;
+            //case 4:
+            //    break;
+            //case 5:  
+            //    break;
+            //case 6:
+            //    break;
+            //default:
+            //    break;
         }
         return enemyTeamList;
     }
@@ -104,8 +108,8 @@ public class EnemyTeamGenerator : MonoBehaviour
         eHp = pHp / eNum;
 
         eAtk = (float) Math.Round(eAtk, 0);
-        eDef = (float)Math.Round(eDef, 0);
-        eHp = (float)Math.Round(eHp, 0);
+        eDef = (float) Math.Round(eDef, 0);
+        eHp = (float) Math.Round(eHp, 0);
 
         //Debug.Log("eNum: " + eNum + " eAtk: " + eAtk + " eDef: " + eDef + " eHp " + eHp);
     }

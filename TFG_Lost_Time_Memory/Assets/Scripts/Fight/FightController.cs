@@ -42,6 +42,8 @@ public class FightController : MonoBehaviour
         allEnemiesList = etg.GenerateEnemyTeam(GameManager.inst.enemyTeam);
         teamList = new List<Character.Info>() { null, null, null, null, null, null };
 
+        //GameManager.inst.ShowTeam();
+
         for (int i = 0; i < auxCharList.Count; i++)
         {
             if (auxCharList[i].inTeam)
@@ -106,7 +108,7 @@ public class FightController : MonoBehaviour
                 enemy.GetComponent<FightCharacter>().position = allEnemiesList[i].pos;
             }
             enemiesPositions.Add(enemy.GetComponent<FightCharacter>().position);
-            Debug.Log("Instantiate in pos " + enemy.GetComponent<FightCharacter>().position);
+            //Debug.Log("Instantiate in pos " + enemy.GetComponent<FightCharacter>().position);
             Instantiate(enemy, enemieSlots[enemy.GetComponent<FightCharacter>().position].transform);
         }
 
@@ -306,7 +308,7 @@ public class FightController : MonoBehaviour
         }
     }
 
-    public void  SetResult()
+    public void SetResult()
     {
         DesactivateAllBtns();
         DesactivateAllSpBtns();
@@ -315,14 +317,15 @@ public class FightController : MonoBehaviour
             fightResult = true;
             resultText.text = "GANAS";
             GameManager.inst.objectAlert = true;
-            sm.ReturnToNodesMap(true);
+            StartCoroutine(WaitAndWin(3));
+            
         }
         else if (enemiesN > -1 && playersN < 0)
         {
             fightResult = false;
             resultText.text = "PIERDES";
             PlayerPrefs.SetInt("death", 1);
-            sm.ChangeScene("Tavern");
+            StartCoroutine(WaitAndLose(3));
         }
     }
 
@@ -338,6 +341,20 @@ public class FightController : MonoBehaviour
             PlayerPrefs.SetInt("death", 1);
             sm.ChangeScene("Tavern");
         }
+    }
+
+    IEnumerator WaitAndWin(float time)
+    {
+        yield return new WaitForSeconds(time);
+        Debug.Log("Waited");
+        sm.ReturnToNodesMap(true);
+    }
+
+    IEnumerator WaitAndLose(float time)
+    {
+        yield return new WaitForSeconds(time);
+        Debug.Log("Waited");
+        sm.ChangeScene("Tavern");
     }
 
     //public void SelectCharacter()
