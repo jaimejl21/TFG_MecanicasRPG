@@ -2421,8 +2421,8 @@ MonoBehaviour:
         y: 1120
         width: 160
         height: 30
-    canvasScrollPosition: {x: 0, y: 0}
-    canvasZoom: 0.91
+    canvasScrollPosition: {x: 62.19513, y: 0}
+    canvasZoom: 0.8200001
   - id: 2
     fields:
     - title: Title
@@ -26217,8 +26217,8 @@ MonoBehaviour:
         y: 770
         width: 160
         height: 30
-    canvasScrollPosition: {x: 0, y: 0}
-    canvasZoom: 1.1199999
+    canvasScrollPosition: {x: 12.92363, y: 7.00678}
+    canvasZoom: 1.06
   - id: 16
     fields:
     - title: Title
@@ -49015,8 +49015,8 @@ MonoBehaviour:
         y: 1742
         width: 160
         height: 30
-    canvasScrollPosition: {x: 0, y: 1116.7126}
-    canvasZoom: 1
+    canvasScrollPosition: {x: 0, y: 763.34845}
+    canvasZoom: 0.7299999
   syncInfo:
     syncActors: 0
     syncItems: 0

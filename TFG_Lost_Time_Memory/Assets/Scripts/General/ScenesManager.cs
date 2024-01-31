@@ -33,6 +33,7 @@ public class ScenesManager : MonoBehaviour
                 GameManager.inst.objectAlert = true;
             }
             int nNodesMaps = PlayerPrefs.GetInt("nNodesMaps");
+            Debug.Log("nNodesMaps: " + nNodesMaps);
             if (nNodesMaps == 6)
             {
                 if (fio != null)
@@ -58,14 +59,42 @@ public class ScenesManager : MonoBehaviour
         }
         else
         {
-            if (fio != null)
+            if (objAlert)
             {
-                fio.FadeToScene("Lobby");
+                GameManager.inst.objectAlert = true;
+            }
+            int nNodesMaps = PlayerPrefs.GetInt("nNodesMaps");
+            Debug.Log("nNodesMaps: " + nNodesMaps);
+            if (nNodesMaps == 6)
+            {
+                if (fio != null)
+                {
+                    fio.FadeToScene("Lobby");
+                }
+                else
+                {
+                    SceneManager.LoadScene("Lobby");
+                }
             }
             else
             {
-                SceneManager.LoadScene("Lobby");
+                if (fio != null)
+                {
+                    fio.FadeToScene("NodesMap" + nNodesMaps);
+                }
+                else
+                {
+                    SceneManager.LoadScene("NodesMap" + nNodesMaps);
+                }
             }
+            //if (fio != null)
+            //{
+            //    fio.FadeToScene("Lobby");
+            //}
+            //else
+            //{
+            //    SceneManager.LoadScene("Lobby");
+            //}
         }   
     }
     public void ChangeToFightScene(int enemyTeam)
