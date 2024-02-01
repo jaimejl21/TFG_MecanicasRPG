@@ -171,6 +171,7 @@ MonoBehaviour:
   death: 0
   converName: 
   filename: 
+  mode: 0
 --- !u!4 &235209504
 Transform:
   m_ObjectHideFlags: 0
