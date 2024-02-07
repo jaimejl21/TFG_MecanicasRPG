@@ -16,15 +16,15 @@ public class ComboController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.gameObject.tag == "Bien")
+        if (col.gameObject.tag == "Good")
         {
             comboType = 1;
         }
-        if (col.gameObject.tag == "Genial")
+        if (col.gameObject.tag == "Great")
         {
             comboType = 2;
         }
-        if (col.gameObject.tag == "Perfecto")
+        if (col.gameObject.tag == "Perfect")
         {
             comboType = 3;
         }
@@ -32,7 +32,8 @@ public class ComboController : MonoBehaviour
         {
             comboType = 0;
         }
-        //Debug.Log("comboType" + comboType);
+        //Debug.Log("tag: " + col.gameObject.tag);
+        Debug.Log("comboType" + comboType);
     }
 
     public void StartAnim()
@@ -111,7 +112,7 @@ public class ComboController : MonoBehaviour
             default:
                 break;
         }
-        //Debug.Log(comboName + " " + timesAtkVar);
+        Debug.Log(comboName + " " + timesAtkVar);
     }
 
     public void ComboAction()
