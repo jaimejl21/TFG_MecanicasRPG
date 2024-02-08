@@ -427,7 +427,8 @@ public class FightCharacter : MonoBehaviour, IPointerClickHandler, IPointerDownH
                 {
                     atkBuffTurns += turns;
                 }
-                //Debug.Log("Id: " + charInfo.id + " Buff atk " + atkBuff + " " + atkBuffTurns + " turns");
+                //Debug.Log("Id: " + charInfo.id + " Buff atk "
+                //+ atkBuff + " " + atkBuffTurns + " turns");
             }
             else
             {
