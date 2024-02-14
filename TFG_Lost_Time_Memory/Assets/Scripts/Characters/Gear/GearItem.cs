@@ -15,7 +15,8 @@ public class GearItem : MonoBehaviour
     void Start()
     {
         SetName();
-        gameObject.transform.GetChild(0).gameObject.GetComponent<TextMeshProUGUI>().text = "" + transform.GetComponent<Gear>().info.id + "\n" + typeName;
+        gameObject.transform.GetChild(0).gameObject.GetComponent<TextMeshProUGUI>().text = 
+            "" + transform.GetComponent<Gear>().info.id + "\n" + typeName;
         SetGearStatColor();
         SetRarityColor();
     }

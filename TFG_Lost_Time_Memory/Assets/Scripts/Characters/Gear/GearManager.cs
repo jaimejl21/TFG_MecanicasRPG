@@ -210,12 +210,12 @@ public class GearManager : MonoBehaviour
 
     public void UpdateBonusTxt(bool add)
     {
-        CheckBonusTxt(add, atkGears, 0);
-        CheckBonusTxt(add, defGears, 1);
-        CheckBonusTxt(add, hpGears, 2);
+        CheckBonus(add, atkGears, 0);
+        CheckBonus(add, defGears, 1);
+        CheckBonus(add, hpGears, 2);
     }
 
-    public void CheckBonusTxt(bool add, int statGear, int statType)
+    public void CheckBonus(bool add, int statGear, int statType)
     {
         if (statGear < 2)
         {

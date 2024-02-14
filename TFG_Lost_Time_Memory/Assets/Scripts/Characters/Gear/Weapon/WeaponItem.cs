@@ -40,7 +40,7 @@ public class WeaponItem : MonoBehaviour
                 typeName = "Bastón";
                 break;
             case 11:
-                typeName = "Brco";
+                typeName = "Arco";
                 break;
             case 12:
                 typeName = "Hacha";
