@@ -202,7 +202,8 @@ public class BlacksmithManager : MonoBehaviour
                 goSelected.GetComponent<BlacksmithItem>().upgrade = true;
                 ChangeUpAwBtn(true, false, true, false);
                 Debug.Log("CanUpgrade : " + goSelected.GetComponent<BlacksmithItem>().upMat + " > " + upMats);
-                CanUpAwGear(goSelected.GetComponent<BlacksmithItem>().upPrice, 0, goSelected.GetComponent<BlacksmithItem>().upMat, upMats);
+                CanUpAwGear(goSelected.GetComponent<BlacksmithItem>().upPrice, 
+                    0, goSelected.GetComponent<BlacksmithItem>().upMat, upMats);
             }           
         }
         else
@@ -253,6 +254,10 @@ public class BlacksmithManager : MonoBehaviour
         else if (goSelected.GetComponent<Gear>().info.objType == 1 || goSelected.GetComponent<Gear>().info.objType == 4)
         {
             goSelected.GetComponent<Gear>().info.statAmount += 3;
+        }
+        else if (goSelected.GetComponent<Gear>().info.objType > 5)
+        {
+            goSelected.GetComponent<Gear>().info.statAmount += 10;
         }
         else
         {
