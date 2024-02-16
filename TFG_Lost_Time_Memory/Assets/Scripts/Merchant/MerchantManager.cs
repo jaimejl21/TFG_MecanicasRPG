@@ -24,7 +24,7 @@ public class MerchantManager : MonoBehaviour
         buyGearList = new List<Gear.Info>();
 
         coins = GameManager.inst.coins;
-        coinsTxt.text = "Coins: " + coins;
+        coinsTxt.text = "Monedas: " + coins;
 
         idGearCount = GameManager.inst.idGearCount;
 
@@ -61,7 +61,7 @@ public class MerchantManager : MonoBehaviour
 
     void UpdateCoinsTxt()
     {
-        coinsTxt.text = "Coins: " + coins;
+        coinsTxt.text = "Monedas: " + coins;
         GameManager.inst.coins = coins;
     }
 
@@ -123,9 +123,9 @@ public class MerchantManager : MonoBehaviour
         merchantItem.GetComponent<Gear>().info = go.GetComponent<Gear>().info;
         merchantItem.GetComponent<MerchantItem>().price = go.GetComponent<MerchantItem>().price;
         Instantiate(merchantItem, itemPos);
-        itemInfoTxts[0].text = "Rarity: " + merchantItem.GetComponent<Gear>().info.rarity;
-        itemInfoTxts[1].text = "Stats: " + merchantItem.GetComponent<Gear>().info.statAmount;
-        itemInfoTxts[2].text = "Coins: " + merchantItem.GetComponent<MerchantItem>().price;
+        itemInfoTxts[0].text = "Rareza: " + merchantItem.GetComponent<Gear>().info.rarity;
+        itemInfoTxts[1].text = "Estad: " + merchantItem.GetComponent<Gear>().info.statAmount;
+        itemInfoTxts[2].text = "Monedas: " + merchantItem.GetComponent<MerchantItem>().price;
         if (btns[0].interactable == false)
         {
             if (goSelected.GetComponent<MerchantItem>().price > coins)
@@ -142,7 +142,6 @@ public class MerchantManager : MonoBehaviour
         {
             btns[3].interactable = true;
         }
-
     }
 
     public void ChangeInventory()
@@ -171,9 +170,10 @@ public class MerchantManager : MonoBehaviour
             Destroy(itemPos.GetChild(0).gameObject);
         }
 
-        itemInfoTxts[0].text = "Rarity: ";
-        itemInfoTxts[1].text = "Stats: ";
-        itemInfoTxts[2].text = "Coins: ";
+        itemInfoTxts[0].text = "Rareza: ";
+        itemInfoTxts[1].text = "Estad: ";
+        itemInfoTxts[2].text = "Monedas: ";
+        itemInfoTxts[2].color = Color.white;
 
         btns[2].interactable = false;
         btns[3].interactable = false;

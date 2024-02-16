@@ -165,7 +165,7 @@ public class GameManager : MonoBehaviour
             SaveListsToJson();
 
             started = 1;
-            coins = 500000;
+            coins = 50000;
             awMats = 90;
             upMats = 90;
             lvlUpMatC = 100;
@@ -195,7 +195,7 @@ public class GameManager : MonoBehaviour
 
             GetIntPlayerPrefs("idGearCount", ref idGearCount, 0);
             GetIntPlayerPrefs("idCharCount", ref idCharCount, 0);
-            GetIntPlayerPrefs("coins", ref coins, 500000);
+            GetIntPlayerPrefs("coins", ref coins, 50000);
             GetIntPlayerPrefs("upMats", ref upMats, 90);
             GetIntPlayerPrefs("awMats", ref awMats, 90);
             GetIntPlayerPrefs("amountC", ref lvlUpMatC, 100);
