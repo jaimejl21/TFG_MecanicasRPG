@@ -140,7 +140,8 @@ public class NodesMapManager : MonoBehaviour
                     bool isActive = false;
                     while (!aux)
                     {
-                        if (columnsList[actualCol].transform.GetChild(i).GetComponent<MapNode>().prevNodes[j].GetComponent<MapNode>().nodeSelected == 1)
+                        if (columnsList[actualCol].transform.GetChild(i).GetComponent<MapNode>().prevNodes[j].
+                            GetComponent<MapNode>().nodeSelected == 1)
                         {
 
                             isActive = true;
