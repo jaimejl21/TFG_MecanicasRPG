@@ -27,22 +27,22 @@ public class GearItem : MonoBehaviour
         switch(type)
         {
             case 0:
-                typeName = "Bracer";
+                typeName = "Brazalete";
                 break;
             case 1:
-                typeName = "Neck";
+                typeName = "Collar";
                 break;
             case 2:
-                typeName = "Belt";
+                typeName = "Cinturón";
                 break;
             case 3:
-                typeName = "Ring";
+                typeName = "Anillo";
                 break;
             case 4:
-                typeName = "Earring";
+                typeName = "Pendientes";
                 break;
             case 5:
-                typeName = "Orb";
+                typeName = "Orbe";
                 break;
         }
     }
