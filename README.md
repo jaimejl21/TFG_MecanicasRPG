@@ -1,5 +1,4 @@
-<img src="./media/image1.jpeg" style="width:5.24861in;height:2.65694in"
-alt="Interfaz de usuario gráfica, Texto, Aplicación Descripción generada automáticamente" />
+<img src="./media/image1.jpeg" style="width:5.24861in;height:2.65694in" />
 
 **ESCUELA TÉCNICA SUPERIOR DE INGENIERÍA INFORMÁTICA**
 
